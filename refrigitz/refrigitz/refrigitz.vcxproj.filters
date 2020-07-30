@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="syzygy">
+      <UniqueIdentifier>{0c7ab093-9043-41dc-91ef-57c45fc9a88a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\AllDraw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\AssemblyInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ChessForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ChessGeneticAlgorithm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ChessRules.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\CodeClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Colleralation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawCastle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawElefant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawHourse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawKing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawMinister.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawSoldire.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\FenNotation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Stone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ThingsConverter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ThinkingHybridizerRefrigitz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\uci.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Chess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\WCharC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\RAMIN\Desktop\New folder\Point.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\IsNextEnemyMovementForCheckedMate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\LearningAtamata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\NetworkQuantumLearningKrinskyAtamata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\QuantumAtamata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\QuantumLearningAtamata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\evaluate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\movegen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\timeman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\thread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\search.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\movepick.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\pawns.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\bitboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\endgame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\misc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\tt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\syzygy\tbcore.cpp">
+      <Filter>syzygy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\syzygy\tbprobe.cpp">
+      <Filter>syzygy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\AllDraw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\AssemblyInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ChessForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ChessRules.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\CodeClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Colleralation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawCastle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawElefant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawHourse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawKing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawMinister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\DrawSoldire.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\FenNotation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Program.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Stone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ThingsConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\ThinkingHybridizerRefrigitz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\uci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\stringconverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\Chess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HybridizerRefrigitz\HybridizerRefrigitzGeneticAlgorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\WCharC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAMIN\Desktop\New folder\ChessGeneticAlgorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\RAMIN\Desktop\New folder\Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\QuantumLearningAtamata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\IsNextEnemyMovementForCheckedMate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\LearningAtamata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\NetworkQuantumLearningKrinskyAtamata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\QuantumAtamata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\evaluate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\movegen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\position.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\timeman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\search.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\movepick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\pawns.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\thread_win32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\bitboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\endgame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\tt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\syzygy\tbcore.h">
+      <Filter>syzygy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%27Personal%27_%27Files%27\refrigitz\refrigitz\HybridizerRefrigitz\syzygy\tbprobe.h">
+      <Filter>syzygy</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
