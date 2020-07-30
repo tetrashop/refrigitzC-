@@ -122,27 +122,27 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 		//Initiate a Object and Assignemt of a Clone to Construction of a Copy.
 
 		AA = new DrawSoldier(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, this->Row, this->Column, this->color, CloneATable(Tab), this->Order, false, this->Current);
-		AA.ArrangmentsChanged = ArrangmentsChanged;
+		AA->ArrangmentsChanged = ArrangmentsChanged;
 		for (int  i = 0; i < AllDraw::SodierMovments; i++)
 		{
 
-			AA.SoldierThinking = ThinkingHybridizerRefrigitz(i,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->SoldierThinking.Clone(AA.SoldierThinking);
+			AA->SoldierThinking = ThinkingHybridizerRefrigitz(i,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			this->SoldierThinking.Clone(AA->SoldierThinking);
 
 		}
-		*AA.Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
+		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
 		for (int  ii = 0; ii < 8; ii++)
 		{
 			for (int  jj = 0; jj < 8; jj++)
 			{
-				AA.Table[ii][jj] = Tab[ii][jj];
+				AA->Table[ii][jj] = Tab[ii][jj];
 			}
 		}
-		AA.[So2]. = Row;
-		AA.Column = Column;
-		AA.Order = Order;
-		AA.Current = Current;
-		AA.color = color;
+		AA->[So2]. = Row;
+		AA->Column = Column;
+		AA->Order = Order;
+		AA->Current = Current;
+		AA->color = color;
 
 	}*/
 

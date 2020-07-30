@@ -1,4 +1,4 @@
-﻿#include "LearningAtamata.h"
+﻿#include "LearningAtamatA->h"
 
 
 
@@ -67,28 +67,28 @@
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		//lock (o)
 		{
-			AA.r = this->r;
-			AA.m = this->m;
-			AA.k = this->k;
-			alpha = new double[AA.r];
-			for (int i = 0; i < AA.r; i++)
+			AA->r = this->r;
+			AA->m = this->m;
+			AA->k = this->k;
+			alpha = new double[AA->r];
+			for (int i = 0; i < AA->r; i++)
 			{
-				AA.alpha[i] = this->alpha[i];
+				AA->alpha[i] = this->alpha[i];
 			}
-			AA.beta = this->beta;
-			AA.Failer = this->Failer;
-			fi = new double[AA.k];
-			for (int i = 0; i < AA.k; i++)
+			AA->beta = this->beta;
+			AA->Failer = this->Failer;
+			fi = new double[AA->k];
+			for (int i = 0; i < AA->k; i++)
 			{
-				AA.fi[i] = this->fi[i];
+				AA->fi[i] = this->fi[i];
 			}
-			AA.IsPenalty = this->IsPenalty;
-			AA.IsReward = this->IsReward;
-			AA.Reward = this->Reward;
-			AA.Penalty = this->Penalty;
-			AA.Success = this->Success;
-			AA.Failer = this->Failer;
-			AA.State = this->State;
+			AA->IsPenalty = this->IsPenalty;
+			AA->IsReward = this->IsReward;
+			AA->Reward = this->Reward;
+			AA->Penalty = this->Penalty;
+			AA->Success = this->Success;
+			AA->Failer = this->Failer;
+			AA->State = this->State;
 		}
 	}
 	*/

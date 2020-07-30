@@ -123,10 +123,10 @@
 //C# TO C++ CONVERTER NOTE: The variable Colleralation was renamed since it is named the same as a user-defined type:
 		static int Colleralation_Renamed;
 		static int DeColleralation;
-		static int **TableInitiation;
+		static int TableInitiation[8][8];
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public static int[,] TableInitiationPreventionOfMultipleMove ={ { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 } };
-		static int **TableInitiationPreventionOfMultipleMove;
+		static int TableInitiationPreventionOfMultipleMove[8][8];
 	private:
 		int RationalRegard;
 		int RationalPenalty;
@@ -296,7 +296,7 @@
 		int color;
 		int Order;
 		//[NonSerialized()]
-		std::vector<AllDraw> AStarGreedy;
+		std::vector<AllDraw*> AStarGreedy;
 		std::vector<bool> AStarGreedyMove;
 	private:
 		const int **Value;
@@ -324,8 +324,7 @@
 		std::wstring AsS(int i, int j, int ii, int jj);
 		ThinkingHybridizerRefrigitz();
 		//Constructor
-		ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j);
-
+	
 		//determine When Arrangment of Table Objects is Validated at Begin.
 	private:
 		ThinkingHybridizerRefrigitz(int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j);
@@ -333,9 +332,30 @@
 		//Constructor
 	public:
 		ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin);
-		//Clone A Table
+	//Clone A Table
 	private:
 		int **CloneATable(int** Tab);
+		int **CloneATableC(int Tab[][8])
+		{
+			////auto o = new Object();
+	//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
+			////lock (O)
+			{
+				//Create and new an Object.
+				int **Table; *Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
+				//Assigne Parameter To New Objects.
+				for (int i = 0; i < 8; i++)
+				{
+					for (int j = 0; j < 8; j++)
+					{
+						Table[i][j] = Tab[i][j];
+					}
+				}
+				//Return New Object.
+				return Table;
+			}
+		}
+
 		//Clone A List.  
 		int *CloneAList(int Tab[], int Count);
 		//Clone a copy of an array.
@@ -791,14 +811,14 @@
 	private:
 		void ThinkingWaite();
 		//operantinal of creation of current deeper node and set string making
-		void FullGameThinkingTreeInitialization(AllDraw THIS, int ik, int j, int Order, int kind);
+		void FullGameThinkingTreeInitialization(AllDraw *THIS, int ik, int j, int Order, int kind);
 		//Deeper than deeper
-		void ThinkingFullGame(int iAStarGreedy, AllDraw THIS);
+		void ThinkingFullGame(int iAStarGreedy, AllDraw *THIS);
 		int ColorOpposite(int a);
 		bool MovableAllObjectsListMethos(int RowS, int ColS);
 		void MovableAllObjectsListMethos(int** TableS, bool Before, int RowS, int ColS, int RowD, int ColD, int con, int movable = 1);
 	public:
-		void Thinking(int iAStarGreedy, AllDraw THIS, int *LoseOcuuredatChiled, int &WinOcuuredatChiled);
+		void Thinking(int iAStarGreedy, AllDraw *THIS, int *LoseOcuuredatChiled, int &WinOcuuredatChiled);
 		bool IsTheeAtleastMAteSelf();
 		void TowDistrurbProperUse(int *LoseOcuuredatChiled);
 		void TowDistrurbProperUsePreferNotToClose(int *LoseOcuuredatChiled, int** Tab);

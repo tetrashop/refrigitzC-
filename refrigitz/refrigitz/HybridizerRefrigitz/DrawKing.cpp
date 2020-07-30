@@ -158,27 +158,27 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 		}
 		//Initiate a Construction Object and Clone a Copy.
 		AA = new DrawKing(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, this->Row, this->Column, this->color, this->CloneATable(Table), this->Order, false, this->Current);
-		AA.ArrangmentsChanged = ArrangmentsChanged;
+		AA->ArrangmentsChanged = ArrangmentsChanged;
 		for (int  i = 0; i < AllDraw::KingMovments; i++)
 		{
 
-			AA.KingThinking =new ThinkingHybridizerRefrigitz(i, 6, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->KingThinking.Clone(AA.KingThinking);
+			AA->KingThinking =new ThinkingHybridizerRefrigitz(i, 6, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			this->KingThinking.Clone(AA->KingThinking);
 
 		}
-		*AA.Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
+		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
 		for (int  ii = 0; ii < 8; ii++)
 		{
 			for (int  jj = 0; jj < 8; jj++)
 			{
-				AA.Table[ii][jj] = Tab[ii][jj];
+				AA->Table[ii][jj] = Tab[ii][jj];
 			}
 		}
-		AA.[So2]. = Row;
-		AA.Column = Column;
-		AA.Order = Order;
-		AA.Current = Current;
-		AA.color = color;
+		AA->[So2]. = Row;
+		AA->Column = Column;
+		AA->Order = Order;
+		AA->Current = Current;
+		AA->color = color;
 
 	}
 */

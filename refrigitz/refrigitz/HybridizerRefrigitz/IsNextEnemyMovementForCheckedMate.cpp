@@ -17,7 +17,7 @@
 		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("IsNextEnemyMovementForCheckedMate:" + (TimeElapced.TimeNow() - Time).ToString());}Spaces--;
 	}
 
-	IsNextEnemyMovementForCheckedMate::IsNextEnemyMovementForCheckedMate(int Order, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, AllDraw THi, int ** Tab) : AllDraw(Order, MovementsAStarGreedyHeuristicTFou, IgnoreSelfObject, UsePenaltyRegardMechnisa, BestMovment, PredictHurist, OnlySel, AStarGreedyHuris, Arrangments, THi)
+	IsNextEnemyMovementForCheckedMate::IsNextEnemyMovementForCheckedMate(int Order, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, AllDraw *Thi, int ** Tab) : AllDraw(Order, MovementsAStarGreedyHeuristicTFou, IgnoreSelfObject, UsePenaltyRegardMechnisa, BestMovment, PredictHurist, OnlySel, AStarGreedyHuris, Arrangments, THi)
 	{
 		//long Time = TimeElapced.TimeNow();Spaces++;
 		InitializeInstanceFields();
@@ -98,12 +98,12 @@
 		std::vector<AllDraw> A54 = std::vector<AllDraw>();
 		for (var i = 0; i < AllDraw::StoreADraw.size(); i++)
 		{
-			A54.push_back(AllDraw::StoreADraw[i]);
+			A54.push_back(new AllDraw::StoreADraw[i]);
 		}
 		std::vector<int> A55 = std::vector<int>();
 		for (var i = 0; i < AllDraw::StoreADrawAStarGreedy.size(); i++)
 		{
-			A55.push_back(AllDraw::StoreADrawAStarGreedy[i]);
+			A55.push_back(new AllDraw::StoreADrawAStarGreedy[i]);
 		}
 		int A56 = AllDraw::SuppportCountStaticBrown;
 		int A57 = AllDraw::SuppportCountStaticGray;
@@ -111,12 +111,12 @@
 		std::vector<int**> A59 = std::vector<int**>();
 		for (var i = 0; i < AllDraw::TableCurrent.size(); i++)
 		{
-			A59.push_back(AllDraw::TableCurrent[i]);
+			A59.push_back(new AllDraw::TableCurrent[i]);
 		}
 		std::vector<int**> A60 = std::vector<int**>();
 		for (var i = 0; i < AllDraw::TableListAction.size(); i++)
 		{
-			A60.push_back(AllDraw::TableListAction[i]);
+			A60.push_back(new AllDraw::TableListAction[i]);
 		}
 		int A61[8][8];
 		for (var i = 0; i < 8; i++)

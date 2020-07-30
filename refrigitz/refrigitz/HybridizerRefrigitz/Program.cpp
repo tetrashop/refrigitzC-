@@ -1,15 +1,15 @@
 ﻿#include "Program.h"
 #include "uci.h"
 
-int Program::main(int argc, char *argv[])
+int main(int argc, char *argv[])
 //Main Programm.
 //[STAThread]
 {
-	/* cuda.DeviceSynchronize();
+	/* cudA->DeviceSynchronize();
 	 HybRunner runner = HybRunner.Cuda("Hybridizer.Runtime.CUDAImports.dll").SetDistrib(1, 2);
 	 GlobalMembersUci.t = new ArtificialInteligenceMove(new HybridizerRefrigitzForm();
 	 runner.Wrap(GlobalMembersUci.t);
-	 */
+	 *//*
 	if (GlobalMembersUci::tP == nullptr)
 	{
 		GlobalMembersUci::tP = new HybridizerRefrigitzForm();
@@ -30,7 +30,7 @@ int Program::main(int argc, char *argv[])
 
 	}
 	GlobalMembersUci::loop(argc, argv);
-
+	*/
 }
 
 	

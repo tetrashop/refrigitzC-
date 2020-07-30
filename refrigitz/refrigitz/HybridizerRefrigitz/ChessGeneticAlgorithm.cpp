@@ -556,7 +556,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		catch (IndexOutOfRangeException t)
 		{
 			Log(t);
-			return *nullptr;
+			return nullptr;
 		}
 
 		Index = Store;
@@ -594,7 +594,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 			//If Gen Kind Not Found Retrun Not Valididity.
 			if (List[List.size() + MinusOne][CromosomRow][CromosomColumn] == 0)
 			{
-				return *nullptr;
+				return nullptr;
 			}
 			else
 			{
@@ -624,7 +624,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 						continue;
 					}
 					//Rulement of Gen Movments.
-					if (( ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, GeneticTable[CromosomRow][CromosomColumn], CloneATable(GeneticTable), Order, CromosomRow, CromosomColumn))->Rules(CromosomRow, CromosomColumn, Gen1, Gen2, color, GeneticTable[CromosomRow][CromosomColumn]))
+					if ((new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, GeneticTable[CromosomRow][CromosomColumn], CloneATable(GeneticTable), Order, CromosomRow, CromosomColumn))->Rules(CromosomRow, CromosomColumn, Gen1, Gen2, color, GeneticTable[CromosomRow][CromosomColumn]))
 					{
 						//Initiate Global Variables and Syntax.
 						int A[2];
@@ -647,7 +647,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 						else
 						{
 							//Check Consideration.
-							if (( ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, GeneticTable[CromosomRow][CromosomRow], CloneATable(GeneticTable), Order, CromosomRow, CromosomColumn))->Check(CloneATable(GeneticTable), Order))
+							if ((new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, GeneticTable[CromosomRow][CromosomRow], CloneATable(GeneticTable), Order, CromosomRow, CromosomColumn))->Check(CloneATable(GeneticTable), Order))
 							{
 								GeneticTable[CromosomRow][CromosomColumn] = GeneticTable[Gen1][Gen2];
 								GeneticTable[Gen1][Gen2] = 0;
@@ -699,11 +699,11 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 						Ki = 1;
 					}
 					Count++;
-				} while (Count < 6 && !( ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
+				} while (Count < 6 && !(new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
 				if (Count >= 6)
 				{
 					NoGameFounf = true;
-					return *nullptr;
+					return nullptr;
 				}
 
 
@@ -722,11 +722,11 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 						Ki = -1;
 					}
 					Count++;
-				} while (Count < 6 && !( ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
+				} while (Count < 6 && !(new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
 				if (Count >= 6)
 				{
 					NoGameFounf = true;
-					return *nullptr;
+					return nullptr;
 				}
 
 
@@ -763,10 +763,10 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 					Ki = 1;
 				}
 				Count++;
-			} while (Count < 6 && !( ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
+			} while (Count < 6 && !(new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
 			if (Count >= 6)
 			{
-				return *nullptr;
+				return nullptr;
 			}
 
 		}
@@ -784,10 +784,10 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 					Ki = -1;
 				}
 				Count++;
-			} while (Count < 6 && !( ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
+			} while (Count < 6 && !(new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
 			if (Count >= 6)
 			{
-				return *nullptr;
+				return nullptr;
 			}
 		}
 

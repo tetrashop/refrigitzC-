@@ -40,7 +40,7 @@
 	private:
 		bool Person;
 	public:
-		AllDraw Draw;
+		AllDraw *Draw;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public static int[,] Table = nullptr;
 		static int **Table;
@@ -85,7 +85,7 @@
 		void Wait();
 		  public:
 		  AllDraw RootFound();
-		void SetDrawFounding(bool &FOUNDI, AllDraw THISI, bool FirstI);
+		void SetDrawFounding(bool &FOUNDI, AllDraw *THISI, bool FirstI);
 	private:
 		bool DrawManagement();
 		void SetAllDrawKindString();

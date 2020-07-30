@@ -116,7 +116,7 @@ namespace {
   #define S(mg, eg) make_score(mg, eg)
 
   // MobilityBonus[PieceType][attacked] contains bonuses for middle and end
-  // game, indexed by piece type and number of attacked squares in the MobilityArea.
+  // game, indexed by piece type and number of attacked squares in the MobilityAreA->
   const Score MobilityBonus[][32] = {
     {}, {},
     { S(-75,-76), S(-56,-54), S( -9,-26), S( -2,-10), S(  6,  5), S( 15, 11), // Knights
