@@ -306,7 +306,7 @@ void MainThread::search() {
   if (   !this->easyMovePlayed
       &&  Options["MultiPV"] == 1
       && !Limits.depth
-      && !Skill(Options["Skill Level"]).enabled()
+      && !Skill(Options["Skill Leve"]).enabled()
       &&  rootMoves[0].pv[0] != MOVE_NONE)
   {
       for (Thread* th : Threads)
@@ -357,7 +357,7 @@ void Thread::search() {
   }
 
   size_t multiPV = Options["MultiPV"];
-  Skill skill(Options["Skill Level"]);
+  Skill skill(Options["Skill Leve"]);
 
   // When playing with strength handicap enable MultiPV search that we will
   // use behind the scenes to retrieve a set of possible moves.

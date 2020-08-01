@@ -3,17 +3,17 @@
 
 
 
-/*	void CodeClass::SaveByCode(int Code, int LineCode, const std::wstring &File)
+/*	void CodeClass::SaveByCode(int Code, int LineCode, const std::string &File)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{
-			if (!System::IO::File::Exists(L"CodeLogEvent.log"))
+			if (!System::IO::File::Exists("CodeLogEvent.log"))
 			{
-				System::IO::File::CreateText(L"CodeLogEvent.log");
+				System::IO::File::CreateText("CodeLogEvent.log");
 			}
-			System::IO::File::AppendAllText(L"CodeLogEvent.log", std::wstring(L"\r\nError by ") + Code + std::wstring(L"At ") + LineCode + std::wstring(L" LinCode of File ") + File);
+			System::IO::File::AppendAllText("CodeLogEvent.log", std::string("\r\nError by ") + Code + std::string("At ") + LineCode + std::string(" LinCode of File ") + File);
 		}
 	}
 

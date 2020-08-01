@@ -1,4 +1,5 @@
-﻿#include "DrawKing.h"
+﻿#include "stdafx.h"
+#include "DrawKing.h"
 
 
 bool DrawKing::KingWHITENotCheckedByQuantumMove = false;
@@ -23,7 +24,7 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 		for (int  ii = 0; ii < AllDraw::KingMovments; ii++)
 
 		{
-			a += KingThinking.ReturnHeuristic(-1, -1, Order, false, HaveKilled);
+			a += KingThinking->ReturnHeuristic(-1, -1, Order, false, HaveKilled);
 		}
 
 
@@ -86,7 +87,7 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 				}
 			}
 			
-				KingThinking = ThinkingHybridizerRefrigitz(0, 6, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 8, Ord, TB, Cur, 2, 6);
+				KingThinking = new ThinkingHybridizerRefrigitz(0, 6, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 8, Ord, TB, Cur, 2, 6);
 			
 			Row = i;
 			Column = j;
@@ -163,7 +164,7 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 		{
 
 			AA->KingThinking =new ThinkingHybridizerRefrigitz(i, 6, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->KingThinking.Clone(AA->KingThinking);
+			this->KingThinking->Clone(AA->KingThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
@@ -234,7 +235,7 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 
 	void DrawKing::InitializeInstanceFields()
 	{
-		//Space = new std::string(L"&nbsp;");
+		//Space = new std::string("&nbsp;");
 		Spaces = 0;
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];

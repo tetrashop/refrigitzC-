@@ -38,7 +38,7 @@
 
 		bool TimeEnd;
 	private:
-		std::wstring Name;
+		std::string Name;
 		//Initiate Variables. static and local for three timer.
 	public:
 		static int StoreAllDrawCount;
@@ -69,7 +69,7 @@
 	public:
 		Timer(int ord, bool SignPositive = true);
 		//Initiate Timer.
-		void TimerInitiate(const std::wstring &N);
+		void TimerInitiate(const std::string &N);
 		//Main Timer of Threading.
 	private:
 		void TimerThread();
@@ -90,11 +90,11 @@
 		//Cal Midle (Avarage) AStarGreedyt First Some static variables.
 		void MidleAStarGreedytTimer(int AStarGreedyti);
 		//Strat timer function.
-		void StartTime(const std::wstring &N);
+		void StartTime(const std::string &N);
 
 		//Stop Timer.
 		void StopTime();
-		std::wstring ReturnTime();
+		std::string ReturnTime();
 
 	private:
 		void InitializeInstanceFields();

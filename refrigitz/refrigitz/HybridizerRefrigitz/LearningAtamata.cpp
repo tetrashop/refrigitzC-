@@ -1,4 +1,5 @@
-﻿#include "LearningAtamatA->h"
+﻿#include "stdafx.h"
+#include "LearningAtamatA->h"
 
 
 

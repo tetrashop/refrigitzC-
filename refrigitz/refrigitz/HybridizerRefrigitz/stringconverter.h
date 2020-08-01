@@ -12,7 +12,7 @@ class StringConverterHelper
 {
 public:
 	template<typename T>
-	static std::wstring toString(const T &subject)
+	static std::string toString(const T &subject)
 	{
 		std::wostringstream ss;
 		ss << subject;
@@ -20,7 +20,7 @@ public:
 	}
 
 	template<typename T>
-	static T fromString(const std::wstring &subject)
+	static T fromString(const std::string &subject)
 	{
 		std::wistringstream ss(subject);
 		T target;

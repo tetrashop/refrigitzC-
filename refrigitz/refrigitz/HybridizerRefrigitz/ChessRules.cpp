@@ -1,4 +1,5 @@
-﻿#include "ChessRules.h"
+﻿#include "stdafx.h"
+#include "ChessRules.h"
 #include "AllDraw.h"
 #include "ThinkingHybridizerRefrigitz.h"
 #include "DrawKing.h"
@@ -1394,47 +1395,47 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		}
 	}
 
-	std::wstring ChessRules::ThingsAlphabet(int i)
+	std::string ChessRules::ThingsAlphabet(int i)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{ //long Time = TimeElapced.TimeNow();
 		  //Initiate a Local Varibale. 
-			std::wstring A ;
+			std::string A ;
 			//Determinbe WHITE Or BLACK Movment.
 			if (i < 0)
 			{
-				A = L"BLACK:";
+				A = "BLACK:";
 			}
 			if (i > 0)
 			{
-				A = L"WHITE:";
+				A = "WHITE:";
 			}
 			//Determine Object Alhpabet. 
 			if (abs(i) == 1)
 			{
-				A += std::wstring(L"(S)");
+				A += std::string("(S)");
 			}
 			if (abs(i) == 2)
 			{
-				A += std::wstring(L"(E)");
+				A += std::string("(E)");
 			}
 			if (abs(i) == 3)
 			{
-				A += std::wstring(L"(H)");
+				A += std::string("(H)");
 			}
 			if (abs(i) == 4)
 			{
-				A += std::wstring(L"(B)");
+				A += std::string("(B)");
 			}
 			if (abs(i) == 5)
 			{
-				A += std::wstring(L"(M)");
+				A += std::string("(M)");
 			}
 			if (abs(i) == 6)
 			{
-				A += std::wstring(L"(K)");
+				A += std::string("(K)");
 			}
 			//Retrun Alphabet.
 			////AllDraw.OutPut.Append("\r\nThingsAlphabet:" + (TimeElapced.TimeNow() - Time).ToString();
@@ -1443,46 +1444,46 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		}
 	}
 
-	std::wstring ChessRules::RowAlphabet(int i)
+	std::string ChessRules::RowAlphabet(int i)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{ //long Time = TimeElapced.TimeNow();
 				 //Initiate Local Variable.
-			std::wstring A ;
+			std::string A ;
 			//[So2]. Alphabet Consideration.
 			if (i == 0)
 			{
-				A = L"a";
+				A = "a";
 			}
 			if (i == 1)
 			{
-				A = L"b";
+				A = "b";
 			}
 			if (i == 2)
 			{
-				A = L"c";
+				A = "c";
 			}
 			if (i == 3)
 			{
-				A = L"d";
+				A = "d";
 			}
 			if (i == 4)
 			{
-				A = L"e";
+				A = "e";
 			}
 			if (i == 5)
 			{
-				A = L"f";
+				A = "f";
 			}
 			if (i == 6)
 			{
-				A = L"g";
+				A = "g";
 			}
 			if (i == 7)
 			{
-				A = L"h";
+				A = "h";
 			}
 			//Return [So2]. Alphabet.
 			////AllDraw.OutPut.Append("\r\nRowAlphabet:" + (TimeElapced.TimeNow() - Time).ToString();
@@ -1491,7 +1492,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		}
 	}
 
-	std::wstring ChessRules::CreateStatistic(bool Arrange, int** Tab, int Movments, int SourceThings, int Column, int Row, bool Hit, int HitThings, bool CastleKing, bool SodierConvert)
+	std::string ChessRules::CreateStatistic(bool Arrange, int** Tab, int Movments, int SourceThings, int Column, int Row, bool Hit, int HitThings, bool CastleKing, bool SodierConvert)
 	{
 		//long Time = TimeElapced.TimeNow();Spaces++;
 		////auto oOO = new Object();
@@ -1508,11 +1509,11 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			}
 			//Movments String Number Creation in String.
 			bn = (static_cast<int>(bn / 2)) + 1;
-			std::wstring SN ;
-			std::wstring S ;
+			std::string SN ;
+			std::string S ;
 			if (ms)
 			{
-				SN = StringConverterHelper::toString(bn) + std::wstring(L".");
+				SN = StringConverterHelper::toString(bn) + std::string(".");
 			}
 
 
@@ -1579,7 +1580,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						////lock (O2)
 						{
 							ThinkingHybridizerRefrigitz::KingMaovableWHITE = true;
-							S += std::wstring(L"WHITE-BK-S");
+							S += std::string("WHITE-BK-S");
 							////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 							////lock (O)
@@ -1601,7 +1602,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 						////lock (O2)
 						{
-							S += std::wstring(L"WHITE-BK-B");
+							S += std::string("WHITE-BK-B");
 							ThinkingHybridizerRefrigitz::KingMaovableWHITE = true;
 							////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -1624,7 +1625,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 						////lock (O2)
 						{
-							S += std::wstring(L"BLACK-BK-S");
+							S += std::string("BLACK-BK-S");
 							ThinkingHybridizerRefrigitz::KingMaovableBLACK = true;
 							////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -1648,7 +1649,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 						////lock (O2)
 						{
-							S += std::wstring(L"BLACK-BK-B");
+							S += std::string("BLACK-BK-B");
 							ThinkingHybridizerRefrigitz::KingMaovableBLACK = true;
 							////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -1687,25 +1688,25 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						}
 						//THIS.SetObjectInPictureBox(Row, Column);
 
-						S += std::wstring(L"x");
+						S += std::string("x");
 					}
 					S += StringConverterHelper::toString(Column);
 					//CheckMate of WHITE Or BLACK
 					if (AAA->PatkWHITE || AAA->PatBLACK)
 					{
-						S += std::wstring(L"-O-");
+						S += std::string("-O-");
 					}
 					else
 					{
 						if (A->CheckMateWHITE || A->CheckMateBLACK)
 						{
-						S += std::wstring(L"++");
+						S += std::string("++");
 						}
 					//Check Of WHITE Or BLACK.
 					else if (A->CheckBLACK || A->CheckWHITE)
 					{
 
-						S += std::wstring(L"+");
+						S += std::string("+");
 						if (A->CheckBLACK && Order == -1)
 						{
 							////auto o2 = new Object();
@@ -1772,7 +1773,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						ObjectHittedColumn = Column;
 					}
 					//THIS.SetObjectInPictureBox(Row, Column);
-					S += std::wstring(L"x");
+					S += std::string("x");
 				}
 				//[So2]. Column Consideration.
 				S += RowAlphabet(Row);
@@ -1780,19 +1781,19 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				//CheckMate Consideration.
 				if (AAA->PatkWHITE || AAA->PatBLACK)
 				{
-					S += std::wstring(L"-O-");
+					S += std::string("-O-");
 				}
 				else
 
 				{
 					if (A->CheckMateWHITE || A->CheckMateBLACK)
 					{
-					S += std::wstring(L"++");
+					S += std::string("++");
 					}
 				//WHITE Consideration.
 				else if (A->CheckBLACK || A->CheckWHITE)
 				{
-					S += std::wstring(L"+");
+					S += std::string("+");
 					if (A->CheckBLACK && Order == -1)
 					{
 						////auto o2 = new Object();
@@ -1849,11 +1850,11 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			//Separate.
 			if (AllDraw::Less != -DBL_MAX)
 			{
-				S += std::wstring(L" With Heuristic (") + StringConverterHelper::toString(AllDraw::Less) + std::wstring(L")--");
+				S += std::string(" With Heuristic (") + StringConverterHelper::toString(AllDraw::Less) + std::string(")--");
 			}
 			else
 			{
-				S += std::wstring(L" --");
+				S += std::string(" --");
 			}
 			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CreateStatistic:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
 			//Return String Sysntax.
@@ -4006,7 +4007,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 	void ChessRules::InitializeInstanceFields()
 	{
-		//Space = new std::string(L"&nbsp;");
+		//Space = new std::string("&nbsp;");
 		Spaces = 0;
 		IgnoreSelfObject = false;
 		MovementsAStarGreedyHeuristicFoundT = false;

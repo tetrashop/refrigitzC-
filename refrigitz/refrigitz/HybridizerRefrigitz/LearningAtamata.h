@@ -49,7 +49,7 @@
 	public:
 		void Initiate();
 		LearningKrinskyAtamata(int r0, int m0, int k0);
-		void Clone(QuantumAtamata *&AA);
+		//void Clone(QuantumAtamata *&AA);
 
 		void FailureState();
 		void SuccessState();

@@ -1,4 +1,6 @@
-﻿#include "Timer.h"
+﻿#include <chrono>
+#include <ctime>  
+#include "Timer.h"
 #include "AllDraw.h"
 
 
@@ -37,7 +39,7 @@ bool Timer::Text = false;
 
 	}
 
-	void Timer::TimerInitiate(const std::wstring &N)
+	void Timer::TimerInitiate(const std::string &N)
 	{
 		Name = N;
 		////auto o = new Object();
@@ -69,14 +71,14 @@ bool Timer::Text = false;
 				{ //When timer stop sleep and checked for 500 ms.
 
 					//When timr begin store current time.
-					long long t1 = DateTime::Now.Hour * 60 * 60 * 1000 + DateTime::Now.Minute * 60 * 1000 + DateTime::Now.Second * 1000;
+					auto t1 = std::chrono::system_clock::now().time_since_epoch().count();
 
 					do
 					{
 					 //   System.Threading.Thread.Sleep(AllDraw.winc);
 					}
 					//Cal for every 1 second.
-					while (DateTime::Now.Hour * 60 * 60 * 1000 + DateTime::Now.Minute * 60 * 1000 + DateTime::Now.Second * 1000 - t1 < AllDraw::winc);
+					while (std::chrono::system_clock::now().time_since_epoch().count()- t1 < AllDraw::winc);
 					Times = Times + AllDraw::winc * Sign;
 				} while (Times < AllDraw::wtime);
 				do
@@ -95,7 +97,7 @@ bool Timer::Text = false;
 
 				do
 				{ //When timr begin store current time.
-					long long t1 = DateTime::Now.Hour * 60 * 60 * 1000 + DateTime::Now.Minute * 60 * 1000 + DateTime::Now.Second * 1000;
+					long long t1 = std::chrono::system_clock::now().time_since_epoch().count();
 
 
 					do
@@ -103,7 +105,7 @@ bool Timer::Text = false;
 						//System.Threading.Thread.Sleep(AllDraw.binc);
 					}
 					//Cal for every 1 second.
-					while (DateTime::Now.Hour * 60 * 60 * 1000 + DateTime::Now.Minute * 60 * 1000 + DateTime::Now.Second * 1000 - t1 < AllDraw::binc);
+					while (std::chrono::system_clock::now().time_since_epoch().count() - t1 < AllDraw::binc);
 					Times = Times + AllDraw::binc * Sign;
 				} while (Times < AllDraw::btime);
 				do
@@ -119,7 +121,7 @@ bool Timer::Text = false;
 
 		//Indicating of end timer.
 		EndTime = true;
-	}
+	}/*
 
 	const long long &Timer::getTimesAccess() const
 	{
@@ -153,18 +155,7 @@ bool Timer::Text = false;
 			//When Ok.
 			if (Sign != 1)
 			{
-				/*if ((System.Math.Pow((AStarGreedytiLevelMax - StoreAllDrawCount) * AStarGreedytMidleTimer, PowerEx) + System.Math.Pow(TimerColor.TimesAccess, PowerEx) > System.Math.Pow((AStarGreedytiLevelMax - StoreAllDrawCount) * AStarGreedytMidleTimer, PowerEx) + System.Math.Pow((AStarGreedyti - StoreAllDrawCount) * AStarGreedytMidleTimer, PowerEx)))
-				{
-				    Increase = 1;
-	
-				}
-				else//When is Cancled.
-				{
-				    if ((System.Math.Pow((AStarGreedytiLevelMax - StoreAllDrawCount) * AStarGreedytMidleTimer, PowerEx) + System.Math.Pow(TimerColor.TimesAccess, PowerEx) < System.Math.Pow((AStarGreedytiLevelMax - StoreAllDrawCount) * AStarGreedytMidleTimer, PowerEx) + System.Math.Pow((AStarGreedyti - StoreAllDrawCount) * AStarGreedytMidleTimer, PowerEx)))
-				    {
-				        Increase = -1;
-				    }
-				}*/
+				
 				if (Times - 120000 < 0)
 				{
 					Increase = -1;
@@ -215,7 +206,7 @@ bool Timer::Text = false;
 		}
 	}
 
-	void Timer::StartTime(const std::wstring &N)
+	void Timer::StartTime(const std::string &N)
 	{
 		TextChanged = true;
 		////auto o = new Object();
@@ -238,7 +229,7 @@ bool Timer::Text = false;
 			Paused = false;
 		}
 	}
-
+	
 	void Timer::StopTime()
 	{
 		//Thread.Sleep(1000);
@@ -299,8 +290,8 @@ bool Timer::Text = false;
 			TextChanged = false;
 		}
 	}
-	/*
-	std::wstring Timer::ReturnTime()
+	
+	std::string Timer::ReturnTime()
 	{
 		//Cal and return timer string.
 		////auto o = new Object();
@@ -309,7 +300,7 @@ bool Timer::Text = false;
 		{
 			long long T = Times;
 			//Cal and return timer string.
-			std::wstring Houre = L"0";
+			std::string Houre = "0";
 			if (T >= 3600000)
 			{
 
@@ -317,7 +308,7 @@ bool Timer::Text = false;
 				Houre = ((static_cast<long long>(T / 3600000))).ToString();
 				T = (T - static_cast<long long>(T / 3600000) * 3600000);
 			}
-			std::wstring Minute = L"0";
+			std::string Minute = "0";
 			if (T >= 60000)
 			{
 
@@ -325,8 +316,8 @@ bool Timer::Text = false;
 				Minute = ((static_cast<long long>(T / 60000))).ToString();
 				T = (T - static_cast<long long>(T / 60000) * 60000);
 			}
-			std::wstring Second = StringConverterHelper::toString(T / 1000);
-			return Houre + std::wstring(L":") + Minute + std::wstring(L":") + Second;
+			std::string Second = StringConverterHelper::toString(T / 1000);
+			return Houre + std::string(":") + Minute + std::string(":") + Second;
 		}
 	}
 	*/

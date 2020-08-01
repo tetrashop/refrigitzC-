@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "WCharC.h"
 WCharC* WCharC::Split(WCharC*src, wchar_t indstr)
 {
@@ -49,16 +50,16 @@ void WCharC::Append(wchar_t **src, wchar_t dst, int len)
 		}
 	return;
 }
-void WCharC::Append(wchar_t **src, std::wstring dst)
+void WCharC::Append(wchar_t **src, std::string dst)
 {
 	//int lensrc = getlenght(src);
 	*src = new wchar_t[64];
 
 	for (int i = 0; i < 64; i++) {
 		src[i] = new wchar_t[64];
-		for (int h = 0; h < dst.length; h++)
+		for (unsigned int h = 0; h < dst.length; h++)
 		{
-			*src[i, h] = ((dst.c_str()[h])) ;
+			*src[i, h] << ((dst.c_str()[h])) ;
 		}
 	}
 	return;

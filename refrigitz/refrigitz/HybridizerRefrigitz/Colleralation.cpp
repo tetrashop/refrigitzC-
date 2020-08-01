@@ -1,4 +1,5 @@
-﻿#include "Colleralation.h"
+﻿#include "stdafx.h"
+#include "Colleralation.h"
 
 
 

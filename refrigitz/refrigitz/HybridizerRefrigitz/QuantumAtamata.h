@@ -28,7 +28,7 @@
 	class QuantumAtamata : public LearningKrinskyAtamata
 	{
 	private:
-		std::vector<std::wstring> States;
+		std::vector<std::string> States;
 		std::vector<unsigned char> StateByte;
 		int r, m, k;
 	public:
@@ -53,11 +53,11 @@
 		int A2;
 		int A3;
 	public:
-		std::wstring AA;
-		std::wstring AB;
-		std::wstring AC;
+		std::string AA;
+		std::string AB;
+		std::string AC;
 
-		std::wstring CurrentState;
+		std::string CurrentState;
 		QuantumAtamata(int r0, int m0, int k0);
 		void CurrenStateInitialize();
 

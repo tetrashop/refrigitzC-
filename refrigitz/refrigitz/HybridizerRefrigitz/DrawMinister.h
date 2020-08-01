@@ -53,7 +53,7 @@
 		int **Table;
 		int Current;
 		int Order;
-		ThinkingHybridizerRefrigitz  MinisterThinking;
+		ThinkingHybridizerRefrigitz  *MinisterThinking;
 	private:
 		int CurrentAStarGredyMax;
 		static void Log(std::exception &ex);

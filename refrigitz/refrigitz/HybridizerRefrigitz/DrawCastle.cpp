@@ -1,4 +1,5 @@
-﻿#include "DrawCastle.h"
+﻿#include "stdafx.h"
+#include "DrawCastle.h"
 
 
 long long DrawCastle::MaxHeuristicxB = -20000000000000000;
@@ -49,7 +50,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 		for (int  ii = 0; ii < AllDraw::CastleMovments; ii++)
 
 		{
-			a += CastleThinking.ReturnHeuristic(-1, -1, Order, false, HaveKilled);
+			a += CastleThinking->ReturnHeuristic(-1, -1, Order, false, HaveKilled);
 		}
 
 
@@ -84,7 +85,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 				}
 			}
 			
-				CastleThinking = ThinkingHybridizerRefrigitz(0, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 16, Ord, TB, Cur, 4, 4);
+				CastleThinking = new ThinkingHybridizerRefrigitz(0, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 16, Ord, TB, Cur, 4, 4);
 			
 			Row = i;
 			Column = j;
@@ -160,8 +161,8 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 		for (int  i = 0; i < AllDraw::CastleMovments; i++)
 		{
 
-			AA->CastleThinking = ThinkingHybridizerRefrigitz(i, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->CastleThinking.Clone(AA->CastleThinking);
+			AA->CastleThinking = new ThinkingHybridizerRefrigitz(i, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			this->CastleThinking->Clone(AA->CastleThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
@@ -227,7 +228,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 
 	void DrawCastle::InitializeInstanceFields()
 	{
-		//Space = new std::string(L"&nbsp;");
+		//Space = new std::string("&nbsp;");
 		Spaces = 0;
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];

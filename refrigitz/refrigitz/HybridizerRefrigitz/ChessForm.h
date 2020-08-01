@@ -23,13 +23,13 @@
 		int AllDrawKind;
 		bool NotFoundBegin;
 		bool Deeperthandeeper;
-		const std::wstring path3;
-		std::wstring AllDrawReplacement;
+		const std::string path3;
+		std::string AllDrawReplacement;
 
 	public:
 		static int MovmentsNumber;
-		static std::wstring Root;
-		static std::wstring AllDrawKindString;
+		static std::string Root;
+		static std::string AllDrawKindString;
 		//public static int OrderPlate = 1;
 	private:
 		bool CoPermit;
@@ -84,7 +84,7 @@
 	private:
 		void Wait();
 		  public:
-		  AllDraw RootFound();
+		  AllDraw* RootFound();
 		void SetDrawFounding(bool &FOUNDI, AllDraw *THISI, bool FirstI);
 	private:
 		bool DrawManagement();

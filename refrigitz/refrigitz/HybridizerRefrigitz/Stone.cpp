@@ -1,5 +1,5 @@
 ﻿#include "Stone.h"
-#include "Point.h
+#include "Point.h"
 
 
 	Stone::Stone()

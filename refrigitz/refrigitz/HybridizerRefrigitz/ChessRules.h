@@ -112,12 +112,12 @@
 		bool FindWHITEKing(int** Table, int &Row, int &Column);
 		//Alpahber Object Consideration.
 	private:
-		static std::wstring ThingsAlphabet(int i);
+		static std::string ThingsAlphabet(int i);
 		//[So2]. Alphabet Consideration.
-		static std::wstring RowAlphabet(int i);
+		static std::string RowAlphabet(int i);
 		//Create Syntax of Movments.
 	public:
-		std::wstring CreateStatistic(bool Arrange, int** Tab, int Movments, int SourceThings, int Column, int Row, bool Hit, int HitThings, bool CastleKing, bool SodierConvert);
+		std::string CreateStatistic(bool Arrange, int** Tab, int Movments, int SourceThings, int Column, int Row, bool Hit, int HitThings, bool CastleKing, bool SodierConvert);
 		//Consideration of Existing Table in List.
 	private:
 		bool ArrayInList(std::vector<int*>& List, int * A);

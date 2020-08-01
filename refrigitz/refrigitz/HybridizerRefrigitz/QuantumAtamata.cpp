@@ -1,4 +1,5 @@
-﻿#include "QuantumAtamata.h"
+﻿#include "stdafx.h"
+#include "QuantumAtamata.h"
 
 
 
@@ -99,8 +100,8 @@
 		
 			for (int i = 0; i < 3; i++)
 			{
-				BitState[i] = new Bit();
-				ThreeSet[i] = new LearningKrinskyAtamata(r0, m0, k0);
+				BitState[i] =  Bit();
+				ThreeSet[i] =  LearningKrinskyAtamata(r0, m0, k0);
 			}
 			States.clear();
 			r = r0;
@@ -123,55 +124,55 @@
 			AC = StringConverterHelper::toString(A3);
 			if (A1 == 0)
 			{
-				AA = L"|0>,";
+				AA = "|0>,";
 			}
 			else
 			{
 				if (A1 == 1)
 				{
-				AA = L"|1>,";
+				AA = "|1>,";
 				}
 			else
 			{
 					if (A1 == 2)
 					{
-				AA = L"|2>+|3>,";
+				AA = "|2>+|3>,";
 					}
 			}
 			}
 			if (A2 == 0)
 			{
-				AB = L"|0>,";
+				AB = "|0>,";
 			}
 			else
 			{
 				if (A2 == 1)
 				{
-				AB = L"|1>,";
+				AB = "|1>,";
 				}
 			else
 			{
 					if (A2 == 2)
 					{
-				AB = L"|2>+|3>,";
+				AB = "|2>+|3>,";
 					}
 			}
 			}
 			if (A3 == 0)
 			{
-				AC = L"|0>,";
+				AC = "|0>,";
 			}
 			else
 			{
 				if (A3 == 1)
 				{
-				AC = L"|1>,";
+				AC = "|1>,";
 				}
 			else
 			{
 					if (A3 == 2)
 					{
-				AC = L"|2>+|3>,";
+				AC = "|2>+|3>,";
 					}
 			}
 			}
@@ -346,7 +347,7 @@
 
 	void QuantumAtamata::InitializeInstanceFields()
 	{
-		States = std::vector<std::wstring>();
+		States = std::vector<std::string>();
 		StateByte = std::vector<unsigned char>();
 		r = 0;
 		m = 0;
@@ -358,8 +359,8 @@
 		A1 = 0;
 		A2 = 0;
 		A3 = 0;
-		AA = L"";
-		AB = L"";
-		AC = L"";
-		CurrentState = L"";
+		AA = "";
+		AB = "";
+		AC = "";
+		CurrentState = "";
 	}

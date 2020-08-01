@@ -1,4 +1,5 @@
-﻿#include "IsNextEnemyMovementForCheckedMate.h"
+﻿#include "stdafx.h"
+#include "IsNextEnemyMovementForCheckedMate.h"
 #include "ThinkingChess.h"
 
 
@@ -41,7 +42,7 @@
 			a = Color::Brown;
 		}
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-		std::wstring A1 = AllDraw::ActionString->ToString();
+		std::string A1 = AllDraw::ActionString->ToString();
 		bool A2 = AllDraw::ActionStringReady;
 		bool A3 = AllDraw::AStarGreadyFirstSearch;
 		int A4 = AllDraw::AStarGreedyiLevelMax;
@@ -58,8 +59,8 @@
 		bool A15 = AllDraw::EndOfGame;
 		bool A16 = AllDraw::FoundATable;
 		int A17 = AllDraw::HourseMovments;
-		std::wstring A18 = AllDraw::ImageRoot;
-		std::wstring A19 = AllDraw::ImagesSubRoot;
+		std::string A18 = AllDraw::ImageRoot;
+		std::string A19 = AllDraw::ImagesSubRoot;
 		int A20 = AllDraw::increasedProgress;
 		int A21 = AllDraw::KingMovments;
 		int A22 = AllDraw::LastColumn;
@@ -77,11 +78,11 @@
 		bool A34 = AllDraw::NoTableFound;
 		int A35 = AllDraw::OrderPlate;
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-		std::wstring A36 = AllDraw::OutPut->ToString();
+		std::string A36 = AllDraw::OutPut->ToString();
 		bool A37 = AllDraw::Person;
 		bool A38 = AllDraw::RedrawTable;
 		bool A39 = AllDraw::RegardOccurred;
-		std::wstring A40 = AllDraw::Root;
+		std::string A40 = AllDraw::Root;
 		int A41 = AllDraw::SignAttack;
 		int A42 = AllDraw::SignDistance;
 		int A43 = AllDraw::SignKiller;
@@ -101,13 +102,13 @@
 			A54.push_back(new AllDraw::StoreADraw[i]);
 		}
 		std::vector<int> A55 = std::vector<int>();
-		for (var i = 0; i < AllDraw::StoreADrawAStarGreedy.size(); i++)
+		for (var i = 0; i < AllDraw::StoreADrawDeep.size(); i++)
 		{
-			A55.push_back(new AllDraw::StoreADrawAStarGreedy[i]);
+			A55.push_back(new AllDraw::StoreADrawDeep[i]);
 		}
 		int A56 = AllDraw::SuppportCountStaticBrown;
 		int A57 = AllDraw::SuppportCountStaticGray;
-		std::wstring A58 = AllDraw::SyntaxToWrite;
+		std::string A58 = AllDraw::SyntaxToWrite;
 		std::vector<int**> A59 = std::vector<int**>();
 		for (var i = 0; i < AllDraw::TableCurrent.size(); i++)
 		{
@@ -136,7 +137,7 @@
 		}
 		int A63 = AllDraw::TaskBegin;
 		int A64 = AllDraw::TaskEnd;
-		std::wstring A65 = AllDraw::THIScomboBoxMaxLevelText;
+		std::string A65 = AllDraw::THIScomboBoxMaxLevelText;
 		AllDraw A66 = nullptr;
 		if (AllDraw::THISDummy != nullptr)
 		{
@@ -145,7 +146,7 @@
 		bool A67 = AllDraw::THISSecradioButtonBrownOrderChecked;
 		bool A68 = AllDraw::THISSecradioButtonGrayOrderChecked;
 		bool A69 = AllDraw::UseDoubleTime;
-		std::wstring B1 = ThinkingRefrigtzChessPortable::ActionsString;
+		std::string B1 = ThinkingRefrigtzChessPortable::ActionsString;
 		int B2 = ThinkingRefrigtzChessPortable::BeginThread;
 		int B3 = ThinkingRefrigtzChessPortable::EndThread;
 		int B4 = ThinkingRefrigtzChessPortable::FoundFirstMating;
@@ -232,10 +233,10 @@
 		{
 			AllDraw::StoreADraw.push_back(A54[i]);
 		}
-		AllDraw::StoreADrawAStarGreedy.clear();
-		for (var i = 0; i < AllDraw::StoreADrawAStarGreedy.size(); i++)
+		AllDraw::StoreADrawDeep.clear();
+		for (var i = 0; i < AllDraw::StoreADrawDeep.size(); i++)
 		{
-			AllDraw::StoreADrawAStarGreedy.push_back(A55[i]);
+			AllDraw::StoreADrawDeep.push_back(A55[i]);
 		}
 		 AllDraw::SuppportCountStaticBrown = A56;
 		 AllDraw::SuppportCountStaticGray = A57;
@@ -295,6 +296,6 @@
 
 	void IsNextEnemyMovementForCheckedMate::InitializeInstanceFields()
 	{
-		Space = new StringBuilder(L"&nbsp;");
+		Space = new StringBuilder("&nbsp;");
 		Spaces = 0;
 	}

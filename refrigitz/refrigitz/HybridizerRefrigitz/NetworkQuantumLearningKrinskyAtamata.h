@@ -11,7 +11,7 @@
 	class NetworkQuantumLearningKrinskyAtamata : public LearningKrinskyAtamata
 	{
 	public:
-		static std::wstring Root;
+		static std::string Root;
 	private:
 		static void Log(std::exception &ex);
 

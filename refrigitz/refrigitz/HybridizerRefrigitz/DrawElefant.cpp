@@ -1,4 +1,5 @@
-﻿#include "DrawElefant.h"
+﻿#include "stdafx.h"
+#include "DrawElefant.h"
 #include "AllDraw.h"
 
 
@@ -48,7 +49,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 		for (int  ii = 0; ii < AllDraw::ElefantMovments; ii++)
 
 		{
-			a += ElefantThinking.ReturnHeuristic(-1, -1, Order, false,HaveKilled);
+			a += ElefantThinking->ReturnHeuristic(-1, -1, Order, false,HaveKilled);
 		}
 
 
@@ -85,7 +86,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 				}
 			}
 			
-				ElefantThinking = ThinkingHybridizerRefrigitz(0,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 16, Ord, TB, Cur, 4, 2);
+				ElefantThinking = new ThinkingHybridizerRefrigitz(0,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 16, Ord, TB, Cur, 4, 2);
 		
 			Row = i;
 			Column = j;
@@ -162,8 +163,8 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 		for (int  i = 0; i < AllDraw::ElefantMovments; i++)
 		{
 
-			AA->ElefantThinking = ThinkingHybridizerRefrigitz(i,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->ElefantThinking.Clone(AA->ElefantThinking);
+			AA->ElefantThinking = new ThinkingHybridizerRefrigitz(i,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			this->ElefantThinking->Clone(AA->ElefantThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
@@ -231,7 +232,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 
 	void DrawElefant::InitializeInstanceFields()
 	{
-		//Space = new std::string(L"&nbsp;");
+		//Space = new std::string("&nbsp;");
 		Spaces = 0;
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];

@@ -1,7 +1,8 @@
-﻿#include "NetworkQuantumLearningKrinskyAtamata.h"
+﻿#include "stdafx.h"
+#include "NetworkQuantumLearningKrinskyAtamata.h"
 
 
-std::wstring NetworkQuantumLearningKrinskyAtamata::Root = System::IO::Path::GetDirectoryName(Environment::GetCommandLineArgs()[0]);
+std::string NetworkQuantumLearningKrinskyAtamata::Root = System::IO::Path::GetDirectoryName(Environment::GetCommandLineArgs()[0]);
 
 	
 	NetworkQuantumLearningKrinskyAtamata::NetworkQuantumLearningKrinskyAtamata(int r0, int m0, int k0) : LearningKrinskyAtamata(r0, m0, k0)
@@ -17,7 +18,7 @@ std::wstring NetworkQuantumLearningKrinskyAtamata::Root = System::IO::Path::GetD
 			{
 				for (int k = 0; k < k0; k++)
 				{
-					Netfi[j][k] = new LearningKrinskyAtamata(r0, m0, k0);
+					Netfi[j][k] =  LearningKrinskyAtamata(r0, m0, k0);
 				}
 			}
 

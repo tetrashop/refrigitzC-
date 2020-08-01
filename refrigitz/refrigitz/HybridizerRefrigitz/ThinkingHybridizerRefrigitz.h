@@ -73,7 +73,7 @@
 	class ThinkingHybridizerRefrigitz //: IDisposable
 	{
 	public:
-		static std::wstring OutP;
+		static std::string OutP;
 	private:
 		std::vector<std::vector<std::vector<int*>>> MovableAllObjectsList;
 	public:
@@ -177,7 +177,7 @@
 	private:
 		bool ThinkingAtRun;
 	public:
-		static std::wstring ActionsString;
+		static std::string ActionsString;
 	private:
 		int ThinkingLevel;
 	public:
@@ -296,7 +296,7 @@
 		int color;
 		int Order;
 		//[NonSerialized()]
-		std::vector<AllDraw*> AStarGreedy;
+		std::vector<AllDraw *> Deep;
 		std::vector<bool> AStarGreedyMove;
 	private:
 		const int **Value;
@@ -321,7 +321,7 @@
 	private:
 		void Dispose(bool disposing);
 	public:
-		std::wstring AsS(int i, int j, int ii, int jj);
+		std::string AsS(int i, int j, int ii, int jj);
 		ThinkingHybridizerRefrigitz();
 		//Constructor
 	
@@ -566,9 +566,9 @@
 		int ReturnHeuristic(int ii, int j, int Order, bool AA, int &HaveKilled);
 		//statstical html 
 	private:
-		std::wstring Alphabet(int RowRealesed);
+		std::string Alphabet(int RowRealesed);
 		//statstical html 
-		std::wstring Number(int ColumnRealeased);
+		std::string Number(int ColumnRealeased);
 		//Heuristic help to kiling of enemy or gave point witout only lraearning autamata exclusive but act on.
 	public:
 		int ReturnHeuristicCalculartorKiller(int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND);
@@ -605,7 +605,7 @@
 //C# TO C++ CONVERTER NOTE: The parameter Castle was renamed since it is named the same as a user-defined type:
 		void KingThinkingHybridizerRefrigitz(int *LoseOcuuredatChiled, int &WinOcuuredatChiled, int DummyOrder, int DummyCurrentOrder, int** TableS, int RowSource, int ColumnSource, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int RowDestination, int ColumnDestination, bool Castle_Renamed);
 		//monitor
-		std::wstring CheM(int A);
+		std::string CheM(int A);
 		//specific determination for thinking main method
 //C# TO C++ CONVERTER NOTE: The parameter Castle was renamed since it is named the same as a user-defined type:
 		void MinisterThinkingHybridizerRefrigitz(int *LoseOcuuredatChiled, int &WinOcuuredatChiled, int DummyOrder, int DummyCurrentOrder, int** TableS, int RowSource, int ColumnSource, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int RowDestination, int ColumnDestination, bool Castle_Renamed);

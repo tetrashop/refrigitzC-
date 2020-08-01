@@ -13,7 +13,7 @@
 	{
 
 	public:
-		static void SaveByCode(int Code, int LineCode, const std::wstring &File);
+		static void SaveByCode(int Code, int LineCode, const std::string &File);
 	};
 
 
