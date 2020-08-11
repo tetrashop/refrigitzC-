@@ -61,6 +61,10 @@ inline bool operator==(const ThinkingHybridizerRefrigitz& lhs, const std::nullpt
 inline bool operator!=(const ThinkingHybridizerRefrigitz& lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
 */
 
+AllDraw& AllDraw::operator=(AllDraw arg) noexcept // copy/move constructor is called to construct arg
+{
+	return *this;
+}
 inline bool operator==(const AllDraw lhs, const std::nullptr_t rhs) { return ((&lhs) == rhs); }
 inline bool operator!=(const AllDraw lhs, const std::nullptr_t rhs) { return !((&lhs) == rhs); }
 inline bool operator==(const DrawSoldier lhs, const std::nullptr_t rhs) { return ((&lhs) == rhs); }

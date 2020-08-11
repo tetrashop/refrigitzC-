@@ -75,7 +75,10 @@
 		void Clone(DrawElefant *&AA); //, ref AllDraw. THIS
 		//Draw an Instatnt Elephant On the Table.
 		void DrawElefantOnTable(int CellW, int CellH);
-
+		DrawElefant& operator=(DrawElefant arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 	private:
 		void InitializeInstanceFields();
 	};

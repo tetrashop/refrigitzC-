@@ -321,6 +321,7 @@
 		//Determine when a MoveOccured.
 		//Note for before move.At most one  moves.
 	public:
+		AllDraw& operator=(AllDraw arg) noexcept;
 		static bool IsAeMoveOccured(bool IsMove);
 	private:
 		void TimeEnd();

@@ -82,7 +82,10 @@
 		//Drawing Soldiers On the Table Method..
 	public:
 		void DrawSoldierOnTable(int CellW, int CellH);
-
+		DrawSoldier& operator=(DrawSoldier arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 	private:
 		void InitializeInstanceFields();
 	};

@@ -73,7 +73,10 @@
 		void Clone(DrawHourse *&AA); //, ref AllDraw. THIS
 		//Draw a Instatnt Hourse on the Table Method.
 		void DrawHourseOnTable(int CellW, int CellH);
-
+		DrawHourse& operator=(DrawHourse arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 	private:
 		void InitializeInstanceFields();
 	};

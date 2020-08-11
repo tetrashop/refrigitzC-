@@ -77,7 +77,10 @@
 		void Clone(DrawCastle *&AA); //, ref AllDraw. THIS
 		//Draw An Instatnt Brideges Images On the Table Method.
 		void DrawCastleOnTable(int CellW, int CellH);
-
+		DrawCastle& operator=(DrawCastle arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 	private:
 		void InitializeInstanceFields();
 	};

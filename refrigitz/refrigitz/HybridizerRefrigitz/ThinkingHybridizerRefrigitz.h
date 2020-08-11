@@ -395,6 +395,10 @@
 		int SignOrderToPlate(int Order);
 		//Remove Penalties of Unnesserily Nodes.
 	public:
+		ThinkingHybridizerRefrigitz& operator=(ThinkingHybridizerRefrigitz arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 		bool RemovePenalty(int** Tab, int Order, int i, int j);
 		//Dangouring of current movment fo current Order.
 	private:

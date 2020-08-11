@@ -78,7 +78,10 @@
 		void Clone(DrawKing *&AA); //, ref AllDraw. THIS
 		//Draw an Instatnt King on the Table Method.
 		void DrawKingOnTable(int CellW, int CellH);
-
+		DrawKing& operator=(DrawKing arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 	private:
 		void InitializeInstanceFields();
 	};
