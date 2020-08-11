@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "Board.h"
+﻿#include "Board.h"
 #include "Stone.h"
 
 
@@ -376,14 +375,14 @@
 			}
 		}
 
-		std::string str;
+		std::wstring str;
 		if (color == 1)
 		{
-			str = "White ";
+			str = L"White ";
 		}
 		else
 		{
-			str = "Black ";
+			str = L"Black ";
 		}
 
 		//System.Windows.FormsMessageBox.Show(str);

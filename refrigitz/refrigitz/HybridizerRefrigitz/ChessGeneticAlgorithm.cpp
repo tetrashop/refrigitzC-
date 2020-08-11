@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "HybridizerRefrigitzGeneticAlgorithm.h"
+﻿#include "HybridizerRefrigitzGeneticAlgorithm.h"
 #include "AllDraw.h"
 #include "ChessRules.h"
 #include "ThinkingHybridizerRefrigitz.h"
@@ -512,7 +511,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 
 	}
 
-	bool **HybridizerRefrigitzGeneticAlgorithm::CloneATableB(bool** Tab)
+	bool **HybridizerRefrigitzGeneticAlgorithm::CloneATableb(bool** Tab)
 	{
 
 		////auto o = new Object();
@@ -535,7 +534,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		}
 
 	}
-	/*
+
 	int **HybridizerRefrigitzGeneticAlgorithm::GenerateTable(std::vector<int**> &List, int Index, int Order)
 	{
 		*GeneticTable = new int[8]; for (int b = 0; b < 8; b++)GeneticTable[b] = new int[8];
@@ -549,12 +548,12 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete*' where appropriate:
 //ORIGINAL LINE: int[,] Cromosom2 = nullptr;
 		int **Cromosom2 = nullptr;
-		//try
+		try
 		{
 			Cromosom1 = List[List.size() - 2];
 			Cromosom2 = List[List.size() + MinusOne];
 		}
-		//catch (IndexOutOfRangeException t)
+		catch (IndexOutOfRangeException t)
 		{
 			Log(t);
 			return nullptr;
@@ -796,7 +795,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 
 
 	}
-*/
+
 	void HybridizerRefrigitzGeneticAlgorithm::InitializeInstanceFields()
 	{
 		Hit = false;

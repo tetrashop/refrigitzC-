@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 #include "ThinkingHybridizerRefrigitz.h"
-#include "AllDraw.h"
+
 
 //C# TO C++ CONVERTER NOTE: The following .NET attribute has no direct equivalent in native C++:
 //ORIGINAL LINE: [Serializable] public class DrawHourse
@@ -49,7 +49,7 @@
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public int[,] Table = nullptr;
 		int **Table;
-		ThinkingHybridizerRefrigitz  *HourseThinking;
+		ThinkingHybridizerRefrigitz  HourseThinking;
 		int Current;
 		int Order;
 	private:

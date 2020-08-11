@@ -74,7 +74,7 @@ std::ostream& operator<<(std::ostream&, SyncCout);
 ///  -  Speed: 1.60 ns/call (Core i7 @3.40GHz)
 ///
 /// For further analysis see
-///   <http://vignA->di.unimi.it/ftp/papers/xorshift.pdf>
+///   <http://vigna.di.unimi.it/ftp/papers/xorshift.pdf>
 
 class PRNG {
 

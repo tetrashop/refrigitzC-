@@ -661,7 +661,7 @@ ScaleFactor Endgame<KBPKB>::operator()(const Position& pos) const {
   {
       // We assume that the position is drawn in the following three situations:
       //
-      //   A-> The pawn is on rank 5 or further back.
+      //   a. The pawn is on rank 5 or further back.
       //   b. The defending king is somewhere in the pawn's path.
       //   c. The defending bishop attacks some square along the pawn's path,
       //      and is at least three squares away from the pawn.

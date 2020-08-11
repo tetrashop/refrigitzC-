@@ -306,7 +306,7 @@ void MainThread::search() {
   if (   !this->easyMovePlayed
       &&  Options["MultiPV"] == 1
       && !Limits.depth
-      && !Skill(Options["Skill Leve"]).enabled()
+      && !Skill(Options["Skill Level"]).enabled()
       &&  rootMoves[0].pv[0] != MOVE_NONE)
   {
       for (Thread* th : Threads)
@@ -357,7 +357,7 @@ void Thread::search() {
   }
 
   size_t multiPV = Options["MultiPV"];
-  Skill skill(Options["Skill Leve"]);
+  Skill skill(Options["Skill Level"]);
 
   // When playing with strength handicap enable MultiPV search that we will
   // use behind the scenes to retrieve a set of possible moves.
@@ -598,7 +598,7 @@ namespace {
         // Step 3. Mate distance pruning. Even if we mate at the next move our score
         // would be at best mate_in(ss->ply+1), but if alpha is already bigger because
         // a shorter mate was found upward in the tree then there is no need to search
-        // because we will never beat the current alphA-> Same logic but with reversed
+        // because we will never beat the current alpha. Same logic but with reversed
         // signs applies also in the opposite condition of being mated instead of giving
         // mate. In this case return a fail-high score.
         alpha = std::max(mated_in(ss->ply), alpha);
@@ -654,7 +654,7 @@ namespace {
         return ttValue;
     }
 
-    // Step 4A-> Tablebase probe
+    // Step 4a. Tablebase probe
     if (!rootNode && TB::Cardinality)
     {
         int piecesCnt = pos.count<ALL_PIECES>(WHITE) + pos.count<ALL_PIECES>(BLACK);

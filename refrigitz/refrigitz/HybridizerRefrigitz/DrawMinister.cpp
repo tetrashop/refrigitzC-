@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "DrawMinister.h"
+﻿#include "DrawMinister.h"
 
 
 
@@ -47,7 +46,7 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 
 		int a = 0;
 		
-			a += MinisterThinking->ReturnHeuristic(-1, -1, Order, false,HaveKilled);
+			a += MinisterThinking.ReturnHeuristic(-1, -1, Order, false,HaveKilled);
 		
 
 		return a;
@@ -81,7 +80,7 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 				}
 			}
 			
-				MinisterThinking = new ThinkingHybridizerRefrigitz(0,5,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 32, Ord, TB, Cur, 2, 5);
+				MinisterThinking = ThinkingHybridizerRefrigitz(0,5,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 32, Ord, TB, Cur, 2, 5);
 		
 			Row = i;
 			Column = j;
@@ -158,8 +157,8 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 		for (int  i = 0; i < AllDraw::MinisterMovments; i++)
 		{
 
-			AA->MinisterThinking = new ThinkingHybridizerRefrigitz(i,5,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->MinisterThinking->Clone(AA->MinisterThinking);
+			AA->MinisterThinking = ThinkingHybridizerRefrigitz(i,5,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			this->MinisterThinking.Clone(AA->MinisterThinking);
 
 
 		}
@@ -227,7 +226,7 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 
 	void DrawMinister::InitializeInstanceFields()
 	{
-		//Space = new std::string("&nbsp;");
+		//Space = new std::string(L"&nbsp;");
 		Spaces = 0;
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];

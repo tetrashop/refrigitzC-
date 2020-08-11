@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 #include "ThinkingHybridizerRefrigitz.h"
-#include "AllDraw.h"
+
 
 //C# TO C++ CONVERTER NOTE: The following .NET attribute has no direct equivalent in native C++:
 //ORIGINAL LINE: [Serializable] public class DrawMinister
@@ -53,7 +53,7 @@
 		int **Table;
 		int Current;
 		int Order;
-		ThinkingHybridizerRefrigitz  *MinisterThinking;
+		ThinkingHybridizerRefrigitz  MinisterThinking;
 	private:
 		int CurrentAStarGredyMax;
 		static void Log(std::exception &ex);

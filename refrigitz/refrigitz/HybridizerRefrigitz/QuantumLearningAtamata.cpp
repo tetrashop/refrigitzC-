@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "QuantumLearningAtamata.h"
+﻿#include "QuantumLearningAtamata.h"
 
 
 	QuantumLearningKrinskyAtamata::QuantumLearningKrinskyAtamata(int r0, int m0, int k0, double Alpha0) : QuantumAtamata(r0, m0, k0)

@@ -1,10 +1,9 @@
-﻿#include "stdafx.h"
-#include "ThinkingHybridizerRefrigitz.h"
+﻿#include "ThinkingHybridizerRefrigitz.h"
 #include "ChessRules.h"
 #include "QuantumAtamata.h"
 
 
-std::string ThinkingHybridizerRefrigitz::OutP = "";
+std::wstring ThinkingHybridizerRefrigitz::OutP = L"";
 bool ThinkingHybridizerRefrigitz::GoldenFinished = false;
 int ThinkingHybridizerRefrigitz::NoOfBoardMovedWHITE = 0;
 int ThinkingHybridizerRefrigitz::NoOfBoardMovedBLACK = 0;
@@ -38,7 +37,7 @@ int ThinkingHybridizerRefrigitz::TableInitiationPreventionOfMultipleMove[8][8] =
 bool ThinkingHybridizerRefrigitz::FullGameAllow = false;
 bool ThinkingHybridizerRefrigitz::IsAtLeastOneKillerAtDraw = false;
 NetworkQuantumLearningKrinskyAtamata *ThinkingHybridizerRefrigitz::LearniningTable = nullptr;
-std::string ThinkingHybridizerRefrigitz::ActionsString = "";
+std::wstring ThinkingHybridizerRefrigitz::ActionsString = L"";
 bool ThinkingHybridizerRefrigitz::LearningVarsCheckedMateOccured = false;
 bool ThinkingHybridizerRefrigitz::LearningVarsCheckedMateOccuredOneCheckedMate = false;
 int ThinkingHybridizerRefrigitz::MaxHeuristicx = -DBL_MAX;
@@ -196,7 +195,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	std::string ThinkingHybridizerRefrigitz::AsS(int i, int j, int ii, int jj)
+	std::wstring ThinkingHybridizerRefrigitz::AsS(int i, int j, int ii, int jj)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -209,6 +208,94 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 	
 
+	ThinkingHybridizerRefrigitz::ThinkingHybridizerRefrigitz(int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j) 
+	{
+
+		InitializeInstanceFields();
+		////auto o = new Object();
+//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
+		////lock (O)
+		{
+			//Initiate Variables.
+
+			CurrentAStarGredyMax = CurrentAStarGredy;
+			MovementsAStarGreedyHeuristicFoundT = MovementsAStarGreedyHeuristicTFou;
+			IgnoreSelfObjectsT = IgnoreSelfObject;
+			UsePenaltyRegardMechnisamT = UsePenaltyRegardMechnisa;
+			BestMovmentsT = BestMovment;
+			PredictHeuristicT = PredictHurist;
+			OnlySelfT = OnlySel;
+			AStarGreedyHeuristicT = AStarGreedyHuris;
+			ArrangmentsChanged = Arrangments;
+			Row = i;
+			Column = j;
+			//Clear Dearty Part.
+			if (KindO == 1)
+			{
+				TableListSolder = std::vector<int**>();
+				RowColumnSoldier = std::vector<int*>();
+				HitNumberSoldier = std::vector<int>();
+				HeuristicListSolder = std::vector<int*>();
+				PenaltyRegardListSolder = std::vector<QuantumAtamata>();
+			}
+			else
+			{
+				if (KindO == 2)
+				{
+				TableListElefant = std::vector<int**>();
+				RowColumnElefant = std::vector<int*>();
+				HitNumberElefant = std::vector<int>();
+				HeuristicListElefant = std::vector<int*>();
+				PenaltyRegardListElefant = std::vector<QuantumAtamata>();
+				}
+			else
+			{
+				if (KindO == 3)
+				{
+				TableListHourse = std::vector<int**>();
+				RowColumnHourse = std::vector<int*>();
+				HitNumberHourse = std::vector<int>();
+				HeuristicListHourse = std::vector<int*>();
+				PenaltyRegardListHourse = std::vector<QuantumAtamata>();
+				}
+			else
+			{
+				if (KindO == 4)
+				{
+				TableListCastle = std::vector<int**>();
+				RowColumnCastle = std::vector<int*>();
+				HitNumberCastle = std::vector<int>();
+				HeuristicListCastle = std::vector<int*>();
+				PenaltyRegardListCastle = std::vector<QuantumAtamata>();
+				}
+			else
+			{
+				if (KindO == 5)
+				{
+				TableListMinister = std::vector<int**>();
+				RowColumnMinister = std::vector<int*>();
+				HitNumberMinister = std::vector<int>();
+				HeuristicListMinister = std::vector<int*>();
+				PenaltyRegardListMinister = std::vector<QuantumAtamata>();
+				}
+			else if (KindO == 6)
+			{
+				TableListKing = std::vector<int**>();
+				RowColumnKing = std::vector<int*>();
+				HitNumberKing = std::vector<int>();
+				HeuristicListKing = std::vector<int*>();
+				PenaltyRegardListKing = std::vector<QuantumAtamata>();
+			}
+			}
+			}
+			}
+			}
+			KillerAtThinking = std::vector<int>();
+			//AStarGreedy = std::vector<AllDraw>();
+			//Network  QuantumAtamata Book Initiate For Every Clone.
+
+		}
+	}
 
 	bool ThinkingHybridizerRefrigitz::BeginArragmentsOfOrderFinished(int** Table, int Order)
 	{
@@ -287,6 +374,110 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
+	ThinkingHybridizerRefrigitz::ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin) //: iIndex(iInde), iIndex(-1), Space(new std::string(L"&nbsp;")), Spaces(0), callStack(new StackFrame(1, true))
+	{
+		InitializeInstanceFields();
+		////auto o = new Object();
+//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
+		////lock (O)
+		{
+
+			CurrentAStarGredyMax = CurrentAStarGredy;
+			MovementsAStarGreedyHeuristicFoundT = MovementsAStarGreedyHeuristicTFou;
+			IgnoreSelfObjectsT = IgnoreSelfObject;
+			UsePenaltyRegardMechnisamT = UsePenaltyRegardMechnisa;
+			BestMovmentsT = BestMovment;
+			PredictHeuristicT = PredictHurist;
+			OnlySelfT = OnlySel;
+			AStarGreedyHeuristicT = AStarGreedyHuris;
+			//Initiate Variables.
+			ArrangmentsChanged = Arrangments;
+			Kind = Kin;
+			SetObjectNumbers(Tab);
+			//AStarGreedy = std::vector<AllDraw>();
+			ThingsNumber = ThingN;
+			CurrentArray = CurA;
+			if (KindO == 1)
+			{
+				TableListSolder = std::vector<int**>();
+				RowColumnSoldier = std::vector<int*>();
+				HitNumberSoldier = std::vector<int>();
+				HeuristicListSolder = std::vector<int*>();
+				PenaltyRegardListSolder = std::vector<QuantumAtamata>();
+			}
+			else
+			{
+				   if (KindO == 2)
+				   {
+				TableListElefant = std::vector<int**>();
+				RowColumnElefant = std::vector<int*>();
+				HitNumberElefant = std::vector<int>();
+				HeuristicListElefant = std::vector<int*>();
+				PenaltyRegardListElefant = std::vector<QuantumAtamata>();
+				   }
+			else
+			{
+				   if (KindO == 3)
+				   {
+				TableListHourse = std::vector<int**>();
+				RowColumnHourse = std::vector<int*>();
+				HitNumberHourse = std::vector<int>();
+				HeuristicListHourse = std::vector<int*>();
+				PenaltyRegardListHourse = std::vector<QuantumAtamata>();
+				   }
+			else
+			{
+				   if (KindO == 4)
+				   {
+				TableListCastle = std::vector<int**>();
+				RowColumnCastle = std::vector<int*>();
+				HitNumberCastle = std::vector<int>();
+				HeuristicListCastle = std::vector<int*>();
+				PenaltyRegardListCastle = std::vector<QuantumAtamata>();
+				   }
+			else
+			{
+				   if (KindO == 5)
+				   {
+				TableListMinister = std::vector<int**>();
+				RowColumnMinister = std::vector<int*>();
+				HitNumberMinister = std::vector<int>();
+				HeuristicListMinister = std::vector<int*>();
+				PenaltyRegardListMinister = std::vector<QuantumAtamata>();
+				   }
+			else if (KindO == 6)
+			{
+				TableListKing = std::vector<int**>();
+				RowColumnKing = std::vector<int*>();
+				HitNumberKing = std::vector<int>();
+				HeuristicListKing = std::vector<int*>();
+				PenaltyRegardListKing = std::vector<QuantumAtamata>();
+			}
+			}
+			}
+			}
+			}
+			KillerAtThinking = std::vector<int>();
+			//AStarGreedy = std::vector<AllDraw>();
+
+			Row = i;
+			Column = j;
+			color = a;
+			Max = Ma;
+			TableT = Tab;
+			IndexSoldier = 0;
+			IndexElefant = 0;
+			IndexHourse = 0;
+			IndexCastle = 0;
+			IndexMinister = 0;
+			IndexKing = 0;
+			TableConst = CloneATable(Tab);
+			Order = Ord;
+			ThinkingBegin = ThinkingBeg;
+
+
+		}
+	}
 
 	int **ThinkingHybridizerRefrigitz::CloneATable(int** Tab)
 	{
@@ -351,14 +542,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			}
 			AA->ArrangmentsChanged = ArrangmentsChanged;
 			//When Depth Object is not NULL.
-			if (Deep.size() != 0)
+			if (AStarGreedy.size() != 0)
 			{
 				AA->AStarGreedy = std::vector<AllDraw>();
 				//For All Depth(s).
-				for (int  i = 0; i < Deep.size(); i++)
+				for (int  i = 0; i < AStarGreedy.size(); i++)
 				{
 					//Clone a Copy From Depth Objects.
-					Deep[i]->Clone(AA->Deep[i]);
+					AStarGreedy[i].Clone(AA->AStarGreedy[i]);
 				}
 			}
 			//For All Moves Indexx Solders List Count.
@@ -1842,7 +2033,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			{
 				return 0;
 			}
-			ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Table[i][j], CloneATable(Table), Order * -1, i, j);
+			ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Table[i][j], CloneATable(Table), Order * -1, i, j);
 			int a = 1;
 			if (Order * -1 == -1)
 			{
@@ -2605,7 +2796,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (Order == 1)
 			{
 				int RowK = -1, ColK = -1;
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Tab), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Tab), Order, RowS, ColS);
 				G->FindWHITEKing(CloneATable(Tab), RowK, ColK);
 				if (Kind == 7)
 				{
@@ -2651,7 +2842,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			else
 			{
 				int RowK = -1, ColK = -1;
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Tab), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Tab), Order, RowS, ColS);
 				G->FindBLACKKing(CloneATable(Tab), RowK, ColK);
 				if (Kind == -7)
 				{
@@ -2711,7 +2902,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			{
 				Tabl[RowD][ColD] = Tabl[RowS][ColS];
 				Tabl[RowS][ColS] = 0;
-				ChessRules *A =new  ChessRules(CurrentAStarGredy, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab[RowD][ColD], CloneATable(Tab), Order, RowD, ColD);
+				ChessRules *A = new ChessRules(CurrentAStarGredy, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab[RowD][ColD], CloneATable(Tab), Order, RowD, ColD);
 				A->CheckMate(Tabl, Order);
 
 
@@ -2754,7 +2945,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			}
 			else
 			{
-				ChessRules *A =new  ChessRules(CurrentAStarGredy, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab[RowD][ColD], CloneATable(Tab), Order, RowD, ColD);
+				ChessRules *A = new ChessRules(CurrentAStarGredy, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab[RowD][ColD], CloneATable(Tab), Order, RowD, ColD);
 				A->CheckMate(Tabl, Order);
 
 
@@ -3596,7 +3787,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			}
 			//Initiate Local Variables.
 			int Store = Table[ii][jj];
-			ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Table[i][j], CloneATable(Table), Order, i, j);
+			ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Table[i][j], CloneATable(Table), Order, i, j);
 			//Menen Parameter is Moveble to Second Parameters Location returm Movable.
 			if (Order == 1 && Table[ii][jj] < 0)
 			{
@@ -3724,7 +3915,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							Table[RowS][ColS] = Tab[RowS][ColS];
 						}
 					}
-					ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Table[ii][jj], CloneATable(Table), Order * -1, ii, jj);
+					ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Table[ii][jj], CloneATable(Table), Order * -1, ii, jj);
 					int a = 1;
 					if (Order * -1 == -1)
 					{
@@ -3752,7 +3943,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							}
 						}
 						//Create New HybridizerRefrigitz Rule Object.
-						A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Table[ii][jj], CloneATable(Table), Order, ii, jj);
+						A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Table[ii][jj], CloneATable(Table), Order, ii, jj);
 						//Detect int.
 						a = 1;
 						if (Order == -1)
@@ -3874,7 +4065,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		////lock (O)
 		{
 			//Initiate Object.
-			ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, 1, CloneATable(Tabl), 1, Row, Column);
+			ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, 1, CloneATable(Tabl), 1, Row, Column);
 			//WHITE Order.
 			if (Order == 1)
 			{
@@ -3914,7 +4105,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 										//Setting Enemy Order.
 										int DummyOrder = Order;
 										int DummyCurrentOrder = ChessRules::CurrentOrder;
-										A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TablCon[i][j], TablCon, -1, i, j);
+										A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TablCon[i][j], TablCon, -1, i, j);
 										//When Enemy is Attacked WHITE Objects.
 										bool ab = false;
 										ab = A->Rules(i, j, ii, jj, -1, TablCon[i][j]);
@@ -3929,7 +4120,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 											//Settting Current Order.
 											ChessRules::CurrentOrder = 1;
 											//Settting Object.
-											A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TablCon[ii][jj], TablCon, 1, ii, jj);
+											A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TablCon[ii][jj], TablCon, 1, ii, jj);
 											//When Occured Check.
 											ab = A->Check(TablCon, 1);
 
@@ -4014,7 +4205,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 										//Store and Enemy Order.
 										int DummyOrder = Order;
 										int DummyCurrentOrder = ChessRules::CurrentOrder;
-										A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TablCon[i][j], TablCon, 1, i, j);
+										A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TablCon[i][j], TablCon, 1, i, j);
 										ChessRules::CurrentOrder = 1;
 										//When Enemy Attacked Self Objects.
 										bool ab = false;
@@ -4028,7 +4219,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 											TablCon[i][j] = 0;
 											//Setting current Order.
 											ChessRules::CurrentOrder = -1;
-											A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TablCon[ii][jj], TablCon, -1, ii, jj);
+											A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TablCon[ii][jj], TablCon, -1, ii, jj);
 											//When Check Occured.
 											ab = A->Check(TablCon, -1);
 
@@ -4098,7 +4289,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete*' where appropriate:
 //ORIGINAL LINE: int[,] Tab2 = CloneATable(Tabl);
 				int **Tab2 = CloneATable(Tabl);
-				ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab2[ik][jk], Tab2, Order * -1, ik, jk);
+				ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab2[ik][jk], Tab2, Order * -1, ik, jk);
 				if (Order * -1 == 1)
 				{
 					color = 1;
@@ -4117,7 +4308,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 					Tab2[iki][jki] = Tab2[ik][jk];
 					Tab2[ik][jk] = 0;
-					A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab2[iki][jki], Tab2, Order * -1, iki, jki);
+					A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab2[iki][jki], Tab2, Order * -1, iki, jki);
 					//When Current Always is in CheckedMate.
 					ab = A->CheckMate(Tab2, Order * -1);
 
@@ -4137,7 +4328,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							}
 							else
 							{
-								//if (A->CheckMateBLACK)
+								//if (A.CheckMateBLACK)
 							}
 						}
 						//When Order is BLACK.
@@ -4152,7 +4343,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							}
 							else
 							{
-								//if (A->CheckMateWHITE)
+								//if (A.CheckMateWHITE)
 							}
 						   }
 						}
@@ -4167,7 +4358,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							}
 							else
 							{
-								//if (A->CheckMateBLACK)
+								//if (A.CheckMateBLACK)
 							}
 						}
 						//When Order * -1 is BLACK
@@ -4182,7 +4373,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							}
 							else
 							{
-								//if (A->CheckMateWHITE)
+								//if (A.CheckMateWHITE)
 							}
 						   }
 						}
@@ -4256,9 +4447,9 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					Tab2[ki][kj] = Tabl[ki][kj];
 				}
 			}
-			ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab2[ik][jk], Tab2, Order - 1, ik, jk);
+			ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab2[ik][jk], Tab2, Order - 1, ik, jk);
 			//When Enemy Attack Currnet.
-			A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab2[iki][jki], Tab2, OrderPalte, iki, jki);
+			A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Tab2[iki][jki], Tab2, OrderPalte, iki, jki);
 			//When Current Always is in CheckedMate.
 			bool ab = false;
 			ab = A->CheckMate(Tab2, OrderPalte);
@@ -5442,7 +5633,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			int HA = 0;
 			if (Order == 1)
 			{
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowD, ColD);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowD, ColD);
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete*' where appropriate:
 //ORIGINAL LINE: int[,] Tab = CloneATable(Table);
 				int **Tab = CloneATable(Table);
@@ -5467,7 +5658,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			}
 			else
 			{
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete*' where appropriate:
 //ORIGINAL LINE: int[,] Tab = CloneATable(Table);
 				int **Tab = CloneATable(Table);
@@ -5504,7 +5695,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (Order == 1)
 			{
 				int RowK = -1, ColK = -1;
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
 				G->FindBLACKKing(CloneATable(Table), RowK, ColK);
 				bool S1 = false;
 				S1 = CurrentIsTowCastleOrMinisterBecomeCheckedMateAtCloseRanAway(RowK, ColK, CloneATable(Table));
@@ -5540,7 +5731,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			else
 			{
 				int RowK = -1, ColK = -1;
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
 				G->FindWHITEKing(CloneATable(Table), RowK, ColK);
 				bool S1 = false;
 				S1 = CurrentIsTowCastleOrMinisterBecomeCheckedMateAtCloseRanAway(RowK, ColK, CloneATable(Table));
@@ -5587,7 +5778,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (Order == 1)
 			{
 				int RowK = -1, ColK = -1;
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
 				G->FindBLACKKing(CloneATable(Table), RowK, ColK);
 				if (EnemyKingCanMateByCloseHome(RowK, ColK, CloneATable(Table), Order))
 				{
@@ -5597,7 +5788,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			else
 			{
 				int RowK = -1, ColK = -1;
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
 				G->FindWHITEKing(CloneATable(Table), RowK, ColK);
 				if (EnemyKingCanMateByCloseHome(RowK, ColK, CloneATable(Table), Order))
 				{
@@ -5618,7 +5809,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (Order == 1)
 			{
 				int RowK = -1, ColK = -1;
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
 				G->FindBLACKKing(CloneATable(Table), RowK, ColK);
 				if (EnemyKingHaveAtMostOneEmptyItemInAttack(RowK, ColK, CloneATable(Table), Order))
 				{
@@ -5628,7 +5819,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			else
 			{
 				int RowK = -1, ColK = -1;
-				ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
+				ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Table), Order, RowS, ColS);
 				G->FindWHITEKing(CloneATable(Table), RowK, ColK);
 				if (EnemyKingHaveAtMostOneEmptyItemInAttack(RowK, ColK, CloneATable(Table), Order))
 				{
@@ -5751,7 +5942,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 											int **Ta = CloneATable(Table);
 											Ta[kkk][ppp] = Ta[kk][pp];
 											Ta[kk][pp] = 0;
-											ChessRules *G =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Ta), Order, kkk, ppp);
+											ChessRules *G = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Order, CloneATable(Ta), Order, kkk, ppp);
 											ab = G->CheckMate(CloneATable(Ta), Order);
 
 
@@ -5873,7 +6064,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 												int **Ta = CloneATable(Tab);
 												Ta[kkk][ppp] = Ta[k][p];
 												Ta[k][p] = 0;
-												ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ta[kkk][ppp], CloneATable(Tab), Order, kkk, ppp);
+												ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ta[kkk][ppp], CloneATable(Tab), Order, kkk, ppp);
 												if (A->CheckMate(CloneATable(Ta), Order * 1))
 												{
 													return true;
@@ -7091,7 +7282,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				if (IsNumberOfObjecttIsLessThanThreashold(CloneATable(Tab), 32))
 				{
 					int Cor = 0;
-					Cor = Colleralation::GetCorrelationScore(CloneATableC(TableInitiation), CloneATable(Tab), 8, Order);
+					Cor = Colleralation::GetCorrelationScore(TableInitiation, CloneATable(Tab), 8, Order);
 
 
 
@@ -7156,7 +7347,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					if (!ab)
 					{
 						int Cor = 0;
-						Cor = Colleralation::GetCorrelationScore(CloneATableC(TableInitiation), CloneATable(Tab), 8, Order);
+						Cor = Colleralation::GetCorrelationScore(TableInitiation, CloneATable(Tab), 8, Order);
 
 
 
@@ -7224,7 +7415,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				if (ab)
 				{
 					int Cor = 0;
-					Cor = Colleralation::GetCorrelationScore(CloneATableC(TableInitiation), CloneATable(Tab), 8, Order);
+					Cor = Colleralation::GetCorrelationScore(TableInitiation, CloneATable(Tab), 8, Order);
 
 
 					if (Cor > Colleralation_Renamed)
@@ -7279,7 +7470,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					if (!IsNumberOfObjecttIsLessThanThreashold(CloneATable(Tab), 32))
 					{
 						int Cor = 0;
-						Cor = Colleralation::GetCorrelationScore(CloneATableC(TableInitiation), CloneATable(Tab), 8, Order);
+						Cor = Colleralation::GetCorrelationScore(TableInitiation, CloneATable(Tab), 8, Order);
 
 
 
@@ -9984,7 +10175,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{
-			//AllDraw::OutPut = "";
+			//AllDraw::OutPut = L"";
 
 			//calculation of Heuristic methos and storing value retured.
 			int Hur = int();
@@ -10034,58 +10225,58 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	std::string ThinkingHybridizerRefrigitz::Alphabet(int RowRealesed)
+	std::wstring ThinkingHybridizerRefrigitz::Alphabet(int RowRealesed)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{
-			std::string A = "";
+			std::wstring A = L"";
 			if (RowRealesed == 0)
 			{
-				A = "a";
+				A = L"a";
 			}
 			else
 			{
 				if (RowRealesed == 1)
 				{
-				A = "b";
+				A = L"b";
 				}
 			else
 			{
 					if (RowRealesed == 2)
 					{
-				A = "c";
+				A = L"c";
 					}
 			else
 			{
 						if (RowRealesed == 3)
 						{
-				A = "d";
+				A = L"d";
 						}
 			else
 			{
 							if (RowRealesed == 4)
 							{
-				A = "e";
+				A = L"e";
 							}
 			else
 			{
 								if (RowRealesed == 5)
 								{
-				A = "f";
+				A = L"f";
 								}
 			else
 			{
 									if (RowRealesed == 6)
 									{
-				A = "g";
+				A = L"g";
 									}
 			else
 			{
 										if (RowRealesed == 7)
 										{
-				A = "h";
+				A = L"h";
 										}
 			}
 			}
@@ -10099,58 +10290,58 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	std::string ThinkingHybridizerRefrigitz::Number(int ColumnRealeased)
+	std::wstring ThinkingHybridizerRefrigitz::Number(int ColumnRealeased)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{
-			std::string A = "";
+			std::wstring A = L"";
 			if (ColumnRealeased == 7)
 			{
-				A = "0";
+				A = L"0";
 			}
 			else
 			{
 				if (ColumnRealeased == 6)
 				{
-				A = "1";
+				A = L"1";
 				}
 			else
 			{
 					if (ColumnRealeased == 5)
 					{
-				A = "2";
+				A = L"2";
 					}
 			else
 			{
 						if (ColumnRealeased == 4)
 						{
-				A = "3";
+				A = L"3";
 						}
 			else
 			{
 							if (ColumnRealeased == 3)
 							{
-				A = "4";
+				A = L"4";
 							}
 			else
 			{
 								if (ColumnRealeased == 2)
 								{
-				A = "5";
+				A = L"5";
 								}
 			else
 			{
 									if (ColumnRealeased == 1)
 									{
-				A = "6";
+				A = L"6";
 									}
 			else
 			{
 										if (ColumnRealeased == 0)
 										{
-				A = "7";
+				A = L"7";
 										}
 			}
 			}
@@ -10295,13 +10486,13 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	{
 		int Heuristic = 0;
 		//when is deeper
-		if (Deep.size() > 0)
+		if (AStarGreedy.size() > 0)
 		{
 			//for all deeper
-			for (int k = 0; k < Deep.size(); k++)
+			for (int k = 0; k < AStarGreedy.size(); k++)
 			{
 				//continue when deeper is null
-				if (Deep[k] == nullptr)
+				if (AStarGreedy[k] == nullptr)
 				{
 					continue;
 				}
@@ -10313,7 +10504,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					if (Order == -1)
 					{
 						//Repeate for Solder.
-						for (int m = 0; m < Deep[k]->SodierMidle; m++)
+						for (int m = 0; m < AStarGreedy[k].SodierMidle; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10323,7 +10514,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							BOUND = bo;
 						}
 						//Repeate for Elephant.
-						for (int m = 0; m < Deep[k]->ElefantMidle; m++)
+						for (int m = 0; m < AStarGreedy[k].ElefantMidle; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10334,7 +10525,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for Hourse.
-						for (int m = 0; m < Deep[k]->HourseMidle; m++)
+						for (int m = 0; m < AStarGreedy[k].HourseMidle; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10345,7 +10536,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for Castles.
-						for (int m = 0; m < Deep[k]->CastleMidle; m++)
+						for (int m = 0; m < AStarGreedy[k].CastleMidle; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10356,7 +10547,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for Minstre.
-						for (int m = 0; m < Deep[k]->MinisterMidle; m++)
+						for (int m = 0; m < AStarGreedy[k].MinisterMidle; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10367,7 +10558,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for King.
-						for (int m = 0; m < Deep[k]->KingMidle; m++)
+						for (int m = 0; m < AStarGreedy[k].KingMidle; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10380,7 +10571,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					}
 					else
 					{
-						for (int m = Deep[k]->SodierMidle; m < Deep[k]->SodierHigh; m++)
+						for (int m = AStarGreedy[k].SodierMidle; m < AStarGreedy[k].SodierHigh; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10391,7 +10582,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for Elephant.
-						for (int m = Deep[k]->ElefantMidle; m < Deep[k]->ElefantHigh; m++)
+						for (int m = AStarGreedy[k].ElefantMidle; m < AStarGreedy[k].ElefantHigh; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10402,7 +10593,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for Hourse.
-						for (int m = Deep[k]->HourseMidle; m < Deep[k]->HourseHight; m++)
+						for (int m = AStarGreedy[k].HourseMidle; m < AStarGreedy[k].HourseHight; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10413,7 +10604,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for Castles.
-						for (int m = Deep[k]->CastleMidle; m < Deep[k]->CastleHigh; m++)
+						for (int m = AStarGreedy[k].CastleMidle; m < AStarGreedy[k].CastleHigh; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10424,7 +10615,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for Minstre.
-						for (int m = Deep[k]->MinisterMidle; m < Deep[k]->MinisterHigh; m++)
+						for (int m = AStarGreedy[k].MinisterMidle; m < AStarGreedy[k].MinisterHigh; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10435,7 +10626,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HaveKilled = hav;
 						}
 						//Repeate for King.
-						for (int m = Deep[k]->KingMidle; m < Deep[k]->KingHigh; m++)
+						for (int m = AStarGreedy[k].KingMidle; m < AStarGreedy[k].KingHigh; m++)
 						{
 							int bo = BOUND;
 							int hav = HaveKilled;
@@ -10457,14 +10648,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	int ThinkingHybridizerRefrigitz::ReturnHeuristicCalculartorDeeperKing(int k, int m, int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND)
 	{
 		int Heuristic = 0;
-		if (Deep[k]->KingOnTable == nullptr || Deep[k]->KingOnTable[m] == nullptr || Deep[k]->KingOnTable[m]->KingThinking == nullptr || Deep[k]->KingOnTable[m]->KingThinking == nullptr || Deep[k]->KingOnTable[m]->KingThinking->TableListKing.empty())
+		if (AStarGreedy[k].KingOnTable == nullptr || AStarGreedy[k].KingOnTable[m] == nullptr || AStarGreedy[k].KingOnTable[m].KingThinking == nullptr || AStarGreedy[k].KingOnTable[m].KingThinking == nullptr || AStarGreedy[k].KingOnTable[m].KingThinking.TableListKing.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < Deep[k]->KingOnTable[m]->KingThinking->TableListKing.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k].KingOnTable[m].KingThinking.TableListKing.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += Deep[k]->KingOnTable[m]->KingThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k].KingOnTable[m].KingThinking.ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10475,14 +10666,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	int ThinkingHybridizerRefrigitz::ReturnHeuristicCalculartorDeeperMinister(int k, int m, int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND)
 	{
 		int Heuristic = 0;
-		if (Deep[k]->MinisterOnTable == nullptr || Deep[k]->MinisterOnTable[m] == nullptr || Deep[k]->MinisterOnTable[m]->MinisterThinking == nullptr || Deep[k]->MinisterOnTable[m]->MinisterThinking == nullptr || Deep[k]->MinisterOnTable[m]->MinisterThinking->TableListMinister.empty())
+		if (AStarGreedy[k].MinisterOnTable == nullptr || AStarGreedy[k].MinisterOnTable[m] == nullptr || AStarGreedy[k].MinisterOnTable[m].MinisterThinking == nullptr || AStarGreedy[k].MinisterOnTable[m].MinisterThinking == nullptr || AStarGreedy[k].MinisterOnTable[m].MinisterThinking.TableListMinister.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < Deep[k]->MinisterOnTable[m]->MinisterThinking->TableListMinister.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k].MinisterOnTable[m].MinisterThinking.TableListMinister.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += Deep[k]->MinisterOnTable[m]->MinisterThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k].MinisterOnTable[m].MinisterThinking.ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10493,14 +10684,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	int ThinkingHybridizerRefrigitz::ReturnHeuristicCalculartorDeeperCastle(int k, int m, int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND)
 	{
 		int Heuristic = 0;
-		if (Deep[k]->CastlesOnTable == nullptr || Deep[k]->CastlesOnTable[m] == nullptr || Deep[k]->CastlesOnTable[m]->CastleThinking == nullptr || Deep[k]->CastlesOnTable[m]->CastleThinking == nullptr || Deep[k]->CastlesOnTable[m]->CastleThinking->TableListCastle.empty())
+		if (AStarGreedy[k].CastlesOnTable == nullptr || AStarGreedy[k].CastlesOnTable[m] == nullptr || AStarGreedy[k].CastlesOnTable[m].CastleThinking == nullptr || AStarGreedy[k].CastlesOnTable[m].CastleThinking == nullptr || AStarGreedy[k].CastlesOnTable[m].CastleThinking.TableListCastle.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < Deep[k]->CastlesOnTable[m]->CastleThinking->TableListCastle.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k].CastlesOnTable[m].CastleThinking.TableListCastle.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += Deep[k]->CastlesOnTable[m]->CastleThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k].CastlesOnTable[m].CastleThinking.ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10511,14 +10702,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	int ThinkingHybridizerRefrigitz::ReturnHeuristicCalculartorDeeperHourse(int k, int m, int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND)
 	{
 		int Heuristic = 0;
-		if (Deep[k]->HoursesOnTable == nullptr || Deep[k]->HoursesOnTable[m] == nullptr || Deep[k]->HoursesOnTable[m]->HourseThinking == nullptr || Deep[k]->HoursesOnTable[m]->HourseThinking == nullptr || Deep[k]->HoursesOnTable[m]->HourseThinking->TableListHourse.empty())
+		if (AStarGreedy[k].HoursesOnTable == nullptr || AStarGreedy[k].HoursesOnTable[m] == nullptr || AStarGreedy[k].HoursesOnTable[m].HourseThinking == nullptr || AStarGreedy[k].HoursesOnTable[m].HourseThinking == nullptr || AStarGreedy[k].HoursesOnTable[m].HourseThinking.TableListHourse.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < Deep[k]->HoursesOnTable[m]->HourseThinking->TableListHourse.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k].HoursesOnTable[m].HourseThinking.TableListHourse.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += Deep[k]->HoursesOnTable[m]->HourseThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k].HoursesOnTable[m].HourseThinking.ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10530,14 +10721,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	{
 		int Heuristic = 0;
 
-		if (Deep[k]->ElephantOnTable == nullptr || Deep[k]->ElephantOnTable[m] == nullptr || Deep[k]->ElephantOnTable[m]->ElefantThinking == nullptr || Deep[k]->ElephantOnTable[m]->ElefantThinking == nullptr || Deep[k]->ElephantOnTable[m]->ElefantThinking->TableListElefant.empty())
+		if (AStarGreedy[k].ElephantOnTable == nullptr || AStarGreedy[k].ElephantOnTable[m] == nullptr || AStarGreedy[k].ElephantOnTable[m].ElefantThinking == nullptr || AStarGreedy[k].ElephantOnTable[m].ElefantThinking == nullptr || AStarGreedy[k].ElephantOnTable[m].ElefantThinking.TableListElefant.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < Deep[k]->ElephantOnTable[m]->ElefantThinking->TableListElefant.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k].ElephantOnTable[m].ElefantThinking.TableListElefant.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += Deep[k]->ElephantOnTable[m]->ElefantThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k].ElephantOnTable[m].ElefantThinking.ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10550,14 +10741,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	{
 		int Heuristic = 0;
 
-		if (Deep[k]->SolderesOnTable == nullptr || Deep[k]->SolderesOnTable[m] == nullptr || Deep[k]->SolderesOnTable[m]->SoldierThinking == nullptr || Deep[k]->SolderesOnTable[m]->SoldierThinking == nullptr || Deep[k]->SolderesOnTable[m]->SoldierThinking->TableListSolder.empty())
+		if (AStarGreedy[k].SolderesOnTable == nullptr || AStarGreedy[k].SolderesOnTable[m] == nullptr || AStarGreedy[k].SolderesOnTable[m].SoldierThinking == nullptr || AStarGreedy[k].SolderesOnTable[m].SoldierThinking == nullptr || AStarGreedy[k].SolderesOnTable[m].SoldierThinking.TableListSolder.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < Deep[k]->SolderesOnTable[m]->SoldierThinking->TableListSolder.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k].SolderesOnTable[m].SoldierThinking.TableListSolder.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += Deep[k]->SolderesOnTable[m]->SoldierThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k].SolderesOnTable[m].SoldierThinking.ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10646,7 +10837,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		{
 			int Heuristic = 0;
 			//when deeper there is not or level exceed
-			if (Deep.empty() && iAstarGready != 0)
+			if (AStarGreedy.empty() && iAstarGready != 0)
 			{
 				return 0;
 			}
@@ -11091,7 +11282,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				//Calculate Heuristic and Add to List and Cal Syntax.
 				if (!Sup)
 				{
-					//std::string H = "";
+					//std::wstring H = L"";
 					////auto a6 = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 					////lock (A6)
@@ -11105,7 +11296,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 							HeuristicListKing.push_back(Hu);
 						}
 					}
@@ -11126,7 +11317,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::string //H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 
@@ -11143,32 +11334,32 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 	}
 
-	std::string ThinkingHybridizerRefrigitz::CheM(int A)
+	std::wstring ThinkingHybridizerRefrigitz::CheM(int A)
 	{
-		std::string AA = "";
+		std::wstring AA = L"";
 		if (A <= -1 && A < 0)
 		{
-			AA = "+SelfChecked ";
+			AA = L"+SelfChecked ";
 		}
 		if (A >= 1 && A > 0)
 		{
-			AA = "+EnemeyChecked ";
+			AA = L"+EnemeyChecked ";
 		}
 		if (A <= -2 && A < 0)
 		{
-			AA = "++SelfMate ";
+			AA = L"++SelfMate ";
 		}
 		if (A >= 2 && A > 0)
 		{
-			AA = "++EnemeyMate ";
+			AA = L"++EnemeyMate ";
 		}
 		if (A <= -3 && A < 0)
 		{
-			AA = "++SelfFinished ";
+			AA = L"++SelfFinished ";
 		}
 		if (A >= 3 && A > 0)
 		{
-			AA = "++EnemeyFinsished ";
+			AA = L"++EnemeyFinsished ";
 		}
 		return AA;
 	}
@@ -11288,7 +11479,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				//Calculate Heuristic and Add to List and Cal Syntax.
 				if (!Sup)
 				{
-					//std::string H = "";
+					//std::wstring H = L"";
 					////auto a6 = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 					////lock (A6)
@@ -11302,7 +11493,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 							HeuristicListMinister.push_back(Hu);
 						}
 					}
@@ -11323,7 +11514,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::string //H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
@@ -11914,7 +12105,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				//Calculate Heuristic and Add to List and Cal Syntax.
 				if (!Sup)
 				{
-					//std::string H = "";
+					//std::wstring H = L"";
 					////auto a6 = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 					////lock (A6)
@@ -11928,7 +12119,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 							HeuristicListCastle.push_back(Hu);
 						}
 						////auto o4 = new Object();
@@ -11949,7 +12140,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::string //H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 
@@ -12080,7 +12271,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				//Calculate Heuristic and Add to List and Cal Syntax.
 				if (!Sup)
 				{
-					//std::string H = "";
+					//std::wstring H = L"";
 					////auto a6 = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 					////lock (A6)
@@ -12094,7 +12285,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 							HeuristicListHourse.push_back(Hu);
 						}
 						////auto o4 = new Object();
@@ -12115,7 +12306,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::string //H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 					ThinkingAtRun = false;
@@ -12244,7 +12435,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				//Calculate Heuristic and Add to List and Cal Syntax.
 				if (!Sup)
 				{
-					//std::string H = "";
+					//std::wstring H = L"";
 					////auto a6 = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 					////lock (A6)
@@ -12260,7 +12451,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 							HeuristicListElefant.push_back(Hu);
 						}
 						////auto o4 = new Object();
@@ -12281,7 +12472,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::string //H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 
@@ -12593,7 +12784,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							return;
 						}
 					}
-					if ((AllDraw::OrderPlateDraw == -1 && AA->CheckMateBLACK)) //(AllDraw.OrderPlateDraw == -1 && AA->CheckBLACK)||
+					if ((AllDraw::OrderPlateDraw == -1 && AA->CheckMateBLACK)) //(AllDraw.OrderPlateDraw == -1 && AA.CheckBLACK)||
 					{
 						////auto a = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -12624,7 +12815,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 						}
 
 					}
-					if ((AllDraw::OrderPlateDraw == 1 && AA->CheckMateWHITE)) //(AllDraw.OrderPlateDraw == 1 && AA->CheckWHITE) ||
+					if ((AllDraw::OrderPlateDraw == 1 && AA->CheckMateWHITE)) //(AllDraw.OrderPlateDraw == 1 && AA.CheckWHITE) ||
 					{
 						DoEnemySelf = false;
 						////auto a = new Object();
@@ -12655,7 +12846,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							return;
 						}
 					}
-					/*  if (Order == 1 && AA->CheckMateBLACK)
+					/*  if (Order == 1 && AA.CheckMateBLACK)
 					  {
 					      IsThereCheckOfEnemy.Add(true);
 					      IsThereMateOfEnemy.Add(false);
@@ -12667,7 +12858,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					      EnemyCheckMateActionsString = true;
 					      CheckedM = -2;
 					  }
-					  if (Order == -1 && AA->CheckMateWHITE)
+					  if (Order == -1 && AA.CheckMateWHITE)
 					  {
 	
 					      IsThereCheckOfEnemy.Add(true);
@@ -12680,7 +12871,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					      EnemyCheckMateActionsString = true;
 					      CheckedM = -2;
 					  }
-					  if (Order == 1 && AA->CheckMateWHITE)
+					  if (Order == 1 && AA.CheckMateWHITE)
 					  {
 					      IsThereCheckOfEnemy.Add(false);
 					      IsThereMateOfEnemy.Add(false);
@@ -12691,7 +12882,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					      EnemyCheckMateActionsString = false;
 					      CheckedM = -2;
 					  }
-					  if (Order == -1 && AA->CheckMateBLACK)
+					  if (Order == -1 && AA.CheckMateBLACK)
 					  {
 					      IsThereCheckOfEnemy.Add(false);
 					      IsThereMateOfEnemy.Add(false);
@@ -12902,7 +13093,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			{
 				if (Equality)
 				{
-					ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TableS[ii][jj], CloneATable(TableS), Order, Row, Column);
+					ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, TableS[ii][jj], CloneATable(TableS), Order, Row, Column);
 					if (A->Check(CloneATable(TableS), Order))
 					{
 						if (Order == 1 && (A->CheckWHITE))
@@ -13656,7 +13847,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				//Calculate Heuristic and Add to List and Cal Syntax.
 				if (!Sup)
 				{
-					//std::string H = "";
+					//std::wstring H = L"";
 					////auto a6 = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 					////lock (A6)
@@ -13670,7 +13861,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 							HeuristicListSolder.push_back(Hu);
 						}
 					}
@@ -13691,7 +13882,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::string //H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 
@@ -13805,7 +13996,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			//Calculate Heuristic Sumation and Store in Specific List.
 			AsS(RowSource, ColumnSource, RowDestination, ColumnDestination);
 			int Hu[10];
-			//std::string H = "";
+			//std::wstring H = L"";
 			////auto a6 = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (A6)
@@ -13815,7 +14006,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-				//H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+				//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 				HeuristicListKing.push_back(Hu);
 			}
 			Castle_Renamed = true;
@@ -16558,7 +16749,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			LoseOcuuredatChiled[0] += TmpL[0];
 			WinOcuuredatChiled += TmpW;
 
-			//std::string H = "";
+			//std::wstring H = L"";
 			AsS(RowSource, ColumnSource, RowDestination, ColumnDestination);
 			int Hu[10];
 			////auto a6 = new Object();
@@ -16571,7 +16762,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-				//H = std::string(" HAttack:") + ((Hu[0])).ToString() + std::string(" HMove:") + ((Hu[1])).ToString() + std::string(" HSelSup:") + ((Hu[2])).ToString() + std::string(" HCheckedMateDang:") + ((Hu[3])).ToString() + std::string(" HKiller:") + ((Hu[4])).ToString() + std::string(" HReduAttack:") + ((Hu[5])).ToString() + std::string(" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::string(" HKingSafe:") + ((Hu[7])).ToString() + std::string(" HObjFromCeneter:") + ((Hu[8])).ToString() + std::string(" HKingDang:") + ((Hu[9])).ToString();
+				//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
 			}
 			////auto o7 = new Object();
 			SetObjectNumbersInList(TableS);
@@ -16789,7 +16980,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O)
 			{
-				///Else for Elephant Thinking->
+				///Else for Elephant Thinking.
 				if (Scop(0, jj, i, j, 2) && abs(TableS[ii][jj]) == 2 && abs(Kind) == 2)
 				{
 					Order = ord;
@@ -17589,108 +17780,108 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	void ThinkingHybridizerRefrigitz::FullGameThinkingTreeInitialization(AllDraw *THIS, int ik, int j, int Order, int kind)
+	void ThinkingHybridizerRefrigitz::FullGameThinkingTreeInitialization(AllDraw THIS, int ik, int j, int Order, int kind)
 	{
 		//soldier
 		if (kind == 1)
 		{
 			//when valid do create of deeper node and string making
-			if (TableListSolder.size() > Deep.size())
+			if (TableListSolder.size() > AStarGreedy.size())
 			{
-				if (Deep.empty())
+				if (AStarGreedy.empty())
 				{
 					//AStarGreedy = std::vector<AllDraw>();
 				}
-				Deep.push_back(new AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
-				Deep[Deep.size() - 1]->TableList.clear();
-				Deep[Deep.size() - 1]->TableList.push_back(CloneATable(TableListSolder[j]));
-				Deep[Deep.size() - 1]->SetRowColumnC(0);
-				Deep[Deep.size() - 1]->AStarGreedyString = THIS;
+				AStarGreedy.push_back(AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
+				AStarGreedy[AStarGreedy.size() - 1].TableList.clear();
+				AStarGreedy[AStarGreedy.size() - 1].TableList.push_back(CloneATable(TableListSolder[j]));
+				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0);
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode = *this;
 			}
 		}
 		else if (kind == 2) //elephant
 		{
 			//when valid do create of deeper node and string making
-			if (TableListElefant.size() > Deep.size())
+			if (TableListElefant.size() > AStarGreedy.size())
 			{
-				if (Deep.empty())
+				if (AStarGreedy.empty())
 				{
 					//AStarGreedy = std::vector<AllDraw>();
 				}
-				Deep.push_back(new AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
-				Deep[Deep.size() - 1]->TableList.clear();
-				Deep[Deep.size() - 1]->TableList.push_back(CloneATable(TableListElefant[j]));
-				Deep[Deep.size() - 1]->SetRowColumnC(0);
-				Deep[Deep.size() - 1]->AStarGreedyString = THIS;
+				AStarGreedy.push_back(AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
+				AStarGreedy[AStarGreedy.size() - 1].TableList.clear();
+				AStarGreedy[AStarGreedy.size() - 1].TableList.push_back(CloneATable(TableListElefant[j]));
+				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0);
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode = *this;
 			}
 		}
 		else if (kind == 3) //hourse
 		{
 			//when valid do create of deeper node and string making
-			if (TableListHourse.size() > Deep.size())
+			if (TableListHourse.size() > AStarGreedy.size())
 			{
-				if (Deep.empty())
+				if (AStarGreedy.empty())
 				{
 					//AStarGreedy = std::vector<AllDraw>();
 				}
-				Deep.push_back(new AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
-				Deep[Deep.size() - 1]->TableList.clear();
-				Deep[Deep.size() - 1]->TableList.push_back(CloneATable(TableListHourse[j]));
-				Deep[Deep.size() - 1]->SetRowColumnC(0);
-				Deep[Deep.size() - 1]->AStarGreedyString = THIS;
+				AStarGreedy.push_back(AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
+				AStarGreedy[AStarGreedy.size() - 1].TableList.clear();
+				AStarGreedy[AStarGreedy.size() - 1].TableList.push_back(CloneATable(TableListHourse[j]));
+				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0);
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode = *this;
 			}
 		}
 		else if (kind == 4) //Castle
 		{
 			//when valid do create of deeper node and string making
-			if (TableListCastle.size() > Deep.size())
+			if (TableListCastle.size() > AStarGreedy.size())
 			{
-				if (Deep.empty())
+				if (AStarGreedy.empty())
 				{
 					//AStarGreedy = std::vector<AllDraw>();
 				}
-				Deep.push_back(new AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
-				Deep[Deep.size() - 1]->TableList.clear();
-				Deep[Deep.size() - 1]->TableList.push_back(CloneATable(TableListCastle[j]));
-				Deep[Deep.size() - 1]->SetRowColumnC(0);
-				Deep[Deep.size() - 1]->AStarGreedyString = THIS;
+				AStarGreedy.push_back(AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
+				AStarGreedy[AStarGreedy.size() - 1].TableList.clear();
+				AStarGreedy[AStarGreedy.size() - 1].TableList.push_back(CloneATable(TableListCastle[j]));
+				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0);
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode = *this;
 			}
 		}
 		else if (kind == 5) //minister
 		{
 			//when valid do create of deeper node and string making
-			if (TableListMinister.size() > Deep.size())
+			if (TableListMinister.size() > AStarGreedy.size())
 			{
-				if (Deep.empty())
+				if (AStarGreedy.empty())
 				{
 					//AStarGreedy = std::vector<AllDraw>();
 				}
-				Deep.push_back(new AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
-				Deep[Deep.size() - 1]->TableList.clear();
-				Deep[Deep.size() - 1]->TableList.push_back(CloneATable(TableListMinister[j]));
-				Deep[Deep.size() - 1]->SetRowColumnC(0);
-				Deep[Deep.size() - 1]->AStarGreedyString = THIS;
+				AStarGreedy.push_back(AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
+				AStarGreedy[AStarGreedy.size() - 1].TableList.clear();
+				AStarGreedy[AStarGreedy.size() - 1].TableList.push_back(CloneATable(TableListMinister[j]));
+				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0);
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode = *this;
 			}
 		}
 		else if (kind == 6) //king
 		{
 			//when valid do create of deeper node and string making
-			if (TableListKing.size() > Deep.size())
+			if (TableListKing.size() > AStarGreedy.size())
 			{
-				if (Deep.empty())
+				if (AStarGreedy.empty())
 				{
 					//AStarGreedy = std::vector<AllDraw>();
 				}
-				Deep.push_back(new AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
-				Deep[Deep.size() - 1]->TableList.clear();
-				Deep[Deep.size() - 1]->TableList.push_back(CloneATable(TableListKing[j]));
-				Deep[Deep.size() - 1]->SetRowColumnC(0);
-				Deep[Deep.size() - 1]->AStarGreedyString = THIS;
+				AStarGreedy.push_back(AllDraw(Order * -1, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged));
+				AStarGreedy[AStarGreedy.size() - 1].TableList.clear();
+				AStarGreedy[AStarGreedy.size() - 1].TableList.push_back(CloneATable(TableListKing[j]));
+				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0);
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode = *this;
 			}
 		}
 	}
 
-	void ThinkingHybridizerRefrigitz::ThinkingFullGame(int iAStarGreedy, AllDraw *THIS)
+	void ThinkingHybridizerRefrigitz::ThinkingFullGame(int iAStarGreedy, AllDraw THIS)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -17704,7 +17895,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					for (int i = 0;i < TableListSolder.size(); i++)
 					{
 						FullGameThinkingTreeInitialization(THIS, iIndex, i, Order, Kind);
-						Deep[i]->InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListSolder[i], Order * -1, false, false, 0);
+						AStarGreedy[i].InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListSolder[i], Order * -1, false, false, 0);
 					}
 				}
 				else
@@ -17715,7 +17906,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				  {
 
 						FullGameThinkingTreeInitialization(THIS, iIndex, i, Order, Kind);
-						Deep[i]->InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListElefant[i], Order * -1, false, false, 0);
+						AStarGreedy[i].InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListElefant[i], Order * -1, false, false, 0);
 				  }
 				}
 				else
@@ -17726,7 +17917,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				   {
 
 						FullGameThinkingTreeInitialization(THIS, iIndex, i, Order, Kind);
-						Deep[i]->InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListHourse[i], Order * -1, false, false, 0);
+						AStarGreedy[i].InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListHourse[i], Order * -1, false, false, 0);
 				   }
 				}
 				else
@@ -17737,7 +17928,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				   {
 
 						FullGameThinkingTreeInitialization(THIS, iIndex, i, Order, Kind);
-						Deep[i]->InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListCastle[i], Order * -1, false, false, 0);
+						AStarGreedy[i].InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListCastle[i], Order * -1, false, false, 0);
 				   }
 				}
 				else
@@ -17748,7 +17939,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				   {
 
 						FullGameThinkingTreeInitialization(THIS, iIndex, i, Order, Kind);
-						Deep[i]->InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListMinister[i], Order * -1, false, false, 0);
+						AStarGreedy[i].InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListMinister[i], Order * -1, false, false, 0);
 				   }
 				}
 				else
@@ -17759,7 +17950,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					for (int i = 0; i < TableListKing.size(); i++)
 					{
 						FullGameThinkingTreeInitialization(THIS, iIndex, i, Order, Kind);
-						Deep[i]->InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListKing[i], Order * -1, false, false, 0);
+						AStarGreedy[i].InitiateAStarGreedyt(iAStarGreedy, 0, 0, ColorOpposite(color), TableListKing[i], Order * -1, false, false, 0);
 					}
 					}
 				}
@@ -17880,7 +18071,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	void ThinkingHybridizerRefrigitz::Thinking(int iAStarGreedy, AllDraw *THIS, int * LoseOcuuredatChiled, int &WinOcuuredatChiled)
+	void ThinkingHybridizerRefrigitz::Thinking(int iAStarGreedy, AllDraw THIS, int * LoseOcuuredatChiled, int &WinOcuuredatChiled)
 	{
 		try
 		{
@@ -18039,7 +18230,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 						{
 							ThinkingFinished = true;
 							CheckMateOcuured = true;
-							if ((AAA->CheckMateWHITE && AllDraw::OrderPlateDraw == 1) || (AAA->CheckMateBLACK && AllDraw::OrderPlateDraw == -1)) //(AAA->CheckWHITE && AllDraw.OrderPlateDraw == 1) || (AAA->CheckBLACK && AllDraw.OrderPlateDraw == -1) ||
+							if ((AAA->CheckMateWHITE && AllDraw::OrderPlateDraw == 1) || (AAA->CheckMateBLACK && AllDraw::OrderPlateDraw == -1)) //(AAA.CheckWHITE && AllDraw.OrderPlateDraw == 1) || (AAA.CheckBLACK && AllDraw.OrderPlateDraw == -1) ||
 							{
 								FoundFirstSelfMating++;
 								if (Order == AllDraw::OrderPlateDraw)
@@ -18135,7 +18326,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 						break;
-					///Else For Castles Thinking->
+					///Else For Castles Thinking.
 					case 4: ///For Castle Thinking
 						 ThinkingCastle(TmpL, TmpW, ord, ii, jj, DummyOrder, DummyCurrentOrder, DoEnemySelf, PenRegStrore, EnemyCheckMateActionsString, Castle_Renamed);
 

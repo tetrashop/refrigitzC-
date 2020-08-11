@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "ChessRules.h"
+﻿#include "ChessRules.h"
 #include "AllDraw.h"
 #include "ThinkingHybridizerRefrigitz.h"
 #include "DrawKing.h"
@@ -105,7 +104,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		}
 	}
 
-	bool ChessRules::Rules(int RowFirst, int ColumnFirst, int RowSecond, int ColumnSecond, int color, int Ki, bool SelfHomeStatCP = true
+	bool ChessRules::Rules(int RowFirst, int ColumnFirst, int RowSecond, int ColumnSecond, int color, int Ki//, bool SelfHomeStatCP = true
 	)
 	{
 		////auto o = new Object();
@@ -672,7 +671,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//When there is checked or checkmate.
 										if (AAA->CheckMate(Tabl, Order))
 										{
-											//if (AAA->CheckMateWHITE)
+											//if (AAA.CheckMateWHITE)
 											if (AAA->CheckMateWHITE)
 											{
 												CheckWHITEObjectDangour = true;
@@ -760,7 +759,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//When There is Check or Checkedmate
 										if (AAA->CheckMate(Tabl, Order))
 										{
-											//if (AAA->CheckMateBLACK)
+											//if (AAA.CheckMateBLACK)
 											if (AAA->CheckMateBLACK)
 											{
 												CheckBLACKObjectDangour = true;
@@ -915,7 +914,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//When there is checked or checkmate.
 										if (AAA->Check(Tabl, Order))
 										{
-											//if (AAA->CheckMateWHITE)
+											//if (AAA.CheckMateWHITE)
 											if (AAA->CheckWHITE)
 											{
 												CheckWHITEObjectDangour = true;
@@ -1003,7 +1002,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//When There is Check or Checkedmate
 										if (AAA->Check(Tabl, Order))
 										{
-											//if (AAA->CheckMateBLACK)
+											//if (AAA.CheckMateBLACK)
 											if (AAA->CheckBLACK)
 											{
 												CheckBLACKObjectDangour = true;
@@ -1199,7 +1198,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										Tab[ik][jk] = Table[ik][jk];
 									}
 								}
-								ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Tab[i][j], CloneATable(Tab), Order * -1, i, j);
+								ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Tab[i][j], CloneATable(Tab), Order * -1, i, j);
 								int a = 1;
 								if (Order * -1 == -1)
 								{
@@ -1252,7 +1251,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 															Tab[iii][jjj] = Tab[i][j];
 															Tab[i][j] = 0;
 
-															A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Tab[iiii][jjjj], CloneATable(Tab), Order, iiii, jjjj);
+															A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Tab[iiii][jjjj], CloneATable(Tab), Order, iiii, jjjj);
 															if (A->Rules(iiii, jjjj, iiiii, jjjjj, a, Tab[i][j]))
 															{
 																Tab[iiiii][jjjjj] = Tab[iiii][jjjj];
@@ -1320,7 +1319,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 															Tab[iii][jjj] = Tab[i][j];
 															Tab[i][j] = 0;
 
-															A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Tab[iiii][jjjj], CloneATable(Tab), Order, iiii, jjjj);
+															A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Tab[iiii][jjjj], CloneATable(Tab), Order, iiii, jjjj);
 															if (A->Rules(iiii, jjjj, iiiii, jjjjj, a, Tab[i][j]))
 															{
 																Tab[iiiii][jjjjj] = Tab[iiii][jjjj];
@@ -1395,47 +1394,47 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		}
 	}
 
-	std::string ChessRules::ThingsAlphabet(int i)
+	std::wstring ChessRules::ThingsAlphabet(int i)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{ //long Time = TimeElapced.TimeNow();
 		  //Initiate a Local Varibale. 
-			std::string A ;
+			std::wstring A ;
 			//Determinbe WHITE Or BLACK Movment.
 			if (i < 0)
 			{
-				A = "BLACK:";
+				A = L"BLACK:";
 			}
 			if (i > 0)
 			{
-				A = "WHITE:";
+				A = L"WHITE:";
 			}
 			//Determine Object Alhpabet. 
 			if (abs(i) == 1)
 			{
-				A += std::string("(S)");
+				A += std::wstring(L"(S)");
 			}
 			if (abs(i) == 2)
 			{
-				A += std::string("(E)");
+				A += std::wstring(L"(E)");
 			}
 			if (abs(i) == 3)
 			{
-				A += std::string("(H)");
+				A += std::wstring(L"(H)");
 			}
 			if (abs(i) == 4)
 			{
-				A += std::string("(B)");
+				A += std::wstring(L"(B)");
 			}
 			if (abs(i) == 5)
 			{
-				A += std::string("(M)");
+				A += std::wstring(L"(M)");
 			}
 			if (abs(i) == 6)
 			{
-				A += std::string("(K)");
+				A += std::wstring(L"(K)");
 			}
 			//Retrun Alphabet.
 			////AllDraw.OutPut.Append("\r\nThingsAlphabet:" + (TimeElapced.TimeNow() - Time).ToString();
@@ -1444,46 +1443,46 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		}
 	}
 
-	std::string ChessRules::RowAlphabet(int i)
+	std::wstring ChessRules::RowAlphabet(int i)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{ //long Time = TimeElapced.TimeNow();
 				 //Initiate Local Variable.
-			std::string A ;
+			std::wstring A ;
 			//[So2]. Alphabet Consideration.
 			if (i == 0)
 			{
-				A = "a";
+				A = L"a";
 			}
 			if (i == 1)
 			{
-				A = "b";
+				A = L"b";
 			}
 			if (i == 2)
 			{
-				A = "c";
+				A = L"c";
 			}
 			if (i == 3)
 			{
-				A = "d";
+				A = L"d";
 			}
 			if (i == 4)
 			{
-				A = "e";
+				A = L"e";
 			}
 			if (i == 5)
 			{
-				A = "f";
+				A = L"f";
 			}
 			if (i == 6)
 			{
-				A = "g";
+				A = L"g";
 			}
 			if (i == 7)
 			{
-				A = "h";
+				A = L"h";
 			}
 			//Return [So2]. Alphabet.
 			////AllDraw.OutPut.Append("\r\nRowAlphabet:" + (TimeElapced.TimeNow() - Time).ToString();
@@ -1492,7 +1491,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		}
 	}
 
-	std::string ChessRules::CreateStatistic(bool Arrange, int** Tab, int Movments, int SourceThings, int Column, int Row, bool Hit, int HitThings, bool CastleKing, bool SodierConvert)
+	std::wstring ChessRules::CreateStatistic(bool Arrange, int** Tab, int Movments, int SourceThings, int Column, int Row, bool Hit, int HitThings, bool CastleKing, bool SodierConvert)
 	{
 		//long Time = TimeElapced.TimeNow();Spaces++;
 		////auto oOO = new Object();
@@ -1509,16 +1508,16 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			}
 			//Movments String Number Creation in String.
 			bn = (static_cast<int>(bn / 2)) + 1;
-			std::string SN ;
-			std::string S ;
+			std::wstring SN ;
+			std::wstring S ;
 			if (ms)
 			{
-				SN = StringConverterHelper::toString(bn) + std::string(".");
+				SN = StringConverterHelper::toString(bn) + std::wstring(L".");
 			}
 
 
 			//Consider CheckMate Condition of Table.
-			ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, Arrange, 1, CloneATable(Tab), 1, Row, Column);
+			ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, Arrange, 1, CloneATable(Tab), 1, Row, Column);
 			ChessRules *AA = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, Arrange, 1, CloneATable(Tab), 1, Row, Column);
 			ChessRules *AAA = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, Arrange, 1, CloneATable(Tab), 1, Row, Column);
 			A->CheckMate(CloneATable(Tab), Order);
@@ -1580,7 +1579,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						////lock (O2)
 						{
 							ThinkingHybridizerRefrigitz::KingMaovableWHITE = true;
-							S += std::string("WHITE-BK-S");
+							S += std::wstring(L"WHITE-BK-S");
 							////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 							////lock (O)
@@ -1602,7 +1601,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 						////lock (O2)
 						{
-							S += std::string("WHITE-BK-B");
+							S += std::wstring(L"WHITE-BK-B");
 							ThinkingHybridizerRefrigitz::KingMaovableWHITE = true;
 							////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -1625,7 +1624,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 						////lock (O2)
 						{
-							S += std::string("BLACK-BK-S");
+							S += std::wstring(L"BLACK-BK-S");
 							ThinkingHybridizerRefrigitz::KingMaovableBLACK = true;
 							////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -1649,7 +1648,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 						////lock (O2)
 						{
-							S += std::string("BLACK-BK-B");
+							S += std::wstring(L"BLACK-BK-B");
 							ThinkingHybridizerRefrigitz::KingMaovableBLACK = true;
 							////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -1688,25 +1687,25 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						}
 						//THIS.SetObjectInPictureBox(Row, Column);
 
-						S += std::string("x");
+						S += std::wstring(L"x");
 					}
 					S += StringConverterHelper::toString(Column);
 					//CheckMate of WHITE Or BLACK
 					if (AAA->PatkWHITE || AAA->PatBLACK)
 					{
-						S += std::string("-O-");
+						S += std::wstring(L"-O-");
 					}
 					else
 					{
 						if (A->CheckMateWHITE || A->CheckMateBLACK)
 						{
-						S += std::string("++");
+						S += std::wstring(L"++");
 						}
 					//Check Of WHITE Or BLACK.
 					else if (A->CheckBLACK || A->CheckWHITE)
 					{
 
-						S += std::string("+");
+						S += std::wstring(L"+");
 						if (A->CheckBLACK && Order == -1)
 						{
 							////auto o2 = new Object();
@@ -1773,7 +1772,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						ObjectHittedColumn = Column;
 					}
 					//THIS.SetObjectInPictureBox(Row, Column);
-					S += std::string("x");
+					S += std::wstring(L"x");
 				}
 				//[So2]. Column Consideration.
 				S += RowAlphabet(Row);
@@ -1781,19 +1780,19 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				//CheckMate Consideration.
 				if (AAA->PatkWHITE || AAA->PatBLACK)
 				{
-					S += std::string("-O-");
+					S += std::wstring(L"-O-");
 				}
 				else
 
 				{
 					if (A->CheckMateWHITE || A->CheckMateBLACK)
 					{
-					S += std::string("++");
+					S += std::wstring(L"++");
 					}
 				//WHITE Consideration.
 				else if (A->CheckBLACK || A->CheckWHITE)
 				{
-					S += std::string("+");
+					S += std::wstring(L"+");
 					if (A->CheckBLACK && Order == -1)
 					{
 						////auto o2 = new Object();
@@ -1850,11 +1849,11 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			//Separate.
 			if (AllDraw::Less != -DBL_MAX)
 			{
-				S += std::string(" With Heuristic (") + StringConverterHelper::toString(AllDraw::Less) + std::string(")--");
+				S += std::wstring(L" With Heuristic (") + StringConverterHelper::toString(AllDraw::Less) + std::wstring(L")--");
 			}
 			else
 			{
-				S += std::string(" --");
+				S += std::wstring(L" --");
 			}
 			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CreateStatistic:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
 			//Return String Sysntax.
@@ -2525,7 +2524,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					{
 						a = -1;
 					}
-					ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[i][j], CloneATable(Table), Ord, i, j);
+					ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[i][j], CloneATable(Table), Ord, i, j);
 					if (Ord == 1)
 					{
 						//Menen Parameter is Moveble to Second Parameters Location returm Movable.
@@ -2659,7 +2658,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						{
 							a = -1;
 						}
-						ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[RowK][ColumnK], CloneATable(Table), Ord, RowK, ColumnK);
+						ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[RowK][ColumnK], CloneATable(Table), Ord, RowK, ColumnK);
 						Order = DummyOrder;
 						///Table[ii, jj] = 0;
 						//Menen Parameter is Moveble to Second Parameters Location returm Movable.
@@ -2795,7 +2794,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 							{
 								a = -1;
 							}
-							ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[i][j], CloneATable(Table), Ord, i, j);
+							ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[i][j], CloneATable(Table), Ord, i, j);
 							///Table[ii, jj] = 0;
 							//Menen Parameter is Moveble to Second Parameters Location returm Movable.
 							if (A->Rules(i, j, ii, jj, a, Ord))
@@ -2808,7 +2807,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 								Table[ii][jj] = Table[i][j];
 								Table[i][j] = 0;
 								//If Check.
-								A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[ii][jj], CloneATable(Table), Ord, ii, jj);
+								A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[ii][jj], CloneATable(Table), Ord, ii, jj);
 								if (A->Check(CloneATable(Table), Ord))
 								{
 									Order = DummyOrder;
@@ -2935,7 +2934,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					Table[i][j] = Tab[i][j];
 				}
 			}
-			ChessRules *A =new  ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[RowG][ColumnG], CloneATable(Table), Ord, RowG, ColumnG);
+			ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[RowG][ColumnG], CloneATable(Table), Ord, RowG, ColumnG);
 
 			//Found of WHITE King.
 			if (FindWHITEKing(CloneATable(Table), RowG, ColumnG))
@@ -4007,7 +4006,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 	void ChessRules::InitializeInstanceFields()
 	{
-		//Space = new std::string("&nbsp;");
+		//Space = new std::string(L"&nbsp;");
 		Spaces = 0;
 		IgnoreSelfObject = false;
 		MovementsAStarGreedyHeuristicFoundT = false;
