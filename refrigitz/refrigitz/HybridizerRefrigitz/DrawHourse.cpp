@@ -217,7 +217,7 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 			}
 			catch (std::exception &t)
 			{
-				Log(t);
+				
 			}
 
 		}

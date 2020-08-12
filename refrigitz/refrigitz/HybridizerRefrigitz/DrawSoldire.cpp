@@ -1,5 +1,5 @@
 ﻿#include "DrawSoldier.h"
-
+#include "ThingsConverter.h"
 
 int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 
@@ -326,7 +326,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 			}
 			catch (std::exception &t)
 			{
-				Log(t);
+				
 			}
 
 		}

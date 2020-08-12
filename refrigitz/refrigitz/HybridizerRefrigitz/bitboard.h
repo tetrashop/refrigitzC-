@@ -35,7 +35,7 @@ bool probe(Square wksq, Square wpsq, Square bksq, Color us);
 namespace Bitboards {
 
 void init();
-const std::string pretty(Bitboard b);
+const string pretty(Bitboard b);
 
 }
 

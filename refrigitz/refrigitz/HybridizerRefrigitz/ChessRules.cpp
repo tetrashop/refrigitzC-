@@ -104,7 +104,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		}
 	}
 
-	bool ChessRules::Rules(int RowFirst, int ColumnFirst, int RowSecond, int ColumnSecond, int color, int Ki//, bool SelfHomeStatCP = true
+	bool ChessRules::Rules(int RowFirst, int ColumnFirst, int RowSecond, int ColumnSecond, int color, int Ki, bool SelfHomeStatCP //= true
 	)
 	{
 		////auto o = new Object();

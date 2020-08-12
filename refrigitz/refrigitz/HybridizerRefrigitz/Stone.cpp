@@ -1,6 +1,6 @@
 ﻿#include "Stone.h"
-#include "Point.h
-
+#include "Point.h"
+#include "Board.h"
 
 	Stone::Stone()
 	{

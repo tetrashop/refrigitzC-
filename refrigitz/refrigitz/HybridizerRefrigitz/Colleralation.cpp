@@ -4,7 +4,7 @@
 
 double Colleralation::Threshold = 0.2;
 
-	int Colleralation::GetCorrelationScore(bool ** seriesA, bool ** seriesB, int n, int Order)
+	int Colleralation::GetCorrelationScore(bool  **seriesA, bool **seriesB, int n, int Order)
 	{
 		int correlationScore = 0;
 
@@ -37,7 +37,7 @@ double Colleralation::Threshold = 0.2;
 		return correlationScore;
 	}
 
-	int Colleralation::GetCorrelationScore(int ** seriesA, int ** seriesB, int n, int Order)
+	int Colleralation::GetCorrelationScore(int **seriesA, int **seriesB, int n, int Order)
 	{
 		int correlationScore = 0;
 
@@ -72,8 +72,8 @@ double Colleralation::Threshold = 0.2;
 
 	bool Colleralation::areEqual(double value1, double value2, double allowedVariance)
 	{
-		//auto lowValue1 = value1 - allowedVariance;
-		//auto highValue1 = value1 + allowedVariance;
+		auto lowValue1 = value1 - allowedVariance;
+		auto highValue1 = value1 + allowedVariance;
 
 		return (lowValue1 < value2 && highValue1 > value2);
 	}

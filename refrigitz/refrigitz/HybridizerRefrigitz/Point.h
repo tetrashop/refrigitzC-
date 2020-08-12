@@ -1,9 +1,10 @@
 ﻿#pragma once
-#include "stdafx.h"
+
 //
 //www.IranProject.Ir
 //
-
+namespace RefrigtzChessPortable
+{
 	class Point
 	{
 	public:
@@ -15,4 +16,4 @@
 	private:
 		void InitializeInstanceFields();
 	};
-
+}

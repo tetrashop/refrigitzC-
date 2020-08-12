@@ -482,7 +482,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		}
 		catch (std::exception &t)
 		{
-			Log(t);
+			
 		}
 		return Hit;
 	}
@@ -534,7 +534,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		}
 
 	}
-
+	/*
 	int **HybridizerRefrigitzGeneticAlgorithm::GenerateTable(std::vector<int**> &List, int Index, int Order)
 	{
 		*GeneticTable = new int[8]; for (int b = 0; b < 8; b++)GeneticTable[b] = new int[8];
@@ -555,7 +555,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		}
 		catch (IndexOutOfRangeException t)
 		{
-			Log(t);
+			
 			return nullptr;
 		}
 
@@ -675,7 +675,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		catch (NullReferenceException t)
 		{
 			//Try Catch Expetion Handling of Not Successful Foundation of Gen.
-			Log(t);
+			
 			if (Order == 1)
 			{
 				Ki = (new Random())->Next(1, 7);
@@ -795,7 +795,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 
 
 	}
-
+*/
 	void HybridizerRefrigitzGeneticAlgorithm::InitializeInstanceFields()
 	{
 		Hit = false;

@@ -1,4 +1,8 @@
-﻿#include "ChessForm.h"
+﻿#include <string>
+#include <vector>
+#include <cmath>
+#include <stdexcept>
+#include "ChessForm.h"
 #include "ThinkingHybridizerRefrigitz.h"
 #include "Stone.h"
 #include "ChessRules.h"
@@ -6,13 +10,12 @@
 int HybridizerRefrigitzForm::MovmentsNumber = 0;
 std::wstring HybridizerRefrigitzForm::Root ;
 std::wstring HybridizerRefrigitzForm::AllDrawKindString ;
-int **HybridizerRefrigitzForm::Table = nullptr;
+int **HybridizerRefrigitzForm::Table;
 
-	HybridizerRefrigitzForm::HybridizerRefrigitzForm() : path3(L"temp")
+	HybridizerRefrigitzForm::HybridizerRefrigitzForm() 
 	{
 
-		 InitializeInstanceFields();
-		 Init2();
+			 Init2();
 	}
 
 	void HybridizerRefrigitzForm::Initiate(int a, int Order)
@@ -22,9 +25,9 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 		////lock (O)
 		{
 			int LeafAStarGrteedy = 0;
-			AllDraw THIS = Draw->AStarGreedyStringNode;
-			Table = Draw->Initiate(1, 4, a, CloneATable(brd->GetTable()), Order, false, FOUND, LeafAStarGrteedy);
-			//Draw->AStarGreedyStringNode = *this;
+			AllDraw THIS =Draw.AStarGreedyStringNode;
+			Table =Draw.Initiate(1, 4, a, CloneATable(brd->GetTable()), Order, false, FOUND, LeafAStarGrteedy);
+			//Draw.AStarGreedyStringNode = *this;
 		}
 	}
 
@@ -45,15 +48,15 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 			Begin4:
 	#pragma warning restore CS0164 // This label has not been referenced
 	//#pragma warning restore CS0164 // This label has not been referenced
-			AllDraw Th = Draw->AStarGreedyStringNode;
-			if (Draw->IsAtLeastAllObjectIsNull())
+			AllDraw Th =Draw.AStarGreedyStringNode;
+			if (Draw.IsAtLeastAllObjectIsNull())
 			{
 				Draw.TableList.clear();
 				Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
-				Draw->SetRowColumn(0);
-				Draw->IsCurrentDraw = true;
+				Draw.SetRowColumn(0,false);
+				Draw.IsCurrentDraw = true;
 			}
-			Draw->AStarGreedyStringNode = Th;
+			Draw.AStarGreedyStringNode = Th;
 			if (AllDraw::OrderPlate == 1)
 			{
 			Initiate(1, 1);
@@ -117,13 +120,13 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 					//Load AllDraw.asd
 					bool LoadTree = true;
 					TakeRoot *y = new TakeRoot();
-					bool DrawDrawen = y->Load(FOUND, false, this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+					bool DrawDrawen = y->Load(FOUND, false, *this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 					if (!DrawDrawen)
 					{
 						Draw = AllDraw(AllDraw::OrderPlate, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 						Draw.TableList.clear();
 						Draw.TableList.push_back(CloneATable(Table));
-						Draw->SetRowColumn(0);
+						Draw.SetRowColumn(0,false);
 						AllDraw::DepthIterative = 0;
 
 						bool Store = Deeperthandeeper;
@@ -141,14 +144,14 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 						bool B = AllDraw::Blitz;
 						AllDraw::Blitz = false;
 
-						if (Draw->IsAtLeastAllObjectIsNull())
+						if (Draw.IsAtLeastAllObjectIsNull())
 						{
 							Draw.TableList.clear();
 							Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 2]));
-							Draw->SetRowColumn(0);
-							Draw->IsCurrentDraw = true;
+							Draw.SetRowColumn(0,false);
+							Draw.IsCurrentDraw = true;
 						}
-						Draw->InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
+						Draw.InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
 
 						AllDraw::Blitz = B;
 						Deeperthandeeper = Store;
@@ -159,7 +162,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 						////lock (i)
 						{
 							 LoadTree = false;
-							//(new TakeRoot())->Save(false, false, this, LoadTree, false, false, false, false, false, false, false, true);
+							//(new TakeRoot())->Save(false, false, *this, LoadTree, false, false, false, false, false, false, false, true);
 						}
 					}
 					else
@@ -230,6 +233,20 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 		}
 	}
 
+	int[][] HybridizerRefrigitzForm::CloneATableD(int** Tab)
+	{
+			int Tabl[8][8];
+			for (int i = 0; i < 8; i++)
+			{
+				for (int j = 0; j < 8; j++)
+				{
+					Tabl[i][j] = Tab[i][j];
+				}
+			}
+
+			return Tabl;
+		
+	}
 	void HybridizerRefrigitzForm::WaitCon()
 	{
 		do
@@ -279,13 +296,13 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 					 AliceAction(AllDraw::OrderPlate);
 
 
-					if (Draw->TableZero(Table))
+					if (Draw.TableZero(Table))
 					{
 						std::cout << std::wstring(L"Board is invalid;") << std::endl;
 						Draw.TableList.clear();
 						Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
-						Draw->SetRowColumn(0);
-						Draw->IsCurrentDraw = true;
+						Draw.SetRowColumn(0,false);
+						Draw.IsCurrentDraw = true;
 						ThinkingHybridizerRefrigitz::NoOfMovableAllObjectMove++;
 						AllDraw::AllowedSupTrue = true;
 
@@ -296,7 +313,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 
 
 
-					AllDraw::TableListAction.push_back(CloneATable(Table));
+					AllDraw::TableListAction.push_back(CloneATableD(Table));
 					R = new HybridizerRefrigitzGeneticAlgorithm(false, false, false, false, false, false, false, true);
 					if (R->FindGenToModified(AllDraw::TableListAction[AllDraw::TableListAction.size() - 2], AllDraw::TableListAction[AllDraw::TableListAction.size() - 1], AllDraw::TableListAction, 0,AllDraw::OrderPlate, true))
 					{
@@ -1112,7 +1129,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 								return 0;
 							}
 							break;
-					}
+					};
 					ThinkingHybridizerRefrigitz::TableInitiationPreventionOfMultipleMove[x1][y1]++;
 					ThinkingHybridizerRefrigitz::TableInitiationPreventionOfMultipleMove[i][j]++;
 
@@ -1196,10 +1213,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 						{
 							lstr = str2 + std::wstring(L" کیش  ") + lstr + std::wstring(L" ") + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To ") + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:") + StringConverterHelper::toString(AllDraw::Less);
 							std::cout << std::wstring(L" کیش توسط") << std::wstring(L" ") << str2 << std::endl;
-							////auto oo = new Object();
-//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-							////lock (oo)
-							{
+							
 								if (Com && (AllDraw::OrderPlate == 1))
 								{
 									MovmentsNumber++;
@@ -1219,17 +1233,17 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 									bool B = AllDraw::Blitz;
 									AllDraw::Blitz = false;
 
-									AllDraw thiB = Draw->AStarGreedyStringNode;
-									if (Draw->IsAtLeastAllObjectIsNull())
+									AllDraw thiB =Draw.AStarGreedyStringNode;
+									if (Draw.IsAtLeastAllObjectIsNull())
 									{
 										Draw.TableList.clear();
 										Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
-										Draw->SetRowColumn(0);
-										Draw->IsCurrentDraw = true;
+										Draw.SetRowColumn(0,false);
+										Draw.IsCurrentDraw = true;
 									}
-									Draw->AStarGreedyStringNode = thiB;
+									Draw.AStarGreedyStringNode = thiB;
 
-									Draw->InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
+									Draw.InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
 
 									AllDraw::Blitz = B;
 
@@ -1270,17 +1284,17 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 									bool B = AllDraw::Blitz;
 									AllDraw::Blitz = false;
 
-									AllDraw thiB = Draw->AStarGreedyStringNode;
-									if (Draw->IsAtLeastAllObjectIsNull())
+									AllDraw thiB =Draw.AStarGreedyStringNode;
+									if (Draw.IsAtLeastAllObjectIsNull())
 									{
 										Draw.TableList.clear();
 										Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
-										Draw->SetRowColumn(0);
-										Draw->IsCurrentDraw = true;
+										Draw.SetRowColumn(0,false);
+										Draw.IsCurrentDraw = true;
 									}
-									Draw->AStarGreedyStringNode = thiB;
+									Draw.AStarGreedyStringNode = thiB;
 
-									Draw->InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
+									Draw.InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
 
 
 
@@ -1305,17 +1319,14 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 
 						  }
 								}
-							}
+							
 						}
 					}
 					else
 					{
 						lstr = str2 + std::wstring(L" ") + lstr + std::wstring(L" ") + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To ") + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:") + StringConverterHelper::toString(AllDraw::Less);
 					}
-					////auto oi = new Object();
-//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-					////lock (oi)
-					{
+					
 						if (Com && (AllDraw::OrderPlate == 1))
 						{
 							MovmentsNumber++;
@@ -1336,17 +1347,17 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 							bool B = AllDraw::Blitz;
 							AllDraw::Blitz = false;
 
-							AllDraw thiB = Draw->AStarGreedyStringNode;
-							if (Draw->IsAtLeastAllObjectIsNull())
+							AllDraw thiB =Draw.AStarGreedyStringNode;
+							if (Draw.IsAtLeastAllObjectIsNull())
 							{
 								Draw.TableList.clear();
 								Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
-								Draw->SetRowColumn(0);
-								Draw->IsCurrentDraw = true;
+								Draw.SetRowColumn(0,false);
+								Draw.IsCurrentDraw = true;
 							}
-							Draw->AStarGreedyStringNode = thiB;
+							Draw.AStarGreedyStringNode = thiB;
 
-							Draw->InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
+							Draw.InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
 
 
 
@@ -1387,17 +1398,17 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 							bool B = AllDraw::Blitz;
 							AllDraw::Blitz = false;
 
-							AllDraw thiB = Draw->AStarGreedyStringNode;
-							if (Draw->IsAtLeastAllObjectIsNull())
+							AllDraw thiB =Draw.AStarGreedyStringNode;
+							if (Draw.IsAtLeastAllObjectIsNull())
 							{
 								Draw.TableList.clear();
 								Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
-								Draw->SetRowColumn(0);
-								Draw->IsCurrentDraw = true;
+								Draw.SetRowColumn(0,false);
+								Draw.IsCurrentDraw = true;
 							}
-							Draw->AStarGreedyStringNode = thiB;
+							Draw.AStarGreedyStringNode = thiB;
 
-							Draw->InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
+							Draw.InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
 
 
 
@@ -1416,13 +1427,13 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 
 						  }
 						}
-					}
+					
 					return 1;
 				}
 			}
 			catch (std::exception &t)
 			{
-				Log(t);
+				
 			}
 			return 0;
 		}
@@ -1456,15 +1467,15 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 		  {
 			  if (Draw != nullptr)
 			  {
-				  while (Draw->AStarGreedyStringNode != nullptr)
+				  while (Draw.AStarGreedyStringNode != nullptr)
 				  {
-					  Draw = Draw->AStarGreedyStringNode;
+					  Draw =Draw.AStarGreedyStringNode;
 				  }
 			  }
 		  }
 		  catch (std::exception &t)
 		  {
-			  Log(t);
+			  
 		  }
 		  return Draw;
 	  }
@@ -1479,8 +1490,8 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 		            return;
 		        int Dummy = AllDraw.OrderPlate;
 	
-		        HybridizerRefrigitz.AllDraw THISB = Draw.AStarGreedyStringNode;
-		        HybridizerRefrigitz.AllDraw THISStore = Draw;
+		        HybridizerRefrigitz.AllDraw THISB = new Draw.AStarGreedyStringNode;
+		        HybridizerRefrigitz.AllDraw THISStore = new Draw;
 		        //while (Draw.AStarGreedyStringNode != null)
 		        bool FOUND = false;
 		        HybridizerRefrigitz.AllDraw THIS = null;
@@ -1511,7 +1522,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 		                bool LoadTree = true;
 		                Ord = AllDraw.OrderPlate;
 		                //if (MovmentsNumber > 1)
-		                (new TakeRoot()).Save(FOUND, false, this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		                (new TakeRoot()).Save(FOUND, false, *this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 	
 		                Draw.IsCurrentDraw = true;
 	
@@ -1523,7 +1534,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 	
 		                a = int.BLACK;
 		                while (Draw.AStarGreedyStringNode != null)
-		                    Draw = Draw.AStarGreedyStringNode;
+		                    Draw = new Draw.AStarGreedyStringNode;
 	
 		                bool FirstS = false;
 		                if ((HybridizerRefrigitz.AllDraw.TableListAction.Count > 2))
@@ -1572,12 +1583,12 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 		                    if (!FirstS)
 		                    {
 	
-		                        AllDraw thiB = Draw.AStarGreedyStringNode;
+		                        AllDraw thiB = new Draw.AStarGreedyStringNode;
 		                        if (Draw.IsAtLeastAllObjectIsNull())
 		                        {
 		                            Draw.TableList.Clear();
 		                            Draw.TableList.Add(CloneATable(HybridizerRefrigitz.AllDraw.TableListAction[HybridizerRefrigitz.AllDraw.TableListAction.Count - 2]);
-		                            Draw->SetRowColumn(0);
+		                           Draw.SetRowColumn(0,false);
 		                            Draw.IsCurrentDraw = true;
 		                        }
 		                        Draw.AStarGreedyStringNode = thiB;
@@ -1591,12 +1602,12 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 		                    {
 		                        FOUND = false;
 	
-		                        AllDraw thiB = Draw.AStarGreedyStringNode;
+		                        AllDraw thiB = new Draw.AStarGreedyStringNode;
 		                        if (Draw.IsAtLeastAllObjectIsNull())
 		                        {
 		                            Draw.TableList.Clear();
 		                            Draw.TableList.Add(CloneATable(HybridizerRefrigitz.AllDraw.TableListAction[HybridizerRefrigitz.AllDraw.TableListAction.Count - 1]);
-		                            Draw->SetRowColumn(0);
+		                           Draw.SetRowColumn(0,false);
 		                            Draw.IsCurrentDraw = true;
 		                        }
 		                        Draw.AStarGreedyStringNode = thiB;
@@ -1630,7 +1641,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 	
 	
 		                        bool LoadTree = true;
-		                        (new TakeRoot()).Save(FOUND, false, this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		                        (new TakeRoot()).Save(FOUND, false, *this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 		                        AllDraw.OrderPlate = Ord;
 	
 	
@@ -1647,12 +1658,12 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 	
 		                        Draw.TableList.Clear();
 		                        Draw.TableList.Add(CloneATable(Table));
-		                        Draw->SetRowColumn(0);
+		                       Draw.SetRowColumn(0,false);
 		                        Draw.IsCurrentDraw = true;
 		                        Draw.AStarGreedyStringNode = THISB;
 		                        HybridizerRefrigitz.ChessRules.CurrentOrder = AllDraw.OrderPlate;
 		                        HybridizerRefrigitz.AllDraw.DepthIterative = 0;
-		                        (new TakeRoot()).Save(FOUND, false, this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		                        (new TakeRoot()).Save(FOUND, false, *this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 	
 	
 		                    }
@@ -1669,12 +1680,12 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 	
 		                    Draw.TableList.Clear();
 		                    Draw.TableList.Add(CloneATable(Table));
-		                    Draw->SetRowColumn(0);
+		                   Draw.SetRowColumn(0,false);
 		                    Draw.IsCurrentDraw = true;
 		                    Draw.AStarGreedyStringNode = THISB;
 		                    HybridizerRefrigitz.ChessRules.CurrentOrder = AllDraw.OrderPlate;
 		                    HybridizerRefrigitz.AllDraw.DepthIterative = 0;
-		                    (new TakeRoot()).Save(FOUND, false, this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		                    (new TakeRoot()).Save(FOUND, false, *this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 	
 	
 		                }
@@ -1700,8 +1711,8 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 			}
 			int Dummy = AllDraw::OrderPlate;
 
-			AllDraw THISB = Draw->AStarGreedyStringNode;
-			AllDraw THISStore = Draw;
+			AllDraw THISB =Draw.AStarGreedyStringNode;
+			AllDraw THISStore = new Draw;
 			//while (Draw.AStarGreedyStringNode != null)
 			bool FOUND = false;
 			AllDraw THIS = nullptr;
@@ -1722,7 +1733,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 				//else
 				int Ord = AllDraw::OrderPlate;
 				AllDraw::OrderPlate = Ord;
-				 Draw->FoundOfCurrentTableNode(CloneATable(Table), Ord, THIS, FOUND);
+				Draw.FoundOfCurrentTableNode(CloneATable(Table), Ord, THIS, FOUND);
 
 
 				if (FOUND)
@@ -1734,9 +1745,9 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 					bool LoadTree = true;
 					Ord = AllDraw::OrderPlate;
 					//if (MovmentsNumber > 1)
-					//(new TakeRoot())->Save(FOUND, false, this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+					//(new TakeRoot())->Save(FOUND, false, *this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 
-					Draw->IsCurrentDraw = true;
+					Draw.IsCurrentDraw = true;
 
 
 				}
@@ -1755,18 +1766,18 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 					AllDraw::Blitz = false;
 				   FOUND = false;
 
-					AllDraw thiB = Draw->AStarGreedyStringNode;
-					if (Draw->IsAtLeastAllObjectIsNull())
+					AllDraw thiB =Draw.AStarGreedyStringNode;
+					if (Draw.IsAtLeastAllObjectIsNull())
 					{
 						Draw.TableList.clear();
 						Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
-						Draw->SetRowColumn(0);
-						Draw->IsCurrentDraw = true;
+						Draw.SetRowColumn(0,false);
+						Draw.IsCurrentDraw = true;
 					}
-					Draw->AStarGreedyStringNode = thiB;
+					Draw.AStarGreedyStringNode = thiB;
 
 
-					Draw->InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
+					Draw.InitiateAStarGreedyt(AllDraw::MaxAStarGreedy, 0, 0, aa, CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, false, FOUND, 0);
 
 
 					AllDraw::Blitz = B;
@@ -1776,7 +1787,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 					FOUND = false;
 
 
-					Draw->FoundOfCurrentTableNode(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, THIS, FOUND);
+					Draw.FoundOfCurrentTableNode(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]), Ord, THIS, FOUND);
 
 
 
@@ -1789,7 +1800,7 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 
 
 						bool LoadTree = true;
-						//(new TakeRoot())->Save(FOUND, false, this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+						//(new TakeRoot())->Save(FOUND, false, *this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 						AllDraw::OrderPlate = Ord;
 
 
@@ -1808,12 +1819,12 @@ int **HybridizerRefrigitzForm::Table = nullptr;
 
 						Draw.TableList.clear();
 						Draw.TableList.push_back(CloneATable(Table));
-						Draw->SetRowColumn(0);
-						Draw->IsCurrentDraw = true;
-						Draw->AStarGreedyStringNode = THISB;
+						Draw.SetRowColumn(0,false);
+						Draw.IsCurrentDraw = true;
+						Draw.AStarGreedyStringNode = THISB;
 						ChessRules::CurrentOrder = AllDraw::OrderPlate;
 						AllDraw::DepthIterative = 0;
-						//(new TakeRoot())->Save(FOUND, false, this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+						//(new TakeRoot())->Save(FOUND, false, *this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 
 
 					}

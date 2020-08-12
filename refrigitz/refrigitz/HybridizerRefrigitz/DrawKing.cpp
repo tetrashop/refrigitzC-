@@ -226,7 +226,7 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 			}
 			catch (std::exception &t)
 			{
-				Log(t);
+				
 			}
 
 		}
