@@ -77,7 +77,7 @@
 	private:
 		bool HitSet(int Order, int **Cromosom1, int **Cromosom2);
 		int **CloneATable(int** Tab);
-		bool **CloneATableB(bool** Tab);
+		bool **CloneATableb(bool** Tab);
 		//Table Foundation of Genetic Alogorithm Method.
 	public:
 		int **GenerateTable(std::vector<int**> &List, int Index, int Order);

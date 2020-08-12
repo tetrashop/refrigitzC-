@@ -314,33 +314,33 @@ inline void Tablebases::init(const std::string& path)
     DTZ_table[i].entry = NULL;
 
   for (i = 1; i < 6; i++) {
-    sprintf_s(str, "K%cvK", pchr[i]);
+    sprintf(str, "K%cvK", pchr[i]);
     init_tb(str);
   }
 
   for (i = 1; i < 6; i++)
     for (j = i; j < 6; j++) {
-      sprintf_s(str, "K%cvK%c", pchr[i], pchr[j]);
+      sprintf(str, "K%cvK%c", pchr[i], pchr[j]);
       init_tb(str);
     }
 
   for (i = 1; i < 6; i++)
     for (j = i; j < 6; j++) {
-      sprintf_s(str, "K%c%cvK", pchr[i], pchr[j]);
+      sprintf(str, "K%c%cvK", pchr[i], pchr[j]);
       init_tb(str);
     }
 
   for (i = 1; i < 6; i++)
     for (j = i; j < 6; j++)
       for (k = 1; k < 6; k++) {
-        sprintf_s(str, "K%c%cvK%c", pchr[i], pchr[j], pchr[k]);
+        sprintf(str, "K%c%cvK%c", pchr[i], pchr[j], pchr[k]);
         init_tb(str);
       }
 
   for (i = 1; i < 6; i++)
     for (j = i; j < 6; j++)
       for (k = j; k < 6; k++) {
-        sprintf_s(str, "K%c%c%cvK", pchr[i], pchr[j], pchr[k]);
+        sprintf(str, "K%c%c%cvK", pchr[i], pchr[j], pchr[k]);
         init_tb(str);
       }
 
@@ -348,7 +348,7 @@ inline void Tablebases::init(const std::string& path)
     for (j = i; j < 6; j++)
       for (k = i; k < 6; k++)
         for (l = (i == k) ? j : k; l < 6; l++) {
-          sprintf_s(str, "K%c%cvK%c%c", pchr[i], pchr[j], pchr[k], pchr[l]);
+          sprintf(str, "K%c%cvK%c%c", pchr[i], pchr[j], pchr[k], pchr[l]);
           init_tb(str);
         }
 
@@ -356,7 +356,7 @@ inline void Tablebases::init(const std::string& path)
     for (j = i; j < 6; j++)
       for (k = j; k < 6; k++)
         for (l = 1; l < 6; l++) {
-          sprintf_s(str, "K%c%c%cvK%c", pchr[i], pchr[j], pchr[k], pchr[l]);
+          sprintf(str, "K%c%c%cvK%c", pchr[i], pchr[j], pchr[k], pchr[l]);
           init_tb(str);
         }
 
@@ -364,7 +364,7 @@ inline void Tablebases::init(const std::string& path)
     for (j = i; j < 6; j++)
       for (k = j; k < 6; k++)
         for (l = k; l < 6; l++) {
-          sprintf_s(str, "K%c%c%c%cvK", pchr[i], pchr[j], pchr[k], pchr[l]);
+          sprintf(str, "K%c%c%c%cvK", pchr[i], pchr[j], pchr[k], pchr[l]);
           init_tb(str);
         }
 

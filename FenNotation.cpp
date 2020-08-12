@@ -13,7 +13,7 @@
 	  }
 	  else
 	  {
-		//th[So2]. std::exception("Specify: 'w' or 'b'");
+		//th[So2]. std::exception(L"Specify: 'w' or 'b'");
 	  }
 	}
 
@@ -57,12 +57,12 @@
 		coBQCastle = value;
 	}
 
-	const std::string &FenNotation::getEnpassant() const
+	const std::wstring &FenNotation::getEnpassant() const
 	{
 		return coEnPassant;
 	}
 
-	void FenNotation::setEnpassant(const std::string &value)
+	void FenNotation::setEnpassant(const std::wstring &value)
 	{
 		coEnPassant = value;
 	}
@@ -95,18 +95,18 @@
 //C# TO C++ CONVERTER TODO TASK: You cannot specify separate 'set' logic for indexers in native C++:
 //	void FenNotation::setdefault(const int &ndx, wchar_t value)
 //	{
-//	  std::string str = "KQRBNPkqrbnp";
+//	  std::wstring str = "KQRBNPkqrbnp";
 //	  if(str.IndexOf(value) >= 0)
 //	  {
 //		coBoard.coBoard[ndx] = value;
 //	  }
 //	  else
 //	  {
-//		//th[So2]. std::exception(std::string("Invalid piece value (") + value + std::string(") use one of: ") + str);
+//		//th[So2]. std::exception(std::wstring("Invalid piece value (") + value + std::wstring(") use one of: ") + str);
 //	  }
 //	}
 
-	FenNotation::FenNotation(const std::string &str)
+	FenNotation::FenNotation(const std::wstring &str)
 	{
 	  InitializeInstanceFields();
 	  *coBoard.coBoard = new wchar_t(64);
@@ -128,7 +128,7 @@
 	{
 	  coBoard.Length = 0;
 	  coBoard.Append(coBoard.coBoard,L' ', 64);
-	  coEnPassant = "-";
+	  coEnPassant = L"-";
 	  coActiveColor = L'w';
 	  coWKCastle = true;
 	  coWQCastle = true;
@@ -138,7 +138,7 @@
 	  coFullMove = 0;
 	}
 
-/*	std::string FenNotation::ToString()
+/*	std::wstring FenNotation::ToString()
 	{
 	  WCharC *note = new WCharC();
 	  int count = 0;
@@ -206,7 +206,7 @@
 	  return note->ToString();
 	}
 	*/
-	void FenNotation::parse(const std::string &str)
+	void FenNotation::parse(const std::wstring &str)
 	{
 		// Clear all current settings.
 		clear();
@@ -227,7 +227,7 @@
 
 		if (row->Length != 8)
 		{
-			//throw ArgumentException(std::string("Invalid board specification, ") + row->Length + std::string(" ranks are defined, there should be 8."));
+			//throw ArgumentException(std::wstring(L"Invalid board specification, ") + row->Length + std::wstring(L" ranks are defined, there should be 8."));
 		}
 
 		for (int i=0;i<row->Length;i++)
@@ -246,10 +246,10 @@
 					{
 						if (cnt > 7) //This check needed here to avoid overrunning index below under some error conditions.
 						{
-							//throw ArgumentException(std::string("Invalid board specification, rank ") + (ndx / 8 + 1) + std::string(" has more then 8 items specified."));
+							//throw ArgumentException(std::wstring(L"Invalid board specification, rank ") + (ndx / 8 + 1) + std::wstring(L" has more then 8 items specified."));
 						}
-						EventPlacePiece(Chess::pieceFromFEN(achar), ndx + cnt);
-						this->operator*(ndx + cnt) = &achar;
+						//EventPlacePiece(Chess::pieceFromFEN(achar), ndx + cnt);
+						this->operator*(ndx + cnt) = achar;
 					}
 					cnt++;
 				}
@@ -262,7 +262,7 @@
 
 			if (cnt != 8)
 			{
-				//throw ArgumentException(std::string("Invalid board specification, rank ") + (ndx / 8 + 1) + std::string(" has ") + cnt + std::string(" items specified, there should be 8."));
+				//throw ArgumentException(std::wstring(L"Invalid board specification, rank ") + (ndx / 8 + 1) + std::wstring(L" has ") + cnt + std::wstring(L" items specified, there should be 8."));
 			}
 
 			ndx -= 8;
@@ -281,12 +281,12 @@
 				}
 				else
 				{
-					//throw ArgumentException("Invalid color designation, use w or b as 2nd field separated by spaces.");
+					//throw ArgumentException(L"Invalid color designation, use w or b as 2nd field separated by spaces.");
 				}
 
 				if (note->coBoard[1]->getlenght() != 1)
 				{
-					//throw ArgumentException(std::string("Invalid color designation, 2nd field is ") + note[1].length() + std::string(" chars long, only 1 allowed."));
+					//throw ArgumentException(std::wstring(L"Invalid color designation, 2nd field is ") + note[1].length() + std::wstring(L" chars long, only 1 allowed."));
 				}
 			}
 		}
@@ -319,7 +319,7 @@
 					case L'-':
 						break;
 					default:
-						//throw std::exception("Invalid castle privileges designation, use: KQkq or -");
+						//throw std::exception(L"Invalid castle privileges designation, use: KQkq or -");
 				}
 			}
 		}
@@ -357,7 +357,7 @@
 
 	void FenNotation::InitializeInstanceFields()
 	{
-		move = "";
+		move = L"";
 		WK = false;
 		WQ = false;
 		BK = false;

@@ -49,7 +49,7 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 		for (int  ii = 0; ii < AllDraw::HourseMovments; ii++)
 
 		{
-			a += HourseThinking->ReturnHeuristic(-1, -1, Order, false,HaveKilled);
+			a += HourseThinking.ReturnHeuristic(-1, -1, Order, false,HaveKilled);
 		}
 
 		return a;
@@ -81,7 +81,7 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 				}
 			}
 			
-				HourseThinking = new ThinkingHybridizerRefrigitz(0,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 8, Ord, TB, Cur, 4, 3);
+				HourseThinking = ThinkingHybridizerRefrigitz(0,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 8, Ord, TB, Cur, 4, 3);
 		
 			Row = i;
 			Column = j;
@@ -157,8 +157,8 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 		for (int  i = 0; i < AllDraw::HourseMovments; i++)
 		{
 
-			AA->HourseThinking = new ThinkingHybridizerRefrigitz(i,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->HourseThinking->Clone(AA->HourseThinking);
+			AA->HourseThinking = ThinkingHybridizerRefrigitz(i,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			this->HourseThinking.Clone(AA->HourseThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
@@ -225,7 +225,7 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 
 	void DrawHourse::InitializeInstanceFields()
 	{
-		//Space = new std::string("&nbsp;");
+		//Space = new std::string(L"&nbsp;");
 		Spaces = 0;
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];

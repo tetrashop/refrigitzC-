@@ -85,13 +85,12 @@
 		int CurrentAStarGredyMax;
 		static void Log(std::exception &ex);
 	public:
-		ChessRules();
 		ChessRules(int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool ArrangmentsChanged, int oRDER);
 		ChessRules(int CurrentAStarGredy, int oRDER, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool ArrangmentsChanged);
 		//Constructor 
 		ChessRules(int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool ArrangmentsChanged, int Ki, int **A, int Ord, int i, int j);
 		//Initiate of Rules of HybridizerRefrigitz Refregitz.
-		bool Rules(int RowFirst, int ColumnFirst, int RowSecond, int ColumnSecond, int color, int Ki, bool SelfHomeStatCP = true);
+		bool Rules(int RowFirst, int ColumnFirst, int RowSecond, int ColumnSecond, int color, int Ki, bool SelfHomeStatCP);
 		//Castle King Movment Consideration.
 		bool CastleKing(int RowFirst, int ColumnFirst, int RowSecond, int ColumnSecond, bool NotMoved, int color, int Ki);
 		//Simulation and Consdtruction of Check.
@@ -112,12 +111,12 @@
 		bool FindWHITEKing(int** Table, int &Row, int &Column);
 		//Alpahber Object Consideration.
 	private:
-		static std::string ThingsAlphabet(int i);
+		static std::wstring ThingsAlphabet(int i);
 		//[So2]. Alphabet Consideration.
-		static std::string RowAlphabet(int i);
+		static std::wstring RowAlphabet(int i);
 		//Create Syntax of Movments.
 	public:
-		std::string CreateStatistic(bool Arrange, int** Tab, int Movments, int SourceThings, int Column, int Row, bool Hit, int HitThings, bool CastleKing, bool SodierConvert);
+		std::wstring CreateStatistic(bool Arrange, int** Tab, int Movments, int SourceThings, int Column, int Row, bool Hit, int HitThings, bool CastleKing, bool SodierConvert);
 		//Consideration of Existing Table in List.
 	private:
 		bool ArrayInList(std::vector<int*>& List, int * A);

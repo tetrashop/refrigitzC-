@@ -43,22 +43,27 @@ void WCharC::Append(wchar_t **src, wchar_t dst)
 void WCharC::Append(wchar_t **src, wchar_t dst, int len)
 {
 	//int lensrc = getlenght(src);
-	for (int h = 0; h < 64; h++)
+	*src = new wchar_t[64];
+
+	for (int i = 0; i < 64; i++) {
+		src[i] = new wchar_t[64];
+		for (int h = 0; h < 64; h++)
 		{
-			*src[Length, h] = dst;
+			*src[i, h] = dst;
 		}
+	}
 	return;
 }
-void WCharC::Append(wchar_t **src, std::string dst)
+void WCharC::Append(wchar_t **src, std::wstring dst)
 {
 	//int lensrc = getlenght(src);
 	*src = new wchar_t[64];
 
 	for (int i = 0; i < 64; i++) {
 		src[i] = new wchar_t[64];
-		for (int h = 0; h < (int)dst.length; h++)
+		for (int h = 0; h < dst.length; h++)
 		{
-			*src[i, h] << ((dst.c_str()[h])) ;
+			*src[i, h] = *((dst.c_str()[h])) ;
 		}
 	}
 	return;

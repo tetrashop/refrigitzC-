@@ -11,7 +11,7 @@
                  \\|//
                  (o o)
 --------------ooO-(_)-Ooo--------------
- Copyright 2004 By Gregory A-> Prentice
+ Copyright 2004 By Gregory A. Prentice
                       Ooo.
 --------------.ooO----(  )-------------
               (  )    (_/
@@ -32,7 +32,7 @@ www.cafechess.org
   class FenNotation 
   {
 	public:
-		std::string move;
+		std::wstring move;
 		bool WK;
 		bool WQ;
 		bool BK;
@@ -112,10 +112,10 @@ private:
 	/// Algebraic square for enpassant captures or '-'.
 	/// </summary>
 public:
-  const std::string &getEnpassant() const;
-  void setEnpassant(const std::string &value);
+  const std::wstring &getEnpassant() const;
+  void setEnpassant(const std::wstring &value);
 private:
-	std::string coEnPassant;
+	std::wstring coEnPassant;
 
 	/// <summary>
 	/// Number of half moves to determine the 50 move rule.
@@ -150,7 +150,7 @@ public:
 	/// Constructs a class by parsing a FEN notation string.
 	/// </summary>
 	/// <param name="str">A valid FEN notation data string</param>
-	FenNotation(const std::string &str);
+	FenNotation(const std::wstring &str);
 
 	/// <summary>
 	/// Constructs a default FEN notation object with the board cleared,
@@ -168,13 +168,13 @@ public:
 	/// Creates our FEN notation string.
 	/// </summary>
 	/// <returns>FEN notation</returns>
-	/*virtual std::string ToString() override;
+	/*virtual std::wstring ToString() override;
 		/// <summary>
 		/// Parses our FEN notation into our class.
 		/// For example: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 		/// </summary>
 		/// <param name="str"></param>*/
-		void parse(const std::string &str);
+		void parse(const std::wstring &str);
 	/*void addEvents(IPositionEvents *ievents);
 	void removeEvents(IPositionEvents *ievents);
 	*/

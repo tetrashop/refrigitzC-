@@ -261,7 +261,7 @@ Position& Position::set(const string& fenStr, bool isChess960, StateInfo* si, Th
 
   assert(pos_is_ok());
 
-  return this;
+  return *this;
 }
 
 

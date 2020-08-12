@@ -3,7 +3,7 @@
 
 
 
-	IsNextEnemyMovementForCheckedMate::IsNextEnemyMovementForCheckedMate(int Order, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int ** Tab) : AllDraw(Order, MovementsAStarGreedyHeuristicTFou, IgnoreSelfObject, UsePenaltyRegardMechnisa, BestMovment, PredictHurist, OnlySel, AStarGreedyHuris, Arrangments)
+	IsNextEnemyMovementForCheckedMate::IsNextEnemyMovementForCheckedMate(int Order, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int Tab[][]) : AllDraw(Order, MovementsAStarGreedyHeuristicTFou, IgnoreSelfObject, UsePenaltyRegardMechnisa, BestMovment, PredictHurist, OnlySel, AStarGreedyHuris, Arrangments)
 	{
 		//long Time = TimeElapced.TimeNow();Spaces++;
 		InitializeInstanceFields();
@@ -17,7 +17,7 @@
 		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("IsNextEnemyMovementForCheckedMate:" + (TimeElapced.TimeNow() - Time).ToString());}Spaces--;
 	}
 
-	IsNextEnemyMovementForCheckedMate::IsNextEnemyMovementForCheckedMate(int Order, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, AllDraw *Thi, int ** Tab) : AllDraw(Order, MovementsAStarGreedyHeuristicTFou, IgnoreSelfObject, UsePenaltyRegardMechnisa, BestMovment, PredictHurist, OnlySel, AStarGreedyHuris, Arrangments, THi)
+	IsNextEnemyMovementForCheckedMate::IsNextEnemyMovementForCheckedMate(int Order, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, AllDraw THi, int Tab[][]) : AllDraw(Order, MovementsAStarGreedyHeuristicTFou, IgnoreSelfObject, UsePenaltyRegardMechnisa, BestMovment, PredictHurist, OnlySel, AStarGreedyHuris, Arrangments, THi)
 	{
 		//long Time = TimeElapced.TimeNow();Spaces++;
 		InitializeInstanceFields();
@@ -41,7 +41,7 @@
 			a = Color::Brown;
 		}
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-		std::string A1 = AllDraw::ActionString->ToString();
+		std::wstring A1 = AllDraw::ActionString->ToString();
 		bool A2 = AllDraw::ActionStringReady;
 		bool A3 = AllDraw::AStarGreadyFirstSearch;
 		int A4 = AllDraw::AStarGreedyiLevelMax;
@@ -58,8 +58,8 @@
 		bool A15 = AllDraw::EndOfGame;
 		bool A16 = AllDraw::FoundATable;
 		int A17 = AllDraw::HourseMovments;
-		std::string A18 = AllDraw::ImageRoot;
-		std::string A19 = AllDraw::ImagesSubRoot;
+		std::wstring A18 = AllDraw::ImageRoot;
+		std::wstring A19 = AllDraw::ImagesSubRoot;
 		int A20 = AllDraw::increasedProgress;
 		int A21 = AllDraw::KingMovments;
 		int A22 = AllDraw::LastColumn;
@@ -77,11 +77,11 @@
 		bool A34 = AllDraw::NoTableFound;
 		int A35 = AllDraw::OrderPlate;
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-		std::string A36 = AllDraw::OutPut->ToString();
+		std::wstring A36 = AllDraw::OutPut->ToString();
 		bool A37 = AllDraw::Person;
 		bool A38 = AllDraw::RedrawTable;
 		bool A39 = AllDraw::RegardOccurred;
-		std::string A40 = AllDraw::Root;
+		std::wstring A40 = AllDraw::Root;
 		int A41 = AllDraw::SignAttack;
 		int A42 = AllDraw::SignDistance;
 		int A43 = AllDraw::SignKiller;
@@ -98,25 +98,25 @@
 		std::vector<AllDraw> A54 = std::vector<AllDraw>();
 		for (var i = 0; i < AllDraw::StoreADraw.size(); i++)
 		{
-			A54.push_back(new AllDraw::StoreADraw[i]);
+			A54.push_back(AllDraw::StoreADraw[i]);
 		}
 		std::vector<int> A55 = std::vector<int>();
-		for (var i = 0; i < AllDraw::StoreADrawDeep.size(); i++)
+		for (var i = 0; i < AllDraw::StoreADrawAStarGreedy.size(); i++)
 		{
-			A55.push_back(new AllDraw::StoreADrawDeep[i]);
+			A55.push_back(AllDraw::StoreADrawAStarGreedy[i]);
 		}
 		int A56 = AllDraw::SuppportCountStaticBrown;
 		int A57 = AllDraw::SuppportCountStaticGray;
-		std::string A58 = AllDraw::SyntaxToWrite;
-		std::vector<int**> A59 = std::vector<int**>();
+		std::wstring A58 = AllDraw::SyntaxToWrite;
+		std::vector<int[][]> A59 = std::vector<int[][]>();
 		for (var i = 0; i < AllDraw::TableCurrent.size(); i++)
 		{
-			A59.push_back(new AllDraw::TableCurrent[i]);
+			A59.push_back(AllDraw::TableCurrent[i]);
 		}
-		std::vector<int**> A60 = std::vector<int**>();
+		std::vector<int[][]> A60 = std::vector<int[][]>();
 		for (var i = 0; i < AllDraw::TableListAction.size(); i++)
 		{
-			A60.push_back(new AllDraw::TableListAction[i]);
+			A60.push_back(AllDraw::TableListAction[i]);
 		}
 		int A61[8][8];
 		for (var i = 0; i < 8; i++)
@@ -136,7 +136,7 @@
 		}
 		int A63 = AllDraw::TaskBegin;
 		int A64 = AllDraw::TaskEnd;
-		std::string A65 = AllDraw::THIScomboBoxMaxLevelText;
+		std::wstring A65 = AllDraw::THIScomboBoxMaxLevelText;
 		AllDraw A66 = nullptr;
 		if (AllDraw::THISDummy != nullptr)
 		{
@@ -145,7 +145,7 @@
 		bool A67 = AllDraw::THISSecradioButtonBrownOrderChecked;
 		bool A68 = AllDraw::THISSecradioButtonGrayOrderChecked;
 		bool A69 = AllDraw::UseDoubleTime;
-		std::string B1 = ThinkingRefrigtzChessPortable::ActionsString;
+		std::wstring B1 = ThinkingRefrigtzChessPortable::ActionsString;
 		int B2 = ThinkingRefrigtzChessPortable::BeginThread;
 		int B3 = ThinkingRefrigtzChessPortable::EndThread;
 		int B4 = ThinkingRefrigtzChessPortable::FoundFirstMating;
@@ -233,9 +233,9 @@
 			AllDraw::StoreADraw.push_back(A54[i]);
 		}
 		AllDraw::StoreADrawAStarGreedy.clear();
-		for (var i = 0; i < AllDraw::StoreADrawDeep.size(); i++)
+		for (var i = 0; i < AllDraw::StoreADrawAStarGreedy.size(); i++)
 		{
-			AllDraw::StoreADrawDeep.push_back(A55[i]);
+			AllDraw::StoreADrawAStarGreedy.push_back(A55[i]);
 		}
 		 AllDraw::SuppportCountStaticBrown = A56;
 		 AllDraw::SuppportCountStaticGray = A57;
@@ -295,6 +295,6 @@
 
 	void IsNextEnemyMovementForCheckedMate::InitializeInstanceFields()
 	{
-		Space = new StringBuilder("&nbsp;");
+		Space = new StringBuilder(L"&nbsp;");
 		Spaces = 0;
 	}

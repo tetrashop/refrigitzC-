@@ -4,8 +4,8 @@
 #include <vector>
 #include <stdexcept>
 
-#include "ThinkingHybridizerRefrigitz.h"
-#include "AllDraw.h"
+
+
 
 //C# TO C++ CONVERTER NOTE: The following .NET attribute has no direct equivalent in native C++:
 //ORIGINAL LINE: [Serializable] public class DrawElefant
@@ -47,7 +47,7 @@
 		bool ArrangmentsChanged;
 		static long long MaxHeuristicxE;
 		float Row, Column;
-		ThinkingHybridizerRefrigitz  *ElefantThinking;
+		ThinkingHybridizerRefrigitz  ElefantThinking;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public int[,] Table = nullptr;
 		int **Table;
@@ -75,7 +75,10 @@
 		void Clone(DrawElefant *&AA); //, ref AllDraw. THIS
 		//Draw an Instatnt Elephant On the Table.
 		void DrawElefantOnTable(int CellW, int CellH);
-
+		DrawElefant& operator=(DrawElefant arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 	private:
 		void InitializeInstanceFields();
 	};

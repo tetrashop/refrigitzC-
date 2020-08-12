@@ -48,7 +48,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 		for (int  ii = 0; ii < AllDraw::SodierMovments; ii++)
 
 		{
-			a += SoldierThinking->ReturnHeuristic(-1, -1, Order, false,HaveKilled);
+			a += SoldierThinking.ReturnHeuristic(-1, -1, Order, false,HaveKilled);
 		}
 
 
@@ -98,7 +98,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 				}
 			}
 			
-				SoldierThinking = new ThinkingHybridizerRefrigitz(0,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 4, Ord, TB, Cur, 16, 1);
+				SoldierThinking = ThinkingHybridizerRefrigitz(0,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 4, Ord, TB, Cur, 16, 1);
 			Row = i;
 			Column = j;
 			color = a;
@@ -126,8 +126,8 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 		for (int  i = 0; i < AllDraw::SodierMovments; i++)
 		{
 
-			AA->SoldierThinking = new ThinkingHybridizerRefrigitz(i,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->SoldierThinking->Clone(AA->SoldierThinking);
+			AA->SoldierThinking = ThinkingHybridizerRefrigitz(i,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			this->SoldierThinking.Clone(AA->SoldierThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];

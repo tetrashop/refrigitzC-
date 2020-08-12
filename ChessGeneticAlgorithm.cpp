@@ -511,7 +511,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 
 	}
 
-	bool **HybridizerRefrigitzGeneticAlgorithm::CloneATableB(bool** Tab)
+	bool **HybridizerRefrigitzGeneticAlgorithm::CloneATableb(bool** Tab)
 	{
 
 		////auto o = new Object();
@@ -534,7 +534,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		}
 
 	}
-
+	/*
 	int **HybridizerRefrigitzGeneticAlgorithm::GenerateTable(std::vector<int**> &List, int Index, int Order)
 	{
 		*GeneticTable = new int[8]; for (int b = 0; b < 8; b++)GeneticTable[b] = new int[8];
@@ -795,7 +795,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 
 
 	}
-
+*/
 	void HybridizerRefrigitzGeneticAlgorithm::InitializeInstanceFields()
 	{
 		Hit = false;

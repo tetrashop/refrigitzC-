@@ -496,7 +496,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 
 	void ThingsConverter::InitializeInstanceFields()
 	{
-		//Space = new std::string("&nbsp;");
+		//Space = new std::string(L"&nbsp;");
 		Spaces = 0;
 		ArrangmentsChanged = true;
 		Convert = false;

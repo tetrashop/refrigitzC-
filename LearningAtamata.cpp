@@ -1,4 +1,4 @@
-﻿#include "LearningAtamatA->h"
+﻿#include "LearningAtamata.h"
 
 
 

@@ -202,6 +202,7 @@ inline bool aligned(Square s1, Square s2, Square s3) {
 /// number of steps for a king in x to reach y. Works with squares, ranks, files.
 
 template<typename T> inline int distance(T x, T y) { return x < y ? y - x : x - y; }
+template<> inline int distance<Square>(Square x, Square y) { return SquareDistance[x][y]; }
 
 template<typename T1, typename T2> inline int distance(T2 x, T2 y);
 template<> inline int distance<File>(Square x, Square y) { return distance(file_of(x), file_of(y)); }

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-
+#include "LearningAtamata.h"
 #include <string>
 #include <vector>
 #include "stringconverter.h"
@@ -28,7 +28,7 @@
 	class QuantumAtamata : public LearningKrinskyAtamata
 	{
 	private:
-		std::vector<std::string> States;
+		std::vector<std::wstring> States;
 		std::vector<unsigned char> StateByte;
 		int r, m, k;
 	public:
@@ -53,11 +53,11 @@
 		int A2;
 		int A3;
 	public:
-		std::string AA;
-		std::string AB;
-		std::string AC;
+		std::wstring AA;
+		std::wstring AB;
+		std::wstring AC;
 
-		std::string CurrentState;
+		std::wstring CurrentState;
 		QuantumAtamata(int r0, int m0, int k0);
 		void CurrenStateInitialize();
 

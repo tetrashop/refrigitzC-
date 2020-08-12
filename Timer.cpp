@@ -37,7 +37,7 @@ bool Timer::Text = false;
 
 	}
 
-	void Timer::TimerInitiate(const std::string &N)
+	void Timer::TimerInitiate(const std::wstring &N)
 	{
 		Name = N;
 		////auto o = new Object();
@@ -215,7 +215,7 @@ bool Timer::Text = false;
 		}
 	}
 
-	void Timer::StartTime(const std::string &N)
+	void Timer::StartTime(const std::wstring &N)
 	{
 		TextChanged = true;
 		////auto o = new Object();
@@ -300,7 +300,7 @@ bool Timer::Text = false;
 		}
 	}
 	/*
-	std::string Timer::ReturnTime()
+	std::wstring Timer::ReturnTime()
 	{
 		//Cal and return timer string.
 		////auto o = new Object();
@@ -309,7 +309,7 @@ bool Timer::Text = false;
 		{
 			long long T = Times;
 			//Cal and return timer string.
-			std::string Houre = "0";
+			std::wstring Houre = L"0";
 			if (T >= 3600000)
 			{
 
@@ -317,7 +317,7 @@ bool Timer::Text = false;
 				Houre = ((static_cast<long long>(T / 3600000))).ToString();
 				T = (T - static_cast<long long>(T / 3600000) * 3600000);
 			}
-			std::string Minute = "0";
+			std::wstring Minute = L"0";
 			if (T >= 60000)
 			{
 
@@ -325,8 +325,8 @@ bool Timer::Text = false;
 				Minute = ((static_cast<long long>(T / 60000))).ToString();
 				T = (T - static_cast<long long>(T / 60000) * 60000);
 			}
-			std::string Second = StringConverterHelper::toString(T / 1000);
-			return Houre + std::string(":") + Minute + std::string(":") + Second;
+			std::wstring Second = StringConverterHelper::toString(T / 1000);
+			return Houre + std::wstring(L":") + Minute + std::wstring(L":") + Second;
 		}
 	}
 	*/

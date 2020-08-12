@@ -73,7 +73,7 @@
 	class ThinkingHybridizerRefrigitz //: IDisposable
 	{
 	public:
-		static std::string OutP;
+		static std::wstring OutP;
 	private:
 		std::vector<std::vector<std::vector<int*>>> MovableAllObjectsList;
 	public:
@@ -123,10 +123,10 @@
 //C# TO C++ CONVERTER NOTE: The variable Colleralation was renamed since it is named the same as a user-defined type:
 		static int Colleralation_Renamed;
 		static int DeColleralation;
-		static int TableInitiation[8][8];
+		static int **TableInitiation;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public static int[,] TableInitiationPreventionOfMultipleMove ={ { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 } };
-		static int TableInitiationPreventionOfMultipleMove[8][8];
+		static int **TableInitiationPreventionOfMultipleMove;
 	private:
 		int RationalRegard;
 		int RationalPenalty;
@@ -177,7 +177,7 @@
 	private:
 		bool ThinkingAtRun;
 	public:
-		static std::string ActionsString;
+		static std::wstring ActionsString;
 	private:
 		int ThinkingLevel;
 	public:
@@ -296,7 +296,7 @@
 		int color;
 		int Order;
 		//[NonSerialized()]
-		std::vector<AllDraw*> Deep;
+		std::vector<AllDraw> AStarGreedy;
 		std::vector<bool> AStarGreedyMove;
 	private:
 		const int **Value;
@@ -321,10 +321,11 @@
 	private:
 		void Dispose(bool disposing);
 	public:
-		std::string AsS(int i, int j, int ii, int jj);
+		std::wstring AsS(int i, int j, int ii, int jj);
 		ThinkingHybridizerRefrigitz();
 		//Constructor
-	
+		ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j);
+
 		//determine When Arrangment of Table Objects is Validated at Begin.
 	private:
 		ThinkingHybridizerRefrigitz(int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j);
@@ -332,30 +333,9 @@
 		//Constructor
 	public:
 		ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin);
-	//Clone A Table
+		//Clone A Table
 	private:
 		int **CloneATable(int** Tab);
-		int **CloneATableC(int Tab[][8])
-		{
-			////auto o = new Object();
-	//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-			////lock (O)
-			{
-				//Create and new an Object.
-				int **Table; *Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
-				//Assigne Parameter To New Objects.
-				for (int i = 0; i < 8; i++)
-				{
-					for (int j = 0; j < 8; j++)
-					{
-						Table[i][j] = Tab[i][j];
-					}
-				}
-				//Return New Object.
-				return Table;
-			}
-		}
-
 		//Clone A List.  
 		int *CloneAList(int Tab[], int Count);
 		//Clone a copy of an array.
@@ -415,6 +395,10 @@
 		int SignOrderToPlate(int Order);
 		//Remove Penalties of Unnesserily Nodes.
 	public:
+		ThinkingHybridizerRefrigitz& operator=(ThinkingHybridizerRefrigitz arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 		bool RemovePenalty(int** Tab, int Order, int i, int j);
 		//Dangouring of current movment fo current Order.
 	private:
@@ -566,9 +550,9 @@
 		int ReturnHeuristic(int ii, int j, int Order, bool AA, int &HaveKilled);
 		//statstical html 
 	private:
-		std::string Alphabet(int RowRealesed);
+		std::wstring Alphabet(int RowRealesed);
 		//statstical html 
-		std::string Number(int ColumnRealeased);
+		std::wstring Number(int ColumnRealeased);
 		//Heuristic help to kiling of enemy or gave point witout only lraearning autamata exclusive but act on.
 	public:
 		int ReturnHeuristicCalculartorKiller(int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND);
@@ -605,7 +589,7 @@
 //C# TO C++ CONVERTER NOTE: The parameter Castle was renamed since it is named the same as a user-defined type:
 		void KingThinkingHybridizerRefrigitz(int *LoseOcuuredatChiled, int &WinOcuuredatChiled, int DummyOrder, int DummyCurrentOrder, int** TableS, int RowSource, int ColumnSource, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int RowDestination, int ColumnDestination, bool Castle_Renamed);
 		//monitor
-		std::string CheM(int A);
+		std::wstring CheM(int A);
 		//specific determination for thinking main method
 //C# TO C++ CONVERTER NOTE: The parameter Castle was renamed since it is named the same as a user-defined type:
 		void MinisterThinkingHybridizerRefrigitz(int *LoseOcuuredatChiled, int &WinOcuuredatChiled, int DummyOrder, int DummyCurrentOrder, int** TableS, int RowSource, int ColumnSource, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int RowDestination, int ColumnDestination, bool Castle_Renamed);
@@ -811,14 +795,14 @@
 	private:
 		void ThinkingWaite();
 		//operantinal of creation of current deeper node and set string making
-		void FullGameThinkingTreeInitialization(AllDraw *THIS, int ik, int j, int Order, int kind);
+		void FullGameThinkingTreeInitialization(AllDraw THIS, int ik, int j, int Order, int kind);
 		//Deeper than deeper
-		void ThinkingFullGame(int iAStarGreedy, AllDraw *THIS);
+		void ThinkingFullGame(int iAStarGreedy, AllDraw THIS);
 		int ColorOpposite(int a);
 		bool MovableAllObjectsListMethos(int RowS, int ColS);
 		void MovableAllObjectsListMethos(int** TableS, bool Before, int RowS, int ColS, int RowD, int ColD, int con, int movable = 1);
 	public:
-		void Thinking(int iAStarGreedy, AllDraw *THIS, int *LoseOcuuredatChiled, int &WinOcuuredatChiled);
+		void Thinking(int iAStarGreedy, AllDraw THIS, int *LoseOcuuredatChiled, int &WinOcuuredatChiled);
 		bool IsTheeAtleastMAteSelf();
 		void TowDistrurbProperUse(int *LoseOcuuredatChiled);
 		void TowDistrurbProperUsePreferNotToClose(int *LoseOcuuredatChiled, int** Tab);

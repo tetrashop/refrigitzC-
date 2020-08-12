@@ -5,13 +5,13 @@
 #include <stdexcept>
 
 /*CopyRight Ramin Edjlal***************************2018*************************
- The Magic Table Game Satte Learing Quantum AtamatA->****************************
+ The Magic Table Game Satte Learing Quantum Atamata.****************************
  *******************************************************************************
  */ 
 	class NetworkQuantumLearningKrinskyAtamata : public LearningKrinskyAtamata
 	{
 	public:
-		static std::string Root;
+		static std::wstring Root;
 	private:
 		static void Log(std::exception &ex);
 

@@ -27,7 +27,7 @@
 
 #include "AllDraw.h"
 
-#include "LearningKrinskyAtamatA->h"
+#include "LearningKrinskyAtamata.h"
 #include "QuantumAtamata.h"
 #include "Board.h"
 #include "Colleralation.h"
@@ -43,7 +43,7 @@
 #include "DrawKing.h"
 #include "Stone.h"
 #include "ThingsConverter.h"
-#include "QuantumLearningKrinskyAtamatA->h"
+#include "QuantumLearningKrinskyAtamata.h"
 
 
 #include "Point.h"

@@ -6,7 +6,7 @@
 #include <stdexcept>
 
 #include "ThinkingHybridizerRefrigitz.h"
-#include "AllDraw.h"
+
 
 //C# TO C++ CONVERTER NOTE: The following .NET attribute has no direct equivalent in native C++:
 //ORIGINAL LINE: [Serializable] public class DrawCastle
@@ -48,7 +48,7 @@
 		static long long MaxHeuristicxB;
 		float Row, Column;
 		int color;
-		ThinkingHybridizerRefrigitz * CastleThinking;
+		ThinkingHybridizerRefrigitz  CastleThinking;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public int[,] Table = nullptr;
 		int **Table;
@@ -77,7 +77,10 @@
 		void Clone(DrawCastle *&AA); //, ref AllDraw. THIS
 		//Draw An Instatnt Brideges Images On the Table Method.
 		void DrawCastleOnTable(int CellW, int CellH);
-
+		DrawCastle& operator=(DrawCastle arg) noexcept // copy/move constructor is called to construct arg
+		{
+			return arg;
+		}
 	private:
 		void InitializeInstanceFields();
 	};

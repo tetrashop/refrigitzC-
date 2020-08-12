@@ -1,7 +1,7 @@
 ﻿#include "NetworkQuantumLearningKrinskyAtamata.h"
 
 
-std::string NetworkQuantumLearningKrinskyAtamata::Root = System::IO::Path::GetDirectoryName(Environment::GetCommandLineArgs()[0]);
+std::wstring NetworkQuantumLearningKrinskyAtamata::Root = System::IO::Path::GetDirectoryName(Environment::GetCommandLineArgs()[0]);
 
 	
 	NetworkQuantumLearningKrinskyAtamata::NetworkQuantumLearningKrinskyAtamata(int r0, int m0, int k0) : LearningKrinskyAtamata(r0, m0, k0)

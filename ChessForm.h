@@ -23,13 +23,14 @@
 		int AllDrawKind;
 		bool NotFoundBegin;
 		bool Deeperthandeeper;
-		const std::string path3;
-		std::string AllDrawReplacement;
+		const std::wstring path3;
+		std::wstring AllDrawReplacement;
 
 	public:
+		int[][] CloneATableD(int** Tab);
 		static int MovmentsNumber;
-		static std::string Root;
-		static std::string AllDrawKindString;
+		static std::wstring Root;
+		static std::wstring AllDrawKindString;
 		//public static int OrderPlate = 1;
 	private:
 		bool CoPermit;
@@ -40,7 +41,7 @@
 	private:
 		bool Person;
 	public:
-		AllDraw *Draw;
+		AllDraw Draw;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public static int[,] Table = nullptr;
 		static int **Table;
@@ -84,8 +85,8 @@
 	private:
 		void Wait();
 		  public:
-		  AllDraw* RootFound();
-		void SetDrawFounding(bool &FOUNDI, AllDraw *THISI, bool FirstI);
+		  AllDraw RootFound();
+		void SetDrawFounding(bool &FOUNDI, AllDraw &THISI, bool FirstI);
 	private:
 		bool DrawManagement();
 		void SetAllDrawKindString();
