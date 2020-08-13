@@ -1,5 +1,5 @@
 ﻿#include "DrawMinister.h"
-
+#include "ThinkingHybridizerRefrigitz.h"
 
 
 long long DrawMinister::MaxHeuristicxM = -20000000000000000;
@@ -46,7 +46,7 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 
 		int a = 0;
 		
-			a += MinisterThinking.ReturnHeuristic(-1, -1, Order, false,HaveKilled);
+			a += MinisterThinking->ReturnHeuristic(-1, -1, Order, false,HaveKilled);
 		
 
 		return a;
@@ -158,7 +158,7 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 		{
 
 			AA->MinisterThinking = ThinkingHybridizerRefrigitz(i,5,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->MinisterThinking.Clone(AA->MinisterThinking);
+			this->MinisterThinking->Clone(AA->MinisterThinking);
 
 
 		}

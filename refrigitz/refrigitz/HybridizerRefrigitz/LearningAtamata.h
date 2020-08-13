@@ -4,7 +4,7 @@
 
 /******************************************************************************
  * Ramin Edjlal Copyrights 2015.************************************************
- * Learning Autamata.**********************************************************
+ * Learning AutamatA->**********************************************************
  * The every sum of probability == one.****************************************(*_)
  * four formula .tow for Regard regime and tow for penalty regime.***************(-)
  * Derived Quantum Automata Penalty All Objects of Derived Automata************(-)
@@ -48,9 +48,10 @@
 		//int State = 1;
 	public:
 		void Initiate();
+		LearningKrinskyAtamata()
+		{}
 		LearningKrinskyAtamata(int r0, int m0, int k0);
-		void Clone(QuantumAtamata *&AA);
-
+		
 		void FailureState();
 		void SuccessState();
 		int IsSecondDerivitionIsPositive();

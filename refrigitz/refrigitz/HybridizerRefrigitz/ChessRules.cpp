@@ -54,7 +54,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		AStarGreedyHeuristicT = AStarGreedyHuris;
 		Order = oRDER;
 		ArrangmentsBoard = ArrangmentsChanged;
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ChessRules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ChessRules:" + (TimeElapced.TimeNow() - Time).ToString();}
 	}
 
 	ChessRules::ChessRules(int CurrentAStarGredy, int oRDER, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool ArrangmentsChanged)
@@ -71,7 +71,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 		OnlySelfT = OnlySel;
 		AStarGreedyHeuristicT = AStarGreedyHuris;
 		ArrangmentsBoard = ArrangmentsChanged;
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ChessRules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ChessRules:" + (TimeElapced.TimeNow() - Time).ToString();}
 	}
 
 	ChessRules::ChessRules(int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool ArrangmentsChanged, int Ki, int **A, int Ord, int i, int j)
@@ -100,7 +100,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			TableS = CloneATable(A);
 
 			Order = Ord;
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ChessRules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ChessRules:" + (TimeElapced.TimeNow() - Time).ToString();}
 		}
 	}
 
@@ -191,14 +191,14 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				{
 					if (abs(RowB - RowSecond) <= 1 && abs(ColumnB - ColumnSecond) <= 1)
 					{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return false;
 					}
 				}
 				//Illegal King Foundation.
 				if (abs(RowB - RowG) <= 1 && abs(ColumnB - ColumnG) <= 1)
 				{
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return false;
 				}
 			} //BLACK Order.
@@ -208,14 +208,14 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				{
 					if (abs(RowG - RowSecond) <= 1 && abs(ColumnG - ColumnSecond) <= 1)
 					{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return false;
 					}
 				}
 				//Ilegal Kings Foundation.
 				if (abs(RowB - RowG) <= 1 && abs(ColumnB - ColumnG) <= 1)
 				{
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return false;
 				}
 			}
@@ -242,19 +242,19 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					if (ColumnFirst == 1 && (Order == 1))
 					{
 
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return Rule(RowFirst, ColumnFirst, RowSecond, ColumnSecond, true, color, ExistInDestinationEnemy, Ki, SelfHomeStatCP);
 					}
 					else //Solder of BLACK At Begining.
 					{
 						if (ColumnFirst == 6 && (Order == -1))
 						{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return Rule(RowFirst, ColumnFirst, RowSecond, ColumnSecond, true, color, ExistInDestinationEnemy, Ki, SelfHomeStatCP);
 						}
 					else //Another Solder Movments.
 					{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return Rule(RowFirst, ColumnFirst, RowSecond, ColumnSecond, false, color, ExistInDestinationEnemy, Ki, SelfHomeStatCP);
 					}
 					}
@@ -264,19 +264,19 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					//Solders of WHITE at Begining.
 					if (ColumnFirst == 6 && (Order == 1))
 					{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return Rule(RowFirst, ColumnFirst, RowSecond, ColumnSecond, true, color, ExistInDestinationEnemy, Ki, SelfHomeStatCP);
 					}
 					else //Solder of BLACK At Begining.
 					{
 						if (ColumnFirst == 1 && (Order == -1))
 						{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return Rule(RowFirst, ColumnFirst, RowSecond, ColumnSecond, true, color, ExistInDestinationEnemy, Ki, SelfHomeStatCP);
 						}
 					else //Another Solder Movments.
 					{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return Rule(RowFirst, ColumnFirst, RowSecond, ColumnSecond, false, color, ExistInDestinationEnemy, Ki, SelfHomeStatCP);
 					}
 					}
@@ -284,7 +284,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			}
 			else //For another Kind of Objects.
 			{
-				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rules:" + (TimeElapced.TimeNow() - Time).ToString();}
 				return Rule(RowFirst, ColumnFirst, RowSecond, ColumnSecond, false, color, ExistInDestinationEnemy, Ki, SelfHomeStatCP);
 			}
 		}
@@ -325,7 +325,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										CastleActWHITE = true;
 										SmallKingCastleWHITE = true;
 									}
-									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 									return true;
 								}
 
@@ -346,7 +346,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										CastleActWHITE = true;
 										BigKingCastleWHITE = true;
 									}
-									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 									return true;
 								}
 
@@ -378,7 +378,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 									{
 										SmallKingCastleBLACK = true;
 									}
-									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 									return true;
 								}
 
@@ -399,7 +399,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 									{
 										BigKingCastleBLACK = true;
 									}
-									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 									return true;
 								}
 
@@ -428,7 +428,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 								if (((RowSecond - 2) >= 0) && ((RowSecond - 1) >= 0) && ((RowSecond + 1) < 8) && Table[RowSecond - 2][ColumnSecond] == 6 && Table[RowSecond - 1][ColumnSecond] == 0 && Table[RowSecond][ColumnSecond] == 0 && Table[RowSecond + 1][ColumnSecond] == 4)
 								{
-									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 									//CastleActWHITE = true;
 									//SmallKingCastleWHITE = true;
 									return true;
@@ -444,7 +444,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 								if (((RowSecond + 2) < 8) && ((RowSecond - 1) >= 0) && ((RowSecond + 1) < 8) && ((RowSecond - 2) >= 0) && Table[RowSecond + 2][ColumnSecond] == 6 && Table[RowSecond + 1][ColumnSecond] == 0 && Table[RowSecond][ColumnSecond] == 0 && Table[RowSecond - 1][ColumnSecond] == 0 && Table[RowSecond - 2][ColumnSecond] == 4)
 								{
-									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 									//CastleActWHITE = true;
 									//BigKingCastleWHITE = true;
 									return true;
@@ -471,7 +471,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 								if (((RowSecond - 2) >= 0) && ((RowSecond - 1) >= 0) && ((RowSecond + 1) < 8) && Table[RowSecond - 2][ColumnSecond] == -6 && Table[RowSecond - 1][ColumnSecond] == 0 && Table[RowSecond][ColumnSecond] == 0 && Table[RowSecond + 1][ColumnSecond] == -4)
 								{
-									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 									//CastleActBLACK = true;
 									//SmallKingCastleBLACK = true;
 									return true;
@@ -487,7 +487,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 								if (((RowSecond + 2) < 8) && ((RowSecond - 1) >= 0) && ((RowSecond + 1) < 8) && ((RowSecond - 2) >= 0) && Table[RowSecond + 2][ColumnSecond] == -6 && Table[RowSecond + 1][ColumnSecond] == 0 && Table[RowSecond][ColumnSecond] == 0 && Table[RowSecond - 1][ColumnSecond] == 0 && Table[RowSecond - 2][ColumnSecond] == -4)
 								{
-									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+									////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 									//  CastleActBLACK = true;
 									//BigKingCastleBLACK = true;
 									return true;
@@ -499,7 +499,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return false;
 		}
 	}
@@ -528,7 +528,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				{
 					if (CheckWHITE)
 					{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckConstructor:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckConstructor:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return true;
 					}
 				}
@@ -537,12 +537,12 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				{
 					if (CheckBLACK)
 					{
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckConstructor:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckConstructor:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return true;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckConstructor:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckConstructor:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Return Non Check State.
 			return false;
 		}
@@ -577,7 +577,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ExistSelfHome:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ExistSelfHome:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return NotExistInDestinationSelfHome;
 		}
 	}
@@ -671,7 +671,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//When there is checked or checkmate.
 										if (AAA->CheckMate(Tabl, Order))
 										{
-											//if (AAA.CheckMateWHITE)
+											//if (AAA->CheckMateWHITE)
 											if (AAA->CheckMateWHITE)
 											{
 												CheckWHITEObjectDangour = true;
@@ -759,7 +759,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//When There is Check or Checkedmate
 										if (AAA->CheckMate(Tabl, Order))
 										{
-											//if (AAA.CheckMateBLACK)
+											//if (AAA->CheckMateBLACK)
 											if (AAA->CheckMateBLACK)
 											{
 												CheckBLACKObjectDangour = true;
@@ -810,7 +810,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				CheckWHITE = CheckWHITEDummy;
 				CheckBLACK = CheckBLACKDummy;
 				//Achamz is Validity.
-				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}
 				return true;
 			}
 			ChessRules::CurrentOrder = CDummy;
@@ -820,7 +820,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			CheckWHITE = CheckWHITEDummy;
 			CheckBLACK = CheckBLACKDummy;
 			//Return Not Validiy.
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return false;
 		}
 	}
@@ -914,7 +914,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//When there is checked or checkmate.
 										if (AAA->Check(Tabl, Order))
 										{
-											//if (AAA.CheckMateWHITE)
+											//if (AAA->CheckMateWHITE)
 											if (AAA->CheckWHITE)
 											{
 												CheckWHITEObjectDangour = true;
@@ -1002,7 +1002,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//When There is Check or Checkedmate
 										if (AAA->Check(Tabl, Order))
 										{
-											//if (AAA.CheckMateBLACK)
+											//if (AAA->CheckMateBLACK)
 											if (AAA->CheckBLACK)
 											{
 												CheckBLACKObjectDangour = true;
@@ -1053,7 +1053,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				CheckWHITE = CheckWHITEDummy;
 				CheckBLACK = CheckBLACKDummy;
 				//Achamz is Validity.
-				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}
 				return true;
 			}
 			ChessRules::CurrentOrder = CDummy;
@@ -1096,7 +1096,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				}
 
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("AchmazCheckByMoveByRule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("AchmazCheckByMoveByRule:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Achmaz;
 		}
 	}
@@ -1147,7 +1147,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				{
 					CheckWHITEObjectDangour = true;
 				}
-				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}
 				return true;
 
 			}
@@ -1266,7 +1266,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 																	CheckBLACKObjectDangour = A->CheckBLACKObjectDangour;
 																	ChessRules::CurrentOrder = CDummy;
 																	Order = COrder;
-																	////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+																	////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}
 																	return true;
 																}
 															}
@@ -1334,7 +1334,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 																	CheckBLACKObjectDangour = A->CheckBLACKObjectDangour;
 																	ChessRules::CurrentOrder = CDummy;
 																	Order = COrder;
-																	////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+																	////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}
 																	return true;
 																}
 															}
@@ -1359,7 +1359,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 			ChessRules::CurrentOrder = CDummy;
 			Order = COrder;
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ObjectDangourKingMove:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Iniatiate Of Global Varibales By Local Variables.
 			//Return Not Validiy.
 			return false;
@@ -1383,12 +1383,12 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						//Initiate Refreable Parameters.
 						Row = i;
 						Column = j;
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindWHITEKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindWHITEKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 						return true;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindWHITEKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindWHITEKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Not Found.
 			return false;
 		}
@@ -1855,7 +1855,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			{
 				S += std::wstring(L" --");
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CreateStatistic:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CreateStatistic:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Return String Sysntax.
 			return SN + S;
 		}
@@ -1878,7 +1878,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					Is = true;
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ArrayInList:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ArrayInList:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Retrun Condition.
 			return Is;
 		}
@@ -1913,7 +1913,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 							//Iniatiate Local Varibales.
 							Row = i;
 							Column = j;
-							////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindAThing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+							////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindAThing:" + (TimeElapced.TimeNow() - Time).ToString();}
 							//Found State.
 							return true;
 						}
@@ -1941,7 +1941,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 										//Initaite Local Variables.
 										Row = i;
 										Column = j;
-										////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindAThing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+										////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindAThing:" + (TimeElapced.TimeNow() - Time).ToString();}
 										//Found of State
 										return true;
 									}
@@ -1953,7 +1953,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindAThing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindAThing:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Not Found State.
 			return false;
 		}
@@ -1976,13 +1976,13 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						//Initiate Refrencable Parameter.
 						Row = i;
 						Column = j;
-						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindBLACKKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+						////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindBLACKKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 						//Found of BLACK King.
 						return true;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindBLACKKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("FindBLACKKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Not Found.
 			return false;
 		}
@@ -2182,7 +2182,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckRemovableByAttack:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckRemovableByAttack:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//If Check Remoavbe BLACK Or WHITE Return Removable.
 			if (CheckBLACKRemovable || CheckWHITERemovable)
 			{
@@ -2231,7 +2231,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				}
 			}
 			ChessRules::CurrentOrder = Cdummy;
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("VeryFye:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("VeryFye:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Tab;
 		}
 	}
@@ -2252,7 +2252,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						{
 							if (Tab[i][j] != 6)
 							{
-								////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("OnlyKingMovable:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+								////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("OnlyKingMovable:" + (TimeElapced.TimeNow() - Time).ToString();}
 								return false;
 							}
 						}
@@ -2260,7 +2260,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						{
 							if (Tab[i][j] != -6)
 							{
-							////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("OnlyKingMovable:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+							////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("OnlyKingMovable:" + (TimeElapced.TimeNow() - Time).ToString();}
 							return false;
 							}
 						}
@@ -2268,7 +2268,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("OnlyKingMovable:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("OnlyKingMovable:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return true;
 
 		}
@@ -2292,7 +2292,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				}
 			}
 			//Return New Object.
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CloneATable:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CloneATable:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Table;
 		}
 
@@ -2316,7 +2316,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				}
 			}
 			//Return New Object.
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CloneATable:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CloneATable:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Table;
 		}
 
@@ -2462,7 +2462,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			{
 				PatCheckedInKingRule = false;
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Pat:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Pat:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Pat;
 		}
 	}
@@ -2556,7 +2556,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					break;
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 		}
 	}
 
@@ -2607,7 +2607,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			}
 
 			Ord = DummyOrder;
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Check:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Check:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//If WHITE Check Or brwon Check return Check..
 			if (CheckBLACK || CheckWHITE)
 			{
@@ -2733,7 +2733,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				}
 			}
 			Order = DummyOrder;
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckMateKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckMateKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 		}
 	}
 
@@ -2885,7 +2885,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				}
 			}
 			Order = DummyOrder;
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckMateNotKing:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckMateNotKing:" + (TimeElapced.TimeNow() - Time).ToString();}
 		}
 	}
 
@@ -3011,14 +3011,14 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				////lock (On)
 				{
 					AllDraw::EndOfGame = true;
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckMate:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckMate:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return true;
 				}
 			}
 			//Initiate Global Variables.
 			CheckWHITE = CheckWHITEDummy;
 			CheckBLACK = CheckBLACKDummy;
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckMate:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CheckMate:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Return Not CheckMate.
 			return false;
 		}
@@ -3036,7 +3036,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				//Determination of Enemy Existing.
 				if (ExistSelfHome(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, Ki) && SelfHomeStatCP)
 				{
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return false;
 				}
 			}
@@ -3045,7 +3045,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			//If Source and The Destination are The Same.
 			if (RowFirst == RowSecond && ColumnFirst == ColumnSecond)
 			{
-				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}
 				return false;
 			}
 			//Initiate Global Variable.
@@ -3064,7 +3064,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					{
 						return false;
 					}
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return SoldierRules(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, ExistInDestinationEnemy);
 
 
@@ -3075,7 +3075,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					}
 
 
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return CastleRules(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, ExistInDestinationEnemy, Ki);
 
 
@@ -3093,7 +3093,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						return false;
 					}
 
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return ElefantRules(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, ExistInDestinationEnemy, Ki);
 				case 5: //Rule of Ministers.
 					if (abs(TableS[RowFirst][ColumnFirst]) != Kind)
@@ -3101,7 +3101,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 						return false;
 					}
 
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return MinisterRules(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, ExistInDestinationEnemy, Ki);
 
 				case 6: //Rule of Kings.
@@ -3109,11 +3109,11 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					{
 						return false;
 					}
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return KingRules(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, ExistInDestinationEnemy, Ki);
 				case 7: //Rule of Castles King.
 
-					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+					////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Rule:" + (TimeElapced.TimeNow() - Time).ToString();}
 					return CastleKing(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, Ki);
 				default:
 					return false;
@@ -3137,7 +3137,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 				Move_Renamed = true;
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("KingRule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("KingRule:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Move_Renamed;
 		}
 	}
@@ -3166,7 +3166,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				}
 			}
 			//Return Not Valididty.
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("MinisterRule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("MinisterRule:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Move_Renamed;
 		}
 
@@ -3384,7 +3384,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 			//Return Not Validity.
 
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleRule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("CastleRule:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Return not Vailidity.
 			return Move_Renamed;
 
@@ -3512,7 +3512,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				}
 			}
 
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ElephantRule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ElephantRule:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//Return Not Validity.
 			return Move_Renamed;
 		}
@@ -3540,7 +3540,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 			}
 			//Return Not Validity.
 
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("HourseRule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("HourseRule:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Move_Renamed;
 		}
 	}
@@ -3757,7 +3757,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("SoldierRule:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("SoldierRule:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Move_Renamed;
 		}
 	}
@@ -3975,7 +3975,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					}
 				}
 			}
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("SoldierRulesaArrangmentsBoardZero:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("SoldierRulesaArrangmentsBoardZero:" + (TimeElapced.TimeNow() - Time).ToString();}
 			return Move_Renamed;
 		}
 
@@ -3991,12 +3991,12 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 
 			if (!(ArrangmentsBoard))
 			{
-				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("SoldierRules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("SoldierRules:" + (TimeElapced.TimeNow() - Time).ToString();}
 				return SoldierRulesaArrangmentsBoardZero(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, ExistInDestinationEnemy);
 			}
 			else
 			{
-				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("SoldierRules:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+				////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("SoldierRules:" + (TimeElapced.TimeNow() - Time).ToString();}
 				return SoldierRulesaArrangmentsBoardOne(RowFirst, ColumnFirst, RowSecond, ColumnSecond, NotMoved, color, ExistInDestinationEnemy);
 			}
 

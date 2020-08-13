@@ -1,5 +1,5 @@
 ﻿#include "DrawKing.h"
-
+#include "ThinkingHybridizerRefrigitz.h"
 
 bool DrawKing::KingWHITENotCheckedByQuantumMove = false;
 bool DrawKing::KingBLACKNotCheckedByQuantumMove = false;
@@ -23,7 +23,7 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 		for (int  ii = 0; ii < AllDraw::KingMovments; ii++)
 
 		{
-			a += KingThinking.ReturnHeuristic(-1, -1, Order, false, HaveKilled);
+			a += KingThinking->ReturnHeuristic(-1, -1, Order, false, HaveKilled);
 		}
 
 
@@ -163,7 +163,7 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 		{
 
 			AA->KingThinking =new ThinkingHybridizerRefrigitz(i, 6, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->KingThinking.Clone(AA->KingThinking);
+			this->KingThinking->Clone(AA->KingThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];

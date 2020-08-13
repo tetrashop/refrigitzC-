@@ -25,9 +25,9 @@ int **HybridizerRefrigitzForm::Table;
 		////lock (O)
 		{
 			int LeafAStarGrteedy = 0;
-			AllDraw THIS =Draw.AStarGreedyStringNode;
+			AllDraw *THIS =Draw.AStarGreedyStringNode;
 			Table =Draw.Initiate(1, 4, a, CloneATable(brd->GetTable()), Order, false, FOUND, LeafAStarGrteedy);
-			//Draw.AStarGreedyStringNode = *this;
+			//Draw.AStarGreedyStringNode  = this;
 		}
 	}
 
@@ -120,10 +120,10 @@ int **HybridizerRefrigitzForm::Table;
 					//Load AllDraw.asd
 					bool LoadTree = true;
 					TakeRoot *y = new TakeRoot();
-					bool DrawDrawen = y->Load(FOUND, false, *this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+					bool DrawDrawen = y->Load(FOUND, false, this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 					if (!DrawDrawen)
 					{
-						Draw = AllDraw(AllDraw::OrderPlate, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+						Draw = new AllDraw(AllDraw::OrderPlate, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 						Draw.TableList.clear();
 						Draw.TableList.push_back(CloneATable(Table));
 						Draw.SetRowColumn(0,false);
@@ -162,7 +162,7 @@ int **HybridizerRefrigitzForm::Table;
 						////lock (i)
 						{
 							 LoadTree = false;
-							//(new TakeRoot())->Save(false, false, *this, LoadTree, false, false, false, false, false, false, false, true);
+							//(new TakeRoot())->Save(false, false, this, LoadTree, false, false, false, false, false, false, false, true);
 						}
 					}
 					else
@@ -231,21 +231,6 @@ int **HybridizerRefrigitzForm::Table;
 
 			return Tabl;
 		}
-	}
-
-	int[][] HybridizerRefrigitzForm::CloneATableD(int** Tab)
-	{
-			int Tabl[8][8];
-			for (int i = 0; i < 8; i++)
-			{
-				for (int j = 0; j < 8; j++)
-				{
-					Tabl[i][j] = Tab[i][j];
-				}
-			}
-
-			return Tabl;
-		
 	}
 	void HybridizerRefrigitzForm::WaitCon()
 	{
@@ -1488,13 +1473,13 @@ int **HybridizerRefrigitzForm::Table;
 		    {
 		        if (Draw == null)
 		            return;
-		        int Dummy = AllDraw.OrderPlate;
+		        int Dummy = new AllDraw.OrderPlate;
 	
-		        HybridizerRefrigitz.AllDraw THISB = new Draw.AStarGreedyStringNode;
-		        HybridizerRefrigitz.AllDraw THISStore = new Draw;
+		        HybridizerRefrigitz.AllDraw *THISB = new Draw.AStarGreedyStringNode;
+		        HybridizerRefrigitz.AllDraw *THISStore = new Draw;
 		        //while (Draw.AStarGreedyStringNode != null)
 		        bool FOUND = false;
-		        HybridizerRefrigitz.AllDraw THIS = null;
+		        HybridizerRefrigitz.AllDraw *THIS = null;
 		        bool First = false;
 	
 	
@@ -1508,7 +1493,7 @@ int **HybridizerRefrigitzForm::Table;
 		            //if (First)
 	
 		            //else
-		            int Ord = AllDraw.OrderPlate;
+		            int Ord = new AllDraw.OrderPlate;
 		            AllDraw.OrderPlate = Ord;
 		             Draw.FoundOfCurrentTableNode(CloneATable(Table), Ord, ref THIS, ref FOUND);
 		            
@@ -1520,9 +1505,9 @@ int **HybridizerRefrigitzForm::Table;
 	
 	
 		                bool LoadTree = true;
-		                Ord = AllDraw.OrderPlate;
+		                Ord = new AllDraw.OrderPlate;
 		                //if (MovmentsNumber > 1)
-		                (new TakeRoot()).Save(FOUND, false, *this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		                (new TakeRoot()).Save(FOUND, false, this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 	
 		                Draw.IsCurrentDraw = true;
 	
@@ -1539,7 +1524,7 @@ int **HybridizerRefrigitzForm::Table;
 		                bool FirstS = false;
 		                if ((HybridizerRefrigitz.AllDraw.TableListAction.Count > 2))
 		                {
-		                    Ord = AllDraw.OrderPlate * -1;
+		                    Ord = new AllDraw.OrderPlate * -1;
 		                    AllDraw.OrderPlate = Ord;
 		                    AllDraw.OrderPlate = Ord;
 	
@@ -1576,7 +1561,7 @@ int **HybridizerRefrigitzForm::Table;
 		                    int aa = int.WHITE;
 		                    if (Ord == -1)
 		                        aa = int.BLACK;
-		                    bool B = AllDraw.Blitz;
+		                    bool B = new AllDraw.Blitz;
 		                    AllDraw.Blitz = false;
 		                    HybridizerRefrigitz.AllDraw.
 	
@@ -1624,7 +1609,7 @@ int **HybridizerRefrigitzForm::Table;
 		                    FOUND = false;
 		                    if (!First && (HybridizerRefrigitz.AllDraw.TableListAction.Count > 2))
 		                    {
-		                        Ord = AllDraw.OrderPlate * -1;
+		                        Ord = new AllDraw.OrderPlate * -1;
 		                        AllDraw.OrderPlate = Ord;
 		                        AllDraw.OrderPlate = Ord;
 		                    }
@@ -1641,7 +1626,7 @@ int **HybridizerRefrigitzForm::Table;
 	
 	
 		                        bool LoadTree = true;
-		                        (new TakeRoot()).Save(FOUND, false, *this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		                        (new TakeRoot()).Save(FOUND, false, this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 		                        AllDraw.OrderPlate = Ord;
 	
 	
@@ -1661,9 +1646,9 @@ int **HybridizerRefrigitzForm::Table;
 		                       Draw.SetRowColumn(0,false);
 		                        Draw.IsCurrentDraw = true;
 		                        Draw.AStarGreedyStringNode = THISB;
-		                        HybridizerRefrigitz.ChessRules.CurrentOrder = AllDraw.OrderPlate;
+		                        HybridizerRefrigitz.ChessRules.CurrentOrder = new AllDraw.OrderPlate;
 		                        HybridizerRefrigitz.AllDraw.DepthIterative = 0;
-		                        (new TakeRoot()).Save(FOUND, false, *this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		                        (new TakeRoot()).Save(FOUND, false, this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 	
 	
 		                    }
@@ -1683,9 +1668,9 @@ int **HybridizerRefrigitzForm::Table;
 		                   Draw.SetRowColumn(0,false);
 		                    Draw.IsCurrentDraw = true;
 		                    Draw.AStarGreedyStringNode = THISB;
-		                    HybridizerRefrigitz.ChessRules.CurrentOrder = AllDraw.OrderPlate;
+		                    HybridizerRefrigitz.ChessRules.CurrentOrder = new AllDraw.OrderPlate;
 		                    HybridizerRefrigitz.AllDraw.DepthIterative = 0;
-		                    (new TakeRoot()).Save(FOUND, false, *this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		                    (new TakeRoot()).Save(FOUND, false, this, ref LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 	
 	
 		                }
@@ -1711,11 +1696,11 @@ int **HybridizerRefrigitzForm::Table;
 			}
 			int Dummy = AllDraw::OrderPlate;
 
-			AllDraw THISB =Draw.AStarGreedyStringNode;
-			AllDraw THISStore = new Draw;
+			AllDraw *THISB =Draw.AStarGreedyStringNode;
+			AllDraw *THISStore = new Draw;
 			//while (Draw.AStarGreedyStringNode != null)
 			bool FOUND = false;
-			AllDraw THIS = nullptr;
+			AllDraw *THIS = nullptr;
 			bool First = false;
 
 
@@ -1745,7 +1730,7 @@ int **HybridizerRefrigitzForm::Table;
 					bool LoadTree = true;
 					Ord = AllDraw::OrderPlate;
 					//if (MovmentsNumber > 1)
-					//(new TakeRoot())->Save(FOUND, false, *this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+					//(new TakeRoot())->Save(FOUND, false, this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 
 					Draw.IsCurrentDraw = true;
 
@@ -1800,7 +1785,7 @@ int **HybridizerRefrigitzForm::Table;
 
 
 						bool LoadTree = true;
-						//(new TakeRoot())->Save(FOUND, false, *this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+						//(new TakeRoot())->Save(FOUND, false, this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 						AllDraw::OrderPlate = Ord;
 
 
@@ -1824,7 +1809,7 @@ int **HybridizerRefrigitzForm::Table;
 						Draw.AStarGreedyStringNode = THISB;
 						ChessRules::CurrentOrder = AllDraw::OrderPlate;
 						AllDraw::DepthIterative = 0;
-						//(new TakeRoot())->Save(FOUND, false, *this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+						//(new TakeRoot())->Save(FOUND, false, this, LoadTree, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 
 
 					}
@@ -1986,7 +1971,7 @@ int **HybridizerRefrigitzForm::Table;
 		////lock (O)
 		{
 			FOUND = false;
-			AllDraw THIS = nullptr;
+			AllDraw *THIS = nullptr;
 			SetDrawFounding(FOUND, THIS, false);
 		}
 	}
@@ -2003,7 +1988,7 @@ int **HybridizerRefrigitzForm::Table;
 		WaitOnplay = false;
 		R = new HybridizerRefrigitzGeneticAlgorithm(false, false,UsePenaltyRegardMechnisam, false, false, false, false, true);
 		Person = true;
-		Draw = AllDraw(-1, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
+		Draw = new AllDraw(-1, false, false, UsePenaltyRegardMechnisam, false, false, false, AStarGreedyHeuristic, true);
 		FOUND = false;
 		cl = 0;
 		order = 0;

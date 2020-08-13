@@ -1,5 +1,5 @@
 ﻿#include "DrawElefant.h"
-
+#include "ThinkingHybridizerRefrigitz.h"
 
 
 long long DrawElefant::MaxHeuristicxE = -20000000000000000;
@@ -48,7 +48,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 		for (int  ii = 0; ii < AllDraw::ElefantMovments; ii++)
 
 		{
-			a += ElefantThinking.ReturnHeuristic(-1, -1, Order, false,HaveKilled);
+			a += ElefantThinking->ReturnHeuristic(-1, -1, Order, false,HaveKilled);
 		}
 
 
@@ -163,7 +163,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 		{
 
 			AA->ElefantThinking = ThinkingHybridizerRefrigitz(i,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->ElefantThinking.Clone(AA->ElefantThinking);
+			this->ElefantThinking->Clone(AA->ElefantThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];

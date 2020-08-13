@@ -40,7 +40,7 @@ namespace {
   // move_importance() is a skew-logistic function based on naive statistical
   // analysis of "how many games are still undecided after n half-moves". Game
   // is considered "undecided" as long as neither side has >275cp advantage.
-  // Data was extracted from the CCRL game database with some simple filtering criteria.
+  // Data was extracted from the CCRL game database with some simple filtering criteriA->
 
   double move_importance(int ply) {
 

@@ -27,7 +27,6 @@
 		std::wstring AllDrawReplacement;
 
 	public:
-		int[][] CloneATableD(int** Tab);
 		static int MovmentsNumber;
 		static std::wstring Root;
 		static std::wstring AllDrawKindString;

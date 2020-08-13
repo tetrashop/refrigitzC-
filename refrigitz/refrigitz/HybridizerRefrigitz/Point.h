@@ -3,8 +3,7 @@
 //
 //www.IranProject.Ir
 //
-namespace RefrigtzChessPortable
-{
+
 	class Point
 	{
 	public:
@@ -16,4 +15,4 @@ namespace RefrigtzChessPortable
 	private:
 		void InitializeInstanceFields();
 	};
-}
+

@@ -1,7 +1,6 @@
 ﻿#include "Point.h"
 
-namespace RefrigtzChessPortable
-{
+
 
 	Point::Point()
 	{
@@ -22,4 +21,4 @@ namespace RefrigtzChessPortable
 		x = 0;
 		y = 0;
 	}
-}
+

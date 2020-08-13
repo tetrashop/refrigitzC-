@@ -8,7 +8,7 @@ double Colleralation::Threshold = 0.2;
 	{
 		int correlationScore = 0;
 
-		for (int  i = 0; i < n; i++) //seriesA.Length
+		for (int  i = 0; i < n; i++) //seriesA->Length
 		{
 			bool A = true;
 			for (int  j = 0; j < n; j++)
@@ -41,7 +41,7 @@ double Colleralation::Threshold = 0.2;
 	{
 		int correlationScore = 0;
 
-		for (int  i = 0; i < n; i++) //seriesA.Length
+		for (int  i = 0; i < n; i++) //seriesA->Length
 		{
 			bool A = true;
 			for (int  j = 0; j < n; j++)

@@ -1,5 +1,5 @@
 ﻿#include "DrawCastle.h"
-
+#include "ThinkingHybridizerRefrigitz.h"
 
 long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 
@@ -49,7 +49,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 		for (int  ii = 0; ii < AllDraw::CastleMovments; ii++)
 
 		{
-			a += CastleThinking.ReturnHeuristic(-1, -1, Order, false, HaveKilled);
+			a += CastleThinking->ReturnHeuristic(-1, -1, Order, false, HaveKilled);
 		}
 
 
@@ -161,7 +161,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 		{
 
 			AA->CastleThinking = ThinkingHybridizerRefrigitz(i, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->CastleThinking.Clone(AA->CastleThinking);
+			this->CastleThinking->Clone(AA->CastleThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];

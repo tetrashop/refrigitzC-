@@ -4,7 +4,7 @@
 #include <vector>
 #include <stdexcept>
 
-
+#include "LearningAtamata.h"
 
 
 //C# TO C++ CONVERTER NOTE: The following .NET attribute has no direct equivalent in native C++:
@@ -14,14 +14,7 @@
 	{
 
 
-	private:
-		//std::string *Space;
-//#pragma warning disable CS0414 // The field 'DrawElefant.Spaces' is assigned but its value is never used
-#pragma warning disable CS0414 // The field 'DrawElefant.Spaces' is assigned but its value is never used
-		int Spaces;
-#pragma warning restore CS0414 // The field 'DrawElefant.Spaces' is assigned but its value is never used
-//#pragma warning restore CS0414 // The field 'DrawElefant.Spaces' is assigned but its value is never used
-
+	
 
 
 	public:
@@ -47,7 +40,7 @@
 		bool ArrangmentsChanged;
 		static long long MaxHeuristicxE;
 		float Row, Column;
-		ThinkingHybridizerRefrigitz  ElefantThinking;
+		ThinkingHybridizerRefrigitz  *ElefantThinking;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public int[,] Table = nullptr;
 		int **Table;

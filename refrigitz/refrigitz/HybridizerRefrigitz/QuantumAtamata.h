@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "LearningAtamata.h"
+
 #include <string>
 #include <vector>
 #include "stringconverter.h"
@@ -32,12 +32,12 @@
 		std::vector<unsigned char> StateByte;
 		int r, m, k;
 	public:
-		Bit BitState[3];
+		Bit *BitState;
 	private:
 		double QuatumProbabilities[3];
 
 	public:
-		LearningKrinskyAtamata ThreeSet[3];
+		LearningKrinskyAtamata *ThreeSet;
 		int NumberActiveAtamata;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public double[] FirstProbibility = nullptr;

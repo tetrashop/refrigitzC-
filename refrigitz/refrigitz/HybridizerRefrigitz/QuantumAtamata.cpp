@@ -96,11 +96,13 @@
 	QuantumAtamata::QuantumAtamata(int r0, int m0, int k0) : LearningKrinskyAtamata(r0, m0, k0)
 	{
 		InitializeInstanceFields();
-		
+		BitState = new Bit[3];
+		ThreeSet = new LearningKrinskyAtamata[3];
+
 			for (int i = 0; i < 3; i++)
 			{
-				BitState[i] = new Bit();
-				ThreeSet[i] = new LearningKrinskyAtamata(r0, m0, k0);
+				BitState[i] =  Bit();
+				ThreeSet[i] =  LearningKrinskyAtamata(r0, m0, k0);
 			}
 			States.clear();
 			r = r0;

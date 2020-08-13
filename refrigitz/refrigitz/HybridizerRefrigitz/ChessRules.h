@@ -17,7 +17,7 @@
 		//std::string *Space;
 //#pragma warning disable CS0414 // The field 'ChessRules.Spaces' is assigned but its value is never used
 #pragma warning disable CS0414 // The field 'ChessRules.Spaces' is assigned but its value is never used
-		int Spaces;
+		
 #pragma warning restore CS0414 // The field 'ChessRules.Spaces' is assigned but its value is never used
 //#pragma warning restore CS0414 // The field 'ChessRules.Spaces' is assigned but its value is never used
 

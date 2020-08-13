@@ -131,12 +131,6 @@
 		int RationalRegard;
 		int RationalPenalty;
 
-#pragma warning disable CS0414 // The field 'ThinkingHybridizerRefrigitz.RationalWin' is assigned but its value is never used
-		int RationalWin;
-#pragma warning restore CS0414 // The field 'ThinkingHybridizerRefrigitz.RationalWin' is assigned but its value is never used
-#pragma warning disable CS0414 // The field 'ThinkingHybridizerRefrigitz.RationalLose' is assigned but its value is never used
-		int RationalLose;
-#pragma warning restore CS0414 // The field 'ThinkingHybridizerRefrigitz.RationalLose' is assigned but its value is never used
 
 	public:
 		static bool FullGameAllow;
@@ -146,13 +140,7 @@
 		static bool IsAtLeastOneKillerAtDraw;
 		std::vector<bool> KishSelf;
 		std::vector<bool> KishEnemy;
-	private:
-		std::string *const Space;
-		//#pragma warning disable CS0414 // The field 'ThinkingHybridizerRefrigitz.Spaces' is assigned but its value is never used
-#pragma warning disable CS0414 // The field 'ThinkingHybridizerRefrigitz.Spaces' is assigned but its value is never used
-		const int Spaces;
-#pragma warning restore CS0414 // The field 'ThinkingHybridizerRefrigitz.Spaces' is assigned but its value is never used
-		//#pragma warning restore CS0414 // The field 'ThinkingHybridizerRefrigitz.Spaces' is assigned but its value is never used
+	
 	public:
 		int HeuristicAttackValueSup;
 		int HeuristicMovementValueSup;
@@ -296,7 +284,7 @@
 		int color;
 		int Order;
 		//[NonSerialized()]
-		std::vector<AllDraw> AStarGreedy;
+		std::vector<AllDraw*> AStarGreedy;
 		std::vector<bool> AStarGreedyMove;
 	private:
 		const int **Value;
@@ -534,7 +522,7 @@
 		//Setting Numbers of Objects in Current Table boards.
 		//Count of Solders on Table.
 	private:
-		/*int SolderOnTableCount(DrawSoldier So[], bool Mi, int MaxCount);
+		/*int SolderOnTableCount(DrawSoldire So[], bool Mi, int MaxCount);
 		//Elepahnt On Table Count.
 		int ElefantOnTableCount(DrawElefant So[], bool Mi, int MaxCount);
 		//Calculate Hourse on table.
@@ -795,14 +783,14 @@
 	private:
 		void ThinkingWaite();
 		//operantinal of creation of current deeper node and set string making
-		void FullGameThinkingTreeInitialization(AllDraw THIS, int ik, int j, int Order, int kind);
+		void FullGameThinkingTreeInitialization(AllDraw *THIS, int ik, int j, int Order, int kind);
 		//Deeper than deeper
-		void ThinkingFullGame(int iAStarGreedy, AllDraw THIS);
+		void ThinkingFullGame(int iAStarGreedy, AllDraw *THIS);
 		int ColorOpposite(int a);
 		bool MovableAllObjectsListMethos(int RowS, int ColS);
 		void MovableAllObjectsListMethos(int** TableS, bool Before, int RowS, int ColS, int RowD, int ColD, int con, int movable = 1);
 	public:
-		void Thinking(int iAStarGreedy, AllDraw THIS, int *LoseOcuuredatChiled, int &WinOcuuredatChiled);
+		void Thinking(int iAStarGreedy, AllDraw *THIS, int *LoseOcuuredatChiled, int &WinOcuuredatChiled);
 		bool IsTheeAtleastMAteSelf();
 		void TowDistrurbProperUse(int *LoseOcuuredatChiled);
 		void TowDistrurbProperUsePreferNotToClose(int *LoseOcuuredatChiled, int** Tab);

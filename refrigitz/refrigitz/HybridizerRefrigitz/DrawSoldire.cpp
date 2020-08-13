@@ -1,20 +1,20 @@
-﻿#include "DrawSoldier.h"
+﻿#include "DrawSoldire.h"
 #include "ThingsConverter.h"
 
-int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
+int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 
 	
 
-	DrawSoldier::~DrawSoldier()
+	DrawSoldire::~DrawSoldire()
 	{
 
 		InitializeInstanceFields();
 		ValuableSelfSupported.clear();
 
 	}
-	DrawSoldier::DrawSoldier(){}
+	DrawSoldire::DrawSoldire(){}
 
-	bool DrawSoldier::MaxFound(bool &MaxNotFound)
+	bool DrawSoldire::MaxFound(bool &MaxNotFound)
 	{
 
 		int a = ReturnHeuristic();
@@ -40,7 +40,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 		return false;
 	}
 
-	int DrawSoldier::ReturnHeuristic()
+	int DrawSoldire::ReturnHeuristic()
 	{
 		int HaveKilled = 0;
 
@@ -48,14 +48,14 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 		for (int  ii = 0; ii < AllDraw::SodierMovments; ii++)
 
 		{
-			a += SoldierThinking.ReturnHeuristic(-1, -1, Order, false,HaveKilled);
+			a += SoldierThinking->ReturnHeuristic(-1, -1, Order, false,HaveKilled);
 		}
 
 
 		return a;
 	}
 
-	int **DrawSoldier::CloneATable(int** Tab)
+	int **DrawSoldire::CloneATable(int** Tab)
 	{
 		int**Tabl; *Tabl = new int[8]; for (int b = 0; b < 8; b++)Tabl[b] = new int[8];
 		
@@ -69,7 +69,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 		return Tabl;
 	}
 
-	DrawSoldier::DrawSoldier(int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, float i, float j, int a, int** Tab, int Ord, bool TB, int Cur) : ThingsConverter(Arrangments, static_cast<int>(i), static_cast<int>(j), a, Tab, Ord, TB, Cur)
+	DrawSoldire::DrawSoldire(int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, float i, float j, int a, int** Tab, int Ord, bool TB, int Cur) : ThingsConverter(Arrangments, static_cast<int>(i), static_cast<int>(j), a, Tab, Ord, TB, Cur)
 	{
 
 		InitializeInstanceFields();
@@ -108,7 +108,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 
 	}
 	/*
-	void DrawSoldier::Clone(DrawSoldier *&AA)
+	void DrawSoldire::Clone(DrawSoldire *&AA)
 	{
 
 		int **Tab; *Tab = new int[8]; for (int b = 0; b < 8; b++)Tab[b] = new int[8];
@@ -121,13 +121,13 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 		}
 		//Initiate a Object and Assignemt of a Clone to Construction of a Copy.
 
-		AA = new DrawSoldier(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, this->Row, this->Column, this->color, CloneATable(Tab), this->Order, false, this->Current);
+		AA = new DrawSoldire(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, this->Row, this->Column, this->color, CloneATable(Tab), this->Order, false, this->Current);
 		AA->ArrangmentsChanged = ArrangmentsChanged;
 		for (int  i = 0; i < AllDraw::SodierMovments; i++)
 		{
 
 			AA->SoldierThinking = ThinkingHybridizerRefrigitz(i,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->SoldierThinking.Clone(AA->SoldierThinking);
+			this->SoldierThinking->Clone(AA->SoldierThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
@@ -146,7 +146,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 
 	}*/
 
-	bool **DrawSoldier::CloneATableb(bool** Tab)
+	bool **DrawSoldire::CloneATableb(bool** Tab)
 	{
 
 		////auto o = new Object();
@@ -170,7 +170,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 
 	}
 
-	void DrawSoldier::DrawSoldierOnTable(int CellW, int CellH)
+	void DrawSoldire::DrawSoldireOnTable(int CellW, int CellH)
 	{
 		//auto balance//lockS = new Object();
 
@@ -332,7 +332,7 @@ int DrawSoldier::MaxHeuristicxS = -DBL_MAX;
 		}
 	}
 
-	void DrawSoldier::InitializeInstanceFields()
+	void DrawSoldire::InitializeInstanceFields()
 	{
 		//Space = "&nbsp;";
 		Spaces = 0;

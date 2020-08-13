@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 /*CopyRight Ramin Edjlal***************************2018*************************
- The Magic Table Game Satte Learing Quantum Atamata.****************************
+ The Magic Table Game Satte Learing Quantum AtamatA->****************************
  *******************************************************************************
  */ 
 	class NetworkQuantumLearningKrinskyAtamata : public LearningKrinskyAtamata

@@ -11,7 +11,7 @@
                  \\|//
                  (o o)
 --------------ooO-(_)-Ooo--------------
- Copyright 2004 By Gregory A. Prentice
+ Copyright 2004 By Gregory A-> Prentice
                       Ooo.
 --------------.ooO----(  )-------------
               (  )    (_/

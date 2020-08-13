@@ -1,5 +1,5 @@
 ﻿#include "DrawHourse.h"
-
+#include "ThinkingHybridizerRefrigitz.h"
 
 
 long long DrawHourse::MaxHeuristicxH = -20000000000000000;
@@ -49,7 +49,7 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 		for (int  ii = 0; ii < AllDraw::HourseMovments; ii++)
 
 		{
-			a += HourseThinking.ReturnHeuristic(-1, -1, Order, false,HaveKilled);
+			a += HourseThinking->ReturnHeuristic(-1, -1, Order, false,HaveKilled);
 		}
 
 		return a;
@@ -158,7 +158,7 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 		{
 
 			AA->HourseThinking = ThinkingHybridizerRefrigitz(i,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
-			this->HourseThinking.Clone(AA->HourseThinking);
+			this->HourseThinking->Clone(AA->HourseThinking);
 
 		}
 		*AA->Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];

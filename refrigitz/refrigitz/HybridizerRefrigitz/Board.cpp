@@ -1,6 +1,6 @@
 ﻿#include "Board.h"
 #include "Stone.h"
-
+#include "Point.h"
 
 
 

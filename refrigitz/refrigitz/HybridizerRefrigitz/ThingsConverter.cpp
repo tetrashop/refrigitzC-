@@ -24,7 +24,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 		Order = Ord;
 		Current = Cur;
 
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ThingsConverter:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ThingsConverter:" + (TimeElapced.TimeNow() - Time).ToString();}
 	}
 
 	int **ThingsConverter::CloneATable(int** Tab)
@@ -51,7 +51,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 		this->tableS = CloneATable(tableS);
 		Order = order;
 		this->v = v;
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ThingsConverter:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ThingsConverter:" + (TimeElapced.TimeNow() - Time).ToString();}
 	}
 
 	bool ThingsConverter::ConvertOperation(int i, int j, int a, int** Tab, int Ord, bool TB, int Cur)
@@ -138,7 +138,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 								/* while (AllDraw.ConvertedKind == -1) { 
 								 }
 	
-								 Rand = AllDraw.ConvertedKind;
+								 Rand = new AllDraw.ConvertedKind;
 	
 								 AllDraw.ConvertedKind = -2;
 	 */
@@ -157,7 +157,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 								/*  while (AllDraw.ConvertedKind == -1) {  
 								  }
 	
-								  Rand = AllDraw.ConvertedKind;
+								  Rand = new AllDraw.ConvertedKind;
 	
 								  AllDraw.ConvertedKind = -2;
 							 */
@@ -249,7 +249,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 									/* while (AllDraw.ConvertedKind == -1) {  
 									 }
 	
-									 Rand = AllDraw.ConvertedKind;
+									 Rand = new AllDraw.ConvertedKind;
 	
 									 AllDraw.ConvertedKind = -2;
 								*/
@@ -267,7 +267,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 									/*  while (AllDraw.ConvertedKind == -1) {  
 									  }
 	
-									  Rand = AllDraw.ConvertedKind;
+									  Rand = new AllDraw.ConvertedKind;
 	
 									  AllDraw.ConvertedKind = -2;
 								  */
@@ -362,7 +362,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 									/*  while (AllDraw.ConvertedKind == -1) { 
 									  }
 	
-									  Rand = AllDraw.ConvertedKind;
+									  Rand = new AllDraw.ConvertedKind;
 	
 									  AllDraw.ConvertedKind = -2;
 								*/
@@ -380,7 +380,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 									/*   while (AllDraw.ConvertedKind == -1) { 
 									   }
 	
-									   Rand = AllDraw.ConvertedKind;
+									   Rand = new AllDraw.ConvertedKind;
 	
 									   AllDraw.ConvertedKind = -2;
 								  */
@@ -488,7 +488,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 
 			}
 
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ConvertOperation:" + (TimeElapced.TimeNow() - Time).ToString();}Spaces--;
+			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ConvertOperation:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//return Convert State.
 			return Convert;
 		}

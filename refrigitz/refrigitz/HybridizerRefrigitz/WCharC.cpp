@@ -1,7 +1,11 @@
+#include <string>
+#include <cctype>
+#include <stdexcept>
 #include "WCharC.h"
-WCharC* WCharC::Split(WCharC*src, wchar_t indstr)
+WCharC* WCharC::Split(WCharC *src, wchar_t indstr)
 {
 	WCharC*str;
+	str = new WCharC();
 
 	int lensrc = 64;
 
@@ -14,7 +18,7 @@ WCharC* WCharC::Split(WCharC*src, wchar_t indstr)
 			if (*(src->coBoard[i,j]) != indstr)
 				continue;
 			for (int j = 0; j < lenindstr; j++) {
-				Is = Is && (*(src->coBoard[i, j]) == indstr);
+				Is = Is && ((src->coBoard[i][ j]) == indstr);
 			}
 			if (Is&&i!=0 && j != 0) 
 			{
@@ -23,7 +27,7 @@ WCharC* WCharC::Split(WCharC*src, wchar_t indstr)
 				for (int ii = 0; ii < i; ii++)
 					for (int jj = 0; jj < j; jj++)
 					{
-						str->coBoard[ii,jj] = (src->coBoard[ii, jj]);
+						str->coBoard[ii][jj] = (src->coBoard[ii][ jj]);
 					}
 			}
 		}
@@ -34,7 +38,7 @@ void WCharC::Append(wchar_t **src, wchar_t dst)
 	for (int i = 0; i < 64; i++)
 	{
 
-		src[Length, i] = &dst;
+		src[Length][ i] = dst;
 
 	}
 	Length++;
@@ -49,7 +53,7 @@ void WCharC::Append(wchar_t **src, wchar_t dst, int len)
 		src[i] = new wchar_t[64];
 		for (int h = 0; h < 64; h++)
 		{
-			*src[i, h] = dst;
+			src[i][ h] = dst;
 		}
 	}
 	return;
@@ -61,9 +65,9 @@ void WCharC::Append(wchar_t **src, std::wstring dst)
 
 	for (int i = 0; i < 64; i++) {
 		src[i] = new wchar_t[64];
-		for (int h = 0; h < dst.length; h++)
+		for (int h = 0; h < dst.length(); h++)
 		{
-			*src[i, h] = *((dst.c_str()[h])) ;
+			src[i][ h] = ((dst.c_str()[h])) ;
 		}
 	}
 	return;

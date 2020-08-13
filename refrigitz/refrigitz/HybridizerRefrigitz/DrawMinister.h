@@ -13,13 +13,6 @@
 	{
 
 
-	private:
-		//std::string *Space;
-//#pragma warning disable CS0414 // The field 'DrawMinister.Spaces' is assigned but its value is never used
-#pragma warning disable CS0414 // The field 'DrawMinister.Spaces' is assigned but its value is never used
-		int Spaces;
-#pragma warning restore CS0414 // The field 'DrawMinister.Spaces' is assigned but its value is never used
-//#pragma warning restore CS0414 // The field 'DrawMinister.Spaces' is assigned but its value is never used
 
 
 
@@ -53,7 +46,7 @@
 		int **Table;
 		int Current;
 		int Order;
-		ThinkingHybridizerRefrigitz  MinisterThinking;
+		ThinkingHybridizerRefrigitz  *MinisterThinking;
 	private:
 		int CurrentAStarGredyMax;
 		static void Log(std::exception &ex);
