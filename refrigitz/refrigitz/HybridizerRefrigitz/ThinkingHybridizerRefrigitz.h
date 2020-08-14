@@ -123,10 +123,30 @@
 //C# TO C++ CONVERTER NOTE: The variable Colleralation was renamed since it is named the same as a user-defined type:
 		static int Colleralation_Renamed;
 		static int DeColleralation;
-		static int **TableInitiation;
+		static int TableInitiation[8][8] =
+		{
+			{-4, -1, 0, 0, 0, 0, 1, 4},
+			{-3, -1, 0, 0, 0, 0, 1, 3},
+			{-2, -1, 0, 0, 0, 0, 1, 2},
+			{-5, -1, 0, 0, 0, 0, 1, 5},
+			{-6, -1, 0, 0, 0, 0, 1, 6},
+			{-2, -1, 0, 0, 0, 0, 1, 2},
+			{-3, -1, 0, 0, 0, 0, 1, 3},
+			{-4, -1, 0, 0, 0, 0, 1, 4}
+		};
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public static int[,] TableInitiationPreventionOfMultipleMove ={ { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 } };
-		static int **TableInitiationPreventionOfMultipleMove;
+		static int TableInitiationPreventionOfMultipleMove[8][8] =
+		{
+			{0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0},
+			{0, 0, 0, 0, 0, 0, 0, 0}
+		};
 	private:
 		int RationalRegard;
 		int RationalPenalty;
@@ -273,12 +293,12 @@
 		std::vector<int*> HeuristicListMinister;
 		std::vector<int*> HeuristicListKing;
 		std::vector<int> KillerAtThinking;
-		std::vector<QuantumAtamata> PenaltyRegardListSolder;
-		std::vector<QuantumAtamata> PenaltyRegardListElefant;
-		std::vector<QuantumAtamata> PenaltyRegardListHourse;
-		std::vector<QuantumAtamata> PenaltyRegardListCastle;
-		std::vector<QuantumAtamata> PenaltyRegardListMinister;
-		std::vector<QuantumAtamata> PenaltyRegardListKing;
+		std::vector<QuantumAtamata*> PenaltyRegardListSolder;
+		std::vector<QuantumAtamata*> PenaltyRegardListElefant;
+		std::vector<QuantumAtamata*> PenaltyRegardListHourse;
+		std::vector<QuantumAtamata*> PenaltyRegardListCastle;
+		std::vector<QuantumAtamata*> PenaltyRegardListMinister;
+		std::vector<QuantumAtamata*> PenaltyRegardListKing;
 		int Max;
 		int Row, Column;
 		int color;
@@ -320,9 +340,9 @@
 		bool BeginArragmentsOfOrderFinished(int** Table, int Order);
 		//Constructor
 	public:
-		ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin);
+		//ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin);
 		//Clone A Table
-	private:
+		private:
 		int **CloneATable(int** Tab);
 		//Clone A List.  
 		int *CloneAList(int Tab[], int Count);
@@ -603,14 +623,14 @@
 		//healthy of lists in learning auatama
 		bool EqualitTow(bool PenRegStrore, int kind);
 		//healthy of lists in learning auatama
-		bool EqualitOne(QuantumAtamata Current, int kind);
+		bool EqualitOne(QuantumAtamata* Current, int kind);
 		//add list 
-		void AddAtList(int kind, QuantumAtamata Current);
+		void AddAtList(int kind, QuantumAtamata* Current);
 		//remove list
 		void eraseList(int kind);
 		//learning autamata maib method
 //C# TO C++ CONVERTER NOTE: The parameter Castle was renamed since it is named the same as a user-defined type:
-		void PenaltyMechanisam(bool &RETURN, int *LoseOcuuredatChiled, int &WinOcuuredatChiled, int &CheckedM, int Killed, bool Before, int kind, int** TableS, int ii, int jj, QuantumAtamata Current, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int i, int j, bool Castle_Renamed);
+		void PenaltyMechanisam(bool &RETURN, int *LoseOcuuredatChiled, int &WinOcuuredatChiled, int &CheckedM, int Killed, bool Before, int kind, int** TableS, int ii, int jj, QuantumAtamata* Current, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int i, int j, bool Castle_Renamed);
 		void SoldierConversion(ThingsConverter *&t, int RowSource, int ColumnSource, int RowDestination, int ColumnDestination, int** TableS);
 		int KilledBool(int row1, int col1, int row2, int col2, int** Tab);
 		//specific determination for thinking main method
@@ -710,7 +730,7 @@
 //C# TO C++ CONVERTER NOTE: The parameter Castle was renamed since it is named the same as a user-defined type:
 		void CastleThinkingWHITE(int *LoseOcuuredatChiled, int &WinOcuuredatChiled, int DummyOrder, int DummyCurrentOrder, int** TableS, int RowSource, int ColumnSource, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int RowDestination, int ColumnDestination, bool Castle_Renamed);
 	public:
-		void HeuristicPenaltyValuePerform(QuantumAtamata Current, int Order, int &HeuristicAttackValue, bool AllDrawClass = false);
+		void HeuristicPenaltyValuePerform(QuantumAtamata* Current, int Order, int &HeuristicAttackValue, bool AllDrawClass = false);
 		//specific determination for thinking main method
 //C# TO C++ CONVERTER NOTE: The parameter Castle was renamed since it is named the same as a user-defined type:
 		void ThinkingSoldierbase(int *LoseOcuuredatChiled, int &WinOcuuredatChiled, int ord, int ii, int jj, int i, int j, int DummyOrder, int DummyCurrentOrder, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, bool Castle_Renamed);

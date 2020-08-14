@@ -11,8 +11,8 @@ int ThinkingHybridizerRefrigitz::NoOfMovableAllObjectMove = 1;
 int ThinkingHybridizerRefrigitz::ColleralationWHITE = DBL_MAX;
 int ThinkingHybridizerRefrigitz::ColleralationBLACK = DBL_MAX;
 //int ThinkingHybridizerRefrigitz::Colleralation = DBL_MAX;
-int ThinkingHybridizerRefrigitz::DeColleralation = DBL_MAX;
-int **ThinkingHybridizerRefrigitz::TableInitiation=
+int ThinkingHybridizerRefrigitz::DeColleralation = DBL_MAX;/*
+int ThinkingHybridizerRefrigitz::TableInitiation[8][8]=
 {
 	{-4, -1, 0, 0, 0, 0, 1, 4},
 	{-3, -1, 0, 0, 0, 0, 1, 3},
@@ -23,7 +23,7 @@ int **ThinkingHybridizerRefrigitz::TableInitiation=
 	{-3, -1, 0, 0, 0, 0, 1, 3},
 	{-4, -1, 0, 0, 0, 0, 1, 4}
 };
-int **ThinkingHybridizerRefrigitz::TableInitiationPreventionOfMultipleMove =
+int ThinkingHybridizerRefrigitz::TableInitiationPreventionOfMultipleMove[8][8] =
 {
 	{0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0},
@@ -33,7 +33,7 @@ int **ThinkingHybridizerRefrigitz::TableInitiationPreventionOfMultipleMove =
 	{0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0}
-};
+};*/
 bool ThinkingHybridizerRefrigitz::FullGameAllow = false;
 bool ThinkingHybridizerRefrigitz::IsAtLeastOneKillerAtDraw = false;
 NetworkQuantumLearningKrinskyAtamata *ThinkingHybridizerRefrigitz::LearniningTable = nullptr;
@@ -51,7 +51,23 @@ int ThinkingHybridizerRefrigitz::BeginThread = 0;
 int ThinkingHybridizerRefrigitz::EndThread = 0;
 bool ThinkingHybridizerRefrigitz::NotSolvedKingDanger = false;
 bool ThinkingHybridizerRefrigitz::ThinkingRun = false;
-
+inline bool operator==(const AllDraw* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+inline bool operator!=(const AllDraw* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+inline bool operator==(const DrawSoldire* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+inline bool operator!=(const DrawSoldire* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+inline bool operator==(const DrawCastle* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+inline bool operator!=(const DrawCastle* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+inline bool operator==(const DrawElefant* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+inline bool operator!=(const DrawElefant* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+inline bool operator==(const DrawHourse* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+inline bool operator!=(const DrawHourse* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+inline bool operator==(const DrawMinister* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+inline bool operator!=(const DrawMinister* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+inline bool operator==(const DrawKing* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+inline bool operator!=(const DrawKing* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+inline bool operator==(const ThinkingHybridizerRefrigitz* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+inline bool operator!=(const ThinkingHybridizerRefrigitz* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+/*
 
 inline bool operator==(const AllDraw lhs, const std::nullptr_t rhs) { return ((&lhs) == rhs); }
 inline bool operator!=(const AllDraw lhs, const std::nullptr_t rhs) { return !((&lhs) == rhs); }
@@ -68,7 +84,7 @@ inline bool operator!=(const DrawMinister lhs, const std::nullptr_t rhs) { retur
 inline bool operator==(const DrawKing lhs, const std::nullptr_t rhs) { return ((&lhs) == rhs); }
 inline bool operator!=(const DrawKing lhs, const std::nullptr_t rhs) { return !((&lhs) == rhs); }
 inline bool operator==(const ThinkingHybridizerRefrigitz lhs, const std::nullptr_t rhs) { return ((&lhs) == rhs); }
-inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr_t rhs) { return !((&lhs) == rhs); }
+inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr_t rhs) { return !((&lhs) == rhs); }*/
 
 	void ThinkingHybridizerRefrigitz::SetObjectNumbersInList(int** Tab)
 	{
@@ -235,7 +251,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnSoldier = std::vector<int*>();
 				HitNumberSoldier = std::vector<int>();
 				HeuristicListSolder = std::vector<int*>();
-				PenaltyRegardListSolder = std::vector<QuantumAtamata>();
+				PenaltyRegardListSolder = std::vector<QuantumAtamata*>();
 			}
 			else
 			{
@@ -245,7 +261,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnElefant = std::vector<int*>();
 				HitNumberElefant = std::vector<int>();
 				HeuristicListElefant = std::vector<int*>();
-				PenaltyRegardListElefant = std::vector<QuantumAtamata>();
+				PenaltyRegardListElefant = std::vector<QuantumAtamata*>();
 				}
 			else
 			{
@@ -255,7 +271,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnHourse = std::vector<int*>();
 				HitNumberHourse = std::vector<int>();
 				HeuristicListHourse = std::vector<int*>();
-				PenaltyRegardListHourse = std::vector<QuantumAtamata>();
+				PenaltyRegardListHourse = std::vector<QuantumAtamata*>();
 				}
 			else
 			{
@@ -265,7 +281,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnCastle = std::vector<int*>();
 				HitNumberCastle = std::vector<int>();
 				HeuristicListCastle = std::vector<int*>();
-				PenaltyRegardListCastle = std::vector<QuantumAtamata>();
+				PenaltyRegardListCastle = std::vector<QuantumAtamata*>();
 				}
 			else
 			{
@@ -275,7 +291,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnMinister = std::vector<int*>();
 				HitNumberMinister = std::vector<int>();
 				HeuristicListMinister = std::vector<int*>();
-				PenaltyRegardListMinister = std::vector<QuantumAtamata>();
+				PenaltyRegardListMinister = std::vector<QuantumAtamata*>();
 				}
 			else if (KindO == 6)
 			{
@@ -283,7 +299,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnKing = std::vector<int*>();
 				HitNumberKing = std::vector<int>();
 				HeuristicListKing = std::vector<int*>();
-				PenaltyRegardListKing = std::vector<QuantumAtamata>();
+				PenaltyRegardListKing = std::vector<QuantumAtamata*>();
 			}
 			}
 			}
@@ -372,8 +388,8 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			return false;
 		}
 	}
-
-	ThinkingHybridizerRefrigitz::ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin) //: iIndex(iInde), iIndex(-1), Space(new std::string(L"&nbsp;"), Spaces(0), callStack(new StackFrame(1, true))
+	/*
+	ThinkingHybridizerRefrigitz::ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -401,7 +417,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnSoldier = std::vector<int*>();
 				HitNumberSoldier = std::vector<int>();
 				HeuristicListSolder = std::vector<int*>();
-				PenaltyRegardListSolder = std::vector<QuantumAtamata>();
+				PenaltyRegardListSolder = std::vector<QuantumAtamata*>();
 			}
 			else
 			{
@@ -411,7 +427,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnElefant = std::vector<int*>();
 				HitNumberElefant = std::vector<int>();
 				HeuristicListElefant = std::vector<int*>();
-				PenaltyRegardListElefant = std::vector<QuantumAtamata>();
+				PenaltyRegardListElefant = std::vector<QuantumAtamata*>();
 				   }
 			else
 			{
@@ -421,7 +437,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnHourse = std::vector<int*>();
 				HitNumberHourse = std::vector<int>();
 				HeuristicListHourse = std::vector<int*>();
-				PenaltyRegardListHourse = std::vector<QuantumAtamata>();
+				PenaltyRegardListHourse = std::vector<QuantumAtamata*>();
 				   }
 			else
 			{
@@ -431,7 +447,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnCastle = std::vector<int*>();
 				HitNumberCastle = std::vector<int>();
 				HeuristicListCastle = std::vector<int*>();
-				PenaltyRegardListCastle = std::vector<QuantumAtamata>();
+				PenaltyRegardListCastle = std::vector<QuantumAtamata*>();
 				   }
 			else
 			{
@@ -441,7 +457,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnMinister = std::vector<int*>();
 				HitNumberMinister = std::vector<int>();
 				HeuristicListMinister = std::vector<int*>();
-				PenaltyRegardListMinister = std::vector<QuantumAtamata>();
+				PenaltyRegardListMinister = std::vector<QuantumAtamata*>();
 				   }
 			else if (KindO == 6)
 			{
@@ -449,7 +465,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				RowColumnKing = std::vector<int*>();
 				HitNumberKing = std::vector<int>();
 				HeuristicListKing = std::vector<int*>();
-				PenaltyRegardListKing = std::vector<QuantumAtamata>();
+				PenaltyRegardListKing = std::vector<QuantumAtamata*>();
 			}
 			}
 			}
@@ -477,7 +493,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	int **ThinkingHybridizerRefrigitz::CloneATable(int** Tab)
+*/	int **ThinkingHybridizerRefrigitz::CloneATable(int** Tab)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -690,11 +706,11 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				AA->HeuristicListKing.push_back(CloneAList(HeuristicListKing[i], 4));
 			}
 			//Initiate and create Penalty Solder List.
-			AA->PenaltyRegardListSolder = std::vector<QuantumAtamata>();
+			AA->PenaltyRegardListSolder = std::vector<QuantumAtamata*>();
 			//For All Solder Penalty List Count.
 			if (Kind == 1)
 			{
-				AA->PenaltyRegardListSolder = std::vector<QuantumAtamata>();
+				AA->PenaltyRegardListSolder = std::vector<QuantumAtamata*>();
 				for (int  i = 0; i < PenaltyRegardListSolder.size(); i++)
 				{
 					//Initiate a new  QuantumAtamata Object
@@ -707,7 +723,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (Kind == 2)
 			{
 				//Initaite and Create Elephant Penalty List Object.
-				AA->PenaltyRegardListElefant = std::vector<QuantumAtamata>();
+				AA->PenaltyRegardListElefant = std::vector<QuantumAtamata*>();
 				//For All Elepahtn Penalty List Count.
 				for (int  i = 0; i < PenaltyRegardListElefant.size(); i++)
 				{
@@ -722,12 +738,12 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		if (Kind == 3)
 		{
 				//Initaite and Create Hourse Penalty List Object.
-				AA->PenaltyRegardListHourse = std::vector<QuantumAtamata>();
+				AA->PenaltyRegardListHourse = std::vector<QuantumAtamata*>();
 				//For All Solder Hourse List Count.
 				for (int  i = 0; i < PenaltyRegardListHourse.size(); i++)
 				{
 					//Initiate a new  QuantumAtamata Object
-					QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+					QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 					//Clone a Copy Of Penalty Hourse.
 					//Add New Object Create to New Penalty Hourse List.
 					AA->PenaltyRegardListHourse.push_back(PenaltyRegardListHourse[i]);
@@ -738,7 +754,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (Kind == 4)
 			{
 				//Initaite and Create Castles Penalty List Object.
-				AA->PenaltyRegardListCastle = std::vector<QuantumAtamata>();
+				AA->PenaltyRegardListCastle = std::vector<QuantumAtamata*>();
 				//For All Solder Castle List Count.
 				for (int  i = 0; i < PenaltyRegardListCastle.size(); i++)
 				{
@@ -753,7 +769,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (Kind == 5)
 			{
 				//Initaite and Create Minister Penalty List Object.
-				AA->PenaltyRegardListMinister = std::vector<QuantumAtamata>();
+				AA->PenaltyRegardListMinister = std::vector<QuantumAtamata*>();
 				//For All Solder Minster List Count.
 				for (int  i = 0; i < PenaltyRegardListMinister.size(); i++)
 				{
@@ -768,7 +784,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (Kind == 6)
 			{
 				//Initaite and Create King Penalty List Object.
-				AA->PenaltyRegardListKing = std::vector<QuantumAtamata>();
+				AA->PenaltyRegardListKing = std::vector<QuantumAtamata*>();
 				//For All Solder King List Count.
 				for (int  i = 0; i < PenaltyRegardListKing.size(); i++)
 				{
@@ -984,7 +1000,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				int Order = int();
 				int a;
 				a = aa;
-				//Ignore of Current.
+				//Ignore of Current->
 				if (RowS == RowD && ColS == ColD)
 				{
 					return HeuristicAttackValue;
@@ -5200,7 +5216,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 						Tabl1[ik][jk] = Table[ik][jk];
 					}
 				}
-				//For Current.
+				//For Current->
 				for (int  i = 0; i < 8; i++)
 				{
 					for (int  j = 0; j < 8; j++)
@@ -5222,7 +5238,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 						{
 							for (int  jj = 0; jj < 8; jj++)
 							{
-								//Ignore of Current.QC_OK.
+								//Ignore of Current->QC_OK.
 								if (Order == 1 && Tabl1[ii][jj] >= 0)
 								{
 									continue;
@@ -8993,7 +9009,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				}
 				{
 				//if (Before)
-					//When is Movable Movement inCurrent.
+					//When is Movable Movement inCurrent->
 					bool ab = false;
 					ab = Movable(CloneATable(Table), RowS, ColS, RowD, ColD, a, Order);
 
@@ -9138,7 +9154,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				}
 				{
 				//if (Before)
-					//When is Movable Movement inCurrent.
+					//When is Movable Movement inCurrent->
 					bool ab = false;
 					ab = Movable(CloneATable(Table), RowS, ColS, RowD, ColD, a, Order);
 
@@ -9290,7 +9306,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				}
 				{
 				//if (Before)
-					//When is Movable Movement inCurrent.
+					//When is Movable Movement inCurrent->
 					bool ab = false;
 					ab = Movable(CloneATable(Table), RowS, ColS, RowD, ColD, a, Order);
 
@@ -9433,7 +9449,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				}
 				{
 				//if (Before)
-					//When is Movable Movement inCurrent.
+					//When is Movable Movement inCurrent->
 					bool ab = false;
 					ab = Movable(CloneATable(Table), RowS, ColS, RowD, ColD, a, Order);
 
@@ -9731,7 +9747,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			{
 				for (int  i = 0; i < this->PenaltyRegardListSolder.size(); i++)
 				{
-					if (PenaltyRegardListSolder[i].IsPenaltyAction() != 0)
+					if (PenaltyRegardListSolder[i]->IsPenaltyAction() != 0)
 					{
 						if (Order == AllDraw::OrderPlateDraw)
 						{
@@ -9760,7 +9776,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				{
 				for (int  i = 0; i < this->PenaltyRegardListElefant.size(); i++)
 				{
-					if (PenaltyRegardListElefant[i].IsPenaltyAction() != 0)
+					if (PenaltyRegardListElefant[i]->IsPenaltyAction() != 0)
 					{
 						if (Order == AllDraw::OrderPlateDraw)
 						{
@@ -9789,7 +9805,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					{
 				for (int  i = 0; i < this->PenaltyRegardListHourse.size(); i++)
 				{
-					if (PenaltyRegardListHourse[i].IsPenaltyAction() != 0)
+					if (PenaltyRegardListHourse[i]->IsPenaltyAction() != 0)
 					{
 						if (Order == AllDraw::OrderPlateDraw)
 						{
@@ -9818,7 +9834,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 						{
 				for (int  i = 0; i < this->PenaltyRegardListCastle.size(); i++)
 				{
-					if (PenaltyRegardListCastle[i].IsPenaltyAction() != 0)
+					if (PenaltyRegardListCastle[i]->IsPenaltyAction() != 0)
 					{
 						if (Order == AllDraw::OrderPlateDraw)
 						{
@@ -9847,7 +9863,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							{
 				for (int  i = 0; i < this->PenaltyRegardListMinister.size(); i++)
 				{
-					if (PenaltyRegardListMinister[i].IsPenaltyAction() != 0)
+					if (PenaltyRegardListMinister[i]->IsPenaltyAction() != 0)
 					{
 						if (Order == AllDraw::OrderPlateDraw)
 						{
@@ -9876,7 +9892,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 								{
 				for (int  i = 0; i < this->PenaltyRegardListKing.size(); i++)
 				{
-					if (PenaltyRegardListKing[i].IsPenaltyAction() != 0)
+					if (PenaltyRegardListKing[i]->IsPenaltyAction() != 0)
 					{
 						if (Order == AllDraw::OrderPlateDraw)
 						{
@@ -10356,7 +10372,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	{
 		int Heuristic = 0;
 		//when killer list satisfied
-		if (KillerAtThinking->size() > j)
+		if (KillerAtThinking.size() > j)
 		{
 			//when killer list exist and for victory
 			if (KillerAtThinking[j] > 0)
@@ -11191,7 +11207,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			if (ab)
 			{
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 				ThinkingAtRun = true;
 				int CheckedM = 0;
 				bool PenaltyVCar = false;
@@ -11390,7 +11406,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			if (ab)
 			{
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 				ThinkingAtRun = true;
 				int CheckedM = 0;
 				bool PenaltyVCar = false;
@@ -12014,7 +12030,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (ab)
 			{
 
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 				ThinkingAtRun = true;
 				int CheckedM = 0;
 				bool PenaltyVCar = false;
@@ -12181,7 +12197,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			if (ab)
 			{
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 				ThinkingAtRun = true;
 				int CheckedM = 0;
 				bool PenaltyVCar = false;
@@ -12346,7 +12362,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			if (ab)
 			{
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 				ThinkingAtRun = true;
 				int CheckedM = 0;
 				bool PenaltyVCar = false;
@@ -12535,44 +12551,44 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	bool ThinkingHybridizerRefrigitz::EqualitOne(QuantumAtamata Current, int kind)
+	bool ThinkingHybridizerRefrigitz::EqualitOne(QuantumAtamata* Current, int kind)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{
 			bool Equality = false;
-			if (kind == 1 && Current.IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListSolder.size() > 0 && PenaltyRegardListSolder.size() == TableListSolder.size())
+			if (kind == 1 && Current->IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListSolder.size() > 0 && PenaltyRegardListSolder.size() == TableListSolder.size())
 			{
 				Equality = true;
 			}
 			else
 			{
-				if (kind == 2 && Current.IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListElefant.size() > 0 && PenaltyRegardListElefant.size() == TableListElefant.size())
+				if (kind == 2 && Current->IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListElefant.size() > 0 && PenaltyRegardListElefant.size() == TableListElefant.size())
 				{
 				Equality = true;
 				}
 			else
 			{
-					if (kind == 3 && Current.IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListHourse.size() > 0 && PenaltyRegardListHourse.size() == TableListHourse.size())
+					if (kind == 3 && Current->IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListHourse.size() > 0 && PenaltyRegardListHourse.size() == TableListHourse.size())
 					{
 				Equality = true;
 					}
 			else
 			{
-			if (kind == 4 && Current.IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListCastle.size() > 0 && PenaltyRegardListCastle.size() == TableListCastle.size())
+			if (kind == 4 && Current->IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListCastle.size() > 0 && PenaltyRegardListCastle.size() == TableListCastle.size())
 			{
 				Equality = true;
 			}
 			else
 			{
-						if (kind == 5 && Current.IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListMinister.size() > 0 && PenaltyRegardListMinister.size() == TableListMinister.size())
+						if (kind == 5 && Current->IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListMinister.size() > 0 && PenaltyRegardListMinister.size() == TableListMinister.size())
 						{
 				Equality = true;
 						}
 			else
 			{
-								 if (kind == 6 && Current.IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListKing.size() > 0 && PenaltyRegardListKing.size() == TableListKing.size())
+								 if (kind == 6 && Current->IsPenaltyAction() != 0 && UsePenaltyRegardMechnisamT && PenaltyRegardListKing.size() > 0 && PenaltyRegardListKing.size() == TableListKing.size())
 								 {
 				Equality = true;
 								 }
@@ -12585,7 +12601,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	void ThinkingHybridizerRefrigitz::AddAtList(int kind, QuantumAtamata Current)
+	void ThinkingHybridizerRefrigitz::AddAtList(int kind, QuantumAtamata* Current)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -12697,7 +12713,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	}
 
 //C# TO C++ CONVERTER NOTE: The parameter Castle was renamed since it is named the same as a user-defined type:
-	void ThinkingHybridizerRefrigitz::PenaltyMechanisam(bool &RETURN, int * LoseOcuuredatChiled, int &WinOcuuredatChiled, int &CheckedM, int Killed, bool Before, int kind, int** TableS, int ii, int jj, QuantumAtamata Current, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int i, int j, bool Castle_Renamed)
+	void ThinkingHybridizerRefrigitz::PenaltyMechanisam(bool &RETURN, int * LoseOcuuredatChiled, int &WinOcuuredatChiled, int &CheckedM, int Killed, bool Before, int kind, int** TableS, int ii, int jj, QuantumAtamata* Current, bool DoEnemySelf, bool PenRegStrore, bool EnemyCheckMateActionsString, int i, int j, bool Castle_Renamed)
 	{
 		////auto oO = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -12741,7 +12757,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							}
 							if (!(!UsePenaltyRegardMechnisamT || (GoldenFinished)))
 							{
-								Current.LearningAlgorithmRegard();
+								Current->LearningAlgorithmRegard();
 								eraseList(kind);
 								AddAtList(kind, Current);
 							}
@@ -12774,7 +12790,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							if (!(!UsePenaltyRegardMechnisamT || (GoldenFinished)))
 							{
 								eraseList(kind);
-								Current.LearningAlgorithmRegard();
+								Current->LearningAlgorithmRegard();
 								AddAtList(kind, Current);
 							}
 							CheckedM = 3;
@@ -12803,7 +12819,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							}
 							if (!(!UsePenaltyRegardMechnisamT || (GoldenFinished)))
 							{
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								eraseList(kind);
 								AddAtList(kind, Current);
 							}
@@ -12836,7 +12852,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							if (!(!UsePenaltyRegardMechnisamT || (GoldenFinished)))
 							{
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
 							CheckedM = 3;
@@ -13097,14 +13113,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 						if (Order == 1 && (A->CheckWHITE))
 						{
 							NumberOfPenalties++;
-							Current.LearningAlgorithmPenalty();
+							Current->LearningAlgorithmPenalty();
 						}
 						else
 						{
 							if (Order == -1 && (A->CheckBLACK))
 							{
 							NumberOfPenalties++;
-							Current.LearningAlgorithmPenalty();
+							Current->LearningAlgorithmPenalty();
 							}
 						}
 						AddAtList(kind, Current);
@@ -13114,7 +13130,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 						if (IsCurrentStateIsDangreousForCurrentOrder(CloneATable(TableS), Order, color, i, j) && DoEnemySelf)
 						{
 							NumberOfPenalties++;
-							Current.LearningAlgorithmPenalty();
+							Current->LearningAlgorithmPenalty();
 							AddAtList(kind, Current);
 						}
 						else
@@ -13138,57 +13154,57 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 								}
 							}
 							//When previous Move of Enemy goes to Dangoure Current Object.
-							if (IsPrviousMovemntIsDangrousForCurr && Current.IsPenaltyAction() != 0)
+							if (IsPrviousMovemntIsDangrousForCurr && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
 							//For Not Suppored In Attacked.
-							if (SelfNotSupported && Current.IsPenaltyAction() != 0)
+							if (SelfNotSupported && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
 							//When Current Move Dos,'t Supporte.
 							//For Ocuuring in Enemy CheckMate.
-							if (SelfNotSupported && Current.IsPenaltyAction() != 0)
+							if (SelfNotSupported && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
-							if (IsGardForCurrentMovmentsAndIsNotMova && Current.IsPenaltyAction() != 0)
+							if (IsGardForCurrentMovmentsAndIsNotMova && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
-							if (IsNotSafeToMoveAenemeyToAttackMoreThanTowObj && Current.IsPenaltyAction() != 0)
+							if (IsNotSafeToMoveAenemeyToAttackMoreThanTowObj && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
-							if (IsDangerous && Current.IsPenaltyAction() != 0)
+							if (IsDangerous && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
 
-							if (EnemyNotSupported && Current.IsPenaltyAction() != 0 && Current.IsRewardAction() != 1)
+							if (EnemyNotSupported && Current->IsPenaltyAction() != 0 && Current->IsRewardAction() != 1)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmRegard();
+								Current->LearningAlgorithmRegard();
 								AddAtList(kind, Current);
 							}
 
@@ -13204,52 +13220,52 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 									LearniningTable->LearningAlgorithmRegardNet(0, jj);
 								}
 							}
-							if (SelfNotSupported && Current.IsPenaltyAction() != 0)
+							if (SelfNotSupported && Current->IsPenaltyAction() != 0)
 							{
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
-							if (IsGardForCurrentMovmentsAndIsNotMova && Current.IsPenaltyAction() != 0)
+							if (IsGardForCurrentMovmentsAndIsNotMova && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
-							if (IsNotSafeToMoveAenemeyToAttackMoreThanTowObj && Current.IsPenaltyAction() != 0)
+							if (IsNotSafeToMoveAenemeyToAttackMoreThanTowObj && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
-							if (IsDangerous && Current.IsPenaltyAction() != 0)
+							if (IsDangerous && Current->IsPenaltyAction() != 0)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmPenalty();
+								Current->LearningAlgorithmPenalty();
 								AddAtList(kind, Current);
 							}
-							if (EnemyNotSupported && Current.IsPenaltyAction() != 0 && Current.IsRewardAction() != 1)
+							if (EnemyNotSupported && Current->IsPenaltyAction() != 0 && Current->IsRewardAction() != 1)
 							{
 								NumberOfPenalties++;
 								eraseList(kind);
-								Current.LearningAlgorithmRegard();
+								Current->LearningAlgorithmRegard();
 								AddAtList(kind, Current);
 							}
 
-							if (IsCurrentCanGardHighPriorityEne && Current.IsPenaltyAction() != 0 && Current.IsRewardAction() != 1)
+							if (IsCurrentCanGardHighPriorityEne && Current->IsPenaltyAction() != 0 && Current->IsRewardAction() != 1)
 							{
 								eraseList(kind);
-								Current.LearningAlgorithmRegard();
+								Current->LearningAlgorithmRegard();
 								AddAtList(kind, Current);
 							}
 							//For Ocuuring Enemy Garding Objects.
-							if (Support && Current.IsPenaltyAction() != 0 && Current.IsRewardAction() != 1)
+							if (Support && Current->IsPenaltyAction() != 0 && Current->IsRewardAction() != 1)
 							{
 								eraseList(kind);
-								Current.LearningAlgorithmRegard();
+								Current->LearningAlgorithmRegard();
 								AddAtList(kind, Current);
 							}
 						}
@@ -13272,64 +13288,64 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 								LearniningTable->LearningAlgorithmPenaltyNet(0, jj);
 							}
 						}
-						if (IsNextMovemntIsCheckOrCheckMateForCurrent && Current.IsPenaltyAction() != 0)
+						if (IsNextMovemntIsCheckOrCheckMateForCurrent && Current->IsPenaltyAction() != 0)
 						{
 							NumberOfPenalties++;
 							eraseList(kind);
-							Current.LearningAlgorithmPenalty();
+							Current->LearningAlgorithmPenalty();
 							AddAtList(kind, Current);
 							Added = true;
 						}
-						if (SelfNotSupported && Current.IsPenaltyAction() != 0)
+						if (SelfNotSupported && Current->IsPenaltyAction() != 0)
 						{
 							eraseList(kind);
-							Current.LearningAlgorithmPenalty();
+							Current->LearningAlgorithmPenalty();
 							AddAtList(kind, Current);
 							Added = true;
 						}
-						if (IsGardForCurrentMovmentsAndIsNotMova && Current.IsPenaltyAction() != 0)
-						{
-							NumberOfPenalties++;
-							eraseList(kind);
-							Current.LearningAlgorithmPenalty();
-							AddAtList(kind, Current);
-							Added = true;
-						}
-						if (IsNotSafeToMoveAenemeyToAttackMoreThanTowObj && Current.IsPenaltyAction() != 0)
+						if (IsGardForCurrentMovmentsAndIsNotMova && Current->IsPenaltyAction() != 0)
 						{
 							NumberOfPenalties++;
 							eraseList(kind);
-							Current.LearningAlgorithmPenalty();
+							Current->LearningAlgorithmPenalty();
 							AddAtList(kind, Current);
 							Added = true;
 						}
-						if (IsDangerous && Current.IsPenaltyAction() != 0)
+						if (IsNotSafeToMoveAenemeyToAttackMoreThanTowObj && Current->IsPenaltyAction() != 0)
 						{
 							NumberOfPenalties++;
 							eraseList(kind);
-							Current.LearningAlgorithmPenalty();
+							Current->LearningAlgorithmPenalty();
 							AddAtList(kind, Current);
 							Added = true;
 						}
-						if (IsNextMovemntIsCheckOrCheckMateForEnemy && Current.IsPenaltyAction() != 0)
-						{
-							eraseList(kind);
-							Current.LearningAlgorithmRegard();
-							AddAtList(kind, Current);
-							Added = true;
-						}
-						if (IsCurrentCanGardHighPriorityEne && Current.IsPenaltyAction() != 0)
-						{
-							eraseList(kind);
-							Current.LearningAlgorithmRegard();
-							AddAtList(kind, Current);
-							Added = true;
-						}
-						if (EnemyNotSupported && Current.IsPenaltyAction() != 0 && Current.IsRewardAction() != 1)
+						if (IsDangerous && Current->IsPenaltyAction() != 0)
 						{
 							NumberOfPenalties++;
 							eraseList(kind);
-							Current.LearningAlgorithmRegard();
+							Current->LearningAlgorithmPenalty();
+							AddAtList(kind, Current);
+							Added = true;
+						}
+						if (IsNextMovemntIsCheckOrCheckMateForEnemy && Current->IsPenaltyAction() != 0)
+						{
+							eraseList(kind);
+							Current->LearningAlgorithmRegard();
+							AddAtList(kind, Current);
+							Added = true;
+						}
+						if (IsCurrentCanGardHighPriorityEne && Current->IsPenaltyAction() != 0)
+						{
+							eraseList(kind);
+							Current->LearningAlgorithmRegard();
+							AddAtList(kind, Current);
+							Added = true;
+						}
+						if (EnemyNotSupported && Current->IsPenaltyAction() != 0 && Current->IsRewardAction() != 1)
+						{
+							NumberOfPenalties++;
+							eraseList(kind);
+							Current->LearningAlgorithmRegard();
 							AddAtList(kind, Current);
 							Added = true;
 						}
@@ -13499,7 +13515,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					}
 				}
 			}
-			KillerAtThinking->push_back(KilledBool(RowSource, ColumnSource, RowDestination, ColumnDestination, TableS));
+			KillerAtThinking.push_back(KilledBool(RowSource, ColumnSource, RowDestination, ColumnDestination, TableS));
 			return;
 		}
 	}
@@ -13754,7 +13770,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			if (ab)
 			{
 				ThingsConverter *t = new ThingsConverter(ArrangmentsChanged, RowSource, ColumnSource, color, CloneATable(TableS), Order, false, 0);
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 				ThinkingAtRun = true;
 				int CheckedM = 0;
 				bool PenaltyVCar = false;
@@ -13915,7 +13931,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			int HeuristicFromCenter = int();
 			int HeuristicKingDangour = int();
 			int HeuristicCheckedMate = int();
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			ThinkingAtRun = true;
 			int CheckedM = 0;
 			bool PenaltyVCar = false;
@@ -15647,11 +15663,11 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 	void ThinkingHybridizerRefrigitz::CollectionSummation(std::vector<std::vector<int*>> &A, int Sum, std::vector<int*> &Co)
 	{
-		if (A->empty())
+		if (A.empty())
 		{
 			return;
 		}
-		for (int i = 0; i < A->size(); i++)
+		for (int i = 0; i < A.size(); i++)
 		{
 			for (int j = 0; j < A[i].size(); j++)
 			{
@@ -15872,7 +15888,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					for (int ColDD = 0; ColDD < 8; ColDD++)
 					{
 						std::vector<int*> DDA = ListOfExistInAttackList(Before, RowSS, ColSS, RowDD, ColDD);
-						if (DDA->size() > 0)
+						if (DDA.size() > 0)
 						{
 							DDL.push_back(DDA);
 						}
@@ -15931,7 +15947,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					for (int ColDD = 0; ColDD < 8; ColDD++)
 					{
 						std::vector<int*> DDA = ListOfExistInReducedAttackList(Before, RowSS, ColSS, RowDD, ColDD);
-						if (DDA->size() > 0)
+						if (DDA.size() > 0)
 						{
 							DDL.push_back(DDA);
 						}
@@ -16543,7 +16559,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	bool ThinkingHybridizerRefrigitz::Exist(std::vector<int*> &A, int* s)
 	{
 		bool Is = false;
-		for (int h = 0; h < A->size(); h++)
+		for (int h = 0; h < A.size(); h++)
 		{
 			if (A[h][0] == s[0] && A[h][1] == s[1])
 			{
@@ -16557,7 +16573,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	bool ThinkingHybridizerRefrigitz::ExistFull(std::vector<int*> &A, int *s)
 	{
 		bool Is = false;
-		for (int h = 0; h < A->size(); h++)
+		for (int h = 0; h < A.size(); h++)
 		{
 			if (A[h][0] == s[0] && A[h][1] == s[1] && A[h][2] == s[2] && A[h][3] == s[3])
 			{
@@ -16574,7 +16590,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		for (int t = 0; t < s.size(); t++)
 		{
 			bool IsI = false;
-			for (int h = 0; h < A->size(); h++)
+			for (int h = 0; h < A.size(); h++)
 			{
 				if (ExistFull(A[h], s[t]))
 				{
@@ -16661,7 +16677,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			int HeuristicFromCenter = int();
 			int HeuristicKingDangour = int();
 			int HeuristicCheckedMate = int();
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			ThinkingAtRun = true;
 			int CheckedM = 0;
 			bool PenaltyVCar = false;
@@ -16786,7 +16802,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		ThinkingAtRun = false;
 	}
 
-	void ThinkingHybridizerRefrigitz::HeuristicPenaltyValuePerform(QuantumAtamata Current, int Order, int &HeuristicAttackValue, bool AllDrawClass = false)
+	void ThinkingHybridizerRefrigitz::HeuristicPenaltyValuePerform(QuantumAtamata* Current, int Order, int &HeuristicAttackValue, bool AllDrawClass = false)
 	{
 
 		////auto o1 = new Object();
@@ -16797,7 +16813,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			{
 				if (Order !=  AllDraw::OrderPlateDraw)
 				{
-					if (Current.IsPenaltyAction() == 0)
+					if (Current->IsPenaltyAction() == 0)
 					{
 						HeuristicAttackValue--;
 					}
@@ -16806,7 +16822,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				{
 					if (AllDraw::OrderPlateDraw != Order)
 					{
-					if (Current.IsPenaltyAction() == 0)
+					if (Current->IsPenaltyAction() == 0)
 					{
 						HeuristicAttackValue++;
 					}
@@ -16814,7 +16830,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				}
 				if (Order !=  AllDraw::OrderPlateDraw)
 				{
-					if (Current.IsRewardAction() == 1)
+					if (Current->IsRewardAction() == 1)
 					{
 						HeuristicAttackValue++;
 					}
@@ -16823,7 +16839,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				{
 					if (AllDraw::OrderPlateDraw != Order)
 					{
-					if (Current.IsRewardAction() == 1)
+					if (Current->IsRewardAction() == 1)
 					{
 						HeuristicAttackValue++;
 					}
@@ -16836,7 +16852,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				{
 					if (Order !=  AllDraw::OrderPlateDraw)
 					{
-						if (Current.IsPenaltyAction() == 0)
+						if (Current->IsPenaltyAction() == 0)
 						{
 							HeuristicAttackValue -= 2;
 						}
@@ -16845,7 +16861,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					{
 					  if (AllDraw::OrderPlateDraw != Order)
 					  {
-						if (Current.IsPenaltyAction() == 0)
+						if (Current->IsPenaltyAction() == 0)
 						{
 							HeuristicAttackValue += 2;
 						}
@@ -16853,7 +16869,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					}
 					if (Order !=  AllDraw::OrderPlateDraw)
 					{
-						if (Current.IsRewardAction() == 1)
+						if (Current->IsRewardAction() == 1)
 						{
 							HeuristicAttackValue += 2;
 						}
@@ -16862,7 +16878,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 					{
 						if (AllDraw::OrderPlateDraw != Order)
 						{
-						if (Current.IsRewardAction() == 1)
+						if (Current->IsRewardAction() == 1)
 						{
 							HeuristicAttackValue -= 2;
 						}
@@ -16885,7 +16901,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			int **TableS = CloneATable(TableConst);
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			if (Scop(0, jj, i, j, 1) && abs(TableS[ii][jj]) == 1 && abs(Kind) == 1)
 			{
 				Order = ord;
@@ -16973,7 +16989,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O)
@@ -17052,7 +17068,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O)
@@ -17089,7 +17105,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 
 			Order = ord;
 			if (Scop(0, jj, ii - 2, jj - 1, 3))
@@ -17121,7 +17137,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O)
@@ -17158,7 +17174,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 
 			Order = ord;
 			if (Scop(0, jj, ii - 2, jj + 1, 3))
@@ -17191,7 +17207,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O)
@@ -17228,7 +17244,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O)
@@ -17265,7 +17281,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			////auto o111 = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O111)
@@ -17301,7 +17317,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 			///Initiate a Local Variables.
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O)
@@ -17479,7 +17495,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 //ORIGINAL LINE: int[,] TableS = CloneATable(TableConst);
 					int **TableS = CloneATable(TableConst);
 					///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-					QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+					QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 					if (Scop(0, jj, i, j, 4) && abs(TableS[ii][jj]) == 4 && abs(Kind) == 4)
 					{
 						Order = ord;
@@ -17521,7 +17537,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 //ORIGINAL LINE: int[,] TableS = CloneATable(TableConst);
 					int **TableS = CloneATable(TableConst);
 					///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-					QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+					QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 
 					if (Scop(0, jj, i, j, 4) && abs(TableS[ii][jj]) == 4 && abs(Kind) == 4)
 					{
@@ -17577,7 +17593,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 //ORIGINAL LINE: int[,] TableS = CloneATable(TableConst);
 			int **TableS = CloneATable(TableConst);
 			///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-			QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+			QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 			////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 			////lock (O)
@@ -17655,7 +17671,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				int **TableS = CloneATable(TableConst);
 
 				///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 
 				///Calculate of Castles of BLACK.
 				if ((new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, -7, CloneATable(TableS), Order, ii, jj))->Rules(0, jj, i, jj, color, -7, true) && (ChessRules::CastleKingAllowedBLACK))
@@ -17693,7 +17709,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				int **TableS = CloneATable(TableConst);
 
 				///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 
 				if ((new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, 7, CloneATable(TableS), Order, ii, jj))->Rules(0, jj, i, jj, color, 7, true) && (ChessRules::CastleKingAllowedWHITE))
 				{
@@ -17740,7 +17756,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 //ORIGINAL LINE: int[,] TableS = CloneATable(TableConst);
 						int **TableS = CloneATable(TableConst);
 						///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-						QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+						QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 						if (Scop(0, jj, i, j, 6) && abs(TableS[ii][jj]) == 6 && abs(Kind) == 6)
 						{
 							Order = ord;
@@ -18203,7 +18219,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				///Initiate a Local Variables.
 				*TableS = new int[8]; for (int b = 0; b < 8; b++)TableS[b] = new int[8];
 				///"Inizialization of This New Class (Current is Dynamic class Object) is MalFunction (Constant Variable Count).
-				QuantumAtamata Current = QuantumAtamata(3, 3, 3);
+				QuantumAtamata* Current =new QuantumAtamata(3, 3, 3);
 				///Most Dot Net FrameWork Hot Path
 				///Create A Clone of Current Table Constant in ThinkingHybridizerRefrigitz Object Tasble.
 				for (int  RowS = 0; RowS < 8; RowS++)
@@ -19172,8 +19188,8 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		DifOfNoOfSupporteAndReducedSupportBLACK = -DBL_MAX;
 		RationalRegard = 10;
 		RationalPenalty = -10;
-		RationalWin = 1000;
-		RationalLose = -1000;
+		//RationalWin = 1000;
+		//RationalLose = -1000;
 		KishSelf = std::vector<bool>();
 		KishEnemy = std::vector<bool>();
 		HeuristicAttackValueSup = int();

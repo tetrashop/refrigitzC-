@@ -446,7 +446,7 @@ int AllDraw::MouseClick = 0;
 				DrawTable = false;
 				*TableVeryfy = new int[8]; for (int b = 0; b < 8; b++)TableVeryfy[b] = new int[8];
 			    *TableVeryfyConst = new int[8]; for (int b = 0; b < 8; b++)TableVeryfyConst[b] = new int[8];
-				TableCurrent.clear();
+				TableCurrent->clear();
 				NoTableFound = false;
 				DynamicAStarGreedytPrograming = false;
 				UseDoubleTime = false;
@@ -685,7 +685,7 @@ int AllDraw::MouseClick = 0;
 				DrawTable = false;
 				*TableVeryfy = new int[8]; for (int b = 0; b < 8; b++)TableVeryfy[b] = new int[8];
 				*TableVeryfyConst = new int[8]; for (int b = 0; b < 8; b++)TableVeryfyConst[b] = new int[8];
-				TableCurrent.clear();
+				TableCurrent->clear();
 				NoTableFound = false;
 				DynamicAStarGreedytPrograming = false;
 				UseDoubleTime = false;
@@ -10966,7 +10966,7 @@ int AllDraw::MouseClick = 0;
 		//soldier
 		if (Kind == 1)
 		{
-			if ((SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() != 0 && SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((((Do == 1 || AA) && UsePenaltyRegardMechnisamT)) && UsePenaltyRegardMechnisamT) || SolderesOnTable[i]->WinOcuuredatChiled >= 1 || SolderesOnTable[i]->WinOcuuredatChiled >= 2 || SolderesOnTable[i]->WinOcuuredatChiled >= 3)
+			if ((SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() != 0 && SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((((Do == 1 || AA) && UsePenaltyRegardMechnisamT)) && UsePenaltyRegardMechnisamT) || SolderesOnTable[i]->WinOcuuredatChiled >= 1 || SolderesOnTable[i]->WinOcuuredatChiled >= 2 || SolderesOnTable[i]->WinOcuuredatChiled >= 3)
 			{
 				//Set Table and Heuristic Value and Syntax.
 				Act = true;
@@ -11039,7 +11039,7 @@ int AllDraw::MouseClick = 0;
 		{
 		if (Kind == 2)
 		{
-			if ((ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() != 0 && ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || ElephantOnTable[i]->WinOcuuredatChiled >= 1 || ElephantOnTable[i]->WinOcuuredatChiled >= 2 || ElephantOnTable[i]->WinOcuuredatChiled >= 3)
+			if ((ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() != 0 && ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || ElephantOnTable[i]->WinOcuuredatChiled >= 1 || ElephantOnTable[i]->WinOcuuredatChiled >= 2 || ElephantOnTable[i]->WinOcuuredatChiled >= 3)
 			{
 				////auto on = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -11076,7 +11076,7 @@ int AllDraw::MouseClick = 0;
 		{
 		if (Kind == 3)
 		{
-			if ((HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() != 0 && HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || HoursesOnTable[i]->WinOcuuredatChiled >= 1 || HoursesOnTable[i]->WinOcuuredatChiled >= 2 || HoursesOnTable[i]->WinOcuuredatChiled >= 3)
+			if ((HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() != 0 && HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || HoursesOnTable[i]->WinOcuuredatChiled >= 1 || HoursesOnTable[i]->WinOcuuredatChiled >= 2 || HoursesOnTable[i]->WinOcuuredatChiled >= 3)
 			{
 				////auto on = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -11113,7 +11113,7 @@ int AllDraw::MouseClick = 0;
 		{
 		if (Kind == 4)
 		{
-			if ((CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() != 0 && CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || CastlesOnTable[i]->WinOcuuredatChiled >= 1 || CastlesOnTable[i]->WinOcuuredatChiled >= 2 || CastlesOnTable[i]->WinOcuuredatChiled >= 3)
+			if ((CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() != 0 && CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || CastlesOnTable[i]->WinOcuuredatChiled >= 1 || CastlesOnTable[i]->WinOcuuredatChiled >= 2 || CastlesOnTable[i]->WinOcuuredatChiled >= 3)
 			{
 				////auto on = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -11150,7 +11150,7 @@ int AllDraw::MouseClick = 0;
 		{
 			if (Kind == 5)
 			{
-			if ((MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() != 0 && MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || MinisterOnTable[i]->WinOcuuredatChiled >= 1 || MinisterOnTable[i]->WinOcuuredatChiled >= 2 || MinisterOnTable[i]->WinOcuuredatChiled >= 3)
+			if ((MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() != 0 && MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || MinisterOnTable[i]->WinOcuuredatChiled >= 1 || MinisterOnTable[i]->WinOcuuredatChiled >= 2 || MinisterOnTable[i]->WinOcuuredatChiled >= 3)
 			{
 				////auto on = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -11188,7 +11188,7 @@ int AllDraw::MouseClick = 0;
 		{
 		if (Kind == 6)
 		{
-			if ((KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() != 0 && KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || KingOnTable[i]->WinOcuuredatChiled >= 1 || KingOnTable[i]->WinOcuuredatChiled >= 2 || KingOnTable[i]->WinOcuuredatChiled >= 3)
+			if ((KingOnTable[i]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() != 0 && KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || KingOnTable[i]->WinOcuuredatChiled >= 1 || KingOnTable[i]->WinOcuuredatChiled >= 2 || KingOnTable[i]->WinOcuuredatChiled >= 3)
 			{
 				////auto on = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -12459,7 +12459,7 @@ int AllDraw::MouseClick = 0;
 						//For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 						//if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 						//)
-						if (SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() == 0)
+						if (SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() == 0)
 						{
 							continue;
 						}
@@ -12699,7 +12699,7 @@ int AllDraw::MouseClick = 0;
 						//For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 						//if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 						//)
-						if (ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() == 0)
+						if (ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() == 0)
 						{
 							continue;
 						}
@@ -12882,7 +12882,7 @@ int AllDraw::MouseClick = 0;
 						//For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 						//if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 						//)
-						if (HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() == 0)
+						if (HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() == 0)
 						{
 							continue;
 						}
@@ -13061,7 +13061,7 @@ int AllDraw::MouseClick = 0;
 						//For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 						//if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 						//)
-						if (CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() == 0)
+						if (CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() == 0)
 						{
 							continue;
 						}
@@ -13239,7 +13239,7 @@ int AllDraw::MouseClick = 0;
 						//For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 						//if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 						//)
-						if (MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() == 0)
+						if (MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() == 0)
 						{
 							continue;
 						}
@@ -13414,7 +13414,7 @@ int AllDraw::MouseClick = 0;
 						//For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 						//if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 						//)
-						if (KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() == 0)
+						if (KingOnTable[i]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() == 0)
 						{
 							continue;
 						}
@@ -18088,7 +18088,7 @@ int AllDraw::MouseClick = 0;
 					if (Order !=  AllDraw::OrderPlateDraw)
 					{
 						//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(1, ik, j) || SolderesOnTable[ik]->SoldierThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessS || (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(1, ik, j) || SolderesOnTable[ik]->SoldierThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessS || (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18107,7 +18107,7 @@ int AllDraw::MouseClick = 0;
 					else
 					{
 						//when in learning autamata is penalty or Heuristic specified is greater than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(1, ik, j) || SolderesOnTable[ik]->SoldierThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessS || (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(1, ik, j) || SolderesOnTable[ik]->SoldierThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessS || (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18174,7 +18174,7 @@ int AllDraw::MouseClick = 0;
 					if (Order !=  AllDraw::OrderPlateDraw)
 					{
 						//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(2, ik, j) || ElephantOnTable[ik]->ElefantThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessE || (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(2, ik, j) || ElephantOnTable[ik]->ElefantThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessE || (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18193,7 +18193,7 @@ int AllDraw::MouseClick = 0;
 					else
 					{
 						//when in learning autamata is penalty or Heuristic specified is greater than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(2, ik, j) || ElephantOnTable[ik]->ElefantThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessE || (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(2, ik, j) || ElephantOnTable[ik]->ElefantThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessE || (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18259,7 +18259,7 @@ int AllDraw::MouseClick = 0;
 					if (Order !=  AllDraw::OrderPlateDraw)
 					{
 						//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(3, ik, j) || HoursesOnTable[ik]->HourseThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessH || (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(3, ik, j) || HoursesOnTable[ik]->HourseThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessH || (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18278,7 +18278,7 @@ int AllDraw::MouseClick = 0;
 					else
 					{
 						//when in learning autamata is penalty or Heuristic specified is greater than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(3, ik, j) || HoursesOnTable[ik]->HourseThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessH || (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(3, ik, j) || HoursesOnTable[ik]->HourseThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessH || (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18344,7 +18344,7 @@ int AllDraw::MouseClick = 0;
 					if (Order !=  AllDraw::OrderPlateDraw)
 					{
 						//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(4, ik, j) || CastlesOnTable[ik]->CastleThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessB || (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(4, ik, j) || CastlesOnTable[ik]->CastleThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessB || (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18363,7 +18363,7 @@ int AllDraw::MouseClick = 0;
 					else
 					{
 						//when in learning autamata is penalty or Heuristic specified is greater than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(4, ik, j) || CastlesOnTable[ik]->CastleThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessB || (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(4, ik, j) || CastlesOnTable[ik]->CastleThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessB || (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18430,7 +18430,7 @@ int AllDraw::MouseClick = 0;
 					if (Order !=  AllDraw::OrderPlateDraw)
 					{
 						//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(5, ik, j) || MinisterOnTable[ik]->MinisterThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessM || (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(5, ik, j) || MinisterOnTable[ik]->MinisterThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessM || (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18449,7 +18449,7 @@ int AllDraw::MouseClick = 0;
 					else
 					{
 						//when in learning autamata is penalty or Heuristic specified is greater than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(5, ik, j) || MinisterOnTable[ik]->MinisterThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessM || (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(5, ik, j) || MinisterOnTable[ik]->MinisterThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessM || (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18515,7 +18515,7 @@ int AllDraw::MouseClick = 0;
 					if (Order !=  AllDraw::OrderPlateDraw)
 					{
 						//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(6, ik, j) || KingOnTable[ik]->KingThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessK || (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(6, ik, j) || KingOnTable[ik]->KingThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessK || (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18534,7 +18534,7 @@ int AllDraw::MouseClick = 0;
 					else
 					{
 						//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-						if (UsedRestrictedBlitzMoveAstarGreedy(6, ik, j) || KingOnTable[ik]->KingThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessK || (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+						if (UsedRestrictedBlitzMoveAstarGreedy(6, ik, j) || KingOnTable[ik]->KingThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessK || (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 						{
 						}
 						else
@@ -18745,7 +18745,7 @@ int AllDraw::MouseClick = 0;
 				if (Order !=  AllDraw::OrderPlateDraw)
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(1, ik, j) || SolderesOnTable[ik]->SoldierThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessS || (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(1, ik, j) || SolderesOnTable[ik]->SoldierThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessS || (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -18764,7 +18764,7 @@ int AllDraw::MouseClick = 0;
 				else
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(1, ik, j) || SolderesOnTable[ik]->SoldierThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessS || (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(1, ik, j) || SolderesOnTable[ik]->SoldierThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessS || (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -18825,7 +18825,7 @@ int AllDraw::MouseClick = 0;
 				if (Order !=  AllDraw::OrderPlateDraw)
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(2, ik, j) || ElephantOnTable[ik]->ElefantThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessE || (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(2, ik, j) || ElephantOnTable[ik]->ElefantThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessE || (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -18844,7 +18844,7 @@ int AllDraw::MouseClick = 0;
 				else
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(2, ik, j) || ElephantOnTable[ik]->ElefantThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessE || (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(2, ik, j) || ElephantOnTable[ik]->ElefantThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessE || (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -18905,7 +18905,7 @@ int AllDraw::MouseClick = 0;
 				if (Order !=  AllDraw::OrderPlateDraw)
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(3, ik, j) || HoursesOnTable[ik]->HourseThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessH || (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(3, ik, j) || HoursesOnTable[ik]->HourseThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessH || (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -18924,7 +18924,7 @@ int AllDraw::MouseClick = 0;
 				else
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(3, ik, j) || HoursesOnTable[ik]->HourseThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessH || (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(3, ik, j) || HoursesOnTable[ik]->HourseThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessH || (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -19136,7 +19136,7 @@ int AllDraw::MouseClick = 0;
 				if (Order !=  AllDraw::OrderPlateDraw)
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(4, ik, j) || CastlesOnTable[ik]->CastleThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessB || (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(4, ik, j) || CastlesOnTable[ik]->CastleThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessB || (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -19157,7 +19157,7 @@ int AllDraw::MouseClick = 0;
 				else
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(4, ik, j) || CastlesOnTable[ik]->CastleThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessB || (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(4, ik, j) || CastlesOnTable[ik]->CastleThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessB || (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -19218,7 +19218,7 @@ int AllDraw::MouseClick = 0;
 				if (Order !=  AllDraw::OrderPlateDraw)
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(5, ik, j) || MinisterOnTable[ik]->MinisterThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessM || (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(5, ik, j) || MinisterOnTable[ik]->MinisterThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessM || (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -19238,7 +19238,7 @@ int AllDraw::MouseClick = 0;
 				else
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(5, ik, j) || MinisterOnTable[ik]->MinisterThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessM || (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(5, ik, j) || MinisterOnTable[ik]->MinisterThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessM || (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -19300,7 +19300,7 @@ int AllDraw::MouseClick = 0;
 				if (Order !=  AllDraw::OrderPlateDraw)
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(6, ik, j) || KingOnTable[ik]->KingThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessK || (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(6, ik, j) || KingOnTable[ik]->KingThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) < PreviousLessK || (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -19320,7 +19320,7 @@ int AllDraw::MouseClick = 0;
 				else
 				{
 					//when in learning autamata is penalty or Heuristic specified is less than specific dynamic programming int 
-					if (UsedRestrictedBlitzMoveAstarGreedy(6, ik, j) || KingOnTable[ik]->KingThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessK || (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
+					if (UsedRestrictedBlitzMoveAstarGreedy(6, ik, j) || KingOnTable[ik]->KingThinking->ReturnHeuristic(ik, j, Order, false, HaveKilled) > PreviousLessK || (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() == 0 && UsePenaltyRegardMechnisamT))
 					{
 					}
 					else
@@ -20295,7 +20295,7 @@ int AllDraw::MouseClick = 0;
 			//soldier
 			if (kind == 1)
 			{
-				if (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
+				if (SolderesOnTable[ik]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
 				{
 					return true;
 				}
@@ -20304,21 +20304,21 @@ int AllDraw::MouseClick = 0;
 			{
 							if (kind == 2)
 							{
-				if (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
+				if (ElephantOnTable[ik]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
 				{
 					return true;
 				}
 							}
 			else if (kind == 3) //hourse
 			{
-				if (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
+				if (HoursesOnTable[ik]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
 				{
 					return true;
 				}
 			}
 			else if (kind == 4) //Castle
 			{
-				if (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
+				if (CastlesOnTable[ik]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
 				{
 					return true;
 				}
@@ -20327,14 +20327,14 @@ int AllDraw::MouseClick = 0;
 			{
 				if (kind == 5) //minister
 				{
-				if (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
+				if (MinisterOnTable[ik]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
 				{
 					return true;
 				}
 				}
 			else if (kind == 6) //king
 			{
-				if (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
+				if (KingOnTable[ik]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() != 0 || (!UsePenaltyRegardMechnisamT))
 				{
 					return true;
 				}
@@ -24881,7 +24881,7 @@ int AllDraw::MouseClick = 0;
 					{
 						//Clear AStarGreedy Varibales.
 						AllDraw::StoreADraw.clear();
-						TableCurrent.clear();
+						TableCurrent->clear();
 						AStarGreedy = 0;
 					}
 					Order = DummyOrder;

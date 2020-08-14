@@ -1165,7 +1165,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 				{
 					for (int  j = 0; j < 8; j++)
 					{
-						//Ignore of current.
+						//Ignore of Current->
 						if (Order == 1 && Tab[i][i] >= 0)
 						{
 							continue;
@@ -1213,7 +1213,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 									{
 										if (Order == 1 && A->CheckMateWHITE)
 										{
-											//For Current.
+											//For Current->
 											for (int  iiii = 0; iiii < 8; iiii++)
 											{
 												for (int  jjjj = 0; jjjj < 8; jjjj++)
@@ -1232,7 +1232,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 													{
 														for (int jjjjj = 0; jjjjj < 8; jjjjj++)
 														{
-															//Ignore of Current.
+															//Ignore of Current->
 															if (Order == 1 && Tab[iiiii][jjjjj] > 0)
 															{
 																continue;
@@ -1281,7 +1281,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 											if (Order == -1 && A->CheckMateBLACK)
 											{
 
-											//For Current.
+											//For Current->
 											for (int  iiii = 0; iiii < 8; iiii++)
 											{
 												for (int  jjjj = 0; jjjj < 8; jjjj++)
@@ -1300,7 +1300,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 													{
 														for (int jjjjj = 0; jjjjj < 8; jjjjj++)
 														{
-															//Ignore of Current.
+															//Ignore of Current->
 															if (Order == 1 && Tab[iiiii][jjjjj] > 0)
 															{
 																continue;
@@ -3340,7 +3340,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					{
 						continue;
 					}
-					//When The Source is Not The Current.
+					//When The Source is Not The Current->
 					if (j != ColumnFirst)
 					{
 						//For All Self Home at Root Return Not Validity

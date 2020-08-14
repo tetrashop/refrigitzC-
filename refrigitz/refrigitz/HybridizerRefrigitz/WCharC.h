@@ -11,7 +11,7 @@ public:
 	void Append(wchar_t ** src, wchar_t dst);
 	void Append(wchar_t ** src, wchar_t  dst, int len);
 	void Append(wchar_t ** src, std::wstring dst);
-	int getlenght(wchar_t *src);
+	int getlenght();
 
 	int Length;
 	wchar_t **coBoard;

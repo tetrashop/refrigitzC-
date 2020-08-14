@@ -9,7 +9,7 @@ WCharC* WCharC::Split(WCharC *src, wchar_t indstr)
 
 	int lensrc = 64;
 
-	int lenindstr = getlenght(&indstr);
+	int lenindstr = src->getlenght();
 	int i = 0,j; bool Is;
 	for (i = 0; i < lensrc; i++)
 		for (int j = 0; j < lenindstr; j++)
@@ -72,10 +72,10 @@ void WCharC::Append(wchar_t **src, std::wstring dst)
 	}
 	return;
 }
-int WCharC::getlenght(wchar_t *src)
+int WCharC::getlenght()
 {
 	int len = 0;
-	while (src[len]!='\0')
+	while (this->coBoard[len]!='\0')
 	{
 		len++;
 	}

@@ -4,7 +4,7 @@
 
 double Colleralation::Threshold = 0.2;
 
-	int Colleralation::GetCorrelationScore(bool  **seriesA, bool **seriesB, int n, int Order)
+	int Colleralation::GetCorrelationScore(bool  seriesA[][8], bool **seriesB, int n, int Order)
 	{
 		int correlationScore = 0;
 
@@ -37,7 +37,7 @@ double Colleralation::Threshold = 0.2;
 		return correlationScore;
 	}
 
-	int Colleralation::GetCorrelationScore(int **seriesA, int **seriesB, int n, int Order)
+	 int Colleralation::GetCorrelationScore(int seriesA[][8], int **seriesB, int n, int Order)
 	{
 		int correlationScore = 0;
 

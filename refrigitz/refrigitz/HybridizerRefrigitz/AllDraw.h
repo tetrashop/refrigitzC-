@@ -515,7 +515,7 @@
 		                           }
 		                           Order = COrder;
 		                           ChessRules.CurrentOrder = CDummy;
-		                           if ((SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() != 0 && SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || SolderesOnTable[i]->WinOcuuredatChiled >= 1 || SolderesOnTable[i]->WinOcuuredatChiled >= 2 || SolderesOnTable[i]->WinOcuuredatChiled >= 3)
+		                           if ((SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() != 0 && SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || SolderesOnTable[i]->WinOcuuredatChiled >= 1 || SolderesOnTable[i]->WinOcuuredatChiled >= 2 || SolderesOnTable[i]->WinOcuuredatChiled >= 3)
 		                           {
 		                               //Set Table and Heuristic Value and Syntax.
 		                               Act = true;
@@ -791,7 +791,7 @@
 		                           }
 		                           Order = COrder;
 		                           ChessRules.CurrentOrder = CDummy;
-		                           if ((ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() != 0 && ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || ElephantOnTable[i]->WinOcuuredatChiled >= 1 || ElephantOnTable[i]->WinOcuuredatChiled >= 2 || ElephantOnTable[i]->WinOcuuredatChiled >= 3)
+		                           if ((ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() != 0 && ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || ElephantOnTable[i]->WinOcuuredatChiled >= 1 || ElephantOnTable[i]->WinOcuuredatChiled >= 2 || ElephantOnTable[i]->WinOcuuredatChiled >= 3)
 		                           {
 		                               Object On = new Object();
 		                               ////lock (On)
@@ -981,7 +981,7 @@
 
 		                           Order = COrder;
 		                           ChessRules.CurrentOrder = CDummy;
-		                           if ((HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() != 0 && HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || HoursesOnTable[i]->WinOcuuredatChiled >= 1 || HoursesOnTable[i]->WinOcuuredatChiled >= 2 || HoursesOnTable[i]->WinOcuuredatChiled >= 3)
+		                           if ((HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() != 0 && HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || HoursesOnTable[i]->WinOcuuredatChiled >= 1 || HoursesOnTable[i]->WinOcuuredatChiled >= 2 || HoursesOnTable[i]->WinOcuuredatChiled >= 3)
 		                           {
 		                               Object On = new Object();
 		                               ////lock (On)
@@ -1173,7 +1173,7 @@
 
 		                           Order = COrder;
 		                           ChessRules.CurrentOrder = CDummy;
-		                           if ((CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() != 0 && CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || CastlesOnTable[i]->WinOcuuredatChiled >= 1 || CastlesOnTable[i]->WinOcuuredatChiled >= 2 || CastlesOnTable[i]->WinOcuuredatChiled >= 3)
+		                           if ((CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() != 0 && CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || CastlesOnTable[i]->WinOcuuredatChiled >= 1 || CastlesOnTable[i]->WinOcuuredatChiled >= 2 || CastlesOnTable[i]->WinOcuuredatChiled >= 3)
 		                           {
 		                               Object On = new Object();
 		                               ////lock (On)
@@ -1363,7 +1363,7 @@
 
 		                           Order = COrder;
 		                           ChessRules.CurrentOrder = CDummy;
-		                           if ((MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() != 0 && MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || MinisterOnTable[i]->WinOcuuredatChiled >= 1 || MinisterOnTable[i]->WinOcuuredatChiled >= 2 || MinisterOnTable[i]->WinOcuuredatChiled >= 3)
+		                           if ((MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() != 0 && MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || MinisterOnTable[i]->WinOcuuredatChiled >= 1 || MinisterOnTable[i]->WinOcuuredatChiled >= 2 || MinisterOnTable[i]->WinOcuuredatChiled >= 3)
 		                           {
 		                               Object On = new Object();
 		                               ////lock (On)
@@ -1556,7 +1556,7 @@
 		                           ChessRules.CurrentOrder = CDummy;
 		                           //if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 		                           //)
-		                           if ((KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() != 0 && KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || KingOnTable[i]->WinOcuuredatChiled >= 1 || KingOnTable[i]->WinOcuuredatChiled >= 2 || KingOnTable[i]->WinOcuuredatChiled >= 3)
+		                           if ((KingOnTable[i]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() != 0 && KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT) || KingOnTable[i]->WinOcuuredatChiled >= 1 || KingOnTable[i]->WinOcuuredatChiled >= 2 || KingOnTable[i]->WinOcuuredatChiled >= 3)
 		                           {
 		                               Object On = new Object();
 		                               ////lock (On)
@@ -1832,7 +1832,7 @@
 
 		                    Order = COrder;
 		                    ChessRules.CurrentOrder = CDummy;
-		                    if ((SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsPenaltyAction() != 0 && SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
+		                    if ((SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j]->IsPenaltyAction() != 0 && SolderesOnTable[i]->SoldierThinking->PenaltyRegardListSolder[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
 		                    {
 		                        //Set Table and Heuristic Value and Syntax.
 		                        Act = true;
@@ -2074,7 +2074,7 @@
 		                {
 		                    //For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 		                    ////if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT)
-		                    //   if (ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() == 0)
+		                    //   if (ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() == 0)
 
 		                    int CDummy = ChessRules.CurrentOrder;
 		                    int COrder = Order;
@@ -2095,7 +2095,7 @@
 		                    ChessRules.CurrentOrder = CDummy;
 		                    //if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 		                    //)
-		                    if ((ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() != 0 && ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
+		                    if ((ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() != 0 && ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
 		                    {
 		                        Object On = new Object();
 		                        ////lock (On)
@@ -2115,7 +2115,7 @@
 		                        continue;
 		                    }
 		                    //When There is No Movments in Such Order Enemy continue.
-		                    if (ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j].IsPenaltyAction() == 0)
+		                    if (ElephantOnTable[i]->ElefantThinking->PenaltyRegardListElefant[j]->IsPenaltyAction() == 0)
 		                        continue;
 		                    Object ol = new Object();
 		                    ////lock (ol)
@@ -2275,7 +2275,7 @@
 		                {
 		                    //For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 		                    ////if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT)
-		                    //    if (HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() == 0)
+		                    //    if (HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() == 0)
 
 		                    int CDummy = ChessRules.CurrentOrder;
 		                    int COrder = Order;
@@ -2296,7 +2296,7 @@
 		                    ChessRules.CurrentOrder = CDummy;
 		                    //if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 		                    //)
-		                    if ((HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsPenaltyAction() != 0 && HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
+		                    if ((HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j]->IsPenaltyAction() != 0 && HoursesOnTable[i]->HourseThinking->PenaltyRegardListHourse[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
 		                    {
 		                        Object On = new Object();
 		                        ////lock (On)
@@ -2476,7 +2476,7 @@
 		                {
 		                    //For Penalty Reagrad Mechanisam of Current Check CheckMate Current Movments.
 		                    ////if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT)
-		                    ///   if (CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() == 0)
+		                    ///   if (CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() == 0)
 
 		                    int CDummy = ChessRules.CurrentOrder;
 		                    int COrder = Order;
@@ -2497,7 +2497,7 @@
 		                    ChessRules.CurrentOrder = CDummy;
 		                    //if (AllDraw.OrderPlate == Order && AStarGreedyi == 1 //&& UsePenaltyRegardMechnisamT
 		                    //)
-		                    if ((CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsPenaltyAction() != 0 && CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
+		                    if ((CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j]->IsPenaltyAction() != 0 && CastlesOnTable[i]->CastleThinking->PenaltyRegardListCastle[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
 		                    {
 		                        Object On = new Object();
 		                        ////lock (On)
@@ -2688,7 +2688,7 @@
 
 		                    Order = COrder;
 		                    ChessRules.CurrentOrder = CDummy;
-		                    if ((MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsPenaltyAction() != 0 && MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
+		                    if ((MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j]->IsPenaltyAction() != 0 && MinisterOnTable[i]->MinisterThinking->PenaltyRegardListMinister[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
 		                    {
 		                        Object On = new Object();
 		                        ////lock (On)
@@ -2871,7 +2871,7 @@
 
 		                    Order = COrder;
 		                    ChessRules.CurrentOrder = CDummy;
-		                    if ((KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsPenaltyAction() != 0 && KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
+		                    if ((KingOnTable[i]->KingThinking->PenaltyRegardListKing[j]->IsPenaltyAction() != 0 && KingOnTable[i]->KingThinking->PenaltyRegardListKing[j].IsRewardAction() == 1 && AStarGreedyi == 1) || ((Do == 1 || AA) && UsePenaltyRegardMechnisamT))
 		                    {
 		                        Object On = new Object();
 		                        ////lock (On)

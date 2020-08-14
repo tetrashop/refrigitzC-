@@ -113,7 +113,7 @@
 		int A57 = AllDraw::SuppportCountStaticGray;
 		std::wstring A58 = AllDraw::SyntaxToWrite;
 		std::vector<int**> A59 = std::vector<int**>();
-		for (var i = 0; i < AllDraw::TableCurrent.size(); i++)
+		for (var i = 0; i < AllDraw::TableCurrent->size(); i++)
 		{
 			A59.push_back(new AllDraw::TableCurrent[i]);
 		}
@@ -244,10 +244,10 @@
 		 AllDraw::SuppportCountStaticBrown = A56;
 		 AllDraw::SuppportCountStaticGray = A57;
 		AllDraw::SyntaxToWrite = A58;
-		AllDraw::TableCurrent.clear();
-		for (var i = 0; i < AllDraw::TableCurrent.size(); i++)
+		AllDraw::TableCurrent->clear();
+		for (var i = 0; i < AllDraw::TableCurrent->size(); i++)
 		{
-			AllDraw::TableCurrent.push_back(A59[i]);
+			AllDraw::TableCurrent->push_back(A59[i]);
 		}
 		AllDraw::TableListAction.clear();
 		for (var i = 0; i < AllDraw::TableListAction.size(); i++)
