@@ -123,7 +123,7 @@
 //C# TO C++ CONVERTER NOTE: The variable Colleralation was renamed since it is named the same as a user-defined type:
 		static int Colleralation_Renamed;
 		static int DeColleralation;
-		static int TableInitiation[8][8] =
+		static int TableInitiation[8][8];/* =
 		{
 			{-4, -1, 0, 0, 0, 0, 1, 4},
 			{-3, -1, 0, 0, 0, 0, 1, 3},
@@ -133,10 +133,10 @@
 			{-2, -1, 0, 0, 0, 0, 1, 2},
 			{-3, -1, 0, 0, 0, 0, 1, 3},
 			{-4, -1, 0, 0, 0, 0, 1, 4}
-		};
+		};*/
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
 //ORIGINAL LINE: public static int[,] TableInitiationPreventionOfMultipleMove ={ { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 } };
-		static int TableInitiationPreventionOfMultipleMove[8][8] =
+		static int TableInitiationPreventionOfMultipleMove[8][8];/* =
 		{
 			{0, 0, 0, 0, 0, 0, 0, 0},
 			{0, 0, 0, 0, 0, 0, 0, 0},
@@ -146,7 +146,7 @@
 			{0, 0, 0, 0, 0, 0, 0, 0},
 			{0, 0, 0, 0, 0, 0, 0, 0},
 			{0, 0, 0, 0, 0, 0, 0, 0}
-		};
+		};*/
 	private:
 		int RationalRegard;
 		int RationalPenalty;
@@ -340,7 +340,7 @@
 		bool BeginArragmentsOfOrderFinished(int** Table, int Order);
 		//Constructor
 	public:
-		//ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin);
+		ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin);
 		//Clone A Table
 		private:
 		int **CloneATable(int** Tab);

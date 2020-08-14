@@ -11,7 +11,7 @@ int ThinkingHybridizerRefrigitz::NoOfMovableAllObjectMove = 1;
 int ThinkingHybridizerRefrigitz::ColleralationWHITE = DBL_MAX;
 int ThinkingHybridizerRefrigitz::ColleralationBLACK = DBL_MAX;
 //int ThinkingHybridizerRefrigitz::Colleralation = DBL_MAX;
-int ThinkingHybridizerRefrigitz::DeColleralation = DBL_MAX;/*
+int ThinkingHybridizerRefrigitz::DeColleralation = DBL_MAX;
 int ThinkingHybridizerRefrigitz::TableInitiation[8][8]=
 {
 	{-4, -1, 0, 0, 0, 0, 1, 4},
@@ -33,7 +33,7 @@ int ThinkingHybridizerRefrigitz::TableInitiationPreventionOfMultipleMove[8][8] =
 	{0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0}
-};*/
+};
 bool ThinkingHybridizerRefrigitz::FullGameAllow = false;
 bool ThinkingHybridizerRefrigitz::IsAtLeastOneKillerAtDraw = false;
 NetworkQuantumLearningKrinskyAtamata *ThinkingHybridizerRefrigitz::LearniningTable = nullptr;
@@ -51,7 +51,7 @@ int ThinkingHybridizerRefrigitz::BeginThread = 0;
 int ThinkingHybridizerRefrigitz::EndThread = 0;
 bool ThinkingHybridizerRefrigitz::NotSolvedKingDanger = false;
 bool ThinkingHybridizerRefrigitz::ThinkingRun = false;
-inline bool operator==(const AllDraw* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
+/*inline bool operator==(const AllDraw* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
 inline bool operator!=(const AllDraw* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
 inline bool operator==(const DrawSoldire* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
 inline bool operator!=(const DrawSoldire* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
@@ -66,7 +66,7 @@ inline bool operator!=(const DrawMinister* lhs, const std::nullptr_t rhs) { retu
 inline bool operator==(const DrawKing* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
 inline bool operator!=(const DrawKing* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
 inline bool operator==(const ThinkingHybridizerRefrigitz* lhs, const std::nullptr_t rhs) { return (lhs == rhs); }
-inline bool operator!=(const ThinkingHybridizerRefrigitz* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }
+inline bool operator!=(const ThinkingHybridizerRefrigitz* lhs, const std::nullptr_t rhs) { return !(lhs == rhs); }*/
 /*
 
 inline bool operator==(const AllDraw lhs, const std::nullptr_t rhs) { return ((&lhs) == rhs); }
@@ -388,8 +388,8 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 			return false;
 		}
 	}
-	/*
-	ThinkingHybridizerRefrigitz::ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin)
+	
+	ThinkingHybridizerRefrigitz::ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin): iIndex(iInde), iIndex(-1), Space(new std::string(L"&nbsp;"), Spaces(0), callStack(new StackFrame(1, true))
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -493,7 +493,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-*/	int **ThinkingHybridizerRefrigitz::CloneATable(int** Tab)
+	int **ThinkingHybridizerRefrigitz::CloneATable(int** Tab)
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:

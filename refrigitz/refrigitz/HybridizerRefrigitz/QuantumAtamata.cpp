@@ -1,5 +1,5 @@
-﻿#include "QuantumAtamata.h"
-
+﻿#include "stringconverter.h"
+#include "LearningAtamata.h"
 
 
 	Bit::Bit()
