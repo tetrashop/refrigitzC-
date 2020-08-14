@@ -9,11 +9,11 @@
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
 		{
-			if (!System::IO::File::Exists(L"CodeLogEvent.log"))
+			if (!System::IO::File::Exists(L"CodeLogEvent.log"
 			{
-				System::IO::File::CreateText(L"CodeLogEvent.log");
+				System::IO::File::CreateText(L"CodeLogEvent.log";
 			}
-			System::IO::File::AppendAllText(L"CodeLogEvent.log", std::wstring(L"\r\nError by ") + Code + std::wstring(L"At ") + LineCode + std::wstring(L" LinCode of File ") + File);
+			System::IO::File::AppendAllText(L"CodeLogEvent.log", L"\r\nError by " + Code + L"At " + LineCode + L" LinCode of File " + File);
 		}
 	}
 

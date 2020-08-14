@@ -6,7 +6,7 @@ int Program::main(int argc, char *argv[])
 //[STAThread]
 {
 	/* cudA->DeviceSynchronize();
-	 HybRunner runner = HybRunner.Cuda("Hybridizer.Runtime.CUDAImports.dll").SetDistrib(1, 2);
+	 HybRunner runner = HybRunner.Cuda("Hybridizer.Runtime.CUDAImports.dll".SetDistrib(1, 2);
 	 GlobalMembersUci.t = new ArtificialInteligenceMove(new HybridizerRefrigitzForm();
 	 runner.Wrap(GlobalMembersUci.t);
 	 */

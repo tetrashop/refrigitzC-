@@ -201,7 +201,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 						////lock (O1)
 						{ //Draw an Instant from File of WHITE Soldeirs.
 							 //Draw a WHITE Castles Instatnt Image On hte Tabe.
-							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "BrG.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "BrG.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 						}
 					}
 					else
@@ -211,7 +211,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 						////lock (O1)
 						{ //Draw an Instant from File of WHITE Soldeirs.
 							 //Draw an Instatnt of BLACK Castles On the Table.
-							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "BrB.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "BrB.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 						}
 					}
 				}
@@ -227,8 +227,8 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 
 	void DrawCastle::InitializeInstanceFields()
 	{
-		//Space = new std::string(L"&nbsp;");
-		Spaces = 0;
+		//Space = new std::string(L"&nbsp;";
+		
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];
 		for (int element = 0; element < sizeof(temp_LoseOcuuredatChiled) / sizeof(temp_LoseOcuuredatChiled[0]); element++)

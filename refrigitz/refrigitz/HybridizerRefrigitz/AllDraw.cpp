@@ -108,14 +108,14 @@ inline bool operator!=(const std::vector<ThinkingHybridizerRefrigitz> lhs, const
 *//*
 inline std::wstring* operator+=(const std::wstring *out, const std::wstring *course)
 {
-	std::wstring* lef =new std::wstring();
+	std::wstring* lef =new );
 	*lef = (*out) + (*course); // for example
 	return lef;
 
 }
 inline std::wstring operator+=(const std::wstring &out, const std::wstring &course)
 {
-	std::wstring& lef = std::wstring();
+	std::wstring& lef = );
 	lef = out + course; // for example
 	return lef;
 
@@ -222,8 +222,8 @@ std::vector<int> AllDraw::StoreADrawAStarGreedy = std::vector<int>();
 bool AllDraw::UseDoubleTime = false;
 int AllDraw::AStarGreedyiLevelMax = 0;
 bool AllDraw::AStarGreadyFirstSearch = true;
-std::wstring AllDraw::ImageRoot = AllDraw::Root + std::wstring(L"\\Images");
-std::wstring AllDraw::ImagesSubRoot = AllDraw::ImageRoot + std::wstring(L"\\Fit\\Small\\");
+std::wstring AllDraw::ImageRoot = AllDraw::Root + L"\\Images";
+std::wstring AllDraw::ImagesSubRoot = AllDraw::ImageRoot + L"\\Fit\\Small\\";
 bool AllDraw::RedrawTable = true;
 //std::wstring AllDraw::SyntaxToWrite = L"";
 bool AllDraw::SodierConversionOcuured = false;
@@ -451,8 +451,8 @@ int AllDraw::MouseClick = 0;
 				DynamicAStarGreedytPrograming = false;
 				UseDoubleTime = false;
 				AStarGreadyFirstSearch = true;
-				ImageRoot = AllDraw::Root + std::wstring(L"\\Images");
-				ImagesSubRoot = AllDraw::ImageRoot + std::wstring(L"\\Fit\\Small\\");
+				ImageRoot = AllDraw::Root + L"\\Images";
+				ImagesSubRoot = AllDraw::ImageRoot + L"\\Fit\\Small\\";
 			}
 			RedrawTable = true;
 			SodierConversionOcuured = false;
@@ -690,8 +690,8 @@ int AllDraw::MouseClick = 0;
 				DynamicAStarGreedytPrograming = false;
 				UseDoubleTime = false;
 				AStarGreadyFirstSearch = true;
-				ImageRoot = AllDraw::Root + std::wstring(L"\\Images");
-				ImagesSubRoot = AllDraw::ImageRoot + std::wstring(L"\\Fit\\Small\\");
+				ImageRoot = AllDraw::Root + L"\\Images";
+				ImagesSubRoot = AllDraw::ImageRoot + L"\\Fit\\Small\\";
 			}
 			RedrawTable = true;
 			SodierConversionOcuured = false;
@@ -10553,36 +10553,36 @@ int AllDraw::MouseClick = 0;
 		}
 		}
 		}
-		SOut += std::wstring(L"AStar Heuristics ");
+		SOut += L"AStar Heuristics ";
 		if (Sec == 1)
 		{
-			SOut += std::wstring(L" -Initiatetion- ");
+			SOut += L" -Initiatetion- ";
 		}
 		if (Sec == 2)
 		{
-			SOut += std::wstring(L" -Regard- ");
+			SOut += L" -Regard- ";
 		}
 		if (Sec == 3)
 		{
-			SOut += std::wstring(L" -Foundation Greatest- ");
+			SOut += L" -Foundation Greatest- ";
 		}
 		if (WinOcuuredatChiled >= 1)
 		{
-			SOut += std::wstring(L" At -WinKing Checked Mate- is active For Eneter Regard- ");
+			SOut += L" At -WinKing Checked Mate- is active For Eneter Regard- ";
 		}
 		if (LoseOcuuredatChiled[0] <= -1)
 		{
-			SOut += std::wstring(L" At -LoseKing Checked Mate- is active For Eneter Penelty- ");
+			SOut += L" At -LoseKing Checked Mate- is active For Eneter Penelty- ";
 		}
 		if (AA)
 		{
-			SOut += std::wstring(L" '-AA-' is Active due to Regard Enter- ");
+			SOut += L" '-AA-' is Active due to Regard Enter- ";
 		}
 		if (Do == 1)
 		{
-			SOut += std::wstring(L" '-Do-' is Active due to Regard Enter- ");
+			SOut += L" '-Do-' is Active due to Regard Enter- ";
 		}
-		SOut += std::wstring(L" With Heuristic Count ") + AllDraw::Less;
+		SOut += L" With Heuristic Count " + AllDraw::Less;
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 		////lock (O)
@@ -13986,7 +13986,7 @@ int AllDraw::MouseClick = 0;
 						SolderesOnTable[iIndex]->SoldierThinking->ThinkingBegin = true;
 						SolderesOnTable[iIndex]->SoldierThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = SolderesOnTable[iIndex]->WinOcuuredatChiled;
 						 SolderesOnTable[iIndex]->SoldierThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14005,7 +14005,7 @@ int AllDraw::MouseClick = 0;
 						SolderesOnTable[iIndex]->SoldierThinking->ThinkingBegin = true;
 						SolderesOnTable[iIndex]->SoldierThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = SolderesOnTable[iIndex]->WinOcuuredatChiled;
 						 SolderesOnTable[iIndex]->SoldierThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14037,7 +14037,7 @@ int AllDraw::MouseClick = 0;
 						ElephantOnTable[iIndex]->ElefantThinking->ThinkingBegin = true;
 						ElephantOnTable[iIndex]->ElefantThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = ElephantOnTable[iIndex]->WinOcuuredatChiled;
 						 ElephantOnTable[iIndex]->ElefantThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14055,7 +14055,7 @@ int AllDraw::MouseClick = 0;
 						ElephantOnTable[iIndex]->ElefantThinking->ThinkingBegin = true;
 						ElephantOnTable[iIndex]->ElefantThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = ElephantOnTable[iIndex]->WinOcuuredatChiled;
 						 ElephantOnTable[iIndex]->ElefantThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14086,7 +14086,7 @@ int AllDraw::MouseClick = 0;
 						HoursesOnTable[iIndex]->HourseThinking->ThinkingBegin = true;
 						HoursesOnTable[iIndex]->HourseThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = HoursesOnTable[iIndex]->WinOcuuredatChiled;
 						 HoursesOnTable[iIndex]->HourseThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14104,7 +14104,7 @@ int AllDraw::MouseClick = 0;
 						HoursesOnTable[iIndex]->HourseThinking->ThinkingBegin = true;
 						HoursesOnTable[iIndex]->HourseThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = HoursesOnTable[iIndex]->WinOcuuredatChiled;
 						 HoursesOnTable[iIndex]->HourseThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14136,7 +14136,7 @@ int AllDraw::MouseClick = 0;
 						CastlesOnTable[iIndex]->CastleThinking->ThinkingBegin = true;
 						CastlesOnTable[iIndex]->CastleThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = CastlesOnTable[iIndex]->WinOcuuredatChiled;
 						 CastlesOnTable[iIndex]->CastleThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14174,7 +14174,7 @@ int AllDraw::MouseClick = 0;
 						MinisterOnTable[iIndex]->MinisterThinking->ThinkingBegin = true;
 						MinisterOnTable[iIndex]->MinisterThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = MinisterOnTable[iIndex]->WinOcuuredatChiled;
 						 MinisterOnTable[iIndex]->MinisterThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14192,7 +14192,7 @@ int AllDraw::MouseClick = 0;
 						MinisterOnTable[iIndex]->MinisterThinking->ThinkingBegin = true;
 						MinisterOnTable[iIndex]->MinisterThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = MinisterOnTable[iIndex]->WinOcuuredatChiled;
 						 MinisterOnTable[iIndex]->MinisterThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14222,7 +14222,7 @@ int AllDraw::MouseClick = 0;
 						KingOnTable[iIndex]->KingThinking->ThinkingBegin = true;
 						KingOnTable[iIndex]->KingThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = KingOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = KingOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = KingOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = KingOnTable[iIndex]->WinOcuuredatChiled;
 						 KingOnTable[iIndex]->KingThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14239,7 +14239,7 @@ int AllDraw::MouseClick = 0;
 						KingOnTable[iIndex]->KingThinking->ThinkingBegin = true;
 						KingOnTable[iIndex]->KingThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = KingOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = KingOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = KingOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = KingOnTable[iIndex]->WinOcuuredatChiled;
 						 KingOnTable[iIndex]->KingThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14272,7 +14272,7 @@ int AllDraw::MouseClick = 0;
 						SolderesOnTable[iIndex]->SoldierThinking->ThinkingBegin = true;
 						SolderesOnTable[iIndex]->SoldierThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = SolderesOnTable[iIndex]->WinOcuuredatChiled;
 						 SolderesOnTable[iIndex]->SoldierThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14289,7 +14289,7 @@ int AllDraw::MouseClick = 0;
 						SolderesOnTable[iIndex]->SoldierThinking->ThinkingBegin = true;
 						SolderesOnTable[iIndex]->SoldierThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = SolderesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = SolderesOnTable[iIndex]->WinOcuuredatChiled;
 						 SolderesOnTable[iIndex]->SoldierThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14318,7 +14318,7 @@ int AllDraw::MouseClick = 0;
 						ElephantOnTable[iIndex]->ElefantThinking->ThinkingBegin = true;
 						ElephantOnTable[iIndex]->ElefantThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = ElephantOnTable[iIndex]->WinOcuuredatChiled;
 						 ElephantOnTable[iIndex]->ElefantThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14336,7 +14336,7 @@ int AllDraw::MouseClick = 0;
 						ElephantOnTable[iIndex]->ElefantThinking->ThinkingBegin = true;
 						ElephantOnTable[iIndex]->ElefantThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = ElephantOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = ElephantOnTable[iIndex]->WinOcuuredatChiled;
 						 ElephantOnTable[iIndex]->ElefantThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14367,7 +14367,7 @@ int AllDraw::MouseClick = 0;
 						HoursesOnTable[iIndex]->HourseThinking->ThinkingBegin = true;
 						HoursesOnTable[iIndex]->HourseThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = HoursesOnTable[iIndex]->WinOcuuredatChiled;
 						 HoursesOnTable[iIndex]->HourseThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14384,7 +14384,7 @@ int AllDraw::MouseClick = 0;
 						HoursesOnTable[iIndex]->HourseThinking->ThinkingBegin = true;
 						HoursesOnTable[iIndex]->HourseThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = HoursesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = HoursesOnTable[iIndex]->WinOcuuredatChiled;
 						 HoursesOnTable[iIndex]->HourseThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14417,7 +14417,7 @@ int AllDraw::MouseClick = 0;
 						CastlesOnTable[iIndex]->CastleThinking->ThinkingBegin = true;
 						CastlesOnTable[iIndex]->CastleThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = CastlesOnTable[iIndex]->WinOcuuredatChiled;
 						 CastlesOnTable[iIndex]->CastleThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14434,7 +14434,7 @@ int AllDraw::MouseClick = 0;
 						CastlesOnTable[iIndex]->CastleThinking->ThinkingBegin = true;
 						CastlesOnTable[iIndex]->CastleThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = CastlesOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = CastlesOnTable[iIndex]->WinOcuuredatChiled;
 						 CastlesOnTable[iIndex]->CastleThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14463,7 +14463,7 @@ int AllDraw::MouseClick = 0;
 						MinisterOnTable[iIndex]->MinisterThinking->ThinkingBegin = true;
 						MinisterOnTable[iIndex]->MinisterThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = MinisterOnTable[iIndex]->WinOcuuredatChiled;
 						 MinisterOnTable[iIndex]->MinisterThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14480,7 +14480,7 @@ int AllDraw::MouseClick = 0;
 						MinisterOnTable[iIndex]->MinisterThinking->ThinkingBegin = true;
 						MinisterOnTable[iIndex]->MinisterThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = MinisterOnTable[iIndex]->WinOcuuredatChiled;
 						 MinisterOnTable[iIndex]->MinisterThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14510,7 +14510,7 @@ int AllDraw::MouseClick = 0;
 						KingOnTable[iIndex]->KingThinking->ThinkingBegin = true;
 						KingOnTable[iIndex]->KingThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = MinisterOnTable[iIndex]->WinOcuuredatChiled;
 						 MinisterOnTable[iIndex]->MinisterThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -14528,7 +14528,7 @@ int AllDraw::MouseClick = 0;
 						KingOnTable[iIndex]->KingThinking->ThinkingBegin = true;
 						KingOnTable[iIndex]->KingThinking->ThinkingFinished = false;
 //C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete[]' where appropriate:
-//ORIGINAL LINE: int[] Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
+//ORIGINAL LINE: int* Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int *Lose = MinisterOnTable[iIndex]->LoseOcuuredatChiled;
 						int Win = MinisterOnTable[iIndex]->WinOcuuredatChiled;
 						 MinisterOnTable[iIndex]->MinisterThinking->Thinking(iAStarGreedy, this, Lose, Win);
@@ -20768,7 +20768,7 @@ int AllDraw::MouseClick = 0;
 			//if (!IsNotAStarGreedyConanaied(ik, j, 1))
 
 			//minitor
-			OutPutAction = std::wstring(L" ") + Alphabet(SolderesOnTable[ik]->SoldierThinking->Row) + Number(SolderesOnTable[ik]->SoldierThinking->Column) + Alphabet(SolderesOnTable[ik]->SoldierThinking->RowColumnSoldier[j][0]) + Number(SolderesOnTable[ik]->SoldierThinking->RowColumnSoldier[j][1]);
+			OutPutAction = L" " + Alphabet(SolderesOnTable[ik]->SoldierThinking->Row) + Number(SolderesOnTable[ik]->SoldierThinking->Column) + Alphabet(SolderesOnTable[ik]->SoldierThinking->RowColumnSoldier[j][0]) + Number(SolderesOnTable[ik]->SoldierThinking->RowColumnSoldier[j][1]);
 			//if (Order == 1)
 			//else
 
@@ -20795,7 +20795,7 @@ int AllDraw::MouseClick = 0;
 			//if (!IsNotAStarGreedyConanaied(ik, j, 2))
 
 			//minitor
-			OutPutAction = std::wstring(L" ") + Alphabet(ElephantOnTable[ik]->ElefantThinking->Row) + Number(ElephantOnTable[ik]->ElefantThinking->Column) + Alphabet(ElephantOnTable[ik]->ElefantThinking->RowColumnElefant[j][0]) + Number(ElephantOnTable[ik]->ElefantThinking->RowColumnElefant[j][1]);
+			OutPutAction = L" " + Alphabet(ElephantOnTable[ik]->ElefantThinking->Row) + Number(ElephantOnTable[ik]->ElefantThinking->Column) + Alphabet(ElephantOnTable[ik]->ElefantThinking->RowColumnElefant[j][0]) + Number(ElephantOnTable[ik]->ElefantThinking->RowColumnElefant[j][1]);
 			//if (Order == 1)
 			//else
 
@@ -20822,7 +20822,7 @@ int AllDraw::MouseClick = 0;
 			//if (!IsNotAStarGreedyConanaied(ik, j, 3))
 
 			//minitor
-			OutPutAction = std::wstring(L" ") + Alphabet(HoursesOnTable[ik]->HourseThinking->Row) + Number(HoursesOnTable[ik]->HourseThinking->Column) + Alphabet(HoursesOnTable[ik]->HourseThinking->RowColumnHourse[j][0]) + Number(HoursesOnTable[ik]->HourseThinking->RowColumnHourse[j][1]);
+			OutPutAction = L" " + Alphabet(HoursesOnTable[ik]->HourseThinking->Row) + Number(HoursesOnTable[ik]->HourseThinking->Column) + Alphabet(HoursesOnTable[ik]->HourseThinking->RowColumnHourse[j][0]) + Number(HoursesOnTable[ik]->HourseThinking->RowColumnHourse[j][1]);
 			//if (Order == 1)
 			//else
 
@@ -20849,7 +20849,7 @@ int AllDraw::MouseClick = 0;
 			//if (!IsNotAStarGreedyConanaied(ik, j, 4))
 
 			//minitor
-			OutPutAction = std::wstring(L" ") + Alphabet(CastlesOnTable[ik]->CastleThinking->Row) + Number(CastlesOnTable[ik]->CastleThinking->Column) + Alphabet(CastlesOnTable[ik]->CastleThinking->RowColumnCastle[j][0]) + Number(CastlesOnTable[ik]->CastleThinking->RowColumnCastle[j][1]);
+			OutPutAction = L" " + Alphabet(CastlesOnTable[ik]->CastleThinking->Row) + Number(CastlesOnTable[ik]->CastleThinking->Column) + Alphabet(CastlesOnTable[ik]->CastleThinking->RowColumnCastle[j][0]) + Number(CastlesOnTable[ik]->CastleThinking->RowColumnCastle[j][1]);
 			//if (Order == 1)
 			//else
 
@@ -20876,7 +20876,7 @@ int AllDraw::MouseClick = 0;
 			//if (!IsNotAStarGreedyConanaied(ik, j, 5))
 
 			//minitor
-			OutPutAction = std::wstring(L" ") + Alphabet(MinisterOnTable[ik]->MinisterThinking->Row) + Number(MinisterOnTable[ik]->MinisterThinking->Column) + Alphabet(MinisterOnTable[ik]->MinisterThinking->RowColumnMinister[j][0]) + Number(MinisterOnTable[ik]->MinisterThinking->RowColumnMinister[j][1]);
+			OutPutAction = L" " + Alphabet(MinisterOnTable[ik]->MinisterThinking->Row) + Number(MinisterOnTable[ik]->MinisterThinking->Column) + Alphabet(MinisterOnTable[ik]->MinisterThinking->RowColumnMinister[j][0]) + Number(MinisterOnTable[ik]->MinisterThinking->RowColumnMinister[j][1]);
 			//if (Order == 1)
 			//else
 
@@ -20903,7 +20903,7 @@ int AllDraw::MouseClick = 0;
 			//if (!IsNotAStarGreedyConanaied(ik, j, 6))
 
 			//minitor
-			OutPutAction = std::wstring(L" ") + Alphabet(KingOnTable[ik]->KingThinking->Row) + Number(KingOnTable[ik]->KingThinking->Column) + Alphabet(KingOnTable[ik]->KingThinking->RowColumnKing[j][0]) + Number(KingOnTable[ik]->KingThinking->RowColumnKing[j][1]);
+			OutPutAction = L" " + Alphabet(KingOnTable[ik]->KingThinking->Row) + Number(KingOnTable[ik]->KingThinking->Column) + Alphabet(KingOnTable[ik]->KingThinking->RowColumnKing[j][0]) + Number(KingOnTable[ik]->KingThinking->RowColumnKing[j][1]);
 			//if (Order == 1)
 			//else
 
@@ -25287,38 +25287,38 @@ int AllDraw::MouseClick = 0;
 
 
 
-			if (Tag.find(L"Thinking") != string::npos)
+			if (Tag.find(L"Thinking" != string::npos)
 			{
 //C# TO C++ CONVERTER TODO TASK: There is no direct native C++ equivalent to this .NET String method:
-				Tag = Tag.Replace(L"Thinking", std::wstring(L"<font int=\"Green\">") + std::wstring(L"Thinking") + std::wstring(L"</font>"));
+				Tag = Tag.Replace(L"Thinking", L"<font int=\"Green\">" + L"Thinking" + L"</font>");
 			}
-			if (Tag.find(L"Perception") != string::npos)
+			if (Tag.find(L"Perception" != string::npos)
 			{
 //C# TO C++ CONVERTER TODO TASK: There is no direct native C++ equivalent to this .NET String method:
-				Tag = Tag.Replace(L"Perception", std::wstring(L"<font int=\"Green\">") + std::wstring(L"Perception") + std::wstring(L"</font>"));
+				Tag = Tag.Replace(L"Perception", L"<font int=\"Green\">" + L"Perception" + L"</font>");
 			}
-			if (Tag.find(L"Bob") != string::npos)
+			if (Tag.find(L"Bob" != string::npos)
 			{
 //C# TO C++ CONVERTER TODO TASK: There is no direct native C++ equivalent to this .NET String method:
-				Tag = Tag.Replace(L"Bob", std::wstring(L"<font int=\"WHITE\">") + std::wstring(L"Bob") + std::wstring(L"</font>"));
+				Tag = Tag.Replace(L"Bob", L"<font int=\"WHITE\">" + L"Bob" + L"</font>");
 			}
-			if (Tag.find(L"Alice") != string::npos)
+			if (Tag.find(L"Alice" != string::npos)
 			{
 //C# TO C++ CONVERTER TODO TASK: There is no direct native C++ equivalent to this .NET String method:
-				Tag = Tag.Replace(L"Alice", std::wstring(L"<font int=\"BLACK\">") + std::wstring(L"BLACK") + std::wstring(L"</font>"));
+				Tag = Tag.Replace(L"Alice", L"<font int=\"BLACK\">" + L"BLACK" + L"</font>");
 			}
-			if (Tag.find(L"AstarGreedy ") != string::npos)
+			if (Tag.find(L"AstarGreedy " != string::npos)
 			{
 //C# TO C++ CONVERTER TODO TASK: There is no direct native C++ equivalent to this .NET String method:
-				Tag = Tag.Replace(L"AstarGreedy ", std::wstring(L"<font int=\"Yellow\">") + std::wstring(L"AstarGreedy ") + std::wstring(L"</font>"));
+				Tag = Tag.Replace(L"AstarGreedy ", L"<font int=\"Yellow\">" + L"AstarGreedy " + L"</font>");
 			}
-			if (Tag.find(L"Level") != string::npos)
+			if (Tag.find(L"Level" != string::npos)
 			{
 //C# TO C++ CONVERTER TODO TASK: There is no direct native C++ equivalent to this .NET String method:
-				Tag = Tag.Replace(L"Level", std::wstring(L"<font int=\"Blue\">") + std::wstring(L"Level") + std::wstring(L"</Font>"));
+				Tag = Tag.Replace(L"Level", L"<font int=\"Blue\">" + L"Level" + L"</Font>");
 			}
 
-			std::wstring R = L"<font int=\"Red\">" + Tag + std::wstring(L"</font>");
+			std::wstring R = L"<font int=\"Red\">" + Tag + L"</font>";
 
 			return R;
 		}
@@ -26474,7 +26474,7 @@ int AllDraw::MouseClick = 0;
 			ThinkingAllowed[element] = temp_ThinkingAllowed[element];
 		IsCurrentDraw = false;
 		HaveKilled = 0;
-		//Space = new std::string(L"&nbsp;");
+		//Space = new std::string(L"&nbsp;";
 		SetDeptIgnore = false;
 		//Now = DateTime::Now.Hour * (36000000 * 24) + DateTime::Now.Minute * 36000000 + DateTime::Now.Second * 600000 + DateTime::Now.Millisecond;
 		//Later = DateTime::Now.Hour * (36000000 * 24) + DateTime::Now.Minute * 36000000 + DateTime::Now.Second * 600000 + DateTime::Now.Millisecond;

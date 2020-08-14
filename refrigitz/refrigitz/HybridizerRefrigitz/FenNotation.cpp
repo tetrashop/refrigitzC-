@@ -13,7 +13,7 @@
 	  }
 	  else
 	  {
-		//th[So2]. std::exception(L"Specify: 'w' or 'b'");
+		//th[So2]. std::exception(L"Specify: 'w' or 'b'";
 	  }
 	}
 
@@ -102,7 +102,7 @@
 //	  }
 //	  else
 //	  {
-//		//th[So2]. std::exception(std::wstring("Invalid piece value (") + value + std::wstring(") use one of: ") + str);
+//		//th[So2]. std::exception("Invalid piece value (" + value + " use one of: " + str);
 //	  }
 //	}
 
@@ -227,7 +227,7 @@
 
 		if (row->Length != 8)
 		{
-			//throw ArgumentException(std::wstring(L"Invalid board specification, ") + row->Length + std::wstring(L" ranks are defined, there should be 8."));
+			//throw ArgumentException(L"Invalid board specification, " + row->Length + L" ranks are defined, there should be 8.");
 		}
 
 		for (int i=0;i<row->Length;i++)
@@ -246,7 +246,7 @@
 					{
 						if (cnt > 7) //This check needed here to avoid overrunning index below under some error conditions.
 						{
-							//throw ArgumentException(std::wstring(L"Invalid board specification, rank ") + (ndx / 8 + 1) + std::wstring(L" has more then 8 items specified."));
+							//throw ArgumentException(L"Invalid board specification, rank " + (ndx / 8 + 1) + L" has more then 8 items specified.");
 						}
 						//EventPlacePiece(Chess::pieceFromFEN(achar), ndx + cnt);
 						this->operator*(ndx + cnt) = achar;
@@ -262,7 +262,7 @@
 
 			if (cnt != 8)
 			{
-				//throw ArgumentException(std::wstring(L"Invalid board specification, rank ") + (ndx / 8 + 1) + std::wstring(L" has ") + cnt + std::wstring(L" items specified, there should be 8."));
+				//throw ArgumentException(L"Invalid board specification, rank " + (ndx / 8 + 1) + L" has " + cnt + L" items specified, there should be 8.");
 			}
 
 			ndx -= 8;
@@ -281,12 +281,12 @@
 				}
 				else
 				{
-					//throw ArgumentException(L"Invalid color designation, use w or b as 2nd field separated by spaces.");
+					//throw ArgumentException(L"Invalid color designation, use w or b as 2nd field separated by spaces.";
 				}
 
 				if (note->coBoard[1]->getlenght() != 1)
 				{
-					//throw ArgumentException(std::wstring(L"Invalid color designation, 2nd field is ") + note[1].length() + std::wstring(L" chars long, only 1 allowed."));
+					//throw ArgumentException(L"Invalid color designation, 2nd field is " + note[1].length() + L" chars long, only 1 allowed.");
 				}
 			}
 		}
@@ -319,7 +319,7 @@
 					case L'-':
 						break;
 					default:
-						//throw std::exception(L"Invalid castle privileges designation, use: KQkq or -");
+						//throw std::exception(L"Invalid castle privileges designation, use: KQkq or -";
 				}
 			}
 		}

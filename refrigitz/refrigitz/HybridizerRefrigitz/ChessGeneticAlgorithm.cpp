@@ -1,14 +1,15 @@
-﻿#include "HybridizerRefrigitzGeneticAlgorithm.h"
+﻿#include "ChessGeneticAlgorithm.h"
 #include "AllDraw.h"
 #include "ChessRules.h"
 #include "ThinkingHybridizerRefrigitz.h"
 
 
 
-bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
+bool ChessGeneticAlgorithm::NoGameFounf = false;
 
+	
 
-	HybridizerRefrigitzGeneticAlgorithm::HybridizerRefrigitzGeneticAlgorithm(bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments)
+	ChessGeneticAlgorithm::ChessGeneticAlgorithm(bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments)
 	{
 		InitializeInstanceFields();
 		MovementsAStarGreedyHeuristicFoundT = MovementsAStarGreedyHeuristicTFou;
@@ -19,16 +20,16 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		OnlySelfT = OnlySel;
 		AStarGreedyHeuristicT = AStarGreedyHuris;
 		ArrangmentsChanged = Arrangments;
-		//Initiate Global Variables.
+		//Initiate Global autoiables.
 		RowColumn.clear();
 	}
 
-	bool HybridizerRefrigitzGeneticAlgorithm::FindHitToModified(int ** Cromosom1, int ** Cromosom2, std::vector<int**> &List, int Index, int Order, bool and)
+	bool ChessGeneticAlgorithm::FindHitToModified(int **Cromosom1, int **Cromosom2, std::vector<int**> &List, int Index, int Order, bool and)
 	{
 		bool Find = false;
-		for (int  i = 0; i < 8; i++)
+		for (auto i = 0; i < 8; i++)
 		{
-			for (int  j = 0; j < 8; j++)
+			for (auto j = 0; j < 8; j++)
 			{
 				if (Order == 1 && Cromosom1[i][j] <= 0)
 				{
@@ -75,28 +76,28 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		return Find;
 	}
 
-	bool HybridizerRefrigitzGeneticAlgorithm::FindGenToModified(int ** Cromosom1, int ** Cromosom2, std::vector<int**> &List, int Index, int Order, bool and)
+	bool ChessGeneticAlgorithm::FindGenToModified(int **Cromosom1, int **Cromosom2, std::vector<int**> &List, int Index, int Order, bool and)
 	{
-		ChessRules::SmallKingCastleBLACK = false;
-		ChessRules::SmallKingCastleWHITE = false;
-		ChessRules::BigKingCastleBLACK = false;
-		ChessRules::BigKingCastleWHITE = false;
-		//Injtjate Local Varjables.
+		ChessRules::SmallKingCastleBrown = false;
+		ChessRules::SmallKingCastleGray = false;
+		ChessRules::BigKingCastleBrown = false;
+		ChessRules::BigKingCastleGray = false;
+		//Injtjate Local autojables.
 		bool Find = false;
 		int FindNumber = 0;
 		bool Brj = false;
 
 		//For All Table Home
-		for (int  j = 0; j < 8; j++)
+		for (auto j = 0; j < 8; j++)
 		{
-			for (int  i = 0; i < 8; i++)
+			for (auto i = 0; i < 8; i++)
 			{
 				if (Cromosom1[j][i] == 0 && Cromosom2[j][i] == 0)
 				{
 					continue;
 				}
 
-				//WHITE Order.
+				//Gray Order.
 
 				if (!ArrangmentsChanged)
 				{
@@ -174,8 +175,8 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 						//Castles King Valjdjty Condjtjon.
 						if (Order == 1 && i == DistantRowUp)
 						{
-							//Small WHITE Castles King.
-							if (j == DistantColumnSmall && Cromosom2[SmallCastleCastleColumnAfter][DistantRowUp] == KingWHITE && Cromosom2[SmallCastleCastleColumnAfter][DistantRowUp] == CastleWHITE && Cromosom1[SmallCastleKingColumnBefore][DistantRowUp] == KingWHITE && Cromosom1[SmallCastleCastleColumnBefore][DistantRowUp] == CastleWHITE)
+							//Small Gray Castles King.
+							if (j == DistantColumnSmall && Cromosom2[SmallCastleCastleColumnAfter][DistantRowUp] == KingGray && Cromosom2[SmallCastleCastleColumnAfter][DistantRowUp] == CastleGray && Cromosom1[SmallCastleKingColumnBefore][DistantRowUp] == KingGray && Cromosom1[SmallCastleCastleColumnBefore][DistantRowUp] == CastleGray)
 							{
 								CromosomRowFirst = SmallCastleKingColumnBefore;
 								CromosomColumnFirst = i;
@@ -183,12 +184,12 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 								CromosomColumn = i;
 								Find = true;
 								FindNumber++;
-								ChessRules::SmallKingCastleWHITE = true;
+								ChessRules::SmallKingCastleGray = true;
 								Brj = true;
 							}
-							else //Big Brjges King WHITE.
+							else //Big Brjges King Gray.
 							{
-								if (j == DistantColumnBig && Cromosom2[BigCastleCastleColumnAfter][DistantRowUp] == CastleWHITE && Cromosom2[BigCastleKingColumnAfter][DistantRowUp] == KingWHITE && Cromosom1[BigCastleCastleColumnBefore][DistantRowUp] == CastleWHITE && Cromosom1[BigCastleKingColumnBefore][DistantRowUp] == KingWHITE)
+								if (j == DistantColumnBig && Cromosom2[BigCastleCastleColumnAfter][DistantRowUp] == CastleGray && Cromosom2[BigCastleKingColumnAfter][DistantRowUp] == KingGray && Cromosom1[BigCastleCastleColumnBefore][DistantRowUp] == CastleGray && Cromosom1[BigCastleKingColumnBefore][DistantRowUp] == KingGray)
 								{
 								CromosomRowFirst = DistantRowUp;
 								CromosomColumnFirst = i;
@@ -196,7 +197,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 								CromosomColumn = i;
 								Find = true;
 								FindNumber++;
-								ChessRules::BigKingCastleWHITE = true;
+								ChessRules::BigKingCastleGray = true;
 								Brj = true;
 								}
 							}
@@ -204,40 +205,34 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 						}
 						else if (i == DistantRowBelow)
 						{
-							//Small Castles King BLACK.
-							if (j == DistantColumnSmall && Cromosom2[BigCastleKingColumnAfter][DistantRowBelow] == KingBLACK && Cromosom2[BigCastleCastleColumnAfter][DistantRowBelow] == CastleBLACK && Cromosom1[BigCastleKingColumnBefore][DistantRowBelow] == KingBLACK && Cromosom1[BigCastleCastleColumnBefore][DistantRowBelow] == CastleBLACK)
+							//Small Castles King Brown.
+							if (j == DistantColumnSmall && Cromosom2[BigCastleKingColumnAfter][DistantRowBelow] == KingBrown && Cromosom2[BigCastleCastleColumnAfter][DistantRowBelow] == CastleBrown && Cromosom1[BigCastleKingColumnBefore][DistantRowBelow] == KingBrown && Cromosom1[BigCastleCastleColumnBefore][DistantRowBelow] == CastleBrown)
 							{
-								////auto o = new Object();
-//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-								////lock (O)
-								{
+								
 									CromosomRowFirst = DistantRowBelow;
 									CromosomColumnFirst = i;
 									CromosomRow = DistantRowBelow;
 									CromosomColumn = i;
 									Find = true;
 									FindNumber++;
-									ChessRules::SmallKingCastleBLACK = true;
+									ChessRules::SmallKingCastleBrown = true;
 									Brj = true;
-								}
+								
 							}
-							else //Big Castles King BLACK.
+							else //Big Castles King Brown.
 							{
-								if (j == DistantColumnBig && Cromosom2[BigCastleCastleColumnAfter][DistantRowBelow] == CastleBLACK && Cromosom2[BigCastleKingColumnBefore][DistantRowBelow] == KingBLACK && Cromosom1[BigCastleCastleColumnBefore][DistantRowBelow] == CastleBLACK && Cromosom1[BigCastleKingColumnBefore][DistantRowBelow] == KingBLACK)
+								if (j == DistantColumnBig && Cromosom2[BigCastleCastleColumnAfter][DistantRowBelow] == CastleBrown && Cromosom2[BigCastleKingColumnBefore][DistantRowBelow] == KingBrown && Cromosom1[BigCastleCastleColumnBefore][DistantRowBelow] == CastleBrown && Cromosom1[BigCastleKingColumnBefore][DistantRowBelow] == KingBrown)
 								{
-								////auto o = new Object();
-//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-								////lock (O)
-								{
+								
 									CromosomRowFirst = DistantRowBelow;
 									CromosomColumnFirst = i;
 									CromosomRow = DistantRowBelow;
 									CromosomColumn = i;
 									Find = true;
 									FindNumber++;
-									ChessRules::BigKingCastleBLACK = true;
+									ChessRules::BigKingCastleBrown = true;
 									Brj = true;
-								}
+								
 								}
 							}
 
@@ -321,8 +316,8 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 						//Castles King Valjdjty Condjtjon.
 						if (Order == 1 && i == DistantRowBelow)
 						{
-							//Small WHITE Castles King.
-							if (j == DistantColumnSmall && Cromosom2[SmallCastleKingColumnAfter][DistantRowBelow] == KingWHITE && Cromosom2[SmallCastleCastleColumnAfter][DistantRowBelow] == CastleWHITE && Cromosom1[SmallCastleKingColumnBefore][DistantRowBelow] == KingWHITE && Cromosom1[SmallCastleCastleColumnBefore][DistantRowBelow] == CastleWHITE)
+							//Small Gray Castles King.
+							if (j == DistantColumnSmall && Cromosom2[SmallCastleKingColumnAfter][DistantRowBelow] == KingGray && Cromosom2[SmallCastleCastleColumnAfter][DistantRowBelow] == CastleGray && Cromosom1[SmallCastleKingColumnBefore][DistantRowBelow] == KingGray && Cromosom1[SmallCastleCastleColumnBefore][DistantRowBelow] == CastleGray)
 							{
 								CromosomRowFirst = DistantRowBelow;
 								CromosomColumnFirst = i;
@@ -330,12 +325,12 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 								CromosomColumn = i;
 								Find = true;
 								FindNumber++;
-								ChessRules::SmallKingCastleWHITE = true;
+								ChessRules::SmallKingCastleGray = true;
 								Brj = true;
 							}
-							else //Big Brjges King WHITE.
+							else //Big Brjges King Gray.
 							{
-								if (j == DistantColumnBig && Cromosom2[BigCastleCastleColumnAfter][DistantRowBelow] == CastleWHITE && Cromosom2[BigCastleKingColumnAfter][DistantRowBelow] == KingWHITE && Cromosom1[BigCastleCastleColumnBefore][DistantRowBelow] == CastleWHITE && Cromosom1[BigCastleKingColumnBefore][DistantRowBelow] == KingWHITE)
+								if (j == DistantColumnBig && Cromosom2[BigCastleCastleColumnAfter][DistantRowBelow] == CastleGray && Cromosom2[BigCastleKingColumnAfter][DistantRowBelow] == KingGray && Cromosom1[BigCastleCastleColumnBefore][DistantRowBelow] == CastleGray && Cromosom1[BigCastleKingColumnBefore][DistantRowBelow] == KingGray)
 								{
 								CromosomRowFirst = DistantRowBelow;
 								CromosomColumnFirst = i;
@@ -343,7 +338,7 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 								CromosomColumn = i;
 								Find = true;
 								FindNumber++;
-								ChessRules::BigKingCastleWHITE = true;
+								ChessRules::BigKingCastleGray = true;
 								Brj = true;
 								}
 							}
@@ -351,41 +346,35 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 						}
 						else if (i == DistantRowUp)
 						{
-							//Small Castles King BLACK.
-							if (j == DistantColumnSmall && Cromosom2[SmallCastleKingColumnAfter][DistantRowUp] == KingBLACK && Cromosom2[SmallCastleCastleColumnAfter][DistantRowUp] == CastleBLACK && Cromosom1[SmallCastleKingColumnBefore][DistantRowUp] == KingBLACK && Cromosom1[SmallCastleCastleColumnBefore][DistantRowUp] == CastleBLACK)
+							//Small Castles King Brown.
+							if (j == DistantColumnSmall && Cromosom2[SmallCastleKingColumnAfter][DistantRowUp] == KingBrown && Cromosom2[SmallCastleCastleColumnAfter][DistantRowUp] == CastleBrown && Cromosom1[SmallCastleKingColumnBefore][DistantRowUp] == KingBrown && Cromosom1[SmallCastleCastleColumnBefore][DistantRowUp] == CastleBrown)
 							{
-								////auto o = new Object();
-//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-								////lock (O)
-								{
+								
 									CromosomRowFirst = DistantRowUp;
 									CromosomColumnFirst = i;
 									CromosomRow = DistantRowUp;
 									CromosomColumn = i;
 									Find = true;
 									FindNumber++;
-									ChessRules::SmallKingCastleBLACK = true;
+									ChessRules::SmallKingCastleBrown = true;
 									Brj = true;
-								}
+								
 							}
-							else //Big Castles King BLACK.
+							else //Big Castles King Brown.
 							{
-								if (j == DistantColumnBig && Cromosom2[BigCastleCastleColumnAfter][DistantRowUp] == CastleBLACK && Cromosom2[BigCastleKingColumnAfter][DistantRowUp] == KingBLACK && Cromosom1[BigCastleCastleColumnBefore][DistantRowUp] == CastleBLACK && Cromosom1[BigCastleKingColumnBefore][DistantRowUp] == KingBLACK)
+								if (j == DistantColumnBig && Cromosom2[BigCastleCastleColumnAfter][DistantRowUp] == CastleBrown && Cromosom2[BigCastleKingColumnAfter][DistantRowUp] == KingBrown && Cromosom1[BigCastleCastleColumnBefore][DistantRowUp] == CastleBrown && Cromosom1[BigCastleKingColumnBefore][DistantRowUp] == KingBrown)
 								{
-								////auto o = new Object();
-//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-								////lock (O)
-								{
+								
 									CromosomRowFirst = DistantRowUp;
 									CromosomColumnFirst = i;
 									CromosomRow = DistantRowUp;
 									CromosomColumn = i;
 									Find = true;
 									FindNumber++;
-									ChessRules::BigKingCastleBLACK = true;
+									ChessRules::BigKingCastleBrown = true;
 									Brj = true;
 								}
-								}
+								
 							}
 
 						}
@@ -457,11 +446,10 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		return false;
 	}
 
-	bool HybridizerRefrigitzGeneticAlgorithm::HitSet(int Order, int ** Cromosom1, int ** Cromosom2)
+	bool ChessGeneticAlgorithm::HitSet(int Order, int **Cromosom1, int **Cromosom2)
 	{
 		bool Hit = false;
-		try
-		{
+		
 			if (CromosomRowFirst != -1 && CromosomColumnFirst != -1 && CromosomRow != -1 && CromosomColumn != -1)
 			{
 				if (Order == 1)
@@ -479,27 +467,21 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 					}
 				}
 			}
-		}
-		catch (std::exception &t)
-		{
-			
-		}
+		
 		return Hit;
 	}
 
-	int **HybridizerRefrigitzGeneticAlgorithm::CloneATable(int** Tab)
+	int **ChessGeneticAlgorithm::CloneATable(int **Tab)
 	{
 
-		////auto o = new Object();
-//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-		////lock (O)
-		{
+		
 			//Create and new an Object.
-			int **Table; *Table = new int[8]; for (int b = 0; b < 8; b++)Table[b] = new int[8];
+		int **Table; *Table = new int[8];	for (auto i = 0; i < 8; i++) { Table[i] = new int[8]; }
+
 			//Assigne Parameter To New Objects.
-			for (int  i = 0; i < 8; i++)
+			for (auto i = 0; i < 8; i++)
 			{
-				for (int  j = 0; j < 8; j++)
+				for (auto j = 0; j < 8; j++)
 				{
 					Table[i][j] = Tab[i][j];
 				}
@@ -507,23 +489,20 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 			//Return New Object.
 
 			return Table;
-		}
+		
 
 	}
 
-	bool **HybridizerRefrigitzGeneticAlgorithm::CloneATableb(bool** Tab)
+	bool **ChessGeneticAlgorithm::CloneATable(bool** Tab)
 	{
 
-		////auto o = new Object();
-//C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
-		////lock (O)
-		{
+		
 			//Create and new an Object.
-			bool **Table; *Table = new bool[8]; for (int b = 0; b < 8; b++)Table[b] = new bool[8];
-			//Assigne Parameter To New Objects.
-			for (int  i = 0; i < 8; i++)
+		bool **Table; *Table = new bool[8];	for (auto i = 0; i < 8; i++) { Table[i] = new bool[8]; }
+		//Assigne Parameter To New Objects.
+			for (auto i = 0; i < 8; i++)
 			{
-				for (int  j = 0; j < 8; j++)
+				for (auto j = 0; j < 8; j++)
 				{
 					Table[i][j] = Tab[i][j];
 				}
@@ -531,272 +510,12 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 			//Return New Object.
 
 			return Table;
-		}
+		
 
 	}
-	/*
-	int **HybridizerRefrigitzGeneticAlgorithm::GenerateTable(std::vector<int**> &List, int Index, int Order)
-	{
-		*GeneticTable = new int[8]; for (int b = 0; b < 8; b++)GeneticTable[b] = new int[8];
-		//Initiate Local Variables.
-		Begine5:
-		RowColumn.clear();
-		int Store = Index;
-//C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete*' where appropriate:
-//ORIGINAL LINE: int[,] Cromosom1 = nullptr;
-		int **Cromosom1 = nullptr;
-//C# TO C++ CONVERTER WARNING: Since the array size is not known in this declaration, C# to C++ Converter has converted this array to a pointer.  You will need to call 'delete*' where appropriate:
-//ORIGINAL LINE: int[,] Cromosom2 = nullptr;
-		int **Cromosom2 = nullptr;
-		try
-		{
-			Cromosom1 = List[List.size() - 2];
-			Cromosom2 = List[List.size() + MinusOne];
-		}
-		catch (IndexOutOfRangeException t)
-		{
-			
-			return nullptr;
-		}
-
-		Index = Store;
-		//Found of Gen.
-		if (!FindGenToModified(Cromosom1, Cromosom2, List, Index, Order, false))
-		{
-			goto EndFindAThing;
-		}
 
 
-
-
-
-		//Initiate Global Variables.
-		BeginFind:
-		int color = 1;
-		if (Order == -1)
-		{
-			color = -1;
-		}
-		try
-		{
-			//If Cromosom Location is Not Founded.
-			if (CromosomRow == -1 && CromosomColumn == -1)
-			{
-				//Initiayte Local Variables.
-				List.erase(List.size() + MinusOne);
-				Index--;
-				goto Begine5;
-			}
-			//Found Kind Of Gen.
-			Ki = List[List.size() + MinusOne][CromosomRow][CromosomColumn];
-			//Initiate Local Variables.
-			*GeneticTable = new int[8]; for (int b = 0; b < 8; b++)GeneticTable[b] = new int[8];
-			//If Gen Kind Not Found Retrun Not Valididity.
-			if (List[List.size() + MinusOne][CromosomRow][CromosomColumn] == 0)
-			{
-				return nullptr;
-			}
-			else
-			{
-				//Clone a Copy.
-				for (int  ii = 0; ii < 8; ii++)
-				{
-					for (int  jj = 0; jj < 8; jj++)
-					{
-						GeneticTable[ii][jj] = List[List.size() + MinusOne][ii][jj];
-					}
-				}
-			}
-			//Initiate Global and Local Variables.
-			color = 1;
-			if (Order == -1)
-			{
-				color = -1;
-			}
-			//For All Gens.
-			for (Gen1 = 0; Gen1 < 8; Gen1++)
-			{
-				for (Gen2 = 0; Gen2 < 8; Gen2++)
-				{
-					//If Gen is Current Gen Location Continue Traversal Back.
-					if (Gen1 == CromosomRow && Gen2 == CromosomColumn)
-					{
-						continue;
-					}
-					//Rulement of Gen Movments.
-					if ((new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, GeneticTable[CromosomRow][CromosomColumn], CloneATable(GeneticTable), Order, CromosomRow, CromosomColumn))->Rules(CromosomRow, CromosomColumn, Gen1, Gen2, color, GeneticTable[CromosomRow][CromosomColumn]))
-					{
-						//Initiate Global Variables and Syntax.
-						int A[2];
-						A[0] = CromosomRow;
-						A[1] = CromosomColumn;
-						RowColumn.push_back(A);
-
-
-
-						GeneticTable[Gen1][Gen2] = GeneticTable[CromosomRow][CromosomColumn];
-						GeneticTable[CromosomRow][CromosomColumn] = 0;
-						//Table Repeatative Consideration.
-						if (ThinkingHybridizerRefrigitz::ExistTableInList(CloneATable(GeneticTable), List, 0))
-						{
-							GeneticTable[CromosomRow][CromosomColumn] = GeneticTable[Gen1][Gen2];
-							GeneticTable[Gen1][Gen2] = 0;
-							continue;
-
-						}
-						else
-						{
-							//Check Consideration.
-							if ((new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, GeneticTable[CromosomRow][CromosomRow], CloneATable(GeneticTable), Order, CromosomRow, CromosomColumn))->Check(CloneATable(GeneticTable), Order))
-							{
-								GeneticTable[CromosomRow][CromosomColumn] = GeneticTable[Gen1][Gen2];
-								GeneticTable[Gen1][Gen2] = 0;
-								continue;
-							}
-
-							else
-							{
-
-								//Return Genetic Table.
-								return GeneticTable;
-							}
-
-						}
-					}
-
-
-				}
-			}
-			//Initiate Try Catch.
-			GeneticTable = nullptr;
-			int a = GeneticTable[0][0];
-		}
-
-		catch (NullReferenceException t)
-		{
-			//Try Catch Expetion Handling of Not Successful Foundation of Gen.
-			
-			if (Order == 1)
-			{
-				Ki = (new Random())->Next(1, 7);
-			}
-			else
-			{
-				Ki = (new Random())->Next(1, 7) * -1;
-			}
-
-			if (Order == 1)
-			{
-				int Count = 0;
-				do
-				{
-					if (Ki < 6)
-					{
-						Ki++;
-					}
-					else
-					{
-						Ki = 1;
-					}
-					Count++;
-				} while (Count < 6 && !(new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
-				if (Count >= 6)
-				{
-					NoGameFounf = true;
-					return nullptr;
-				}
-
-
-			}
-			else
-			{
-				int Count = 0;
-				do
-				{
-					if (Ki > -6)
-					{
-						Ki--;
-					}
-					else
-					{
-						Ki = -1;
-					}
-					Count++;
-				} while (Count < 6 && !(new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
-				if (Count >= 6)
-				{
-					NoGameFounf = true;
-					return nullptr;
-				}
-
-
-
-
-
-
-			}
-
-			goto BeginFind;
-		}
-
-		EndFindAThing:
-		//Foudn of Some Samness Gen.
-		if (Order == 1)
-		{
-			Ki = (new Random())->Next(1, 7);
-		}
-		else
-		{
-			Ki = (new Random())->Next(1, 7) * -1;
-		}
-		if (Order == 1)
-		{
-			int Count = 0;
-			do
-			{
-				if (Ki < 6)
-				{
-					Ki++;
-				}
-				else
-				{
-					Ki = 1;
-				}
-				Count++;
-			} while (Count < 6 && !(new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
-			if (Count >= 6)
-			{
-				return nullptr;
-			}
-
-		}
-		else
-		{
-			int Count = 0;
-			do
-			{
-				if (Ki > -6)
-				{
-					Ki--;
-				}
-				else
-				{
-					Ki = -1;
-				}
-				Count++;
-			} while (Count < 6 && !(new ChessRules(0, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, Ki, List[List.size() + MinusOne], Order, CromosomRow, CromosomColumn))->FindAThing(List[List.size() + MinusOne], CromosomRow, CromosomColumn, Ki, true, RowColumn));
-			if (Count >= 6)
-			{
-				return nullptr;
-			}
-		}
-
-		goto BeginFind;
-
-
-	}
-*/
-	void HybridizerRefrigitzGeneticAlgorithm::InitializeInstanceFields()
+	void ChessGeneticAlgorithm::InitializeInstanceFields()
 	{
 		Hit = false;
 		MovementsAStarGreedyHeuristicFoundT = false;
@@ -819,4 +538,3 @@ bool HybridizerRefrigitzGeneticAlgorithm::NoGameFounf = false;
 		Gen1 = 0;
 		Gen2 = 0;
 	}
-

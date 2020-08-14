@@ -205,7 +205,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 						////lock (O1)
 						{ //Draw an Instant from File of WHITE Soldeirs.
 							 //Draw an Instatnt WHITE Elephant On the Table.
-							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "EG.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "EG.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 						}
 					}
 					else
@@ -215,7 +215,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 						////lock (O1)
 						{ //Draw an Instant from File of WHITE Soldeirs.
 							 //Draw an Instatnt BLACK Elepehnt On the Table.
-							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "EB.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "EB.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 						}
 					}
 				}
@@ -231,8 +231,8 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 
 	void DrawElefant::InitializeInstanceFields()
 	{
-		//Space = new std::string(L"&nbsp;");
-		Spaces = 0;
+		//Space = new std::string(L"&nbsp;";
+		
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];
 		for (int element = 0; element < sizeof(temp_LoseOcuuredatChiled) / sizeof(temp_LoseOcuuredatChiled[0]); element++)

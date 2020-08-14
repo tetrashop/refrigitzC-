@@ -2,6 +2,11 @@
 #include <vector>
 #include <cmath>
 #include <stdexcept>
+
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <fstream>
 #include "ChessForm.h"
 #include "ThinkingHybridizerRefrigitz.h"
 #include "Stone.h"
@@ -110,7 +115,7 @@ int **HybridizerRefrigitzForm::Table;
 			{
 				brd = new Board();
 				Table = brd->GetTable();
-				std::cout << std::wstring(L"Wait...") << std::endl;
+				std::cout << std::wstring(L"Wait..." << std::endl;
 				AllDraw::OrderPlateDraw = -1;
 				AllDraw::TableListAction.push_back(CloneATable(brd->GetTable()));
 				Table = CloneATable(brd->GetTable());
@@ -173,7 +178,7 @@ int **HybridizerRefrigitzForm::Table;
 
 					}
 				}
-				std::cout << std::wstring(L"Ready...") << std::endl;
+				std::cout << std::wstring(L"Ready..." << std::endl;
 				LoadP = true;
 			}
 		}
@@ -283,7 +288,7 @@ int **HybridizerRefrigitzForm::Table;
 
 					if (Draw.TableZero(Table))
 					{
-						std::cout << std::wstring(L"Board is invalid;") << std::endl;
+						std::cout << std::wstring(L"Board is invalid;" << std::endl;
 						Draw.TableList.clear();
 						Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
 						Draw.SetRowColumn(0,false);
@@ -308,7 +313,7 @@ int **HybridizerRefrigitzForm::Table;
 						if (R->CromosomRowFirst == -1 || R->CromosomColumnFirst == -1 || R->CromosomRow == -1 || R->CromosomColumn == -1)
 						{
 
-							std::cout << std::wstring(L"One or more cromosoms is invalid;") << std::endl;
+							std::cout << std::wstring(L"One or more cromosoms is invalid;" << std::endl;
 							AllDraw::TableListAction.pop_back();
 
 
@@ -325,7 +330,7 @@ int **HybridizerRefrigitzForm::Table;
 						jj = R->CromosomColumnFirst;
 						i = ii;
 						j = jj;
-						std::cout << std::wstring(L"\nBestMove :") << (new ThinkingHybridizerRefrigitz())->AsS(R->CromosomRowFirst, R->CromosomColumnFirst, R->CromosomRow, R->CromosomColumn);
+						std::cout << std::wstring(L"\nBestMove :" << (new ThinkingHybridizerRefrigitz())->AsS(R->CromosomRowFirst, R->CromosomColumnFirst, R->CromosomRow, R->CromosomColumn);
 						k = brd->getInfo(i, j);
 						//if (k == 0)
 
@@ -344,7 +349,7 @@ int **HybridizerRefrigitzForm::Table;
 
 
 						{
-							std::cout << std::wstring(L"One or more DNA is invalid;") << std::endl;
+							std::cout << std::wstring(L"One or more DNA is invalid;" << std::endl;
 
 
 
@@ -408,10 +413,22 @@ int **HybridizerRefrigitzForm::Table;
 							b->setSquare(brd->getInfo(y, z), y, z);
 						}
 					}
+					Castle *cs2;
+					Knight *kn;
+					Bishop *bsp;
+					Queen *qn2;
+					King *kg2;
+					Pawn *p;
+					Castle *cs;
+					Knight *kn2;
+					Bishop *bsp2;
+					Queen *qn;
+					King *kg;
+					Pawn *p2;
 					switch (m)
 					{
 						case 1:
-							Castle *cs2 = new Castle(1, x1, y1);
+							cs2 = new Castle(1, x1, y1);
 							if (cs2->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -420,7 +437,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"R";
@@ -446,7 +463,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 2:
-							Knight *kn = new Knight(1, x1, y1);
+							kn = new Knight(1, x1, y1);
 							if (kn->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -455,7 +472,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"N";
@@ -481,7 +498,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 3:
-							Bishop *bsp = new Bishop(1, x1, y1);
+							bsp = new Bishop(1, x1, y1);
 							if (bsp->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -490,7 +507,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"B";
@@ -516,7 +533,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 4:
-							Queen *qn2 = new Queen(1, x1, y1);
+							qn2 = new Queen(1, x1, y1);
 							if (qn2->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -525,7 +542,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"Q";
@@ -551,7 +568,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 5:
-							King *kg2 = new King(1, x1, y1);
+							kg2 = new King(1, x1, y1);
 							if (kg2->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -560,7 +577,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								//pb[x1, y1].Image = null;
@@ -585,7 +602,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"0-0";
@@ -608,7 +625,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"0-0";
@@ -631,7 +648,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 6:
-							Pawn *p = new Pawn(1, x1, y1);
+							p = new Pawn(1, x1, y1);
 							if (p->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -640,7 +657,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"P";
@@ -766,7 +783,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 7:
-							Castle *cs = new Castle(2, x1, y1);
+							cs = new Castle(2, x1, y1);
 							if (cs->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -775,7 +792,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"R";
@@ -801,7 +818,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 8:
-							Knight *kn2 = new Knight(2, x1, y1);
+							kn2 = new Knight(2, x1, y1);
 							if (kn2->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -810,7 +827,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"N";
@@ -829,7 +846,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 9:
-							Bishop *bsp2 = new Bishop(2, x1, y1);
+							bsp2 = new Bishop(2, x1, y1);
 							if (bsp2->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -838,7 +855,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"B";
@@ -864,7 +881,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 10:
-							Queen *qn = new Queen(2, x1, y1);
+							qn = new Queen(2, x1, y1);
 							if (qn->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -873,7 +890,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"Q";
@@ -899,7 +916,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 11:
-							King *kg = new King(2, x1, y1);
+							kg = new King(2, x1, y1);
 							if (kg->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -908,7 +925,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"K";
@@ -934,7 +951,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"0-0";
@@ -957,7 +974,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"0-0";
@@ -980,7 +997,7 @@ int **HybridizerRefrigitzForm::Table;
 							}
 							break;
 						case 12:
-							Pawn *p2 = new Pawn(2, x1, y1);
+							p2 = new Pawn(2, x1, y1);
 							if (p2->move(brd, i, j) == 1)
 							{
 								b->setSquare(0, x1, y1);
@@ -989,7 +1006,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									cl = 0;
 									//this.pb[x1, y1].BorderStyle = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
 									return 0;
 								}
 								lstr = L"P";
@@ -1191,13 +1208,13 @@ int **HybridizerRefrigitzForm::Table;
 					{
 						if (brd->isMated(order) == 1)
 						{
-							lstr = str2 + std::wstring(L" ") + lstr + std::wstring(L" ") + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To ") + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:") + StringConverterHelper::toString(AllDraw::Less);
-							//MessageBox.Show(str + " " + "مات شد");
+							lstr = str2 + std::wstring(L" " + lstr + std::wstring(L" " + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To " + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:" + StringConverterHelper::toString(AllDraw::Less);
+							//MessageBox.Show(str + " " + "مات شد";
 						}
 						else
 						{
-							lstr = str2 + std::wstring(L" کیش  ") + lstr + std::wstring(L" ") + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To ") + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:") + StringConverterHelper::toString(AllDraw::Less);
-							std::cout << std::wstring(L" کیش توسط") << std::wstring(L" ") << str2 << std::endl;
+							lstr = str2 + std::wstring(L" کیش  " + lstr + std::wstring(L" " + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To " + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:" + StringConverterHelper::toString(AllDraw::Less);
+							std::cout << std::wstring(L" کیش توسط" << std::wstring(L" " << str2 << std::endl;
 							
 								if (Com && (AllDraw::OrderPlate == 1))
 								{
@@ -1309,7 +1326,7 @@ int **HybridizerRefrigitzForm::Table;
 					}
 					else
 					{
-						lstr = str2 + std::wstring(L" ") + lstr + std::wstring(L" ") + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To ") + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:") + StringConverterHelper::toString(AllDraw::Less);
+						lstr = str2 + std::wstring(L" " + lstr + std::wstring(L" " + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To " + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:" + StringConverterHelper::toString(AllDraw::Less);
 					}
 					
 						if (Com && (AllDraw::OrderPlate == 1))

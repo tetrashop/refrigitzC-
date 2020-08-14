@@ -3081,7 +3081,7 @@
 		            RW6 = -1;
 		            CL6 = -1;
 		            Ki6 = -1;
-		            int[] BacWard = new int[25];
+		            int* BacWard = new int[25];
 		            Object Omm = new Object();
 		            ////lock (Omm)
 		            {

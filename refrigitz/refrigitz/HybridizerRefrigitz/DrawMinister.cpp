@@ -200,7 +200,7 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 						////lock (O1)
 						{ //Draw an Instant from File of WHITE Soldeirs.
 							 //Draw a WHITE Instatnt Minister Image on the Table.
-							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "MG.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "MG.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 						}
 					}
 					else
@@ -210,7 +210,7 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 						////lock (O1)
 						{ //Draw an Instant from File of WHITE Soldeirs.
 							 //Draw a BLACK Instatnt Minister Image on the Table.
-							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "MB.png"), new Rectangle((int)([So2]. * CellW), (int)(Column * (float)CellH), CellW, CellH);
+							//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "MB.png", new Rectangle((int)([So2]. * CellW), (int)(Column * (float)CellH), CellW, CellH);
 						}
 					}
 				}
@@ -226,8 +226,8 @@ long long DrawMinister::MaxHeuristicxM = -20000000000000000;
 
 	void DrawMinister::InitializeInstanceFields()
 	{
-		//Space = new std::string(L"&nbsp;");
-		Spaces = 0;
+		//Space = new std::string(L"&nbsp;";
+		
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];
 		for (int element = 0; element < sizeof(temp_LoseOcuuredatChiled) / sizeof(temp_LoseOcuuredatChiled[0]); element++)

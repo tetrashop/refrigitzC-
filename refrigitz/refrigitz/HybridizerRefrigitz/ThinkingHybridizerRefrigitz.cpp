@@ -373,7 +373,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 		}
 	}
 
-	ThinkingHybridizerRefrigitz::ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin) //: iIndex(iInde), iIndex(-1), Space(new std::string(L"&nbsp;")), Spaces(0), callStack(new StackFrame(1, true))
+	ThinkingHybridizerRefrigitz::ThinkingHybridizerRefrigitz(int iInde, int KindO, int CurrentAStarGredy, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, int i, int j, int a, int** Tab, int Ma, int Ord, bool ThinkingBeg, int CurA, int ThingN, int Kin) //: iIndex(iInde), iIndex(-1), Space(new std::string(L"&nbsp;"), Spaces(0), callStack(new StackFrame(1, true))
 	{
 		////auto o = new Object();
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
@@ -10646,14 +10646,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	int ThinkingHybridizerRefrigitz::ReturnHeuristicCalculartorDeeperKing(int k, int m, int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND)
 	{
 		int Heuristic = 0;
-		if (AStarGreedy[k]->KingOnTable == nullptr || AStarGreedy[k]->KingOnTable[m] == nullptr || AStarGreedy[k]->KingOnTable[m].KingThinking == nullptr || AStarGreedy[k]->KingOnTable[m].KingThinking == nullptr || AStarGreedy[k]->KingOnTable[m].KingThinking->TableListKing.empty())
+		if (AStarGreedy[k]->KingOnTable == nullptr || AStarGreedy[k]->KingOnTable[m] == nullptr || AStarGreedy[k]->KingOnTable[m]->KingThinking == nullptr || AStarGreedy[k]->KingOnTable[m]->KingThinking == nullptr || AStarGreedy[k]->KingOnTable[m]->KingThinking->TableListKing.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < AStarGreedy[k]->KingOnTable[m].KingThinking->TableListKing.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k]->KingOnTable[m]->KingThinking->TableListKing.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += AStarGreedy[k]->KingOnTable[m].KingThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k]->KingOnTable[m]->KingThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10664,14 +10664,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	int ThinkingHybridizerRefrigitz::ReturnHeuristicCalculartorDeeperMinister(int k, int m, int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND)
 	{
 		int Heuristic = 0;
-		if (AStarGreedy[k]->MinisterOnTable == nullptr || AStarGreedy[k]->MinisterOnTable[m] == nullptr || AStarGreedy[k]->MinisterOnTable[m].MinisterThinking == nullptr || AStarGreedy[k]->MinisterOnTable[m].MinisterThinking == nullptr || AStarGreedy[k]->MinisterOnTable[m].MinisterThinking->TableListMinister.empty())
+		if (AStarGreedy[k]->MinisterOnTable == nullptr || AStarGreedy[k]->MinisterOnTable[m] == nullptr || AStarGreedy[k]->MinisterOnTable[m]->MinisterThinking == nullptr || AStarGreedy[k]->MinisterOnTable[m]->MinisterThinking == nullptr || AStarGreedy[k]->MinisterOnTable[m]->MinisterThinking->TableListMinister.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < AStarGreedy[k]->MinisterOnTable[m].MinisterThinking->TableListMinister.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k]->MinisterOnTable[m]->MinisterThinking->TableListMinister.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += AStarGreedy[k]->MinisterOnTable[m].MinisterThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k]->MinisterOnTable[m]->MinisterThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10682,14 +10682,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	int ThinkingHybridizerRefrigitz::ReturnHeuristicCalculartorDeeperCastle(int k, int m, int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND)
 	{
 		int Heuristic = 0;
-		if (AStarGreedy[k]->CastlesOnTable == nullptr || AStarGreedy[k]->CastlesOnTable[m] == nullptr || AStarGreedy[k]->CastlesOnTable[m].CastleThinking == nullptr || AStarGreedy[k]->CastlesOnTable[m].CastleThinking == nullptr || AStarGreedy[k]->CastlesOnTable[m].CastleThinking->TableListCastle.empty())
+		if (AStarGreedy[k]->CastlesOnTable == nullptr || AStarGreedy[k]->CastlesOnTable[m] == nullptr || AStarGreedy[k]->CastlesOnTable[m]->CastleThinking == nullptr || AStarGreedy[k]->CastlesOnTable[m]->CastleThinking == nullptr || AStarGreedy[k]->CastlesOnTable[m]->CastleThinking->TableListCastle.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < AStarGreedy[k]->CastlesOnTable[m].CastleThinking->TableListCastle.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k]->CastlesOnTable[m]->CastleThinking->TableListCastle.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += AStarGreedy[k]->CastlesOnTable[m].CastleThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k]->CastlesOnTable[m]->CastleThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10700,14 +10700,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	int ThinkingHybridizerRefrigitz::ReturnHeuristicCalculartorDeeperHourse(int k, int m, int iAstarGready, int ii, int j, int Order, int &HaveKilled, int &BOUND)
 	{
 		int Heuristic = 0;
-		if (AStarGreedy[k]->HoursesOnTable == nullptr || AStarGreedy[k]->HoursesOnTable[m] == nullptr || AStarGreedy[k]->HoursesOnTable[m].HourseThinking == nullptr || AStarGreedy[k]->HoursesOnTable[m].HourseThinking == nullptr || AStarGreedy[k]->HoursesOnTable[m].HourseThinking->TableListHourse.empty())
+		if (AStarGreedy[k]->HoursesOnTable == nullptr || AStarGreedy[k]->HoursesOnTable[m] == nullptr || AStarGreedy[k]->HoursesOnTable[m]->HourseThinking == nullptr || AStarGreedy[k]->HoursesOnTable[m]->HourseThinking == nullptr || AStarGreedy[k]->HoursesOnTable[m]->HourseThinking->TableListHourse.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < AStarGreedy[k]->HoursesOnTable[m].HourseThinking->TableListHourse.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k]->HoursesOnTable[m]->HourseThinking->TableListHourse.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += AStarGreedy[k]->HoursesOnTable[m].HourseThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k]->HoursesOnTable[m]->HourseThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10719,14 +10719,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	{
 		int Heuristic = 0;
 
-		if (AStarGreedy[k]->ElephantOnTable == nullptr || AStarGreedy[k]->ElephantOnTable[m] == nullptr || AStarGreedy[k]->ElephantOnTable[m].ElefantThinking == nullptr || AStarGreedy[k]->ElephantOnTable[m].ElefantThinking == nullptr || AStarGreedy[k]->ElephantOnTable[m].ElefantThinking->TableListElefant.empty())
+		if (AStarGreedy[k]->ElephantOnTable == nullptr || AStarGreedy[k]->ElephantOnTable[m] == nullptr || AStarGreedy[k]->ElephantOnTable[m]->ElefantThinking == nullptr || AStarGreedy[k]->ElephantOnTable[m]->ElefantThinking == nullptr || AStarGreedy[k]->ElephantOnTable[m]->ElefantThinking->TableListElefant.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < AStarGreedy[k]->ElephantOnTable[m].ElefantThinking->TableListElefant.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k]->ElephantOnTable[m]->ElefantThinking->TableListElefant.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += AStarGreedy[k]->ElephantOnTable[m].ElefantThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k]->ElephantOnTable[m]->ElefantThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -10739,14 +10739,14 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 	{
 		int Heuristic = 0;
 
-		if (AStarGreedy[k]->SolderesOnTable == nullptr || AStarGreedy[k]->SolderesOnTable[m] == nullptr || AStarGreedy[k]->SolderesOnTable[m].SoldierThinking == nullptr || AStarGreedy[k]->SolderesOnTable[m].SoldierThinking == nullptr || AStarGreedy[k]->SolderesOnTable[m].SoldierThinking->TableListSolder.empty())
+		if (AStarGreedy[k]->SolderesOnTable == nullptr || AStarGreedy[k]->SolderesOnTable[m] == nullptr || AStarGreedy[k]->SolderesOnTable[m]->SoldierThinking == nullptr || AStarGreedy[k]->SolderesOnTable[m]->SoldierThinking == nullptr || AStarGreedy[k]->SolderesOnTable[m]->SoldierThinking->TableListSolder.empty())
 		{
 			return Heuristic;
 		}
-		for (int  jj = 0; jj < AStarGreedy[k]->SolderesOnTable[m].SoldierThinking->TableListSolder.size(); jj++)
+		for (int  jj = 0; jj < AStarGreedy[k]->SolderesOnTable[m]->SoldierThinking->TableListSolder.size(); jj++)
 		{
 			int hav = HaveKilled;
-			Heuristic += AStarGreedy[k]->SolderesOnTable[m].SoldierThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
+			Heuristic += AStarGreedy[k]->SolderesOnTable[m]->SoldierThinking->ReturnHeuristicCalculartor(++iAstarGready, ii, jj, Order * -1, hav);
 
 
 			HaveKilled = hav;
@@ -11294,7 +11294,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 							HeuristicListKing.push_back(Hu);
 						}
 					}
@@ -11315,7 +11315,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 
@@ -11491,7 +11491,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 							HeuristicListMinister.push_back(Hu);
 						}
 					}
@@ -11512,7 +11512,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
@@ -12117,7 +12117,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 							HeuristicListCastle.push_back(Hu);
 						}
 						////auto o4 = new Object();
@@ -12138,7 +12138,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 
@@ -12283,7 +12283,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 							HeuristicListHourse.push_back(Hu);
 						}
 						////auto o4 = new Object();
@@ -12304,7 +12304,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 					ThinkingAtRun = false;
@@ -12449,7 +12449,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 							HeuristicListElefant.push_back(Hu);
 						}
 						////auto o4 = new Object();
@@ -12470,7 +12470,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 
@@ -13859,7 +13859,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 							HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-							//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+							//H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 							HeuristicListSolder.push_back(Hu);
 						}
 					}
@@ -13880,7 +13880,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-					//std::wstring //H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+					//std::wstring //H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 					HeuristicInsertion(Kind, RowDestination, ColumnDestination, CloneATable(TableS), Hu);
 
 
@@ -14004,7 +14004,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				HuMethod(Hu, HeuristicAttackValue, HeuristicMovementValue, HeuristicSelfSupportedValue, HeuristicReducedMovementValue, HeuristicReducedSupport, HeuristicReducedAttackValue, HeuristicDistributionValue, HeuristicKingSafe, HeuristicFromCenter, HeuristicKingDangour, HeuristicCheckedMate);
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-				//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+				//H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 				HeuristicListKing.push_back(Hu);
 			}
 			Castle_Renamed = true;
@@ -16760,7 +16760,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 
 
 //C# TO C++ CONVERTER TODO TASK: There is no native C++ equivalent to 'ToString':
-				//H = std::wstring(L" HAttack:") + ((Hu[0])).ToString() + std::wstring(L" HMove:") + ((Hu[1])).ToString() + std::wstring(L" HSelSup:") + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:") + ((Hu[3])).ToString() + std::wstring(L" HKiller:") + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:") + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:") + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:") + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:") + ((Hu[8])).ToString() + std::wstring(L" HKingDang:") + ((Hu[9])).ToString();
+				//H = std::wstring(L" HAttack:" + ((Hu[0])).ToString() + std::wstring(L" HMove:" + ((Hu[1])).ToString() + std::wstring(L" HSelSup:" + ((Hu[2])).ToString() + std::wstring(L" HCheckedMateDang:" + ((Hu[3])).ToString() + std::wstring(L" HKiller:" + ((Hu[4])).ToString() + std::wstring(L" HReduAttack:" + ((Hu[5])).ToString() + std::wstring(L" HDisFromCurrentEnemyking:" + ((Hu[6])).ToString() + std::wstring(L" HKingSafe:" + ((Hu[7])).ToString() + std::wstring(L" HObjFromCeneter:" + ((Hu[8])).ToString() + std::wstring(L" HKingDang:" + ((Hu[9])).ToString();
 			}
 			////auto o7 = new Object();
 			SetObjectNumbersInList(TableS);
@@ -17794,7 +17794,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.clear();
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.push_back(CloneATable(TableListSolder[j]));
 				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0,false);
-				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  = this;
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  =THIS;
 			}
 		}
 		else if (kind == 2) //elephant
@@ -17810,7 +17810,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.clear();
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.push_back(CloneATable(TableListElefant[j]));
 				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0,false);
-				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  = this;
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  =THIS;
 			}
 		}
 		else if (kind == 3) //hourse
@@ -17826,7 +17826,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.clear();
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.push_back(CloneATable(TableListHourse[j]));
 				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0,false);
-				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  = this;
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  =THIS;
 			}
 		}
 		else if (kind == 4) //Castle
@@ -17842,7 +17842,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.clear();
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.push_back(CloneATable(TableListCastle[j]));
 				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0,false);
-				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  = this;
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  =THIS;
 			}
 		}
 		else if (kind == 5) //minister
@@ -17858,7 +17858,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.clear();
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.push_back(CloneATable(TableListMinister[j]));
 				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0,false);
-				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  = this;
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  =THIS;
 			}
 		}
 		else if (kind == 6) //king
@@ -17874,7 +17874,7 @@ inline bool operator!=(const ThinkingHybridizerRefrigitz lhs, const std::nullptr
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.clear();
 				AStarGreedy[AStarGreedy.size() - 1]->TableList.push_back(CloneATable(TableListKing[j]));
 				AStarGreedy[AStarGreedy.size() - 1]->SetRowColumn(0,false);
-				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  = this;
+				AStarGreedy[AStarGreedy.size() - 1]->AStarGreedyStringNode  =THIS;
 			}
 		}
 	}

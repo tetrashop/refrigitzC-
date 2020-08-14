@@ -198,7 +198,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 							////lock (O1)
 							{ //Draw an Instant from File of WHITE Soldeirs.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "SG.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "SG.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 
 							}
 						}
@@ -209,7 +209,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 							////lock (O1)
 							{ //Draw an Instant from File of WHITE Soldeirs.
 								 //Draw an Instatnt of BLACK Soldier File On the Table.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "SB.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "SB.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 							}
 						}
 
@@ -228,7 +228,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 							////lock (O1)
 							{ //Draw an Instant from File of WHITE Soldeirs.
 								 //Draw of WHITE Minsister Image File By an Instant.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "MG.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "MG.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 							}
 						}
 						else
@@ -238,7 +238,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 							////lock (O1)
 							{ //Draw an Instant from File of WHITE Soldeirs.
 								 //Draw a Image File on the Table Form n Instatnt One.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "MB.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "MB.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 							}
 						}
 
@@ -254,7 +254,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 							////lock (O1)
 							{ //Draw an Instant from File of WHITE Soldeirs.
 								 //Create on the Inststant of WHITE Castles Images.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "BrG.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "BrG.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 							}
 						}
 						else
@@ -264,7 +264,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 							////lock (O1)
 							{ //Draw an Instant from File of WHITE Soldeirs.
 								 //Creat of an Instant of BLACK Image Castles.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "BrB.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "BrB.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 							}
 						}
 
@@ -280,7 +280,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 							////lock (O1)
 							{ //Draw an Instatnt of WHITE Hourse Image File.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "HG.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (int)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "HG.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (int)CellH), CellW, CellH);
 							}
 						}
 						else
@@ -289,7 +289,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 							////lock (O1)
 							{ //Creat of an Instatnt Hourse Image File.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "HB.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "HB.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 							}
 						}
 
@@ -305,7 +305,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 							////lock (O1)
 							{ //Draw an Instatnt Image of WHITE Elephant.
-								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "EG.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								//g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "EG.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 							}
 						}
 						else
@@ -314,7 +314,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 //C# TO C++ CONVERTER TODO TASK: There is no built-in support for multithreading in native C++:
 							////lock (O1)
 							{ //Draw of Instant Image of BLACK Elephant.
-								////g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "EB.png"), new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
+								////g.DrawImage(Image.FromFile(AllDraw.ImagesSubRoot + "EB.png", new Rectangle((int)([So2]. * (float)CellW), (int)(Column * (float)CellH), CellW, CellH);
 							}
 						}
 
@@ -335,7 +335,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 	void DrawSoldire::InitializeInstanceFields()
 	{
 		//Space = "&nbsp;";
-		Spaces = 0;
+		
 		WinOcuuredatChiled = 0;
 		int *temp_LoseOcuuredatChiled = new int[3];
 		for (int element = 0; element < sizeof(temp_LoseOcuuredatChiled) / sizeof(temp_LoseOcuuredatChiled[0]); element++)

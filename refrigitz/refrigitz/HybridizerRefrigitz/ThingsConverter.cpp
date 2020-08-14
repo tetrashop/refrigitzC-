@@ -24,7 +24,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 		Order = Ord;
 		Current = Cur;
 
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ThingsConverter:" + (TimeElapced.TimeNow() - Time).ToString();}
+		////{ //AllDraw.OutPut.Append("\r\n";for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ThingsConverter:" + (TimeElapced.TimeNow() - Time).ToString();}
 	}
 
 	int **ThingsConverter::CloneATable(int** Tab)
@@ -51,7 +51,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 		this->tableS = CloneATable(tableS);
 		Order = order;
 		this->v = v;
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ThingsConverter:" + (TimeElapced.TimeNow() - Time).ToString();}
+		////{ //AllDraw.OutPut.Append("\r\n";for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ThingsConverter:" + (TimeElapced.TimeNow() - Time).ToString();}
 	}
 
 	bool ThingsConverter::ConvertOperation(int i, int j, int a, int** Tab, int Ord, bool TB, int Cur)
@@ -488,7 +488,7 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 
 			}
 
-			////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ConvertOperation:" + (TimeElapced.TimeNow() - Time).ToString();}
+			////{ //AllDraw.OutPut.Append("\r\n";for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("ConvertOperation:" + (TimeElapced.TimeNow() - Time).ToString();}
 			//return Convert State.
 			return Convert;
 		}
@@ -496,8 +496,8 @@ bool ThingsConverter::ActOfClickEqualTow = false;
 
 	void ThingsConverter::InitializeInstanceFields()
 	{
-		//Space = new std::string(L"&nbsp;");
-		Spaces = 0;
+		//Space = new std::string(L"&nbsp;";
+		
 		ArrangmentsChanged = true;
 		Convert = false;
 		ConvertedToMinister = false;

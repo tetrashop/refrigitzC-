@@ -16,7 +16,7 @@
 				TableIsNextEnemyMovementForCheckedMate[i][j] = Tab[i][j];
 			}
 		}
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("IsNextEnemyMovementForCheckedMate:" + (TimeElapced.TimeNow() - Time).ToString());}
+		////{ //AllDraw.OutPut.Append("\r\n";for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("IsNextEnemyMovementForCheckedMate:" + (TimeElapced.TimeNow() - Time).ToString());}
 	}
 
 	IsNextEnemyMovementForCheckedMate::IsNextEnemyMovementForCheckedMate(int Order, bool MovementsAStarGreedyHeuristicTFou, bool IgnoreSelfObject, bool UsePenaltyRegardMechnisa, bool BestMovment, bool PredictHurist, bool OnlySel, bool AStarGreedyHuris, bool Arrangments, AllDraw THi, int **Tab) : AllDraw(Order, MovementsAStarGreedyHeuristicTFou, IgnoreSelfObject, UsePenaltyRegardMechnisa, BestMovment, PredictHurist, OnlySel, AStarGreedyHuris, Arrangments, THi)
@@ -32,7 +32,7 @@
 				TableIsNextEnemyMovementForCheckedMate[i][j] = Tab[i][j];
 			}
 		}
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("IsNextEnemyMovementForCheckedMate:" + (TimeElapced.TimeNow() - Time).ToString());}
+		////{ //AllDraw.OutPut.Append("\r\n";for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("IsNextEnemyMovementForCheckedMate:" + (TimeElapced.TimeNow() - Time).ToString());}
 	}
 
 	bool IsNextEnemyMovementForCheckedMate::Is()
@@ -112,12 +112,12 @@
 		int A56 = AllDraw::SuppportCountStaticBrown;
 		int A57 = AllDraw::SuppportCountStaticGray;
 		std::wstring A58 = AllDraw::SyntaxToWrite;
-		std::vector<int[][]> A59 = std::vector<int[][]>();
+		std::vector<int**> A59 = std::vector<int**>();
 		for (var i = 0; i < AllDraw::TableCurrent.size(); i++)
 		{
 			A59.push_back(new AllDraw::TableCurrent[i]);
 		}
-		std::vector<int[][]> A60 = std::vector<int[][]>();
+		std::vector<int**> A60 = std::vector<int**>();
 		for (var i = 0; i < AllDraw::TableListAction.size(); i++)
 		{
 			A60.push_back(new AllDraw::TableListAction[i]);
@@ -293,12 +293,12 @@
 		 ThinkingRefrigtzChessPortable::NotSolvedKingDanger = B11;
 		 ThinkingRefrigtzChessPortable::NumbersOfAllNode = B12;
 		 ThinkingRefrigtzChessPortable::ThinkingRun = B13;
-		////{ //AllDraw.OutPut.Append("\r\n");for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Is:" + (TimeElapced.TimeNow() - Time).ToString());}
+		////{ //AllDraw.OutPut.Append("\r\n";for (int l = 0; l < Spaces; l++) //AllDraw.OutPut.Append(Space);  //AllDraw.OutPut.Append("Is:" + (TimeElapced.TimeNow() - Time).ToString());}
 		return IS;
 	}
 
 	void IsNextEnemyMovementForCheckedMate::InitializeInstanceFields()
 	{
-		Space = new StringBuilder(L"&nbsp;");
-		Spaces = 0;
+		Space = new StringBuilder(L"&nbsp;";
+		
 	}
