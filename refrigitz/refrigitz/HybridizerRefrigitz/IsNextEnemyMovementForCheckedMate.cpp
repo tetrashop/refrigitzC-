@@ -1,5 +1,5 @@
 ﻿#include "IsNextEnemyMovementForCheckedMate.h"
-#include "ThinkingHybridizerRefrigitz"
+#include "ThinkingHybridizerRefrigitz.h"
 
 
 

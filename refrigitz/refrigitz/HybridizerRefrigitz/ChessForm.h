@@ -80,6 +80,7 @@
 		void WaitCon();
 		void WaitOnly();
 	public:
+		HybridizerRefrigitzForm();
 		int Play(int i, int j);
 	private:
 		void Wait();

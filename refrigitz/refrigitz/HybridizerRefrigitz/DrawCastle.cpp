@@ -1,5 +1,5 @@
 ﻿#include "DrawCastle.h"
-#include "ThinkingHybridizerRefrigitz.h"
+//#include "ThinkingHybridizerRefrigitz.h"
 
 long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 
@@ -84,7 +84,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 				}
 			}
 			
-				CastleThinking = ThinkingHybridizerRefrigitz(0, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 16, Ord, TB, Cur, 4, 4);
+				CastleThinking =new ThinkingHybridizerRefrigitz(0, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 16, Ord, TB, Cur, 4, 4);
 			
 			Row = i;
 			Column = j;
@@ -160,7 +160,7 @@ long long DrawCastle::MaxHeuristicxB = -20000000000000000;
 		for (int  i = 0; i < AllDraw::CastleMovments; i++)
 		{
 
-			AA->CastleThinking = ThinkingHybridizerRefrigitz(i, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			AA->CastleThinking =new ThinkingHybridizerRefrigitz(i, 4, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
 			this->CastleThinking->Clone(AA->CastleThinking);
 
 		}

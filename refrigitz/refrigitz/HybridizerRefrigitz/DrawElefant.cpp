@@ -1,5 +1,5 @@
 ﻿#include "DrawElefant.h"
-#include "ThinkingHybridizerRefrigitz.h"
+//#include "ThinkingHybridizerRefrigitz.h"
 
 
 long long DrawElefant::MaxHeuristicxE = -20000000000000000;
@@ -85,7 +85,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 				}
 			}
 			
-				ElefantThinking = ThinkingHybridizerRefrigitz(0,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 16, Ord, TB, Cur, 4, 2);
+				ElefantThinking =new ThinkingHybridizerRefrigitz(0,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 16, Ord, TB, Cur, 4, 2);
 		
 			Row = i;
 			Column = j;
@@ -162,7 +162,7 @@ long long DrawElefant::MaxHeuristicxE = -20000000000000000;
 		for (int  i = 0; i < AllDraw::ElefantMovments; i++)
 		{
 
-			AA->ElefantThinking = ThinkingHybridizerRefrigitz(i,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			AA->ElefantThinking =new ThinkingHybridizerRefrigitz(i,2,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
 			this->ElefantThinking->Clone(AA->ElefantThinking);
 
 		}

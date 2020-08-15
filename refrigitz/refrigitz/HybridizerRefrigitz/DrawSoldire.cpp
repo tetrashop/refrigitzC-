@@ -98,7 +98,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 				}
 			}
 			
-				SoldierThinking = ThinkingHybridizerRefrigitz(0,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 4, Ord, TB, Cur, 16, 1);
+				SoldierThinking =new ThinkingHybridizerRefrigitz(0,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 4, Ord, TB, Cur, 16, 1);
 			Row = i;
 			Column = j;
 			color = a;
@@ -126,7 +126,7 @@ int DrawSoldire::MaxHeuristicxS = -DBL_MAX;
 		for (int  i = 0; i < AllDraw::SodierMovments; i++)
 		{
 
-			AA->SoldierThinking = ThinkingHybridizerRefrigitz(i,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			AA->SoldierThinking =new ThinkingHybridizerRefrigitz(i,1,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
 			this->SoldierThinking->Clone(AA->SoldierThinking);
 
 		}

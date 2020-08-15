@@ -113,7 +113,7 @@ void benchmark(const Position& current, istream& is) {
   Options["Threads"] = threads;
   Search::clear();
 
-  if (limitType == "time")
+  if (limitType == "time")(current.fen()
       limits.movetime = stoi(limit); // movetime is in millisecs
 
   else if (limitType == "nodes")
@@ -129,7 +129,7 @@ void benchmark(const Position& current, istream& is) {
       fens = Defaults;
 
   else if (fenFile == "current")
-      fens.push_back(current->fen());
+      fens.push_back(current.fen());
 
   else
   {

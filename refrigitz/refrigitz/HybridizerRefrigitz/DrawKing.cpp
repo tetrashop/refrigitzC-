@@ -1,5 +1,5 @@
 ﻿#include "DrawKing.h"
-#include "ThinkingHybridizerRefrigitz.h"
+//#include "ThinkingHybridizerRefrigitz.h"
 
 bool DrawKing::KingWHITENotCheckedByQuantumMove = false;
 bool DrawKing::KingBLACKNotCheckedByQuantumMove = false;
@@ -86,7 +86,7 @@ long long DrawKing::MaxHeuristicxK = -20000000000000000;
 				}
 			}
 			
-				KingThinking = ThinkingHybridizerRefrigitz(0, 6, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 8, Ord, TB, Cur, 2, 6);
+				KingThinking =new ThinkingHybridizerRefrigitz(0, 6, CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 8, Ord, TB, Cur, 2, 6);
 			
 			Row = i;
 			Column = j;

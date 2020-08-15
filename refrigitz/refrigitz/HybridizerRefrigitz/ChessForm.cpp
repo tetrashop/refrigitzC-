@@ -53,7 +53,7 @@ int **HybridizerRefrigitzForm::Table;
 			Begin4:
 	#pragma warning restore CS0164 // This label has not been referenced
 	//#pragma warning restore CS0164 // This label has not been referenced
-			AllDraw Th =Draw.AStarGreedyStringNode;
+			AllDraw *Th =Draw.AStarGreedyStringNode;
 			if (Draw.IsAtLeastAllObjectIsNull())
 			{
 				Draw.TableList.clear();
@@ -115,12 +115,12 @@ int **HybridizerRefrigitzForm::Table;
 			{
 				brd = new Board();
 				Table = brd->GetTable();
-				std::cout << std::wstring(L"Wait..." << std::endl;
+				std::cout << std::wstring(L"Wait...") << std::endl;
 				AllDraw::OrderPlateDraw = -1;
 				AllDraw::TableListAction.push_back(CloneATable(brd->GetTable()));
 				Table = CloneATable(brd->GetTable());
 				ThinkingHybridizerRefrigitz::TableInitiation = CloneATable(brd->GetTable());
-				if (DrawManagement())
+				/*if (DrawManagement())
 				{
 					//Load AllDraw.asd
 					bool LoadTree = true;
@@ -177,8 +177,8 @@ int **HybridizerRefrigitzForm::Table;
 						SetDrawFound();
 
 					}
-				}
-				std::cout << std::wstring(L"Ready..." << std::endl;
+				}*/
+				std::cout << std::wstring(L"Ready...") << std::endl;
 				LoadP = true;
 			}
 		}
@@ -288,7 +288,7 @@ int **HybridizerRefrigitzForm::Table;
 
 					if (Draw.TableZero(Table))
 					{
-						std::cout << std::wstring(L"Board is invalid;" << std::endl;
+						std::cout << std::wstring(L"Board is invalid;") << std::endl;
 						Draw.TableList.clear();
 						Draw.TableList.push_back(CloneATable(AllDraw::TableListAction[AllDraw::TableListAction.size() - 1]));
 						Draw.SetRowColumn(0,false);
@@ -313,7 +313,7 @@ int **HybridizerRefrigitzForm::Table;
 						if (R->CromosomRowFirst == -1 || R->CromosomColumnFirst == -1 || R->CromosomRow == -1 || R->CromosomColumn == -1)
 						{
 
-							std::cout << std::wstring(L"One or more cromosoms is invalid;" << std::endl;
+							std::cout << std::wstring(L"One or more cromosoms is invalid;") << std::endl;
 							AllDraw::TableListAction.pop_back();
 
 
@@ -330,7 +330,7 @@ int **HybridizerRefrigitzForm::Table;
 						jj = R->CromosomColumnFirst;
 						i = ii;
 						j = jj;
-						std::cout << std::wstring(L"\nBestMove :" << (new ThinkingHybridizerRefrigitz())->AsS(R->CromosomRowFirst, R->CromosomColumnFirst, R->CromosomRow, R->CromosomColumn);
+						std::cout << std::wstring(L"\nBestMove :") << (new ThinkingHybridizerRefrigitz())->AsS(R->CromosomRowFirst, R->CromosomColumnFirst, R->CromosomRow, R->CromosomColumn);
 						k = brd->getInfo(i, j);
 						//if (k == 0)
 
@@ -349,7 +349,7 @@ int **HybridizerRefrigitzForm::Table;
 
 
 						{
-							std::cout << std::wstring(L"One or more DNA is invalid;" << std::endl;
+							std::cout << std::wstring(L"One or more DNA is invalid;") << std::endl;
 
 
 
@@ -437,7 +437,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"R";
@@ -472,7 +472,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"N";
@@ -507,7 +507,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"B";
@@ -542,7 +542,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"Q";
@@ -577,7 +577,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								//pb[x1, y1].Image = null;
@@ -602,7 +602,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"0-0";
@@ -625,7 +625,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"0-0";
@@ -657,7 +657,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"P";
@@ -792,7 +792,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"R";
@@ -827,7 +827,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"N";
@@ -855,7 +855,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"B";
@@ -890,7 +890,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"Q";
@@ -925,7 +925,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"K";
@@ -951,7 +951,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"0-0";
@@ -974,7 +974,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									//this.pb[x1, y1].BorderStyle = 0;
 									cl = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"0-0";
@@ -1006,7 +1006,7 @@ int **HybridizerRefrigitzForm::Table;
 								{
 									cl = 0;
 									//this.pb[x1, y1].BorderStyle = 0;
-									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید" << std::endl;
+									std::cout << std::wstring(L"شما نمی توانید این حرکت را انجام دهید") << std::endl;
 									return 0;
 								}
 								lstr = L"P";
@@ -1208,13 +1208,13 @@ int **HybridizerRefrigitzForm::Table;
 					{
 						if (brd->isMated(order) == 1)
 						{
-							lstr = str2 + std::wstring(L" " + lstr + std::wstring(L" " + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To " + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:" + StringConverterHelper::toString(AllDraw::Less);
+							lstr = str2 + std::wstring(L" ") + lstr + std::wstring(L" ") + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To ") + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:") + StringConverterHelper::toString(AllDraw::Less);
 							//MessageBox.Show(str + " " + "مات شد";
 						}
 						else
 						{
-							lstr = str2 + std::wstring(L" کیش  " + lstr + std::wstring(L" " + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To " + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:" + StringConverterHelper::toString(AllDraw::Less);
-							std::cout << std::wstring(L" کیش توسط" << std::wstring(L" " << str2 << std::endl;
+							lstr = str2 + std::wstring(L" کیش  ") + lstr + std::wstring(L" ") + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To ") + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:") + StringConverterHelper::toString(AllDraw::Less);
+							std::cout << std::wstring(L" کیش توسط") << std::wstring(L" ") << str2 << std::endl;
 							
 								if (Com && (AllDraw::OrderPlate == 1))
 								{
@@ -1235,7 +1235,7 @@ int **HybridizerRefrigitzForm::Table;
 									bool B = AllDraw::Blitz;
 									AllDraw::Blitz = false;
 
-									AllDraw thiB =Draw.AStarGreedyStringNode;
+									AllDraw *thiB =Draw.AStarGreedyStringNode;
 									if (Draw.IsAtLeastAllObjectIsNull())
 									{
 										Draw.TableList.clear();
@@ -1286,7 +1286,7 @@ int **HybridizerRefrigitzForm::Table;
 									bool B = AllDraw::Blitz;
 									AllDraw::Blitz = false;
 
-									AllDraw thiB =Draw.AStarGreedyStringNode;
+									AllDraw *thiB =Draw.AStarGreedyStringNode;
 									if (Draw.IsAtLeastAllObjectIsNull())
 									{
 										Draw.TableList.clear();
@@ -1326,7 +1326,7 @@ int **HybridizerRefrigitzForm::Table;
 					}
 					else
 					{
-						lstr = str2 + std::wstring(L" " + lstr + std::wstring(L" " + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To " + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:" + StringConverterHelper::toString(AllDraw::Less);
+						lstr = str2 + std::wstring(L" ") + lstr + std::wstring(L" ") + lstr3 + StringConverterHelper::toString(y1 + 1) + std::wstring(L" To ") + lstr2 + StringConverterHelper::toString(j + 1) + std::wstring(L" Hu:") + StringConverterHelper::toString(AllDraw::Less);
 					}
 					
 						if (Com && (AllDraw::OrderPlate == 1))
@@ -1349,7 +1349,7 @@ int **HybridizerRefrigitzForm::Table;
 							bool B = AllDraw::Blitz;
 							AllDraw::Blitz = false;
 
-							AllDraw thiB =Draw.AStarGreedyStringNode;
+							AllDraw *thiB =Draw.AStarGreedyStringNode;
 							if (Draw.IsAtLeastAllObjectIsNull())
 							{
 								Draw.TableList.clear();
@@ -1400,7 +1400,7 @@ int **HybridizerRefrigitzForm::Table;
 							bool B = AllDraw::Blitz;
 							AllDraw::Blitz = false;
 
-							AllDraw thiB =Draw.AStarGreedyStringNode;
+							AllDraw *thiB =Draw.AStarGreedyStringNode;
 							if (Draw.IsAtLeastAllObjectIsNull())
 							{
 								Draw.TableList.clear();
@@ -1714,7 +1714,7 @@ int **HybridizerRefrigitzForm::Table;
 			int Dummy = AllDraw::OrderPlate;
 
 			AllDraw *THISB =Draw.AStarGreedyStringNode;
-			AllDraw *THISStore = new Draw;
+			AllDraw *THISStore = Draw;
 			//while (Draw.AStarGreedyStringNode != null)
 			bool FOUND = false;
 			AllDraw *THIS = nullptr;
@@ -1768,7 +1768,7 @@ int **HybridizerRefrigitzForm::Table;
 					AllDraw::Blitz = false;
 				   FOUND = false;
 
-					AllDraw thiB =Draw.AStarGreedyStringNode;
+					AllDraw *thiB =Draw.AStarGreedyStringNode;
 					if (Draw.IsAtLeastAllObjectIsNull())
 					{
 						Draw.TableList.clear();

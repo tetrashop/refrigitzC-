@@ -284,7 +284,7 @@
 					//throw ArgumentException(L"Invalid color designation, use w or b as 2nd field separated by spaces.";
 				}
 
-				if (note->coBoard[1]->getlenght() != 1)
+				if (note->getlenght() != 1)
 				{
 					//throw ArgumentException(L"Invalid color designation, 2nd field is " + note[1].length() + L" chars long, only 1 allowed.");
 				}
@@ -330,20 +330,20 @@
 			if (note->Length >= 4)
 			{
 				// 16.1.3.4: Parse en passant target square such as "e3"
-				coEnPassant = note[3];
+				coEnPassant = note->coBoard[3];
 				move = coEnPassant;
 			}
 
 			if (note->Length >= 5)
 			{
 				// 16.1.3.5: Parse halfmove c//lock, count of half-move since last pawn advance or unit capture
-				coHalfMove = static_cast<short>(note->coBoard[4]);
+				coHalfMove = static_cast<int>(note->coBoard[4]);
 			}
 
 			if (note->Length >= 6)
 			{
 				// 16.1.3.6: Parse fullmove number, increment after each black move
-				coFullMove = static_cast<short>(note[5]);
+				coFullMove = static_cast<int>(note->coBoard[5]);
 			}
 		}
 		catch (...)

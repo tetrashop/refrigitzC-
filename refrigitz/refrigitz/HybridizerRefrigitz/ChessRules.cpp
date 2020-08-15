@@ -1,7 +1,7 @@
 ﻿#include "ChessRules.h"
 #include "AllDraw.h"
-#include "ThinkingHybridizerRefrigitz.h"
-#include "DrawKing.h"
+//#include "ThinkingHybridizerRefrigitz.h"
+//#include "DrawKing.h"
 
 
 int ChessRules::ObjectHittedRow = -1;
@@ -1205,7 +1205,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 									a = -1;
 								}
 								//When Enemies can gard King
-								if (A->Rules(i, j, iii, jjj, a, Tab[i][j]))
+								if (A->Rules(i, j, iii, jjj, a, Tab[i][j], true))
 								{
 									Tab[iii][jjj] = Tab[i][j];
 									Tab[i][j] = 0;
@@ -1252,7 +1252,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 															Tab[i][j] = 0;
 
 															A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Tab[iiii][jjjj], CloneATable(Tab), Order, iiii, jjjj);
-															if (A->Rules(iiii, jjjj, iiiii, jjjjj, a, Tab[i][j]))
+															if (A->Rules(iiii, jjjj, iiiii, jjjjj, a, Tab[i][j], true))
 															{
 																Tab[iiiii][jjjjj] = Tab[iiii][jjjj];
 																Tab[iiii][jjjj] = 0;
@@ -1320,7 +1320,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 															Tab[i][j] = 0;
 
 															A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Tab[iiii][jjjj], CloneATable(Tab), Order, iiii, jjjj);
-															if (A->Rules(iiii, jjjj, iiiii, jjjjj, a, Tab[i][j]))
+															if (A->Rules(iiii, jjjj, iiiii, jjjjj, a, Tab[i][j], true))
 															{
 																Tab[iiiii][jjjjj] = Tab[iiii][jjjj];
 																Tab[iiii][jjjj] = 0;
@@ -2224,7 +2224,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					{
 						Tab[i][j] = true;
 					}
-					if ((new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[ii][jj], CloneATable(Table), Order, ii, jj))->Rules(0, jj, i, j, a, Table[ii][jj]))
+					if ((new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[ii][jj], CloneATable(Table), Order, ii, jj))->Rules(0, jj, i, j, a, Table[ii][jj], true))
 					{
 						Tab[i][j] = true;
 					}
@@ -2538,7 +2538,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 					}
 					else
 					{ //Menen Parameter is Moveble to Second Parameters Location returm Movable.
-						if (A->Rules(i, j, RowK, ColumnK, aa, Ord))
+						if (A->Rules(i, j, RowK, ColumnK, aa, Ord, true))
 						{
 							BREAK = true;
 							CheckWHITE = true;
@@ -2669,7 +2669,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 								Table[k][p] = Tab[k][p];
 							}
 						}
-						if (A->Rules(RowK, ColumnK, i, j, a, Ord))
+						if (A->Rules(RowK, ColumnK, i, j, a, Ord,true))
 						{
 							Order = DummyOrder;
 							//Initaite Loval and Move.
@@ -2797,7 +2797,7 @@ int ChessRules::CheckBLACKRemovableValueColumnjj = 0;
 							ChessRules *A = new ChessRules(CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsBoard, Table[i][j], CloneATable(Table), Ord, i, j);
 							///Table[ii, jj] = 0;
 							//Menen Parameter is Moveble to Second Parameters Location returm Movable.
-							if (A->Rules(i, j, ii, jj, a, Ord))
+							if (A->Rules(i, j, ii, jj, a, Ord, true))
 							{
 								Order = DummyOrder;
 								//Initiate Local Varibales and Move.

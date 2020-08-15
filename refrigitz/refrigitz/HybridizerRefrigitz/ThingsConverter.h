@@ -9,14 +9,7 @@
 	class ThingsConverter
 	{
 
-	private:
-		//std::string *Space;
-//#pragma warning disable CS0414 // The field 'ThingsConverter.Spaces' is assigned but its value is never used
-#pragma warning disable CS0414 // The field 'ThingsConverter.Spaces' is assigned but its value is never used
-		
-#pragma warning restore CS0414 // The field 'ThingsConverter.Spaces' is assigned but its value is never used
-//#pragma warning restore CS0414 // The field 'ThingsConverter.Spaces' is assigned but its value is never used
-
+	
 		//Initiate Global Variables.
 	public:
 		static bool LoadConvertTable;

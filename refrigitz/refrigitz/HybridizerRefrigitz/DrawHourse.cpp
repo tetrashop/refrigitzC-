@@ -1,5 +1,5 @@
 ﻿#include "DrawHourse.h"
-#include "ThinkingHybridizerRefrigitz.h"
+//#include "ThinkingHybridizerRefrigitz.h"
 
 
 long long DrawHourse::MaxHeuristicxH = -20000000000000000;
@@ -81,7 +81,7 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 				}
 			}
 			
-				HourseThinking = ThinkingHybridizerRefrigitz(0,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 8, Ord, TB, Cur, 4, 3);
+				HourseThinking =new ThinkingHybridizerRefrigitz(0,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(i), static_cast<int>(j), a, CloneATable(Tab), 8, Ord, TB, Cur, 4, 3);
 		
 			Row = i;
 			Column = j;
@@ -157,7 +157,7 @@ long long DrawHourse::MaxHeuristicxH = -20000000000000000;
 		for (int  i = 0; i < AllDraw::HourseMovments; i++)
 		{
 
-			AA->HourseThinking = ThinkingHybridizerRefrigitz(i,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
+			AA->HourseThinking =new ThinkingHybridizerRefrigitz(i,3,CurrentAStarGredyMax, MovementsAStarGreedyHeuristicFoundT, IgnoreSelfObjectsT, UsePenaltyRegardMechnisamT, BestMovmentsT, PredictHeuristicT, OnlySelfT, AStarGreedyHeuristicT, ArrangmentsChanged, static_cast<int>(this->[So2].), static_cast<int>(this->Column));
 			this->HourseThinking->Clone(AA->HourseThinking);
 
 		}
