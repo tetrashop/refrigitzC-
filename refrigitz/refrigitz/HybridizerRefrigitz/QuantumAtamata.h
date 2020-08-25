@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "stringconverter.h"
-#include "LearningAtamata.h"
+#include "LearningKrinskyAtamata.h"
 
 //C# TO C++ CONVERTER NOTE: The following .NET attribute has no direct equivalent in native C++:
 //ORIGINAL LINE: [Serializable] public class Bit
