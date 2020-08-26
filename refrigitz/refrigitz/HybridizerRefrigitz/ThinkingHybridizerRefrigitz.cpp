@@ -1,8 +1,13 @@
 ﻿#include "ThinkingHybridizerRefrigitz.h"
 #include "ChessRules.h"
+#include "LearningKrinskyAtamata.h"
 #include "QuantumAtamata.h"
-
-
+#include "DrawSoldire.h"
+#include "DrawElefant.h"
+#include "DrawHourse.h"
+#include "DrawCastle.h"
+#include "DrawMinister.h"
+#include "DrawKing.h"
 std::wstring ThinkingHybridizerRefrigitz::OutP = L"";
 bool ThinkingHybridizerRefrigitz::GoldenFinished = false;
 int ThinkingHybridizerRefrigitz::NoOfBoardMovedWHITE = 0;

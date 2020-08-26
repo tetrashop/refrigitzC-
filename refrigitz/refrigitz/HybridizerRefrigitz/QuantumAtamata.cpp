@@ -1,6 +1,6 @@
 ﻿#include "stringconverter.h"
 #include "QuantumAtamata.h"
-
+#include "LearningKrinskyAtamata.h"
 	Bit::Bit()
 	{
 		

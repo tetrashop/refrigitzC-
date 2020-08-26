@@ -65,6 +65,12 @@
 		int SecondAtamataState();
 		int ThirdAtamataState();
 
+		int IsSecondDerivitionIsPositive();
+		double LearningAlgorithmRegard();
+		int IsRewardAction();
+
+		double IsPenaltyAction();
+		double LearningAlgorithmPenalty();
 
 	private:
 		void InitializeInstanceFields();
